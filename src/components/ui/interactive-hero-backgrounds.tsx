@@ -10,7 +10,7 @@ import {
 } from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 
-// --- Static Reusable Vectors (Eliminates GC stutter completely) ---
+// --- Static Reusable Vectors (Zero Garbage Collection overhead) ---
 const vPos = new Vector3();
 const vVel = new Vector3();
 const vOtherPos = new Vector3();
@@ -40,6 +40,7 @@ class X {
         this.#config = config;
         this.canvas = this.#config.canvas;
         this.camera = new PerspectiveCamera(50, 1, 0.1, 100);
+        this.camera.position.set(0, 0, 20);
         this.scene = new Scene();
 
         const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
@@ -84,6 +85,13 @@ class X {
         this.size.ratio = w / h;
         this.camera.aspect = this.size.ratio;
         this.camera.updateProjectionMatrix();
+
+        // Calculate accurate 3D frustum width & height at Z=0 plane
+        const vFOV = (this.camera.fov * Math.PI) / 180;
+        const visibleHeight = 2 * Math.tan(vFOV / 2) * this.camera.position.z;
+        const visibleWidth = visibleHeight * this.camera.aspect;
+        this.size.wWidth = visibleWidth;
+        this.size.wHeight = visibleHeight;
 
         const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
         this.renderer.setSize(w, h);
@@ -133,7 +141,7 @@ class X {
     }
 }
 
-// --- Smooth Physics Engine (Zero Memory Allocations in Render Loop) ---
+// --- Physics Engine (Side Floating + Text Exclusion Zone + No Memory Allocation) ---
 class W {
     config: any;
     positionData: Float32Array;
@@ -156,13 +164,19 @@ class W {
         const { count, maxX, maxY, maxZ } = this.config;
         for (let i = 0; i < count; i++) {
             const idx = 3 * i;
-            this.positionData[idx] = MathUtils.randFloatSpread(2 * maxX * 0.85);
-            this.positionData[idx + 1] = MathUtils.randFloatSpread(2 * maxY * 0.85);
-            this.positionData[idx + 2] = MathUtils.randFloatSpread(2 * maxZ * 0.5);
+            // Distribute bubbles to left and right wings so center text stays clear
+            const side = i % 2 === 0 ? 1 : -1;
+            const xPos = side * MathUtils.randFloat(3.5, Math.max(4, maxX * 0.9));
+            const yPos = MathUtils.randFloatSpread(maxY * 1.2);
+            const zPos = MathUtils.randFloatSpread(maxZ * 0.6);
 
-            this.velocityData[idx] = MathUtils.randFloat(-0.015, 0.015);
-            this.velocityData[idx + 1] = MathUtils.randFloat(-0.015, 0.015);
-            this.velocityData[idx + 2] = MathUtils.randFloat(-0.01, 0.01);
+            this.positionData[idx] = xPos;
+            this.positionData[idx + 1] = yPos;
+            this.positionData[idx + 2] = zPos;
+
+            this.velocityData[idx] = MathUtils.randFloat(-0.01, 0.01);
+            this.velocityData[idx + 1] = MathUtils.randFloat(-0.01, 0.01);
+            this.velocityData[idx + 2] = MathUtils.randFloat(-0.005, 0.005);
         }
     }
 
@@ -192,16 +206,19 @@ class W {
             vPos.fromArray(positionData, base);
             vVel.fromArray(velocityData, base);
 
-            // Organic Gentle Floating Motion (Ambient Floating Bubbles)
-            const floatX = Math.sin(deltaInfo.elapsed * 0.8 + i * 1.3) * 0.0012;
-            const floatY = Math.cos(deltaInfo.elapsed * 0.9 + i * 0.9) * 0.0015;
+            // Ambient Organic Floating (Waves)
+            const floatX = Math.sin(deltaInfo.elapsed * 0.7 + i * 1.3) * 0.001;
+            const floatY = Math.cos(deltaInfo.elapsed * 0.8 + i * 0.9) * 0.0012;
             vVel.x += floatX;
             vVel.y += floatY;
 
-            // Optional Mouse Repulsion / Attract
-            if (config.controlSphere0 && i === 0) {
-                vPos.lerp(this.center, 0.05);
-                vVel.set(0, 0, 0);
+            // Soft Center Exclusion Zone (Pushes bubbles away from central headline)
+            const distFromCenterSq = vPos.x * vPos.x + vPos.y * vPos.y * 1.6;
+            if (distFromCenterSq < 22) {
+                const pushFactor = (22 - distFromCenterSq) * 0.0007;
+                const dirX = vPos.x >= 0 ? 1 : -1;
+                vVel.x += dirX * pushFactor;
+                vVel.y += (vPos.y >= 0 ? 1 : -1) * pushFactor * 0.4;
             }
 
             // Click shockwave expansion
@@ -235,17 +252,21 @@ class W {
                 }
             }
 
-            // Wall bounces with soft padding
-            if (Math.abs(vPos.x) + sizeData[i] > config.maxX) {
-                vPos.x = Math.sign(vPos.x) * (config.maxX - sizeData[i]);
+            // Soft boundary wall bounces
+            const boundX = Math.max(4, config.maxX);
+            const boundY = Math.max(3, config.maxY);
+            const boundZ = Math.max(2, config.maxZ);
+
+            if (Math.abs(vPos.x) + sizeData[i] > boundX) {
+                vPos.x = Math.sign(vPos.x) * (boundX - sizeData[i]);
                 vVel.x *= -config.wallBounce;
             }
-            if (Math.abs(vPos.y) + sizeData[i] > config.maxY) {
-                vPos.y = Math.sign(vPos.y) * (config.maxY - sizeData[i]);
+            if (Math.abs(vPos.y) + sizeData[i] > boundY) {
+                vPos.y = Math.sign(vPos.y) * (boundY - sizeData[i]);
                 vVel.y *= -config.wallBounce;
             }
-            if (Math.abs(vPos.z) + sizeData[i] > config.maxZ) {
-                vPos.z = Math.sign(vPos.z) * (config.maxZ - sizeData[i]);
+            if (Math.abs(vPos.z) + sizeData[i] > boundZ) {
+                vPos.z = Math.sign(vPos.z) * (boundZ - sizeData[i]);
                 vVel.z *= -config.wallBounce;
             }
 
@@ -323,7 +344,6 @@ class Z extends InstancedMesh {
             this.setMatrixAt(i, U.matrix);
         }
         this.instanceMatrix.needsUpdate = true;
-        if (this.config.controlSphere0) this.light.position.fromArray(this.physics.positionData, 0);
     }
 }
 
@@ -335,7 +355,7 @@ const lavenderColors = ["#E9D5FF", "#F3E8FF", "#D8B4FE", "#C084FC", "#DDD6FE", "
 const isMobileDevice = typeof window !== "undefined" && window.innerWidth < 768;
 
 const defaultBallpitConfig = {
-    count: isMobileDevice ? 10 : 26,
+    count: isMobileDevice ? 8 : 20,
     minSize: isMobileDevice ? 0.35 : 0.45,
     maxSize: isMobileDevice ? 0.75 : 1.1,
     friction: 0.98,
@@ -344,7 +364,7 @@ const defaultBallpitConfig = {
     maxX: 12,
     maxY: 8,
     maxZ: 6,
-    controlSphere0: false, // Turn off center pin so bubbles float ambiently across screen without blocking text!
+    controlSphere0: false,
     followCursor: false,
     lightIntensity: 4,
     ambientIntensity: 2.5,
@@ -376,7 +396,6 @@ export default function GlassyLavenderBubbles({
 
         const three = new X({ canvas, size: "parent" });
         three.renderer.toneMapping = ACESFilmicToneMapping;
-        three.camera.position.set(0, 0, 20);
 
         const spheres = new Z(three.renderer, config);
         three.scene.add(spheres);
@@ -400,9 +419,11 @@ export default function GlassyLavenderBubbles({
         };
 
         three.onAfterResize = (size) => {
-            spheres.physics.config.maxX = size.wWidth / 2;
-            spheres.physics.config.maxY = size.wHeight / 2;
-            spheres.physics.config.maxZ = size.wWidth / 4;
+            if (size.wWidth && size.wHeight) {
+                spheres.physics.config.maxX = size.wWidth / 2 - 0.5;
+                spheres.physics.config.maxY = size.wHeight / 2 - 0.5;
+                spheres.physics.config.maxZ = 4;
+            }
         };
 
         return () => {
