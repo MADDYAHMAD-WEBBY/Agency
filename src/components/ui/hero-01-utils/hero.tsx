@@ -1,9 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
-import GlassyLavenderBubbles from "@/components/ui/interactive-hero-backgrounds";
+
+const GlassyLavenderBubbles = dynamic(
+  () => import("@/components/ui/interactive-hero-backgrounds"),
+  { ssr: false }
+);
 
 export interface AvatarList {
   image: string;

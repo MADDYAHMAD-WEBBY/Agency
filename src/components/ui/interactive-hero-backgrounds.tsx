@@ -65,9 +65,8 @@ class X {
         const h = parentEl ? parentEl.offsetHeight : window.innerHeight;
         this.size.width = w; this.size.height = h; this.size.ratio = w / h;
         this.camera.aspect = this.size.ratio; this.camera.updateProjectionMatrix();
-        const fovRad = (this.camera.fov * Math.PI) / 180;
-        this.size.wHeight = 2 * Math.tan(fovRad / 2) * this.camera.position.z; this.size.wWidth = this.size.wHeight * this.camera.aspect;
-        this.renderer.setSize(w, h); this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+        this.renderer.setSize(w, h); this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 1.5));
         this.onAfterResize(this.size);
     }
     #onIntersection(e: any) { this.#isAnimating = e[0].isIntersecting; this.#isAnimating ? this.#startAnimation() : this.#stopAnimation(); }
@@ -178,7 +177,8 @@ class Z extends InstancedMesh {
     light: PointLight;
     constructor(renderer: WebGLRenderer, params: any) {
         const pmrem = new PMREMGenerator(renderer); const envTexture = pmrem.fromScene(new RoomEnvironment(renderer)).texture; pmrem.dispose();
-        const geometry = new SphereGeometry(1, 32, 32);
+        const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+        const geometry = new SphereGeometry(1, isMobile ? 16 : 24, isMobile ? 16 : 24);
         
         // Glassy Light Lavender Material
         const material = new MeshPhysicalMaterial({
@@ -229,8 +229,10 @@ function onPointerMove(e: PointerEvent) {
 // --- Default Glassy Light Lavender Bubble Palette ---
 const lavenderColors = ["#E9D5FF", "#F3E8FF", "#D8B4FE", "#C084FC", "#DDD6FE", "#E0E7FF"];
 
+const isMobileDevice = typeof window !== "undefined" && window.innerWidth < 768;
+
 const defaultBallpitConfig = {
-    count: 85,
+    count: isMobileDevice ? 16 : 60,
     materialParams: {
         transparent: true,
         opacity: 0.85,
@@ -241,7 +243,7 @@ const defaultBallpitConfig = {
     minSize: 0.35, maxSize: 0.95, size0: 1.2,
     gravity: 0.25, friction: 0.995, wallBounce: 0.4, maxVelocity: 0.15,
     maxX: 10, maxY: 10, maxZ: 10,
-    controlSphere0: true, followCursor: true,
+    controlSphere0: true, followCursor: !isMobileDevice,
     lightIntensity: 5, ambientIntensity: 2,
 };
 
