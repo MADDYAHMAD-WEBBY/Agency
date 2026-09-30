@@ -50,7 +50,11 @@ div[id*="idm"],
 div[class*="idm"],
 [id*="IDM_"],
 [class*="IDM_"],
-embed[type*="application/x-idm"] {
+[id*="idm_"],
+[class*="idm_"],
+embed[type*="application/x-idm"],
+body > div[style*="position: absolute"][style*="z-index:"],
+body > div[style*="position: fixed"][style*="z-index:"] {
   display: none !important;
   opacity: 0 !important;
   pointer-events: none !important;

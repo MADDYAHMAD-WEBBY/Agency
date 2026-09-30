@@ -41,7 +41,7 @@ function TypewriterSubtitle({ text }: { text: string }) {
   }, [text]);
 
   return (
-    <p className="text-xs sm:text-sm text-zinc-600 max-w-lg sm:max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed font-normal px-2 sm:px-4 min-h-[52px] sm:min-h-[44px] flex items-center justify-center">
+    <p className="text-xs sm:text-sm text-zinc-800 font-medium max-w-lg sm:max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed px-2 sm:px-4 min-h-[52px] sm:min-h-[44px] flex items-center justify-center">
       <span>
         {displayedText}
         <span
@@ -155,18 +155,18 @@ export default function HeroSection({ avatarList }: HeroProps) {
     "At shadcn space, I help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.";
 
   return (
-    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-20 sm:pb-28">
-      {/* 100% IDM-Proof Offscreen Canvas Video Background with Rich Color Grading */}
+    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-20 sm:pb-28 bg-white">
+      {/* 100% IDM-Proof Offscreen Canvas Video Background */}
       <IDMProofCanvasVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
-        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-80 [mask-image:linear-gradient(to_bottom,black_0%,black_80%,transparent_100%)] select-none"
+        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-45 select-none"
       />
 
-      {/* Noise Overlay for Film Grain Finish */}
-      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay z-0 [mask-image:linear-gradient(to_bottom,black_0%,black_80%,transparent_100%)]" />
+      {/* Bright Soft Light Overlay for Ultra-Crisp High Contrast Reading */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/85 via-white/60 to-white z-0 backdrop-blur-[1px]" />
 
-      {/* Soft Vignette Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white z-0" />
+      {/* Noise Overlay for Subtle Film Grain Finish */}
+      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-overlay z-0" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12">
         
@@ -189,7 +189,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
               {avatarList.map((avatar, index) => (
                 <div
                   key={index}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white overflow-hidden bg-zinc-100 shadow-sm shrink-0"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white overflow-hidden bg-zinc-100 shadow-md shrink-0"
                 >
                   <img
                     src={avatar.image}
@@ -205,7 +205,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
               <div className="flex items-center text-amber-500 text-xs sm:text-sm leading-none">
                 ★ ★ ★ ★ ★
               </div>
-              <span className="text-[11px] sm:text-xs text-zinc-600 font-medium mt-0.5 sm:mt-1">
+              <span className="text-[11px] sm:text-xs text-zinc-800 font-semibold mt-0.5 sm:mt-1">
                 Trusted by 1000+ clients
               </span>
             </div>
@@ -216,7 +216,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
       </div>
 
       {/* Ultra-Smooth Seamless Blend Transition to Light Brand Slider */}
-      <div className="absolute bottom-0 left-0 right-0 h-36 sm:h-52 bg-gradient-to-b from-transparent via-white/80 to-white pointer-events-none z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-gradient-to-b from-transparent via-white/90 to-white pointer-events-none z-10" />
     </section>
   );
 }
