@@ -80,11 +80,11 @@ export default function BrandSlider({ brandList }: BrandSliderProps) {
         
         {/* Subtle Divider Line with Centered Text */}
         <div className="relative flex py-3 sm:py-4 items-center justify-center max-w-3xl mx-auto mb-6 sm:mb-8 px-2 sm:px-4">
-          <div className="flex-1 border-t border-zinc-800/80 min-w-[16px]"></div>
-          <span className="shrink-0 px-2 sm:px-4 text-[11px] xs:text-xs sm:text-sm text-zinc-400 font-normal tracking-tight text-center">
+          <div className="flex-1 border-t border-zinc-200 min-w-[16px]"></div>
+          <span className="shrink-0 px-2 sm:px-4 text-[11px] xs:text-xs sm:text-sm text-zinc-600 font-medium tracking-tight text-center">
             Loved by 1000+ big and small brands around the world
           </span>
-          <div className="flex-1 border-t border-zinc-800/80 min-w-[16px]"></div>
+          <div className="flex-1 border-t border-zinc-200 min-w-[16px]"></div>
         </div>
 
         {/* Marquee Track Container with Masked Fade Edges */}
@@ -101,7 +101,7 @@ export default function BrandSlider({ brandList }: BrandSliderProps) {
             {marqueeLogos.map((logo, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 sm:gap-3 font-black text-lg sm:text-2xl text-zinc-200 hover:text-white tracking-tight shrink-0 hover:scale-105 transition-transform cursor-pointer"
+                className="flex items-center gap-2 sm:gap-3 font-black text-lg sm:text-2xl text-zinc-700 hover:text-black tracking-tight shrink-0 hover:scale-105 transition-transform cursor-pointer"
               >
                 {logo.icon}
                 <span>{logo.name}</span>
