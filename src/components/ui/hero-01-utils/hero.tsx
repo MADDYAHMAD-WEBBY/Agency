@@ -227,6 +227,8 @@ export default function HeroSection({ avatarList }: HeroProps) {
             </div>
           </div>
 
+        </div>
+
       </div>
 
       {/* Ultra-Smooth Feather Transition to Brand Slider */}
