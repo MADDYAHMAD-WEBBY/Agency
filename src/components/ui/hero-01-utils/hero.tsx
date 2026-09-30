@@ -221,7 +221,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
               <div className="flex items-center text-amber-500 text-xs sm:text-sm leading-none">
                 ★ ★ ★ ★ ★
               </div>
-              <span className="text-[11px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1">
+              <span className="text-[11px] sm:text-xs text-slate-900 font-semibold mt-0.5 sm:mt-1">
                 Trusted by 1000+ clients
               </span>
             </div>
