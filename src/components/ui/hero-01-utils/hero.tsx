@@ -41,12 +41,12 @@ function TypewriterSubtitle({ text }: { text: string }) {
   }, [text]);
 
   return (
-    <p className="text-xs sm:text-sm text-[#71717a] max-w-lg sm:max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed font-normal px-2 sm:px-4 min-h-[52px] sm:min-h-[44px] flex items-center justify-center">
+    <p className="text-xs sm:text-base text-slate-900 max-w-lg sm:max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed font-semibold px-2 sm:px-4 min-h-[52px] sm:min-h-[44px] flex items-center justify-center [text-shadow:0_1px_8px_rgba(255,255,255,0.95)]">
       <span>
         {displayedText}
         <span
-          className={`inline-block w-[2px] h-[14px] sm:h-[16px] bg-purple-600 ml-1 translate-y-[2px] ${
-            isComplete ? "animate-pulse opacity-50" : "opacity-100 animate-ping"
+          className={`inline-block w-[2px] h-[14px] sm:h-[18px] bg-purple-700 ml-1 translate-y-[2px] ${
+            isComplete ? "animate-pulse opacity-60" : "opacity-100 animate-ping"
           }`}
         />
       </span>
@@ -72,7 +72,7 @@ function RotatingServicesHeadline() {
   }, [services.length]);
 
   return (
-    <h1 className="text-3xl sm:text-6xl lg:text-[76px] font-extrabold tracking-tight text-[#0a0a0c] leading-[1.14] sm:leading-[1.16] mb-4 sm:mb-6">
+    <h1 className="text-3xl sm:text-6xl lg:text-[76px] font-extrabold tracking-tight text-[#0a0a0c] leading-[1.14] sm:leading-[1.16] mb-4 sm:mb-6 [text-shadow:0_1px_12px_rgba(255,255,255,0.9),0_0_3px_rgba(255,255,255,1)]">
       We Turn Your Business Into a <br />
       Growth Machine with <br />
       <span className="inline-block py-1 sm:py-2 pr-1 sm:pr-3 font-serif-italic font-normal align-baseline">
@@ -94,7 +94,7 @@ function RotatingServicesHeadline() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="inline-block bg-gradient-to-r from-cyan-400 via-blue-600 via-purple-600 via-fuchsia-500 to-pink-500 bg-[length:200%_auto] bg-clip-text text-transparent pb-1"
+              className="inline-block bg-gradient-to-r from-cyan-400 via-blue-600 via-purple-600 via-fuchsia-500 to-pink-500 bg-[length:200%_auto] bg-clip-text text-transparent pb-1 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]"
             >
               {services[currentIndex]}
             </motion.span>
@@ -159,11 +159,19 @@ export default function HeroSection({ avatarList }: HeroProps) {
       {/* 100% IDM-Proof Offscreen Canvas Video Background */}
       <IDMProofCanvasVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
-        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-55 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
+        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-45 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
       />
 
       {/* Noise Overlay */}
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay z-0 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" />
+
+      {/* Central Soft Radial Light Aura for Maximum Headline Readability */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] sm:w-[800px] h-[360px] sm:h-[480px] rounded-full pointer-events-none opacity-90 blur-[45px] z-0"
+        style={{
+          background: "radial-gradient(ellipse at center, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%)"
+        }}
+      />
 
       {/* 3D Glassy Lavender Interactive Bubbles */}
       <div className="absolute inset-0 z-0 pointer-events-auto opacity-70">
