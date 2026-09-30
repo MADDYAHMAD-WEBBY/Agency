@@ -93,9 +93,9 @@ export default function AgencyHeroSection() {
   ];
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <Header navigationData={navigationData} />
-      <main className="w-full -mt-[60px] sm:-mt-[88px]">
+      <main className="w-full -mt-[68px] sm:-mt-[96px]">
         <HeroSection avatarList={avatarList} />
         <div className="w-full pt-2 pb-12 bg-white relative z-20">
           <BrandSlider brandList={brandList} />

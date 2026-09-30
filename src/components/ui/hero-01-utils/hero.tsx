@@ -111,8 +111,27 @@ export default function HeroSection({ avatarList }: HeroProps) {
 
   return (
     <section className="relative w-full min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-8 sm:pb-12">
+      {/* Cinematic CloudFront Background Video with IDM Protection & Seamless Alpha Fade */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        controlsList="nodownload no remoteplayback"
+        disablePictureInPicture
+        disableRemotePlayback
+        aria-hidden="true"
+        data-idm-no-download="true"
+        onContextMenu={(e) => e.preventDefault()}
+        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-55 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+      />
+
+      {/* Noise Overlay */}
+      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay z-0 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" />
+
       {/* 3D Glassy Lavender Interactive Bubbles */}
-      <div className="absolute inset-0 z-0 pointer-events-auto opacity-80">
+      <div className="absolute inset-0 z-0 pointer-events-auto opacity-70">
         <GlassyLavenderBubbles />
       </div>
 
@@ -176,9 +195,6 @@ export default function HeroSection({ avatarList }: HeroProps) {
         </div>
 
       </div>
-
-      {/* Bottom Soft Cloudy Blend Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-10" />
     </section>
   );
 }
