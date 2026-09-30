@@ -159,11 +159,11 @@ export default function HeroSection({ avatarList }: HeroProps) {
       {/* 100% IDM-Proof Offscreen Canvas Video Background */}
       <IDMProofCanvasVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
-        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-65 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
+        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-60 [mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)] select-none"
       />
 
       {/* Noise Overlay */}
-      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay z-0 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" />
+      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay z-0 [mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)]" />
 
       {/* 3D Glassy Lavender Interactive Bubbles */}
       <div className="absolute inset-0 z-0 pointer-events-auto opacity-70">
@@ -227,9 +227,10 @@ export default function HeroSection({ avatarList }: HeroProps) {
             </div>
           </div>
 
-        </div>
-
       </div>
+
+      {/* Ultra-Smooth Feather Transition to Brand Slider */}
+      <div className="absolute bottom-0 left-0 right-0 h-36 sm:h-52 bg-gradient-to-b from-transparent via-white/40 to-white pointer-events-none z-10" />
     </section>
   );
 }
