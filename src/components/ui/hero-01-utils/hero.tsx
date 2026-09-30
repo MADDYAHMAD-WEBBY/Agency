@@ -105,26 +105,61 @@ function RotatingServicesHeadline() {
   );
 }
 
+function IDMProofCanvasVideo({ src, className }: { src: string; className?: string }) {
+  const canvasRef = React.useRef<HTMLCanvasElement>(null);
+
+  React.useEffect(() => {
+    // Offscreen video element kept in JS memory only - IDM cannot inspect or attach to non-DOM nodes
+    const video = document.createElement("video");
+    video.src = src;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.crossOrigin = "anonymous";
+    video.setAttribute("data-idm-no-download", "true");
+
+    let animId: number;
+
+    const render = () => {
+      const canvas = canvasRef.current;
+      if (canvas && video.readyState >= 2) {
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+            canvas.width = video.videoWidth || 1280;
+            canvas.height = video.videoHeight || 720;
+          }
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        }
+      }
+      animId = requestAnimationFrame(render);
+    };
+
+    video.play().catch(() => {});
+    render();
+
+    return () => {
+      cancelAnimationFrame(animId);
+      video.pause();
+      video.src = "";
+      video.remove();
+    };
+  }, [src]);
+
+  return <canvas ref={canvasRef} className={className} />;
+}
+
 export default function HeroSection({ avatarList }: HeroProps) {
   const subtitleText =
     "At shadcn space, I help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.";
 
   return (
     <section className="relative w-full min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-8 sm:pb-12">
-      {/* Cinematic CloudFront Background Video with IDM Protection & Seamless Alpha Fade */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        controlsList="nodownload no remoteplayback"
-        disablePictureInPicture
-        disableRemotePlayback
-        aria-hidden="true"
-        data-idm-no-download="true"
-        onContextMenu={(e) => e.preventDefault()}
-        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-55 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
+      {/* 100% IDM-Proof Offscreen Canvas Video Background */}
+      <IDMProofCanvasVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-55 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
       />
 
       {/* Noise Overlay */}
