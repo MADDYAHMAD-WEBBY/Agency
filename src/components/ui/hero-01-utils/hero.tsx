@@ -155,7 +155,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
     "At shadcn space, I help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.";
 
   return (
-    <section className="relative w-full min-h-[100vh] sm:min-h-[110vh] lg:min-h-[118vh] flex items-center justify-center overflow-hidden pt-32 sm:pt-44 pb-16 sm:pb-24">
+    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-8 sm:pb-12">
       {/* 100% IDM-Proof Offscreen Canvas Video Background */}
       <IDMProofCanvasVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
@@ -184,7 +184,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl -mt-8 sm:-mt-[50px]">
         
         {/* Dynamic Rotating Headline */}
         <RotatingServicesHeadline />
