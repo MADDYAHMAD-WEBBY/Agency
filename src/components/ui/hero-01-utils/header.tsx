@@ -18,9 +18,18 @@ interface HeaderProps {
 
 export default function Header({ navigationData }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full py-3 sm:py-5 bg-transparent">
+    <header className={`sticky top-0 z-50 w-full py-3 sm:py-4 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md border-b border-gray-200/50 shadow-2xs" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         
         {/* Logo: Black pill */}
