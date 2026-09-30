@@ -38,7 +38,7 @@ export default function Header({ navigationData }: HeaderProps) {
               href={item.href}
               className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
                 item.isActive
-                  ? "bg-zinc-800 text-white shadow-xs font-semibold border border-zinc-700/80"
+                  ? "bg-zinc-800 text-amber-300 shadow-xs font-semibold border border-amber-500/40"
                   : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
               }`}
             >

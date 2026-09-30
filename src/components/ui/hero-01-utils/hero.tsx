@@ -45,7 +45,7 @@ function TypewriterSubtitle({ text }: { text: string }) {
       <span>
         {displayedText}
         <span
-          className={`inline-block w-[2px] h-[14px] sm:h-[16px] bg-purple-500 ml-1 translate-y-[2px] ${
+          className={`inline-block w-[2px] h-[14px] sm:h-[16px] bg-amber-400 ml-1 translate-y-[2px] ${
             isComplete ? "animate-pulse opacity-50" : "opacity-100 animate-ping"
           }`}
         />
