@@ -97,7 +97,7 @@ export default function AgencyHeroSection() {
       <Header navigationData={navigationData} />
       <main className="w-full -mt-[68px] sm:-mt-[96px]">
         <HeroSection avatarList={avatarList} />
-        <div className="w-full pt-10 sm:pt-16 pb-12 bg-white relative z-20">
+        <div className="w-full pt-10 sm:pt-16 pb-12 bg-[#09090b] relative z-20">
           <BrandSlider brandList={brandList} />
         </div>
       </main>

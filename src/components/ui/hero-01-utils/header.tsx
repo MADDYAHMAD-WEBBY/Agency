@@ -25,21 +25,21 @@ export default function Header({ navigationData }: HeaderProps) {
         
         {/* Logo: Black pill */}
         <Link href="/" className="inline-flex items-center">
-          <div className="bg-black text-white px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-bold text-sm sm:text-lg tracking-tight hover:opacity-95 transition-opacity">
+          <div className="bg-black text-white border border-zinc-800/80 px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-bold text-sm sm:text-lg tracking-tight hover:opacity-95 transition-opacity">
             shadcnspace.
           </div>
         </Link>
 
-        {/* Center Nav: Light Gray Segmented Pill */}
-        <nav className="hidden md:flex items-center gap-1 bg-[#f4f4f5] p-1.5 rounded-full border border-gray-200/50">
+        {/* Center Nav: Dark Glass Segmented Pill */}
+        <nav className="hidden md:flex items-center gap-1 bg-black/80 backdrop-blur-md p-1.5 rounded-full border border-zinc-800/80">
           {navigationData.map((item, index) => (
             <Link
               key={index}
               href={item.href}
               className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
                 item.isActive
-                  ? "bg-white text-purple-950 shadow-xs font-semibold border border-purple-200/60"
-                  : "text-gray-500 hover:text-black hover:bg-gray-200/50"
+                  ? "bg-zinc-800 text-white shadow-xs font-semibold border border-zinc-700/80"
+                  : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
               }`}
             >
               {item.title}
@@ -56,7 +56,7 @@ export default function Header({ navigationData }: HeaderProps) {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <button aria-label="Open Menu" className="p-2 sm:p-2.5 rounded-full bg-gray-100/90 text-black hover:bg-gray-200 transition-colors">
+              <button aria-label="Open Menu" className="p-2 sm:p-2.5 rounded-full bg-zinc-900 text-white border border-zinc-800 hover:bg-zinc-800 transition-colors">
                 <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </SheetTrigger>
