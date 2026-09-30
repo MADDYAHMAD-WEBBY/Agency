@@ -21,17 +21,24 @@ This document records the complete architecture, design system, performance rule
 
 ---
 
-## 3. Design System & Theme Guidelines
-- **Theme**: Luxury Dark Mode Theme (`#09090b` obsidian background, `#f4f4f5` silver-white text).
+## 3. Design System & Clean White Theme Guidelines
+- **Theme**: Clean White Theme (`#ffffff` background, `#09090b` primary dark typography) chosen for maximum high-ticket B2B client trust, E-E-A-T clarity, and sharp contrast.
 - **Global Scrollbar**: Hidden globally in `globals.css` (`scrollbar-width: none`, `::-webkit-scrollbar { display: none }`, `overflow-x: clip`).
+- **Header Navigation Bar**:
+  - Logo Pill: Black pill (`bg-black text-white border border-zinc-900 px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-bold`).
+  - Center Navigation: Light Glass Segmented Pill (`bg-zinc-100/90 backdrop-blur-md border border-zinc-200/80 shadow-xs`).
+  - Active Nav Link: `bg-white text-black font-semibold shadow-xs border border-zinc-200/80`.
+  - Inactive Nav Link: `text-zinc-600 hover:text-black hover:bg-zinc-200/60`.
 - **Typography & Headline**:
   - `h1-h6` elements automatically inherit `EB Garamond` serif font via CSS variables.
   - Hero Headline Structure (Strict 3-Line Layout):
-    1. Line 1: *"We Turn Your Business Into a"* (Ivory `#E1E0CC`)
-    2. Line 2: *"Growth Machine with"* (Ivory `#E1E0CC`)
-    3. Line 3: `[Rotating Service Pill]` rendered in `EB Garamond Italic` with an animated cyan-pink gradient (`from-cyan-400 via-blue-500 via-purple-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent`).
-  - Subtitle: `TypewriterSubtitle` component with typing effect (`text-xs sm:text-sm text-zinc-300`).
-- **Accent Colors**: Minimalist Light White / Silver (`#ffffff` / `zinc-300` / `zinc-700`).
+    1. Line 1: *"We Turn Your Business Into a"* (`#0a0a0c`)
+    2. Line 2: *"Growth Machine with"* (`#0a0a0c`)
+    3. Line 3: `[Rotating Service Pill]` rendered in `EB Garamond Italic` with an animated cyan-pink gradient (`from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-clip-text text-transparent`).
+  - Subtitle: `TypewriterSubtitle` component with typing effect (`text-xs sm:text-sm text-zinc-800 font-medium`).
+- **Social Proof**:
+  - Avatars stacked with `border-2 border-white bg-zinc-100 shadow-md`.
+  - Rating: Amber 5-star rating (`text-amber-500`) + rating text (`text-zinc-800 font-semibold`).
 
 ---
 
@@ -40,17 +47,21 @@ This document records the complete architecture, design system, performance rule
 ### A. 100% IDM-Proof Offscreen Canvas Video Background (`IDMProofCanvasVideo`)
 - **Problem**: Internet Download Manager (IDM) extension injects a floating "Download this video" button over standard HTML5 `<video>` tags.
 - **Solution**: Create an offscreen video element in JS memory (`document.createElement("video")`) without attaching it to the DOM tree. Render frames onto an HTML5 `<canvas>` at 60 FPS. IDM extension DOM observers only scan attached `<video>` nodes, completely bypassing `<canvas>` elements.
-- **Suppression CSS**: Global rules in `globals.css` hide any injected `[id*="idm"]` or `[class*="idm"]` elements.
+- **Suppression CSS**: Global rules in `globals.css` hide any injected `[id*="idm"]`, `[class*="idm"]`, or high z-index overlay elements.
 
-### B. Mobile & Desktop WebGL Optimization (`GlassyLavenderBubbles`)
+### B. High-Contrast Light Overlay for Hero Video
+- To ensure 100% typography contrast over dynamic cinematic video frames without obscuring motion, a soft gradient light overlay is applied:
+  `bg-gradient-to-b from-white/85 via-white/60 to-white backdrop-blur-[1px]` over an `opacity-45` canvas video.
+
+### C. Mobile & Desktop WebGL Optimization (`GlassyLavenderBubbles`)
 - Dynamic code splitting using `next/dynamic` with `{ ssr: false }` to prevent Three.js from blocking initial critical path JS bundles.
 - Zero-allocation physics loop (`W.update`) using static pre-allocated vectors (`vPos`, `vVel`, `vDiff`) to eliminate JavaScript Garbage Collector lag spikes.
 - Center Exclusion Zone to push floating background bubbles to the side wings, keeping the headline text 100% readable.
 
-### C. Sticky Navigation Header
+### D. Sticky Navigation Header
 - `<Header />` uses `sticky top-0 z-50 bg-transparent`.
 - Ancestor containers MUST NOT use `overflow-hidden` (use `overflow-x: clip` instead), as CSS `overflow-hidden` breaks sticky positioning on child elements.
 
-### D. Seamless Bottom Video Fade
-- Background video uses `[mask-image:linear-gradient(to_bottom,black_0%,black_80%,transparent_100%)]`.
-- Bottom transition layer (`h-36 sm:h-52 bg-gradient-to-b from-transparent via-[#09090b]/60 to-[#09090b]`) smoothly blends the hero video into the dark Brand Slider with zero hard edges or white fog.
+### E. Seamless Bottom Transition to Brand Slider
+- Seamless bottom transition layer (`h-32 sm:h-48 bg-gradient-to-b from-transparent via-white/90 to-white`) smoothly blends the hero canvas video into the white Brand Slider container (`bg-white`) with zero hard edges.
+- Brand Slider divider lines (`border-zinc-200`), text (`text-zinc-600 font-medium`), and marquee logos (`text-zinc-700 hover:text-black`).
