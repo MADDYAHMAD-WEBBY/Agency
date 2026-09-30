@@ -159,19 +159,11 @@ export default function HeroSection({ avatarList }: HeroProps) {
       {/* 100% IDM-Proof Offscreen Canvas Video Background */}
       <IDMProofCanvasVideo
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
-        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-45 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
+        className="absolute inset-0 h-full w-full object-cover z-0 pointer-events-none opacity-65 [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] select-none"
       />
 
       {/* Noise Overlay */}
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.3] mix-blend-overlay z-0 [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]" />
-
-      {/* Central Soft Radial Light Aura for Maximum Headline Readability */}
-      <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] sm:w-[800px] h-[360px] sm:h-[480px] rounded-full pointer-events-none opacity-90 blur-[45px] z-0"
-        style={{
-          background: "radial-gradient(ellipse at center, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%)"
-        }}
-      />
 
       {/* 3D Glassy Lavender Interactive Bubbles */}
       <div className="absolute inset-0 z-0 pointer-events-auto opacity-70">
