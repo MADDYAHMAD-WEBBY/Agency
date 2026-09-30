@@ -184,7 +184,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl -mt-8 sm:-mt-[50px]">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12">
         
         {/* Dynamic Rotating Headline */}
         <RotatingServicesHeadline />
