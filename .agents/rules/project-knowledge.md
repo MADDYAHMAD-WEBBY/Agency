@@ -32,7 +32,7 @@ This document records the complete architecture, design system, performance rule
 - **Typography & Headline**:
   - `h1-h6` elements automatically inherit `EB Garamond` serif font via CSS variables.
   - Hero Headline Structure (Strict 3-Line Layout):
-    1. Line 1: *"We Turn Your Business Into a"* (`#0a0a0c`)
+    1. Line 1: *"We Turn Your Business Into"* (`#0a0a0c`)
     2. Line 2: *"Growth Machine with"* (`#0a0a0c`)
     3. Line 3: `[Rotating Service Pill]` rendered in `EB Garamond Italic` with an animated cyan-pink gradient (`from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-clip-text text-transparent`).
   - Subtitle: `TypewriterSubtitle` component with typing effect (`text-xs sm:text-sm text-zinc-800 font-medium`).

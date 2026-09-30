@@ -73,7 +73,7 @@ function RotatingServicesHeadline() {
 
   return (
     <h1 className="text-3xl sm:text-6xl lg:text-[76px] font-extrabold tracking-tight text-[#0a0a0c] leading-[1.14] sm:leading-[1.16] mb-4 sm:mb-6">
-      We Turn Your Business Into a <br />
+      We Turn Your Business Into <br />
       Growth Machine with <br />
       <span className="inline-block py-1 sm:py-2 pr-1 sm:pr-3 font-serif-italic font-normal align-baseline">
         <AnimatePresence mode="wait">
