@@ -134,7 +134,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="bg-gradient-to-br from-[#eaf2fe] via-[#f0f5ff] to-[#eef4fe] border border-blue-200/80 rounded-[12px] p-5 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
+              className="bg-gradient-to-br from-[#eaf2fe] via-[#f0f5ff] to-[#eef4fe] border border-blue-200/80 rounded-[12px] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-auto lg:h-full"
             >
               {/* Content text */}
               <p className="text-zinc-700 font-medium text-sm sm:text-base leading-relaxed max-w-lg relative z-10 mb-4 sm:mb-6">
@@ -142,7 +142,7 @@ export default function AboutSection() {
               </p>
 
               {/* Bottom Row: Official Trustpilot Rating & Action Button */}
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 relative z-10 pt-1 sm:pt-2">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 relative z-10 pt-2">
                 {/* Official Trustpilot Rating Block */}
                 <div className="flex flex-col items-start gap-1.5">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-900 tracking-tight">
@@ -168,10 +168,10 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="bg-gradient-to-br from-[#fdeaf2] via-[#fef2f7] to-[#fde5f0] border border-pink-200/80 rounded-[12px] p-5 sm:p-8 flex flex-col sm:flex-row items-center gap-5 sm:gap-6 relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
+              className="bg-gradient-to-br from-[#fdeaf2] via-[#fef2f7] to-[#fde5f0] border border-pink-200/80 rounded-[12px] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-auto lg:h-full"
             >
               {/* Profile Image Portrait */}
-              <div className="w-24 h-32 xs:w-28 xs:h-36 sm:w-36 sm:h-44 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-white bg-zinc-200">
+              <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-white bg-zinc-200">
                 <img 
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" 
                   alt="Zainab Ijaz portrait"
@@ -180,8 +180,8 @@ export default function AboutSection() {
               </div>
 
               {/* Quote & Signature Details */}
-              <div className="flex flex-col justify-between space-y-3 sm:space-y-4 text-center sm:text-left h-auto sm:h-full w-full">
-                <div className="space-y-1.5 sm:space-y-2">
+              <div className="flex flex-col justify-between space-y-4 text-center sm:text-left h-auto lg:h-full w-full">
+                <div className="space-y-2">
                   {/* Quote Mark */}
                   <span className="text-3xl sm:text-5xl leading-none text-pink-300 font-serif font-black select-none block -mb-1 sm:-mb-2">
                     “
@@ -193,7 +193,7 @@ export default function AboutSection() {
                   </blockquote>
 
                   {/* Signature / Role */}
-                  <div className="text-xs sm:text-sm text-zinc-600 pt-0.5 sm:pt-1">
+                  <div className="text-xs sm:text-sm text-zinc-600 pt-1">
                     <span className="font-bold text-zinc-900">Zainab Ijaz</span>
                     <span className="mx-1.5 text-zinc-300">|</span>
                     <span className="font-medium text-zinc-700">RankIF&apos;s Design Lead</span>
@@ -201,7 +201,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Hero Animated Pill Button */}
-                <div className="pt-1 sm:pt-2 flex justify-center sm:justify-start">
+                <div className="pt-2 flex justify-center sm:justify-start">
                   <AnimatedPillButton text="Let's Talk" />
                 </div>
               </div>
