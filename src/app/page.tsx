@@ -1,11 +1,43 @@
+import Header, { NavigationSection } from "@/components/ui/hero-01-utils/header";
 import AgencyHeroSection from "@/components/ui/hero-01";
 import AboutSection from "@/components/ui/about-section";
 
+const navigationData: NavigationSection[] = [
+  {
+    title: "Home",
+    href: "#",
+    isActive: true,
+  },
+  {
+    title: "About us",
+    href: "#about",
+  },
+  {
+    title: "Services",
+    href: "#services",
+  },
+  {
+    title: "Team",
+    href: "#team",
+  },
+  {
+    title: "Pricing",
+    href: "#pricing",
+  },
+  {
+    title: "Awards",
+    href: "#awards",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#09090b] text-zinc-100 antialiased selection:bg-purple-600 selection:text-white">
-      <AgencyHeroSection />
-      <AboutSection />
+    <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
+      <Header navigationData={navigationData} />
+      <main className="w-full -mt-[68px] sm:-mt-[96px]">
+        <AgencyHeroSection />
+        <AboutSection />
+      </main>
     </div>
   );
 }

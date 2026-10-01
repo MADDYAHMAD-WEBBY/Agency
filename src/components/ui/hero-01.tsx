@@ -1,6 +1,4 @@
 import HeroSection from "@/components/ui/hero-01-utils/hero";
-import type { NavigationSection } from "@/components/ui/hero-01-utils/header";
-import Header from "@/components/ui/hero-01-utils/header";
 import type { AvatarList } from "@/components/ui/hero-01-utils/hero";
 
 export default function AgencyHeroSection() {
@@ -23,40 +21,5 @@ export default function AgencyHeroSection() {
     },
   ];
 
-  const navigationData: NavigationSection[] = [
-    {
-      title: "Home",
-      href: "#",
-      isActive: true,
-    },
-    {
-      title: "About us",
-      href: "#",
-    },
-    {
-      title: "Services",
-      href: "#",
-    },
-    {
-      title: "Team",
-      href: "#",
-    },
-    {
-      title: "Pricing",
-      href: "#",
-    },
-    {
-      title: "Awards",
-      href: "#",
-    },
-  ];
-
-  return (
-    <div className="relative w-full">
-      <Header navigationData={navigationData} />
-      <main className="w-full -mt-[68px] sm:-mt-[96px]">
-        <HeroSection avatarList={avatarList} />
-      </main>
-    </div>
-  );
+  return <HeroSection avatarList={avatarList} />;
 }

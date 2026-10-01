@@ -63,7 +63,7 @@ export default function AboutSection() {
         </div>
 
         {/* Bento Grid: 3 Aesthetic Pastel Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
           
           {/* Card 1: Left Main Globe Card (Soft Periwinkle / Lavender) */}
           <motion.div 
@@ -126,7 +126,7 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Right Column: 2 Glassy Pastel Cards */}
-          <div className="lg:col-span-6 flex flex-col gap-6 sm:gap-8 justify-between">
+          <div className="lg:col-span-6 flex flex-col gap-4 sm:gap-5 justify-between">
             
             {/* Card 2: Top-Right Stat & Trust Card (Aesthetic Icy Blue Pastel) */}
             <motion.div 
@@ -137,7 +137,7 @@ export default function AboutSection() {
               className="bg-gradient-to-br from-[#eaf2fe] via-[#f0f5ff] to-[#eef4fe] border border-blue-200/80 rounded-[12px] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
             >
               {/* Content text */}
-              <p className="text-zinc-800 font-semibold text-base sm:text-xl leading-relaxed max-w-lg relative z-10 mb-6 sm:mb-10">
+              <p className="text-zinc-700 font-medium text-sm sm:text-base leading-relaxed max-w-lg relative z-10 mb-4 sm:mb-6">
                 Trusted by local and international clients, delivering bespoke digital solutions that rank number one in search results.
               </p>
 
@@ -188,7 +188,7 @@ export default function AboutSection() {
                   </span>
                   
                   {/* Quote Text */}
-                  <blockquote className="text-sm sm:text-base font-semibold text-zinc-900 leading-snug">
+                  <blockquote className="text-xs sm:text-sm font-medium text-zinc-800 leading-snug">
                     Good design feels obvious, because the hard work is hidden.
                   </blockquote>
 
