@@ -27,8 +27,7 @@ const servicesData: ServiceItem[] = [
     title: "Workflow Automation",
     description:
       "Automate repetitive business operations, eliminate manual bottlenecks, and connect software tools seamlessly to save hundreds of hours monthly.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/workflow-automation.webp",
     badge: "Automation",
     tags: ["Zapier & Make", "Process Scaling", "No-Code Systems"],
     accent: "#9333ea",
@@ -41,8 +40,7 @@ const servicesData: ServiceItem[] = [
     title: "AI Chatbots & Autonomous Agents",
     description:
       "Deploy intelligent LLM chatbots and 24/7 AI agents that engage website visitors, qualify leads, and close sales automatically.",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/ai-chatbots.webp",
     badge: "AI Tech",
     tags: ["OpenAI & LLMs", "24/7 Lead Capture", "Custom Agents"],
     accent: "#0284c7",
@@ -55,8 +53,7 @@ const servicesData: ServiceItem[] = [
     title: "CRM / Lead Automation",
     description:
       "Capture, track, and nurture incoming leads automatically with custom CRM pipelines, SMS/Email sequences, and instant team alerts.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/crm-lead-automation.webp",
     badge: "Lead Gen",
     tags: ["CRM Integration", "SMS & Email Flow", "High Conversion"],
     accent: "#2563eb",
@@ -69,8 +66,7 @@ const servicesData: ServiceItem[] = [
     title: "Custom AI Integrations",
     description:
       "Embed custom artificial intelligence capabilities directly into your existing web platforms for intelligent analytics and smart recommendations.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/custom-ai-integrations.webp",
     badge: "Custom AI",
     tags: ["API Integration", "Machine Learning", "Custom Models"],
     accent: "#c026d3",
@@ -85,8 +81,7 @@ const servicesData: ServiceItem[] = [
     title: "Business Websites",
     description:
       "High-converting, mobile-responsive business websites built to showcase your brand, establish immediate authority, and turn traffic into clients.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/business-websites.webp",
     badge: "Web Design",
     tags: ["Responsive UI", "Brand Strategy", "Fast Load"],
     accent: "#059669",
@@ -99,8 +94,7 @@ const servicesData: ServiceItem[] = [
     title: "E-Commerce (Shopify & WooCommerce)",
     description:
       "Scalable online store solutions engineered for seamless checkout, high conversion rates, inventory synchronization, and sub-second loading.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0a675659e924?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/ecommerce.webp",
     badge: "E-Commerce",
     tags: ["Shopify", "WooCommerce", "Payment Gateways"],
     accent: "#d97706",
@@ -113,8 +107,7 @@ const servicesData: ServiceItem[] = [
     title: "WordPress & Webflow Development",
     description:
       "Custom Headless WordPress and Webflow builds engineered with clean code, sub-second Core Web Vitals, and effortless CMS editing.",
-    image:
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/wordpress-webflow.webp",
     badge: "CMS Specialist",
     tags: ["Headless WP", "Webflow", "Core Web Vitals"],
     accent: "#7c3aed",
@@ -127,8 +120,7 @@ const servicesData: ServiceItem[] = [
     title: "Web Apps (React / Next.js)",
     description:
       "Modern web applications built with Next.js 15 and React delivering lightning performance, dynamic routing, and pixel-perfect design.",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/web-apps.webp",
     badge: "Frontend Engineering",
     tags: ["Next.js 15", "React", "TypeScript"],
     accent: "#4f46e5",
