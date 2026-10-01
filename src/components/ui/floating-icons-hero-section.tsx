@@ -113,7 +113,7 @@ const Icon = ({
 
 const FloatingIconsHero = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & FloatingIconsHeroProps
+  Omit<React.HTMLAttributes<HTMLDivElement>, "title"> & FloatingIconsHeroProps
 >(({ className, eyebrow, title, subtitle, ctaText, ctaHref, icons, ...props }, ref) => {
   // Refs to track the raw mouse position
   const mouseX = React.useRef(0);
