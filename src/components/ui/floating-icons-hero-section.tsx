@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
 // Interface for the props of each individual icon.
 interface IconProps {
@@ -14,7 +14,8 @@ interface IconProps {
 
 // Interface for the main hero component's props.
 export interface FloatingIconsHeroProps {
-  title: string;
+  eyebrow?: string;
+  title: React.ReactNode;
   subtitle: string;
   ctaText: string;
   ctaHref: string;
@@ -113,7 +114,7 @@ const Icon = ({
 const FloatingIconsHero = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & FloatingIconsHeroProps
->(({ className, title, subtitle, ctaText, ctaHref, icons, ...props }, ref) => {
+>(({ className, eyebrow, title, subtitle, ctaText, ctaHref, icons, ...props }, ref) => {
   // Refs to track the raw mouse position
   const mouseX = React.useRef(0);
   const mouseY = React.useRef(0);
@@ -148,19 +149,23 @@ const FloatingIconsHero = React.forwardRef<
 
       {/* Container for the foreground content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <span className="text-xs sm:text-sm font-semibold tracking-wider text-purple-600 uppercase mb-3 block">
-          Battle-Tested Modern Stack
-        </span>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-tight">
-          {title}
+        <h2 className="text-xs sm:text-sm font-semibold tracking-wider text-purple-600 uppercase mb-3 block font-sans">
+          {eyebrow || "Battle-Tested Tech Stack"}
         </h2>
-        <p className="mt-5 max-w-2xl mx-auto text-sm sm:text-lg text-zinc-600 leading-relaxed font-medium">
+        <h3 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-tight">
+          {title}
+        </h3>
+        <p className="mt-5 max-w-2xl mx-auto text-xs sm:text-base text-zinc-600 leading-relaxed font-medium">
           {subtitle}
         </p>
-        <div className="mt-8">
-          <Button asChild size="lg" className="px-8 py-6 text-base font-bold rounded-full bg-black hover:bg-zinc-800 text-white shadow-md">
-            <a href={ctaHref}>{ctaText}</a>
-          </Button>
+        <div className="mt-8 flex justify-center">
+          <AnimatedPillButton 
+            text={ctaText} 
+            onClick={() => {
+              const el = document.getElementById("contact");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
+          />
         </div>
       </div>
     </section>

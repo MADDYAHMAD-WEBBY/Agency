@@ -144,12 +144,22 @@ const techIcons: FloatingIconsHeroProps["icons"] = [
 
 export default function TechStackSection() {
   return (
-    <FloatingIconsHero
-      title="Technologies & Stacks We Master"
-      subtitle="Engineering high-performing web applications, AI automation workflows, and headless CMS architecture using industry-standard modern stacks."
-      ctaText="Start Your Project"
-      ctaHref="#contact"
-      icons={techIcons}
-    />
+    <section id="tech-stack">
+      <FloatingIconsHero
+        eyebrow="Battle-Tested Modern Stack"
+        title={
+          <>
+            Technologies & Stacks We{" "}
+            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+              Master
+            </span>
+          </>
+        }
+        subtitle="Engineering high-performing web applications, AI automation workflows, and headless CMS architecture using industry-standard modern stacks."
+        ctaText="Start Your Project"
+        ctaHref="#contact"
+        icons={techIcons}
+      />
+    </section>
   );
 }
