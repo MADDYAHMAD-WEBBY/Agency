@@ -92,7 +92,7 @@ const Icon = ({
     >
       {/* Inner wrapper for the continuous floating animation */}
       <motion.div
-        className="flex items-center justify-center w-14 h-14 md:w-20 md:h-20 p-3 rounded-3xl shadow-lg bg-white/90 backdrop-blur-md border border-zinc-200/80"
+        className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 p-3 rounded-[18px] md:rounded-[22px] shadow-lg bg-[#433c50] border border-white/10"
         animate={{
           y: [0, -8, 0, 8, 0],
           x: [0, 6, 0, -6, 0],
@@ -105,7 +105,7 @@ const Icon = ({
           ease: 'easeInOut',
         }}
       >
-        <iconData.icon className="w-7 h-7 md:w-10 md:h-10 text-zinc-900" />
+        <iconData.icon className="w-6 h-6 md:w-8 md:h-8 text-white fill-white" />
       </motion.div>
     </motion.div>
   );
