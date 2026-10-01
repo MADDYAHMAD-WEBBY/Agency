@@ -5,10 +5,32 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
-const RotatingEarth = dynamic(
-  () => import("@/components/ui/wireframe-dotted-globe"),
+const CobeGlobe = dynamic(
+  () => import("@/components/ui/cobe-globe").then((m) => m.Globe),
   { ssr: false }
 );
+
+const markers = [
+  { id: "bwp", location: [29.3544, 71.6911] as [number, number], label: "Bahawalpur" },
+  { id: "london", location: [51.5074, -0.1278] as [number, number], label: "London" },
+  { id: "tokyo", location: [35.6762, 139.6503] as [number, number], label: "Tokyo" },
+  { id: "dubai", location: [25.2048, 55.2708] as [number, number], label: "Dubai" },
+  { id: "nyc", location: [40.7128, -74.006] as [number, number], label: "New York" },
+];
+
+const arcs = [
+  {
+    id: "bwp-london",
+    from: [29.3544, 71.6911] as [number, number],
+    to: [51.5074, -0.1278] as [number, number],
+    label: "Global Reach",
+  },
+  {
+    id: "bwp-nyc",
+    from: [29.3544, 71.6911] as [number, number],
+    to: [40.7128, -74.006] as [number, number],
+  },
+];
 
 export default function AboutSection() {
   return (
@@ -46,7 +68,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[32px] p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[520px] sm:min-h-[600px]"
+            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[32px] p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[540px] sm:min-h-[620px]"
           >
             {/* Top Content */}
             <div className="relative z-10 flex flex-col items-center text-center space-y-5 pt-2">
@@ -80,18 +102,23 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* Bottom Large Curved 3D Dotted Globe Container */}
-            <div className="absolute inset-x-0 bottom-0 top-36 sm:top-40 z-0 pointer-events-auto flex items-end justify-center overflow-hidden">
-              <RotatingEarth 
-                width={800}
-                height={620}
-                strokeColor="rgba(99, 102, 241, 0.4)"
-                dotColor="rgba(30, 27, 75, 0.8)"
-                graticuleColor="rgba(129, 140, 248, 0.22)"
-                scaleMultiplier={2.25}
-                centerYRatio={0.92}
-                className="w-full h-full"
-              />
+            {/* Bottom Cobe Globe Container */}
+            <div className="absolute inset-x-0 bottom-0 top-36 sm:top-40 z-0 pointer-events-auto flex items-end justify-center overflow-hidden translate-y-12 sm:translate-y-16">
+              <div className="w-[115%] sm:w-[125%] max-w-none aspect-square">
+                <CobeGlobe 
+                  markers={markers}
+                  arcs={arcs}
+                  markerColor={[0.85, 0.2, 0.2]}
+                  baseColor={[0.95, 0.94, 0.99]}
+                  arcColor={[0.4, 0.35, 0.9]}
+                  glowColor={[0.92, 0.91, 0.98]}
+                  dark={0}
+                  mapBrightness={8}
+                  markerSize={0.035}
+                  markerElevation={0.02}
+                  className="w-full h-full"
+                />
+              </div>
             </div>
           </motion.div>
 
