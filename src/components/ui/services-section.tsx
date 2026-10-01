@@ -176,6 +176,34 @@ const servicesData: ServiceItem[] = [
     accent: "#475569",
     accentForeground: "#ffffff",
   },
+  {
+    id: "apk-websites",
+    category: "web",
+    href: "#contact",
+    title: "APK & App Download Portals",
+    description:
+      "High-traffic APK download portals and Android directory websites optimized for rapid search indexing, high ad revenue, and instant file downloads.",
+    image:
+      "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=800&auto=format&fit=crop",
+    badge: "Niche Web",
+    tags: ["APK Portals", "High Traffic", "AdSense & SEO"],
+    accent: "#16a34a",
+    accentForeground: "#ffffff",
+  },
+  {
+    id: "tool-websites",
+    category: "web",
+    href: "#contact",
+    title: "Tool-Based Websites & Utilities",
+    description:
+      "Custom interactive web tools, online calculators, converters, and browser utilities engineered for high user retention and viral organic traffic.",
+    image:
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800&auto=format&fit=crop",
+    badge: "Interactive Utilities",
+    tags: ["Online Tools", "Calculators & Converters", "Passive Traffic"],
+    accent: "#0284c7",
+    accentForeground: "#ffffff",
+  },
 
   // --- Category: Local SEO & Reputation ---
   {
@@ -226,7 +254,7 @@ const categories = [
   { id: "ai", label: "AI & Automation" },
   { id: "web", label: "Web & App Development" },
   { id: "seo", label: "Local SEO & Reputation" },
-  { id: "all", label: "All Services (14)" },
+  { id: "all", label: "All Services (16)" },
 ];
 
 export default function ServicesSection() {
