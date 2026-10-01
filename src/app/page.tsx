@@ -1,6 +1,7 @@
 import Header, { NavigationSection } from "@/components/ui/hero-01-utils/header";
 import AgencyHeroSection from "@/components/ui/hero-01";
 import AboutSection from "@/components/ui/about-section";
+import ServicesSection from "@/components/ui/services-section";
 
 const navigationData: NavigationSection[] = [
   {
@@ -37,6 +38,7 @@ export default function Home() {
       <main className="w-full -mt-[68px] sm:-mt-[96px]">
         <AgencyHeroSection />
         <AboutSection />
+        <ServicesSection />
       </main>
     </div>
   );
