@@ -62,14 +62,20 @@ export function NotchedProjectCard({
   return (
     <a
       href={href}
+      style={
+        {
+          "--card-accent": accent,
+          "--card-accent-fg": accentForeground,
+        } as React.CSSProperties
+      }
       className={cn(
-        "group flex flex-col rounded-[28px] outline-none focus-visible:ring-2 focus-visible:ring-purple-600 focus-visible:ring-offset-4 focus-visible:ring-offset-background",
-        className,
+        "group flex flex-col h-full bg-white rounded-[28px] p-4 border border-zinc-200/90 hover:border-[var(--card-accent)] shadow-xs hover:shadow-xl transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-purple-600 focus-visible:ring-offset-4 focus-visible:ring-offset-background",
+        className
       )}
     >
       <div className="relative">
         {/* the cover */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-zinc-100 border border-zinc-200/80 shadow-xs group-hover:shadow-md transition-shadow">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-zinc-100 border border-zinc-200/80 shadow-xs group-hover:shadow-md transition-shadow">
           <img
             src={image}
             alt={screen ? "" : imageAlt}
@@ -95,7 +101,7 @@ export function NotchedProjectCard({
           )}
           {badge && (
             <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-4">
-              <span className="rounded-full border border-white/40 bg-black/40 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md shadow-2xs">
+              <span className="rounded-full border border-white/40 bg-black/45 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md shadow-2xs">
                 {badge}
               </span>
             </div>
@@ -129,33 +135,33 @@ export function NotchedProjectCard({
         {/* the arrow, nested in the notch */}
         <span
           aria-hidden
-          className={cn(
-            "absolute bottom-0 right-0 flex items-center justify-center rounded-full bg-zinc-900 text-white transition-[background-color,color,scale] duration-300 group-hover:scale-105 shadow-md",
-            accent
-              ? "group-hover:bg-[var(--card-accent)] group-hover:text-[var(--card-accent-fg)]"
-              : "group-hover:bg-purple-600 group-hover:text-white",
-          )}
-          style={
-            {
-              width: DISC,
-              height: DISC,
-              "--card-accent": accent,
-              "--card-accent-fg": accentForeground,
-            } as React.CSSProperties
-          }
+          className="absolute bottom-0 right-0 flex items-center justify-center rounded-full bg-zinc-900 text-white transition-all duration-300 group-hover:bg-[var(--card-accent)] group-hover:text-[var(--card-accent-fg)] group-hover:scale-105 shadow-md"
+          style={{
+            width: DISC,
+            height: DISC,
+          }}
         >
           <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </span>
       </div>
 
-      <h3 className="mt-5 text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 group-hover:text-purple-600 transition-colors">{title}</h3>
-      {description && <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-600">{description}</p>}
+      {/* Title with dynamic card accent color on hover */}
+      <h3 className="mt-5 text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 group-hover:text-[var(--card-accent)] transition-colors duration-300">
+        {title}
+      </h3>
+      
+      {description && (
+        <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-600">
+          {description}
+        </p>
+      )}
+
       {tags.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-2">
           {tags.map((t, i) => (
             <li
               key={`${t}-${i}`}
-              className="rounded-full bg-zinc-100 border border-zinc-200 px-3 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-zinc-700"
+              className="rounded-full bg-zinc-100/90 border border-zinc-200/80 px-3 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-zinc-700 group-hover:border-[var(--card-accent)]/30 transition-colors duration-300"
             >
               {t}
             </li>

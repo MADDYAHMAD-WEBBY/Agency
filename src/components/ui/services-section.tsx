@@ -317,7 +317,7 @@ export default function ServicesSection() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.4, delay: idx * 0.04, ease: "easeInOut" }}
-                className="flex flex-col h-full bg-white rounded-[28px] p-4 border border-zinc-200/80 shadow-xs hover:shadow-lg transition-all duration-300"
+                className="flex flex-col h-full"
               >
                 <NotchedProjectCard
                   href={service.href}
