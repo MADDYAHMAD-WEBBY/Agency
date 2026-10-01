@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
@@ -20,7 +21,12 @@ export default function Header({ navigationData }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full py-3 sm:py-5 bg-transparent">
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.65, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className="sticky top-0 z-50 w-full py-3 sm:py-5 bg-transparent"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         
         {/* Logo: Black pill */}
@@ -90,7 +96,7 @@ export default function Header({ navigationData }: HeaderProps) {
         </div>
 
       </div>
-    </header>
+    </motion.header>
   );
 }
 
