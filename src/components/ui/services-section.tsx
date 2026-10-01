@@ -13,7 +13,6 @@ interface ServiceItem {
   description: string;
   image: string;
   badge: string;
-  metrics: { label: string; value: string }[];
   tags: string[];
   accent: string;
   accentForeground: string;
@@ -30,11 +29,6 @@ const servicesData: ServiceItem[] = [
       "Automate repetitive business operations, eliminate manual bottlenecks, and connect software tools seamlessly to save hundreds of hours monthly.",
     image: "/images/services/workflow-automation.webp",
     badge: "Automation",
-    metrics: [
-      { label: "Hours Saved", value: "200+ hrs/mo" },
-      { label: "Error Rate", value: "<0.01%" },
-      { label: "Efficiency", value: "10x Fast" },
-    ],
     tags: ["Zapier & Make", "Process Scaling", "No-Code Systems"],
     accent: "#9333ea",
     accentForeground: "#ffffff",
@@ -48,11 +42,6 @@ const servicesData: ServiceItem[] = [
       "Deploy intelligent LLM chatbots and 24/7 AI agents that engage website visitors, qualify leads, and close sales automatically.",
     image: "/images/services/ai-chatbots.webp",
     badge: "AI Tech",
-    metrics: [
-      { label: "Availability", value: "24/7 Live" },
-      { label: "Response", value: "<1 Sec" },
-      { label: "Lead Capture", value: "+300%" },
-    ],
     tags: ["OpenAI & LLMs", "24/7 Lead Capture", "Custom Agents"],
     accent: "#0284c7",
     accentForeground: "#ffffff",
@@ -66,11 +55,6 @@ const servicesData: ServiceItem[] = [
       "Capture, track, and nurture incoming leads automatically with custom CRM pipelines, SMS/Email sequences, and instant team alerts.",
     image: "/images/services/crm-lead-automation.webp",
     badge: "Lead Gen",
-    metrics: [
-      { label: "Lead Velocity", value: "Instant" },
-      { label: "Conversion", value: "+180%" },
-      { label: "Pipeline ROI", value: "5x Growth" },
-    ],
     tags: ["CRM Integration", "SMS & Email Flow", "High Conversion"],
     accent: "#2563eb",
     accentForeground: "#ffffff",
@@ -84,11 +68,6 @@ const servicesData: ServiceItem[] = [
       "Embed custom artificial intelligence capabilities directly into your existing web platforms for intelligent analytics and smart recommendations.",
     image: "/images/services/custom-ai-integrations.webp",
     badge: "Custom AI",
-    metrics: [
-      { label: "API Latency", value: "<100ms" },
-      { label: "Accuracy", value: "98.5%" },
-      { label: "Uptime", value: "99.99%" },
-    ],
     tags: ["API Integration", "Machine Learning", "Custom Models"],
     accent: "#c026d3",
     accentForeground: "#ffffff",
@@ -104,11 +83,6 @@ const servicesData: ServiceItem[] = [
       "High-converting, mobile-responsive business websites built to showcase your brand, establish immediate authority, and turn traffic into clients.",
     image: "/images/services/business-websites.webp",
     badge: "Web Design",
-    metrics: [
-      { label: "Speed Score", value: "99/100" },
-      { label: "Mobile Ready", value: "100%" },
-      { label: "Bounce Rate", value: "-45%" },
-    ],
     tags: ["Responsive UI", "Brand Strategy", "Fast Load"],
     accent: "#059669",
     accentForeground: "#ffffff",
@@ -122,11 +96,6 @@ const servicesData: ServiceItem[] = [
       "Scalable online store solutions engineered for seamless checkout, high conversion rates, inventory synchronization, and sub-second loading.",
     image: "/images/services/ecommerce.webp",
     badge: "E-Commerce",
-    metrics: [
-      { label: "Sales Lift", value: "+210%" },
-      { label: "Checkout", value: "Sub-1s" },
-      { label: "Cart Recovery", value: "+35%" },
-    ],
     tags: ["Shopify", "WooCommerce", "Payment Gateways"],
     accent: "#d97706",
     accentForeground: "#ffffff",
@@ -140,11 +109,6 @@ const servicesData: ServiceItem[] = [
       "Custom Headless WordPress and Webflow builds engineered with clean code, sub-second Core Web Vitals, and effortless CMS editing.",
     image: "/images/services/wordpress-webflow.webp",
     badge: "CMS Specialist",
-    metrics: [
-      { label: "Core Web Vitals", value: "Passed" },
-      { label: "Security", value: "A+ Tier" },
-      { label: "Load Speed", value: "0.5s" },
-    ],
     tags: ["Headless WP", "Webflow", "Core Web Vitals"],
     accent: "#7c3aed",
     accentForeground: "#ffffff",
@@ -158,11 +122,6 @@ const servicesData: ServiceItem[] = [
       "Modern web applications built with Next.js 15 and React delivering lightning performance, dynamic routing, and pixel-perfect design.",
     image: "/images/services/web-apps.webp",
     badge: "Frontend Eng",
-    metrics: [
-      { label: "Framework", value: "Next.js 15" },
-      { label: "Performance", value: "100/100" },
-      { label: "Type Safety", value: "Strict TS" },
-    ],
     tags: ["Next.js 15", "React", "TypeScript"],
     accent: "#4f46e5",
     accentForeground: "#ffffff",
@@ -176,11 +135,6 @@ const servicesData: ServiceItem[] = [
       "End-to-end full-stack software architecture, MVP product builds, and multi-tenant SaaS platforms engineered for security and scale.",
     image: "/images/services/custom-software-saas.webp",
     badge: "SaaS Architect",
-    metrics: [
-      { label: "Architecture", value: "Full-Stack" },
-      { label: "Scale Capacity", value: "1M+ Users" },
-      { label: "Security", value: "ISO Ready" },
-    ],
     tags: ["Custom SaaS", "Cloud Backend", "Database Architecture"],
     accent: "#0d9488",
     accentForeground: "#ffffff",
@@ -194,11 +148,6 @@ const servicesData: ServiceItem[] = [
       "Cross-platform mobile applications for iOS and Android delivering native fluidity, push notifications, and intuitive interfaces.",
     image: "/images/services/mobile-apps.webp",
     badge: "Mobile Dev",
-    metrics: [
-      { label: "Platforms", value: "iOS & Android" },
-      { label: "FPS Rate", value: "60 FPS" },
-      { label: "User Rating", value: "4.9 ★" },
-    ],
     tags: ["React Native", "iOS & Android", "App Store"],
     accent: "#dc2626",
     accentForeground: "#ffffff",
@@ -212,11 +161,6 @@ const servicesData: ServiceItem[] = [
       "Secure REST & GraphQL API integrations connecting payment systems, CRMs, ERPs, and custom backend microservices seamlessly.",
     image: "/images/services/api-integrations.webp",
     badge: "Integrations",
-    metrics: [
-      { label: "Sync Speed", value: "Realtime" },
-      { label: "Reliability", value: "99.99%" },
-      { label: "Security", value: "Encrypted" },
-    ],
     tags: ["REST & GraphQL", "Webhooks", "Microservices"],
     accent: "#475569",
     accentForeground: "#ffffff",
@@ -230,11 +174,6 @@ const servicesData: ServiceItem[] = [
       "High-traffic APK download portals and Android directory websites optimized for rapid search indexing, high ad revenue, and instant file downloads.",
     image: "/images/services/apk-websites.webp",
     badge: "Niche Web",
-    metrics: [
-      { label: "Traffic Concurrency", value: "High Volume" },
-      { label: "Index Rate", value: "Instant" },
-      { label: "Download Speed", value: "Blazing" },
-    ],
     tags: ["APK Portals", "High Traffic", "AdSense & SEO"],
     accent: "#16a34a",
     accentForeground: "#ffffff",
@@ -248,11 +187,6 @@ const servicesData: ServiceItem[] = [
       "Custom interactive web tools, online calculators, converters, and browser utilities engineered for high user retention and viral organic traffic.",
     image: "/images/services/tool-websites.webp",
     badge: "Interactive Utilities",
-    metrics: [
-      { label: "User Retention", value: "High D30" },
-      { label: "Organic Reach", value: "Viral Growth" },
-      { label: "Execution", value: "Client-Side" },
-    ],
     tags: ["Online Tools", "Calculators & Converters", "Passive Traffic"],
     accent: "#0284c7",
     accentForeground: "#ffffff",
@@ -268,11 +202,6 @@ const servicesData: ServiceItem[] = [
       "Claim, optimize, and rank your Google Business Profile to capture top 3 map-pack positions and dominate local organic search traffic.",
     image: "/images/services/gbp-optimization.webp",
     badge: "Local SEO",
-    metrics: [
-      { label: "Map Pack Rank", value: "Top 3 (#1)" },
-      { label: "Call Growth", value: "+320%" },
-      { label: "Local Reach", value: "Hyper-Local" },
-    ],
     tags: ["Google Maps", "Map Pack #1", "Geo-Targeting"],
     accent: "#ea580c",
     accentForeground: "#ffffff",
@@ -286,11 +215,6 @@ const servicesData: ServiceItem[] = [
       "Consistent, high-authority NAP (Name, Address, Phone) citations built across premium directory networks to boost local trust scores.",
     image: "/images/services/citation-building.webp",
     badge: "Authority",
-    metrics: [
-      { label: "NAP Consistency", value: "100% Match" },
-      { label: "Directory Score", value: "High DA" },
-      { label: "Index Rate", value: "Guaranteed" },
-    ],
     tags: ["Directory Submissions", "NAP Consistency", "Local Rank"],
     accent: "#16a34a",
     accentForeground: "#ffffff",
@@ -304,11 +228,6 @@ const servicesData: ServiceItem[] = [
       "Automate customer review requests, monitor feedback across Google & Trustpilot, and build glowing 5-star social proof continuously.",
     image: "/images/services/review-management.webp",
     badge: "Reputation",
-    metrics: [
-      { label: "Avg Rating", value: "4.9 ★" },
-      { label: "Review Flow", value: "Automated" },
-      { label: "Trust Factor", value: "Max Level" },
-    ],
     tags: ["5-Star Reviews", "Trustpilot", "Social Proof"],
     accent: "#e11d48",
     accentForeground: "#ffffff",
@@ -387,7 +306,7 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* Services Cards Grid featuring the Work Card Container & Metrics Box */}
+        {/* Notched Service Cards Grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <AnimatePresence mode="popLayout">
             {displayServices.map((service, idx) => (
@@ -400,7 +319,6 @@ export default function ServicesSection() {
                 transition={{ duration: 0.4, delay: idx * 0.04, ease: "easeInOut" }}
                 className="flex flex-col h-full bg-white rounded-[28px] p-4 border border-zinc-200/80 shadow-xs hover:shadow-lg transition-all duration-300"
               >
-                {/* Notched Cover & Content */}
                 <NotchedProjectCard
                   href={service.href}
                   title={service.title}
@@ -412,20 +330,6 @@ export default function ServicesSection() {
                   accentForeground={service.accentForeground}
                   surface="#ffffff"
                 />
-
-                {/* 3-Column Performance Metrics Box */}
-                <div className="mt-5 pt-4 border-t border-zinc-100 grid grid-cols-3 gap-2 text-center bg-zinc-50/80 rounded-2xl p-3">
-                  {service.metrics.map((m, i) => (
-                    <div key={i} className="flex flex-col items-center">
-                      <span className="text-xs sm:text-sm font-black text-purple-700 tracking-tight">
-                        {m.value}
-                      </span>
-                      <span className="text-[10px] sm:text-[11px] font-medium text-zinc-500 uppercase tracking-wider mt-0.5">
-                        {m.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
               </motion.div>
             ))}
           </AnimatePresence>
