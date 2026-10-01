@@ -133,8 +133,7 @@ const servicesData: ServiceItem[] = [
     title: "Custom Software / SaaS Solutions",
     description:
       "End-to-end full-stack software architecture, MVP product builds, and multi-tenant SaaS platforms engineered for security and scale.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/custom-software-saas.webp",
     badge: "SaaS Architect",
     tags: ["Custom SaaS", "Cloud Backend", "Database Architecture"],
     accent: "#0d9488",
@@ -147,8 +146,7 @@ const servicesData: ServiceItem[] = [
     title: "Mobile Apps",
     description:
       "Cross-platform mobile applications for iOS and Android delivering native fluidity, push notifications, and intuitive interfaces.",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/mobile-apps.webp",
     badge: "Mobile Dev",
     tags: ["React Native", "iOS & Android", "App Store"],
     accent: "#dc2626",
@@ -161,8 +159,7 @@ const servicesData: ServiceItem[] = [
     title: "API & Third-Party Integrations",
     description:
       "Secure REST & GraphQL API integrations connecting payment systems, CRMs, ERPs, and custom backend microservices seamlessly.",
-    image:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/api-integrations.webp",
     badge: "Integrations",
     tags: ["REST & GraphQL", "Webhooks", "Microservices"],
     accent: "#475569",
@@ -175,8 +172,7 @@ const servicesData: ServiceItem[] = [
     title: "APK & App Download Portals",
     description:
       "High-traffic APK download portals and Android directory websites optimized for rapid search indexing, high ad revenue, and instant file downloads.",
-    image:
-      "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/apk-websites.webp",
     badge: "Niche Web",
     tags: ["APK Portals", "High Traffic", "AdSense & SEO"],
     accent: "#16a34a",
@@ -189,8 +185,7 @@ const servicesData: ServiceItem[] = [
     title: "Tool-Based Websites & Utilities",
     description:
       "Custom interactive web tools, online calculators, converters, and browser utilities engineered for high user retention and viral organic traffic.",
-    image:
-      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/tool-websites.webp",
     badge: "Interactive Utilities",
     tags: ["Online Tools", "Calculators & Converters", "Passive Traffic"],
     accent: "#0284c7",
@@ -205,8 +200,7 @@ const servicesData: ServiceItem[] = [
     title: "Google Business Profile Optimization",
     description:
       "Claim, optimize, and rank your Google Business Profile to capture top 3 map-pack positions and dominate local organic search traffic.",
-    image:
-      "https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/gbp-optimization.webp",
     badge: "Local SEO",
     tags: ["Google Maps", "Map Pack #1", "Geo-Targeting"],
     accent: "#ea580c",
@@ -219,8 +213,7 @@ const servicesData: ServiceItem[] = [
     title: "Citation Building",
     description:
       "Consistent, high-authority NAP (Name, Address, Phone) citations built across premium directory networks to boost local trust scores.",
-    image:
-      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/citation-building.webp",
     badge: "Authority",
     tags: ["Directory Submissions", "NAP Consistency", "Local Rank"],
     accent: "#16a34a",
@@ -233,8 +226,7 @@ const servicesData: ServiceItem[] = [
     title: "Review Management & Reputation",
     description:
       "Automate customer review requests, monitor feedback across Google & Trustpilot, and build glowing 5-star social proof continuously.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+    image: "/images/services/review-management.webp",
     badge: "Reputation",
     tags: ["5-Star Reviews", "Trustpilot", "Social Proof"],
     accent: "#e11d48",
