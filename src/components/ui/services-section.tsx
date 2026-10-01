@@ -277,9 +277,13 @@ export default function ServicesSection() {
             className="text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight"
           >
             Specialized Services Built for{" "}
-            <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 bg-clip-text text-transparent">
+            <motion.span
+              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal"
+            >
               Maximum Business Impact
-            </span>
+            </motion.span>
           </motion.h3>
         </div>
 
