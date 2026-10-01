@@ -2,6 +2,7 @@ import Header, { NavigationSection } from "@/components/ui/hero-01-utils/header"
 import AgencyHeroSection from "@/components/ui/hero-01";
 import AboutSection from "@/components/ui/about-section";
 import ServicesSection from "@/components/ui/services-section";
+import TechStackSection from "@/components/ui/tech-stack-section";
 
 const navigationData: NavigationSection[] = [
   {
@@ -18,16 +19,16 @@ const navigationData: NavigationSection[] = [
     href: "#services",
   },
   {
+    title: "Tech Stack",
+    href: "#tech-stack",
+  },
+  {
     title: "Team",
     href: "#team",
   },
   {
     title: "Pricing",
     href: "#pricing",
-  },
-  {
-    title: "Awards",
-    href: "#awards",
   },
 ];
 
@@ -39,6 +40,7 @@ export default function Home() {
         <AgencyHeroSection />
         <AboutSection />
         <ServicesSection />
+        <TechStackSection />
       </main>
     </div>
   );
