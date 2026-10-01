@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NotchedProjectCard } from "@/components/ui/notched-project-card";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface ServiceItem {
   id: string;
@@ -222,19 +223,24 @@ const servicesData: ServiceItem[] = [
 ];
 
 const categories = [
-  { id: "all", label: "All Services (14)" },
   { id: "ai", label: "AI & Automation" },
   { id: "web", label: "Web & App Development" },
   { id: "seo", label: "Local SEO & Reputation" },
+  { id: "all", label: "All Services (14)" },
 ];
 
 export default function ServicesSection() {
-  const [activeTab, setActiveTab] = useState<string>("all");
+  const [activeTab, setActiveTab] = useState<string>("ai");
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
-  const filteredServices =
+  const rawServices =
     activeTab === "all"
       ? servicesData
       : servicesData.filter((item) => item.category === activeTab);
+
+  // When on "all", show max 6 unless expanded
+  const displayServices =
+    activeTab === "all" && !isExpanded ? rawServices.slice(0, 6) : rawServices;
 
   return (
     <section id="services" className="w-full py-16 sm:py-24 bg-white relative z-20 overflow-hidden">
@@ -249,7 +255,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.6 }}
             className="text-xs sm:text-sm font-semibold tracking-wider text-purple-600 uppercase mb-3"
           >
-            Full-Spectrum Digital Services
+            Capabilities & Solutions
           </motion.h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -258,24 +264,27 @@ export default function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight"
           >
-            Comprehensive Solutions Built for{" "}
+            Specialized Services Built for{" "}
             <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 bg-clip-text text-transparent">
-              Growth & Scalability
+              Maximum Business Impact
             </span>
           </motion.h3>
         </div>
 
         {/* Category Segmented Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 sm:mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 sm:mb-14">
           {categories.map((cat) => {
             const isActive = activeTab === cat.id;
             return (
               <button
                 key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
+                onClick={() => {
+                  setActiveTab(cat.id);
+                  setIsExpanded(false);
+                }}
                 className={`relative px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? "bg-zinc-900 text-white shadow-md"
+                    ? "bg-black text-white shadow-md"
                     : "bg-zinc-100/90 text-zinc-600 hover:bg-zinc-200/80 hover:text-zinc-900 border border-zinc-200/60"
                 }`}
               >
@@ -288,7 +297,7 @@ export default function ServicesSection() {
         {/* Notched Service Cards Grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredServices.map((service) => (
+            {displayServices.map((service) => (
               <motion.div
                 key={service.id}
                 layout
@@ -312,6 +321,23 @@ export default function ServicesSection() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Expand / Collapse Button for 'All Services' */}
+        {activeTab === "all" && rawServices.length > 6 && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 hover:bg-black text-white font-semibold text-sm transition-all duration-300 shadow-md cursor-pointer group"
+            >
+              <span>{isExpanded ? "Show Less Services" : `View All ${rawServices.length} Services`}</span>
+              {isExpanded ? (
+                <ChevronUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+              ) : (
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+              )}
+            </button>
+          </div>
+        )}
 
       </div>
     </section>
