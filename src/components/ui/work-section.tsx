@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Sparkles, ChevronRight } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
 export interface FeaturedProject {
@@ -102,15 +102,12 @@ const featuredProjects: FeaturedProject[] = [
 ];
 
 export default function WorkSection() {
-  const [activeProjectIndex, setActiveProjectIndex] = useState<number>(0);
-  const currentProject = featuredProjects[activeProjectIndex];
-
   return (
     <section id="work" className="w-full py-20 sm:py-32 bg-zinc-50/70 border-t border-zinc-200/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <h2 className="text-4xl sm:text-6xl font-extrabold text-zinc-900 tracking-tight leading-tight font-serif">
             Curated{" "}
             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent italic">
@@ -122,117 +119,99 @@ export default function WorkSection() {
           </p>
         </div>
 
-        {/* Project Selector Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 sm:mb-14">
-          {featuredProjects.map((p, idx) => {
-            const isActive = idx === activeProjectIndex;
-            return (
-              <button
-                key={p.id}
-                onClick={() => setActiveProjectIndex(idx)}
-                className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? "bg-zinc-950 text-white shadow-md"
-                    : "bg-white text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 border border-zinc-200/80"
-                }`}
-              >
-                {p.title}
-              </button>
-            );
-          })}
+        {/* Featured Projects Stacked List */}
+        <div className="space-y-12 sm:space-y-16">
+          {featuredProjects.map((project, idx) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-[32px] p-6 sm:p-10 border border-zinc-200/80 shadow-xs"
+            >
+              {/* Left Column: Visual Banner Card with Framed Preview */}
+              <div className="lg:col-span-6 flex flex-col">
+                <a
+                  href={project.liveUrl}
+                  className="group relative rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between aspect-[4/3] shadow-md transition-transform duration-500 hover:scale-[1.01]"
+                >
+                  {/* Background Gradient */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${project.bannerGradient} transition-opacity duration-500`}
+                  />
+
+                  {/* Top Banner Text & Arrow Button */}
+                  <div className="relative z-10 flex items-start justify-between gap-4 mb-6">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug max-w-md">
+                      {project.tagline}
+                    </h3>
+                    <span className="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-zinc-900 transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+
+                  {/* Framed Web Application Screen Preview */}
+                  <div className="relative z-10 mt-auto rounded-t-2xl overflow-hidden border border-white/20 bg-zinc-950/80 shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]">
+                    <div className="h-6 bg-zinc-900/90 border-b border-white/10 px-3 flex items-center gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    </div>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto object-cover object-top max-h-[280px] sm:max-h-[340px]"
+                    />
+                  </div>
+                </a>
+              </div>
+
+              {/* Right Column: Project Details, Bullet Points & Tech Badges */}
+              <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
+                {/* Title with dash prefix */}
+                <div className="flex items-center gap-3">
+                  <span className="w-6 h-0.5 bg-pink-600 rounded-full" />
+                  <h3 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight font-serif">
+                    {project.title}
+                  </h3>
+                </div>
+
+                {/* Summary Description */}
+                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
+                  {project.summary}
+                </p>
+
+                {/* Bullet points with pink 4-point star icon */}
+                <ul className="space-y-3 pt-2">
+                  {project.highlights.map((item, itemIdx) => (
+                    <li key={itemIdx} className="flex items-start gap-3 text-xs sm:text-sm text-zinc-700 font-medium leading-relaxed">
+                      <span className="text-pink-600 font-bold text-base flex-shrink-0 mt-0.5">✦</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tech Stack Badges */}
+                <div className="pt-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.map((tech, techIdx) => (
+                      <span
+                        key={techIdx}
+                        className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100/90 border border-zinc-200/80 px-3 py-1.5 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase text-zinc-700 shadow-2xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Featured Project Showcase Container */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentProject.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-[32px] p-6 sm:p-10 border border-zinc-200/80 shadow-xs"
-          >
-            {/* Left Column: Visual Banner Card with Framed Preview */}
-            <div className="lg:col-span-6 flex flex-col">
-              <a
-                href={currentProject.liveUrl}
-                className="group relative rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between aspect-[4/3] shadow-md transition-transform duration-500 hover:scale-[1.01]"
-              >
-                {/* Background Gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${currentProject.bannerGradient} transition-opacity duration-500`}
-                />
-
-                {/* Top Banner Text & Arrow Button */}
-                <div className="relative z-10 flex items-start justify-between gap-4 mb-6">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug max-w-md">
-                    {currentProject.tagline}
-                  </h3>
-                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-zinc-900 transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </div>
-
-                {/* Framed Web Application Screen Preview */}
-                <div className="relative z-10 mt-auto rounded-t-2xl overflow-hidden border border-white/20 bg-zinc-950/80 shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]">
-                  <div className="h-6 bg-zinc-900/90 border-b border-white/10 px-3 flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                  </div>
-                  <img
-                    src={currentProject.image}
-                    alt={currentProject.title}
-                    className="w-full h-auto object-cover object-top max-h-[280px] sm:max-h-[340px]"
-                  />
-                </div>
-              </a>
-            </div>
-
-            {/* Right Column: Project Details, Bullet Points & Tech Badges */}
-            <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
-              {/* Title with dash prefix */}
-              <div className="flex items-center gap-3">
-                <span className="w-6 h-0.5 bg-pink-600 rounded-full" />
-                <h3 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight font-serif">
-                  {currentProject.title}
-                </h3>
-              </div>
-
-              {/* Summary Description */}
-              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
-                {currentProject.summary}
-              </p>
-
-              {/* Bullet points with pink 4-point star icon */}
-              <ul className="space-y-3 pt-2">
-                {currentProject.highlights.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-zinc-700 font-medium leading-relaxed">
-                    <span className="text-pink-600 font-bold text-base flex-shrink-0 mt-0.5">✦</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Tech Stack Badges */}
-              <div className="pt-4">
-                <div className="flex flex-wrap gap-2">
-                  {currentProject.techStack.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100/90 border border-zinc-200/80 px-3 py-1.5 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase text-zinc-700 shadow-2xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
         {/* Bottom CTA */}
-        <div className="mt-16 text-center flex flex-col items-center justify-center">
+        <div className="mt-20 text-center flex flex-col items-center justify-center">
           <p className="text-xs sm:text-sm text-zinc-500 font-semibold uppercase tracking-widest mb-4">
             Have a project in mind? Let’s build your flagship web platform.
           </p>
