@@ -103,8 +103,8 @@ export default function AboutSection() {
             </div>
 
             {/* Bottom Cobe Globe Container */}
-            <div className="absolute inset-x-0 bottom-0 top-36 sm:top-40 z-0 pointer-events-auto flex items-end justify-center overflow-hidden translate-y-12 sm:translate-y-16">
-              <div className="w-[115%] sm:w-[125%] max-w-none aspect-square">
+            <div className="absolute inset-x-0 -bottom-32 sm:-bottom-44 z-0 pointer-events-auto flex items-end justify-center overflow-hidden">
+              <div className="w-[145%] sm:w-[165%] max-w-none aspect-square translate-y-10 sm:translate-y-14">
                 <CobeGlobe 
                   markers={markers}
                   arcs={arcs}
