@@ -159,7 +159,7 @@ export default function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm sm:text-base text-zinc-500 font-medium max-w-xl mx-auto mt-4 leading-relaxed"
+          className="text-xs sm:text-sm text-zinc-500 font-medium max-w-xl mx-auto mt-4 leading-relaxed tracking-normal"
         >
           From high-performance edge runtimes to custom Headless WordPress architectures — the battle-tested engineering stack behind our digital solutions.
         </motion.p>
