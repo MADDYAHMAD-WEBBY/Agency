@@ -19,7 +19,7 @@ const IconNextjs = (props: React.SVGProps<SVGSVGElement>) => (
 const IconReact = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="50" cy="50" r="8" fill="white"/>
-    <g stroke="white" strokeWidth="4" fill="none">
+    <g stroke="white" strokeWidth="5" fill="none">
       <ellipse cx="50" cy="50" rx="36" ry="14"/>
       <ellipse cx="50" cy="50" rx="36" ry="14" transform="rotate(60 50 50)"/>
       <ellipse cx="50" cy="50" rx="36" ry="14" transform="rotate(120 50 50)"/>
@@ -50,9 +50,8 @@ const IconNodejs = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const IconWordPress = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="45" fill="white"/>
-    <path d="M10 50C10 64.5 17 77.2 27.8 84.8L14.7 49.2H10ZM89.8 50C89.8 44 88.1 38.3 85 33.6L71.3 73.1C82.4 67.9 89.8 59.8 89.8 50ZM50 90C43.3 90 37 88 31.5 84.5L48.2 38.6L65 84.5C59.7 88 53.5 90 50 90ZM50 10C60.7 10 70.3 14.2 77.5 21L62 64.2L52 34.6C53.8 34.3 55.6 33.8 55.6 33.8C57.4 33.3 57 30.6 55.2 31C55.2 31 47 31.8 43.5 31.8C40 31.8 31.8 31 31.8 31C30 30.6 29.6 33.3 31.4 33.8C31.4 33.8 33.2 34.3 35 34.6L40.4 50.2L28.8 18C34.8 13 42.1 10 50 10Z" fill="#433c50"/>
+  <svg {...props} viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.158 0C5.457 0 0 5.457 0 12.158c0 6.701 5.457 12.158 12.158 12.158 6.701 0 12.158-5.457 12.158-12.158C24.316 5.457 18.859 0 12.158 0zm0 1.258c6.014 0 10.9 4.886 10.9 10.9 0 2.292-.71 4.417-1.926 6.173L15.34 5.372c.483-.028.932-.083.932-.083.435-.055.385-.688-.055-.658 0 0-1.354.11-2.228.11-.842 0-2.195-.11-2.195-.11-.44-.03-.49.603-.055.658 0 0 .422.055.85.083l2.482 6.793-3.486 10.428L6.4 5.372c.483-.028.932-.083.932-.083.435-.055.385-.688-.055-.658 0 0-1.354.11-2.228.11-.842 0-2.195-.11-2.195-.11-.44-.03-.49.603-.055.658 0 0 .422.055.85.083l4.57 12.553L6.96 17.514C4.16 15.01 2.516 11.4 2.516 7.4c0-2.292.71-4.417 1.926-6.173L12.158 1.258z" />
   </svg>
 );
 
@@ -63,9 +62,8 @@ const IconWebflow = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const IconShopify = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M78 19C78 19 76 18.5 74 19.5C72 20.5 64 26 64 26L51 8C51 8 49.5 6.5 47.5 6.5C45.5 6.5 44.5 8 44.5 8L39 26C39 26 31.5 20.5 29.5 19.5C27.5 18.5 25.5 19 25.5 19L8 85L50 96.5L92 85L78 19Z" fill="white"/>
-    <path d="M50 26.5V96.5L75 89.5L64 26.5H50Z" fill="#e2e8f0"/>
+  <svg {...props} viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.34 2.55c-.06 0-.12.02-.17.06-.06.05-.1.11-.11.18L14.6 5.5h-5.2l-.46-2.71c-.01-.07-.05-.13-.11-.18a.29.29 0 0 0-.17-.06H5.45c-.14 0-.25.11-.25.25v.75c0 .14.11.25.25.25h2.61l2.45 14.46c.02.12.12.21.25.21h8.48c.13 0 .23-.09.25-.21l2.45-14.46h2.61c.14 0 .25-.11.25-.25v-.75c0-.14-.11-.25-.25-.25h-3.21zM9.82 5.5l.38-2.25h3.6l.38 2.25H9.82z" />
   </svg>
 );
 
@@ -125,24 +123,24 @@ const IconFramerMotion = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-// Define 16 floating tech stack icons with responsive screen positions
+// Define 16 floating tech stack icons with responsive screen positions (safe top padding)
 const techIcons: FloatingIconsHeroProps["icons"] = [
-  { id: 1, icon: IconNextjs, className: "top-[10%] left-[8%]" },
-  { id: 2, icon: IconReact, className: "top-[15%] right-[10%]" },
+  { id: 1, icon: IconNextjs, className: "top-[16%] left-[8%]" },
+  { id: 2, icon: IconReact, className: "top-[18%] right-[10%]" },
   { id: 3, icon: IconTypescript, className: "top-[78%] left-[8%]" },
   { id: 4, icon: IconTailwind, className: "bottom-[12%] right-[10%]" },
-  { id: 5, icon: IconNodejs, className: "top-[5%] left-[32%]" },
-  { id: 6, icon: IconWordPress, className: "top-[5%] right-[32%]" },
-  { id: 7, icon: IconWebflow, className: "bottom-[8%] left-[26%]" },
-  { id: 8, icon: IconShopify, className: "top-[42%] left-[12%]" },
+  { id: 5, icon: IconNodejs, className: "top-[14%] left-[32%]" },
+  { id: 6, icon: IconWordPress, className: "top-[14%] right-[32%]" },
+  { id: 7, icon: IconWebflow, className: "bottom-[12%] left-[26%]" },
+  { id: 8, icon: IconShopify, className: "top-[45%] left-[10%]" },
   { id: 9, icon: IconPython, className: "top-[72%] right-[26%]" },
-  { id: 10, icon: IconPostgres, className: "top-[88%] left-[68%]" },
+  { id: 10, icon: IconPostgres, className: "top-[82%] left-[68%]" },
   { id: 11, icon: IconOpenAI, className: "top-[48%] right-[6%]" },
   { id: 12, icon: IconZapier, className: "top-[52%] left-[6%]" },
-  { id: 13, icon: IconFigmaTech, className: "top-[6%] left-[54%]" },
-  { id: 14, icon: IconGitHubTech, className: "bottom-[6%] right-[44%]" },
-  { id: 15, icon: IconVercelTech, className: "top-[28%] right-[22%]" },
-  { id: 16, icon: IconFramerMotion, className: "top-[62%] left-[32%]" },
+  { id: 13, icon: IconFigmaTech, className: "top-[14%] left-[54%]" },
+  { id: 14, icon: IconGitHubTech, className: "bottom-[10%] right-[44%]" },
+  { id: 15, icon: IconVercelTech, className: "top-[32%] right-[22%]" },
+  { id: 16, icon: IconFramerMotion, className: "top-[65%] left-[32%]" },
 ];
 
 export default function TechStackSection() {
