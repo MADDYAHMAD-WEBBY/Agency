@@ -22,7 +22,7 @@ export default function AnimatedPillButton({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
-      className={`group relative inline-flex items-center h-[46px] bg-black hover:bg-zinc-900 text-white rounded-full font-semibold text-sm transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-white/15 border border-zinc-800 hover:border-zinc-700/90 cursor-pointer select-none overflow-hidden ${
+      className={`group relative inline-flex items-center w-fit shrink-0 h-[46px] bg-black hover:bg-zinc-900 text-white rounded-full font-semibold text-sm transition-all duration-300 shadow-xs hover:shadow-lg hover:shadow-white/15 border border-zinc-800 hover:border-zinc-700/90 cursor-pointer select-none overflow-hidden ${
         isHovered ? "pl-1.5 pr-6" : "pl-6 pr-1.5"
       } ${className}`}
     >

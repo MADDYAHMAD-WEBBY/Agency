@@ -142,7 +142,7 @@ export default function AboutSection() {
               </p>
 
               {/* Bottom Row: Official Trustpilot Rating & Action Button */}
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 relative z-10 pt-2">
+              <div className="flex flex-col items-start sm:flex-row sm:items-end justify-between gap-4 relative z-10 pt-2">
                 {/* Official Trustpilot Rating Block */}
                 <div className="flex flex-col items-start gap-1.5">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-900 tracking-tight">
