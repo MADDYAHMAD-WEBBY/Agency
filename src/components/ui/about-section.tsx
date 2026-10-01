@@ -55,7 +55,10 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight"
           >
-            Transforming Brands with World-Class Digital Solutions
+            Transforming Brands with{" "}
+            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+              World-Class Digital Solutions
+            </span>
           </motion.h3>
         </div>
 
@@ -103,8 +106,8 @@ export default function AboutSection() {
             </div>
 
             {/* Bottom Cobe Globe Container */}
-            <div className="absolute inset-x-0 -bottom-48 sm:-bottom-64 z-0 pointer-events-auto flex items-end justify-center overflow-hidden">
-              <div className="w-[195%] sm:w-[215%] max-w-none aspect-square translate-y-12 sm:translate-y-16">
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-[318px] sm:-bottom-[366px] w-[132%] sm:w-[142%] max-w-none z-0 pointer-events-auto flex items-end justify-center">
+              <div className="w-full aspect-square">
                 <CobeGlobe 
                   markers={markers}
                   arcs={arcs}
