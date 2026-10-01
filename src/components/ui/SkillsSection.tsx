@@ -95,7 +95,7 @@ function SkillIcon({ skill }: { skill: SkillItem }) {
       />
 
       {/* Tooltip */}
-      <div className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 bg-slate-900 border border-white/15 px-2.5 py-1 rounded-md text-[10px] font-mono text-white whitespace-nowrap shadow-xl z-40">
+      <div className="absolute -top-9 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 bg-zinc-900 border border-white/15 px-2.5 py-1 rounded-md text-[10px] font-mono text-white whitespace-nowrap shadow-xl z-40">
         {skill.name}
       </div>
     </div>
@@ -111,47 +111,57 @@ export default function SkillsSection() {
   const row2Doubled = [...row2Skills, ...row2Skills, ...row2Skills];
 
   return (
-    <section id="skills" className="relative z-10 w-full py-20 md:py-28 flex flex-col items-center overflow-hidden bg-white text-slate-900 transition-colors duration-300 border-t-0">
+    <section id="skills" className="relative z-10 w-full py-16 sm:py-24 flex flex-col items-center overflow-hidden bg-white text-zinc-900 transition-colors duration-300 border-t-0">
       {/* ===== RICH PURPLE AMBIENT BACKGROUND GLOW ===== */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(139, 92, 246, 0.12) 0%, rgba(88, 28, 135, 0.04) 45%, transparent 75%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(147, 51, 234, 0.08) 0%, rgba(79, 70, 229, 0.03) 45%, transparent 75%)",
         }}
       />
 
       {/* Top and Bottom Edge Fades for 100% Seamless Background Blend */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-white to-transparent z-10" />
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent z-10" />
 
       {/* Left and Right Edge Gradient Fades for Smooth Infinite Marquee Effect */}
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-36 md:w-56 bg-gradient-to-r from-white via-white/90 to-transparent z-20" />
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-36 md:w-56 bg-gradient-to-l from-white via-white/90 to-transparent z-20" />
 
-      {/* Section Header */}
-      <div className="relative z-10 text-center mb-6 sm:mb-8 px-4">
+      {/* Section Header matching Website Theme Typography */}
+      <div className="relative z-10 text-center mb-10 sm:mb-14 max-w-3xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-[42px] sm:text-[56px] md:text-[67px] font-serif font-normal text-slate-900 tracking-tight"
+          className="text-xs sm:text-sm font-semibold tracking-wider text-purple-600 uppercase mb-3"
         >
-          Skills &{" "}
-          <span className="font-serif italic font-normal bg-gradient-to-r from-[#4F46E5] via-[#7C3AED] to-[#EC4899] bg-clip-text text-transparent">
-            Tools
-          </span>
+          Tech Stack & Capabilities
         </motion.h2>
+
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight"
+        >
+          Tools & Frameworks Built for{" "}
+          <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+            Maximum Speed & Scale
+          </span>
+        </motion.h3>
 
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="font-mono text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-4 leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-sm sm:text-base text-zinc-500 font-medium max-w-xl mx-auto mt-4 leading-relaxed"
         >
-          Tools Behind the Magic: From code to deployment—tools that bring digital visions to life.
+          From high-performance edge runtimes to custom Headless WordPress architectures — the battle-tested engineering stack behind our digital solutions.
         </motion.p>
       </div>
 
