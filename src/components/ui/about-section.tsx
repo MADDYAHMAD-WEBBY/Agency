@@ -37,7 +37,7 @@ export default function AboutSection() {
           </motion.h3>
         </div>
 
-        {/* Bento Grid: 3 Refined Pastel Cards */}
+        {/* Bento Grid: 3 Aesthetic Pastel Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           
           {/* Card 1: Left Main Globe Card (Soft Periwinkle / Lavender) */}
@@ -107,32 +107,28 @@ export default function AboutSection() {
               className="bg-gradient-to-br from-[#eaf2fe] via-[#f0f5ff] to-[#eef4fe] border border-blue-200/80 rounded-[32px] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
             >
               {/* Content text */}
-              <p className="text-zinc-800 font-semibold text-base sm:text-xl leading-relaxed max-w-lg relative z-10 mb-6">
+              <p className="text-zinc-800 font-semibold text-base sm:text-xl leading-relaxed max-w-lg relative z-10 mb-6 sm:mb-10">
                 Trusted by local and international clients, delivering bespoke digital solutions that rank number one in search results.
               </p>
 
-              {/* Aesthetic Vibe Badges Row */}
-              <div className="relative z-10 pt-2 flex flex-wrap items-center gap-3">
-                {/* Trustpilot Pill */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-blue-200/90 shadow-2xs">
-                  <span className="text-emerald-500 font-black text-xs">★</span>
-                  <span className="text-xs font-bold text-zinc-900">Trustpilot 5.0 Rating</span>
-                  <div className="flex items-center gap-0.5 ml-1">
+              {/* Bottom Row: Official Trustpilot Rating & Action Button */}
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 relative z-10 pt-2">
+                {/* Official Trustpilot Rating Block */}
+                <div className="flex flex-col items-start gap-1.5">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-900 tracking-tight">
+                    <span className="text-emerald-500 font-black text-sm">★</span> Trustpilot
+                  </div>
+                  <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-emerald-500 text-xs">★</span>
+                      <div key={i} className="w-5 h-5 sm:w-6 sm:h-6 bg-zinc-900 flex items-center justify-center rounded-xs text-emerald-400 text-xs sm:text-sm font-bold shadow-2xs">
+                        ★
+                      </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Satisfaction Badge */}
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-blue-200/90 shadow-2xs text-xs font-bold text-zinc-800">
-                  <span>⚡</span> 100% Client Satisfaction
-                </div>
-
-                {/* Local SEO Badge */}
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-blue-200/90 shadow-2xs text-xs font-bold text-zinc-800">
-                  <span>📈</span> #1 Local SEO Ranking
-                </div>
+                {/* Hero Animated Pill Button */}
+                <AnimatedPillButton text="Explore Results" />
               </div>
             </motion.div>
 
