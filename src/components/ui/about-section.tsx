@@ -71,7 +71,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[32px] p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[540px] sm:min-h-[620px]"
+            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[12px] p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[540px] sm:min-h-[620px]"
           >
             {/* Top Content */}
             <div className="relative z-10 flex flex-col items-center text-center space-y-5 pt-2">
@@ -83,15 +83,15 @@ export default function AboutSection() {
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
                 </span>
                 <span className="text-xs sm:text-sm font-semibold text-zinc-800">
-                  Available for projects worldwide
+                  Available for projects
                 </span>
               </div>
 
               {/* Location Heading */}
               <h4 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
-                Based in{" "}
+                Based{" "}
                 <span className="bg-gradient-to-r from-red-600 via-rose-600 to-orange-600 bg-clip-text text-transparent">
-                  Bahawalpur, Pakistan
+                  Worldwide
                 </span>
               </h4>
 
@@ -134,7 +134,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="bg-gradient-to-br from-[#eaf2fe] via-[#f0f5ff] to-[#eef4fe] border border-blue-200/80 rounded-[32px] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
+              className="bg-gradient-to-br from-[#eaf2fe] via-[#f0f5ff] to-[#eef4fe] border border-blue-200/80 rounded-[12px] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
             >
               {/* Content text */}
               <p className="text-zinc-800 font-semibold text-base sm:text-xl leading-relaxed max-w-lg relative z-10 mb-6 sm:mb-10">
@@ -168,7 +168,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="bg-gradient-to-br from-[#fdeaf2] via-[#fef2f7] to-[#fde5f0] border border-pink-200/80 rounded-[32px] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
+              className="bg-gradient-to-br from-[#fdeaf2] via-[#fef2f7] to-[#fde5f0] border border-pink-200/80 rounded-[12px] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-full"
             >
               {/* Profile Image Portrait */}
               <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-white bg-zinc-200">
