@@ -129,7 +129,7 @@ const FloatingIconsHero = React.forwardRef<
       ref={ref}
       onMouseMove={handleMouseMove}
       className={cn(
-        'relative w-full py-20 md:py-28 flex items-center justify-center overflow-hidden bg-white border-t border-zinc-100',
+        'relative w-full py-16 md:py-24 flex items-center justify-center overflow-hidden bg-white',
         className
       )}
       {...props}
@@ -152,7 +152,7 @@ const FloatingIconsHero = React.forwardRef<
         <h2 className="text-xs sm:text-sm font-semibold tracking-wider text-purple-600 uppercase mb-3 block font-sans">
           {eyebrow || "Battle-Tested Tech Stack"}
         </h2>
-        <h3 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 leading-tight">
+        <h3 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight">
           {title}
         </h3>
         <p className="mt-5 max-w-2xl mx-auto text-xs sm:text-base text-zinc-600 leading-relaxed font-medium">
