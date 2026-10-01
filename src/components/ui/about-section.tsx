@@ -177,8 +177,8 @@ export default function AboutSection() {
               {/* Profile Image Portrait */}
               <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-white bg-zinc-200">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" 
-                  alt="Zainab Ijaz portrait"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" 
+                  alt="Muhammad Hafeez Khan portrait"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -198,9 +198,9 @@ export default function AboutSection() {
 
                   {/* Signature / Role */}
                   <div className="text-xs sm:text-sm text-zinc-600 pt-1">
-                    <span className="font-bold text-zinc-900">Zainab Ijaz</span>
+                    <span className="font-bold text-zinc-900">Muhammad Hafeez Khan</span>
                     <span className="mx-1.5 text-zinc-300">|</span>
-                    <span className="font-medium text-zinc-700">RankIF&apos;s Design Lead</span>
+                    <span className="font-medium text-zinc-700">shadcnspace. Lead</span>
                   </div>
                 </div>
 
