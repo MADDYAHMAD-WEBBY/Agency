@@ -31,13 +31,16 @@ export default function CtaSection() {
           <div className="relative z-10 flex flex-col items-center text-center">
 
             {/* Main Headline with Theme Serif Font and Relative Wrapper for Rotating Badge */}
-            <div className="relative inline-block max-w-4xl mx-auto mb-6 sm:mb-8 pt-2 sm:pt-4">
-              <h2 className="text-3xl sm:text-5xl lg:text-[3.8rem] font-serif font-bold tracking-tight text-zinc-900 leading-[1.14] uppercase select-none">
-                <span>READY TO ELEVATE YOUR </span>
-                <strong className="font-extrabold text-black">DIGITAL IMPACT?</strong>
-                <br />
-                <span>LET&apos;S ENGINEER YOUR </span>
-                <strong className="font-extrabold text-black">GROWTH MACHINE</strong>
+            <div className="relative inline-block max-w-5xl mx-auto mb-6 sm:mb-8 pt-2 sm:pt-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-serif font-bold tracking-tight text-zinc-900 leading-[1.22] uppercase select-none">
+                <span className="block whitespace-normal sm:whitespace-nowrap">
+                  <span>READY TO ELEVATE YOUR </span>
+                  <strong className="font-extrabold text-black">DIGITAL IMPACT?</strong>
+                </span>
+                <span className="block whitespace-normal sm:whitespace-nowrap mt-1 sm:mt-1.5">
+                  <span>LET&apos;S ENGINEER YOUR </span>
+                  <strong className="font-extrabold text-black">GROWTH MACHINE</strong>
+                </span>
               </h2>
 
               {/* Rotating "OPEN TO COLLABORATE" Sticker Badge */}
