@@ -106,10 +106,7 @@ export default function AboutSection() {
                   className="w-full h-full"
                   config={{
                     radius: 2.1,
-                    showAtmosphere: true,
-                    atmosphereColor: "#818cf8",
-                    atmosphereIntensity: 0.6,
-                    atmosphereBlur: 3,
+                    showAtmosphere: false,
                     bumpScale: 1.5,
                     autoRotateSpeed: 2.2,
                     enableZoom: false,
