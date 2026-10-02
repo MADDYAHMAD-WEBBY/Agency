@@ -36,13 +36,13 @@ export interface WorksWheelProps extends Omit<
 }
 
 /* Geometry ratios */
-const CARD_H = 0.30; // front card height, ratio of stage height on desktop
-const CARD_MAX_W = 0.30; // max width ratio on desktop
+const CARD_H = 0.35; // front card height, ratio of stage height on desktop
+const CARD_MAX_W = 0.35; // max width ratio on desktop
 const CARD_RATIO = 1.45; // card width / height
 const STEP = 40; // degrees between cards on the drum
 const DRUM = 2.1; // drum radius, in card heights
 const LENS = 2.7; // perspective distance
-const RING_R = 1.02; // ring radius
+const RING_R = 1.05; // ring radius
 const BOW = 1.82;
 const TITLE = 0.15; // ring label and front-card title
 const INDEX = 0.045; // the index down the right-hand side
@@ -130,14 +130,14 @@ export function WorksWheel({
   const metrics = React.useMemo(() => {
     const { w, h } = stage;
     const isMobile = w > 0 && w < 640;
-    const maxWFactor = isMobile ? 0.44 : CARD_MAX_W;
-    const cardHFactor = isMobile ? 0.32 : CARD_H;
+    const maxWFactor = isMobile ? 0.48 : CARD_MAX_W;
+    const cardHFactor = isMobile ? 0.34 : CARD_H;
     const cardW = Math.min(h * cardHFactor * CARD_RATIO, w * maxWFactor);
     const cardH = cardW / CARD_RATIO;
     const drumR = cardH * DRUM;
-    const ringR = cardH * (isMobile ? 1.0 : RING_R);
+    const ringR = cardH * (isMobile ? 1.02 : RING_R);
     const ringScale = count
-      ? clamp((((2 * Math.PI * ringR) / count) * 0.85) / (cardW || 1), isMobile ? 0.28 : 0.18, 1)
+      ? clamp((((2 * Math.PI * ringR) / count) * 0.90) / (cardW || 1), isMobile ? 0.30 : 0.20, 1)
       : 1;
     return {
       cardW,
@@ -147,8 +147,8 @@ export function WorksWheel({
       drumR,
       bow: cardH * (isMobile ? 0.85 : BOW),
       depth: cardH * LENS,
-      title: Math.max(isMobile ? 17 : 26, cardH * TITLE),
-      index: Math.max(13, cardH * INDEX),
+      title: Math.max(isMobile ? 18 : 28, cardH * TITLE),
+      index: Math.max(14, cardH * INDEX),
       isMobile,
     };
   }, [stage, count]);

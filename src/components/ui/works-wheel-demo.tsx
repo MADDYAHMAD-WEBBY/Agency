@@ -110,7 +110,7 @@ export default function WorksWheelDemo() {
         </div>
 
         {/* 3D Works Wheel Stage with responsive height for mobile and desktop */}
-        <div className="w-full h-[370px] sm:h-[660px] lg:h-[760px] relative">
+        <div className="w-full h-[400px] sm:h-[700px] lg:h-[800px] relative">
           <WorksWheel items={WORKS} label="Selected Works" action="View" />
         </div>
 
