@@ -36,17 +36,17 @@ export interface WorksWheelProps extends Omit<
 }
 
 /* Geometry ratios */
-const CARD_H = 0.35; // front card height, ratio of stage height on desktop
-const CARD_MAX_W = 0.35; // max width ratio on desktop
+const CARD_H = 0.31; // front card height, ratio of stage height on desktop
+const CARD_MAX_W = 0.33; // max width ratio on desktop
 const CARD_RATIO = 1.45; // card width / height
-const STEP = 40; // degrees between cards on the drum
-const DRUM = 2.1; // drum radius, in card heights
+const STEP = 36; // degrees between cards on the drum
+const DRUM = 1.95; // drum radius, in card heights
 const LENS = 2.7; // perspective distance
 const RING_R = 1.05; // ring radius
-const BOW = 1.82;
+const BOW = 1.70;
 const TITLE = 0.15; // ring label and front-card title
 const INDEX = 0.045; // the index down the right-hand side
-const CULL = 1.6;
+const CULL = 1.35;
 
 /** How much of a wheel-notch or a dragged pixel counts as one item. */
 const WHEEL_UNITS = 900;
@@ -166,8 +166,8 @@ export function WorksWheel({
   const metrics = React.useMemo(() => {
     const { w, h } = stage;
     const isMobile = w > 0 && w < 640;
-    const maxWFactor = isMobile ? 0.48 : CARD_MAX_W;
-    const cardHFactor = isMobile ? 0.34 : CARD_H;
+    const maxWFactor = isMobile ? 0.44 : CARD_MAX_W;
+    const cardHFactor = isMobile ? 0.30 : CARD_H;
     const cardW = Math.min(h * cardHFactor * CARD_RATIO, w * maxWFactor);
     const cardH = cardW / CARD_RATIO;
     const drumR = cardH * DRUM;
@@ -243,8 +243,8 @@ export function WorksWheel({
           const dist = Math.abs(dDrum);
           if (dist > CULL) {
             cardOpacity = 0;
-          } else if (dist > 1) {
-            cardOpacity = 1 - (dist - 1) / (CULL - 1);
+          } else if (dist > 0.35) {
+            cardOpacity = Math.max(0, 1 - (dist - 0.35) / (CULL - 0.35));
           } else {
             cardOpacity = 1;
           }
@@ -330,6 +330,8 @@ export function WorksWheel({
         style={{
           perspective: `${metrics.depth}px`,
           transformStyle: "preserve-3d",
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
         }}
         onPointerDown={(event) => {
           dragStart.current = {

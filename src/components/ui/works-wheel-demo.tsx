@@ -70,7 +70,7 @@ export default function WorksWheelDemo() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header matching Website Theme Typography & Animations */}
-        <div className="text-center max-w-3xl mx-auto mb-3 sm:mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-20 lg:mb-24">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
