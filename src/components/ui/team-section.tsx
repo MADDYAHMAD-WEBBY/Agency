@@ -7,7 +7,9 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
-  gradient: string;
+  cardGradient: string;
+  cardBorder: string;
+  avatarGradient: string;
   socials: {
     github?: string;
     linkedin?: string;
@@ -16,11 +18,13 @@ interface TeamMember {
 }
 
 // Owner / Featured Leader Card
-const featuredLeader: TeamMember = {
+const featuredLeader = {
   name: "Hamad Ahmad",
   role: "Founder & Full-Stack Architect",
   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85",
-  gradient: "from-purple-700 via-indigo-600 to-violet-900",
+  cardGradient: "bg-gradient-to-br from-[#f5f3ff] via-[#ede9fe] to-[#faf5ff]",
+  cardBorder: "border-purple-200/90 hover:border-purple-400",
+  avatarGradient: "from-purple-700 via-indigo-600 to-violet-900",
   socials: {
     x: "https://twitter.com",
     linkedin: "https://linkedin.com",
@@ -28,13 +32,15 @@ const featuredLeader: TeamMember = {
   },
 };
 
-// Compact Team Members (Images kept small & subtle)
+// Team Members with custom theme-aligned gradients and enlarged cards & avatars
 const teamMembers: TeamMember[] = [
   {
     name: "Bilal Tariq",
     role: "Senior Full-Stack Engineer",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-    gradient: "from-purple-600 via-purple-700 to-indigo-800",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=85",
+    cardGradient: "bg-gradient-to-br from-[#f5f3ff] via-[#ede9fe] to-[#fdf4ff]",
+    cardBorder: "border-purple-200/80 hover:border-purple-400",
+    avatarGradient: "from-purple-600 via-purple-700 to-indigo-800",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
@@ -43,8 +49,10 @@ const teamMembers: TeamMember[] = [
   {
     name: "Ayesha Malik",
     role: "Lead UI/UX & Brand Designer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-    gradient: "from-fuchsia-600 via-purple-600 to-violet-800",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=85",
+    cardGradient: "bg-gradient-to-br from-[#fdf2f8] via-[#fce7f3] to-[#faf5ff]",
+    cardBorder: "border-pink-200/80 hover:border-pink-400",
+    avatarGradient: "from-fuchsia-600 via-purple-600 to-violet-800",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
@@ -53,8 +61,10 @@ const teamMembers: TeamMember[] = [
   {
     name: "Usman Farooq",
     role: "Technical SEO & Growth Specialist",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-    gradient: "from-indigo-600 via-purple-700 to-violet-900",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85",
+    cardGradient: "bg-gradient-to-br from-[#eff6ff] via-[#e0e7ff] to-[#f5f3ff]",
+    cardBorder: "border-indigo-200/80 hover:border-indigo-400",
+    avatarGradient: "from-indigo-600 via-purple-700 to-violet-900",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
@@ -63,8 +73,10 @@ const teamMembers: TeamMember[] = [
   {
     name: "Zainab Noor",
     role: "Conversion & Content Strategist",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-    gradient: "from-purple-600 via-pink-600 to-purple-900",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85",
+    cardGradient: "bg-gradient-to-br from-[#fdf4ff] via-[#fae8ff] to-[#f5f3ff]",
+    cardBorder: "border-fuchsia-200/80 hover:border-fuchsia-400",
+    avatarGradient: "from-purple-600 via-pink-600 to-purple-900",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
@@ -73,7 +85,7 @@ const teamMembers: TeamMember[] = [
 ];
 
 // Clean SVGs for Social Icons
-function XIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
+function XIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -81,7 +93,7 @@ function XIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
   );
 }
 
-function LinkedInIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
+function LinkedInIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -89,7 +101,7 @@ function LinkedInIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
   );
 }
 
-function GithubIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
+function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path
@@ -109,13 +121,13 @@ export default function TeamSection() {
         className="absolute inset-0 pointer-events-none z-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(147, 51, 234, 0.05) 0%, rgba(79, 70, 229, 0.02) 50%, transparent 75%)",
+            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(147, 51, 234, 0.06) 0%, rgba(79, 70, 229, 0.02) 50%, transparent 75%)",
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -150,19 +162,19 @@ export default function TeamSection() {
           </motion.p>
         </div>
 
-        {/* Compact Team Bento Grid: Cards positioned close together */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-3.5 items-stretch">
+        {/* Team Bento Grid: Exact 10px rounded corners & rich theme gradients */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
           
-          {/* Left Column: Owner / Featured Leader Card */}
+          {/* Left Column: Owner / Featured Leader Card (Enlarged) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-4 bg-gradient-to-b from-[#fbf9ff] via-[#f7f3ff] to-white border border-purple-200/90 rounded-[22px] p-5 sm:p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(147,51,234,0.06)] transition-all duration-300 hover:border-purple-400 hover:shadow-[0_16px_36px_rgba(147,51,234,0.12)] group"
+            className={`lg:col-span-5 ${featuredLeader.cardGradient} border ${featuredLeader.cardBorder} rounded-[10px] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(147,51,234,0.08)] transition-all duration-300 hover:shadow-[0_20px_45px_rgba(147,51,234,0.16)] group`}
           >
-            {/* Top: Large Portrait with Purple Theme Color Grading */}
-            <div className={`relative w-full aspect-square rounded-[16px] overflow-hidden bg-gradient-to-br ${featuredLeader.gradient} shadow-inner`}>
+            {/* Top: Large Portrait with 10px Border Radius & Theme Purple Gradient */}
+            <div className={`relative w-full aspect-square rounded-[10px] overflow-hidden bg-gradient-to-br ${featuredLeader.avatarGradient} shadow-inner`}>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(216,180,254,0.25)_0%,transparent_70%)] pointer-events-none z-10" />
               
               <img
@@ -176,26 +188,26 @@ export default function TeamSection() {
             </div>
 
             {/* Middle: Name & Role */}
-            <div className="text-center my-4 sm:my-5">
-              <h4 className="text-lg sm:text-xl font-extrabold text-zinc-900 tracking-tight">
+            <div className="text-center my-5 sm:my-6">
+              <h4 className="text-xl sm:text-2xl font-extrabold text-zinc-900 tracking-tight">
                 {featuredLeader.name}
               </h4>
-              <p className="text-xs sm:text-sm text-purple-600 font-semibold mt-1">
+              <p className="text-xs sm:text-sm text-purple-700 font-semibold mt-1">
                 {featuredLeader.role}
               </p>
             </div>
 
             {/* Bottom: Centered Circular Social Buttons */}
-            <div className="flex items-center justify-center gap-2.5">
+            <div className="flex items-center justify-center gap-3">
               {featuredLeader.socials.x && (
                 <a
                   href={featuredLeader.socials.x}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X Profile"
-                  className="w-9 h-9 rounded-full bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200/70 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+                  className="w-10 h-10 rounded-full bg-white/90 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(168,85,247,0.35)] shadow-xs"
                 >
-                  <XIcon className="w-3.5 h-3.5" />
+                  <XIcon className="w-4 h-4" />
                 </a>
               )}
               {featuredLeader.socials.linkedin && (
@@ -204,9 +216,9 @@ export default function TeamSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
-                  className="w-9 h-9 rounded-full bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200/70 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+                  className="w-10 h-10 rounded-full bg-white/90 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(168,85,247,0.35)] shadow-xs"
                 >
-                  <LinkedInIcon className="w-3.5 h-3.5" />
+                  <LinkedInIcon className="w-4 h-4" />
                 </a>
               )}
               {featuredLeader.socials.github && (
@@ -215,16 +227,16 @@ export default function TeamSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
-                  className="w-9 h-9 rounded-full bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200/70 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+                  className="w-10 h-10 rounded-full bg-white/90 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(168,85,247,0.35)] shadow-xs"
                 >
-                  <GithubIcon className="w-3.5 h-3.5" />
+                  <GithubIcon className="w-4 h-4" />
                 </a>
               )}
             </div>
           </motion.div>
 
-          {/* Right Column: 2x2 Grid of Compact Horizontal Cards */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
+          {/* Right Column: 2x2 Grid of Enlarged Horizontal Team Cards with 10px Radius & Gradients */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {teamMembers.map((member, idx) => (
               <motion.div
                 key={member.name}
@@ -232,12 +244,12 @@ export default function TeamSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="bg-white hover:bg-[#faf7ff] border border-purple-100 hover:border-purple-300 rounded-[20px] p-4 sm:p-5 flex flex-col justify-between shadow-[0_2px_12px_rgba(147,51,234,0.04)] hover:shadow-[0_12px_28px_rgba(147,51,234,0.09)] transition-all duration-300 group min-h-[145px] sm:min-h-[160px]"
+                className={`${member.cardGradient} border ${member.cardBorder} rounded-[10px] p-5 sm:p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(147,51,234,0.06)] hover:shadow-[0_16px_36px_rgba(147,51,234,0.12)] transition-all duration-300 group min-h-[185px] sm:min-h-[205px]`}
               >
-                {/* Top Row: Small Compact Avatar (Owner k ilava chota image) + Right Socials */}
+                {/* Top Row: Bigger Inner Avatar Image (rounded-[10px]) + Right Socials */}
                 <div className="flex items-start justify-between w-full">
-                  {/* Small Square Avatar on Purple Theme Gradient */}
-                  <div className={`relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-gradient-to-br ${member.gradient} shadow-xs shrink-0 ring-1 ring-purple-200/60`}>
+                  {/* Bigger Avatar on Purple/Vibrant Theme Gradient */}
+                  <div className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-[10px] overflow-hidden bg-gradient-to-br ${member.avatarGradient} shadow-sm shrink-0 ring-1 ring-black/5`}>
                     <img
                       src={member.image}
                       alt={member.name}
@@ -246,17 +258,17 @@ export default function TeamSection() {
                     />
                   </div>
 
-                  {/* Top-Right Compact Social Icons */}
-                  <div className="flex items-center gap-1.5">
+                  {/* Top-Right Social Icons */}
+                  <div className="flex items-center gap-2">
                     {member.socials.github && (
                       <a
                         href={member.socials.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} GitHub`}
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200/60 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-105"
+                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200/80 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-2xs"
                       >
-                        <GithubIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                        <GithubIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </a>
                     )}
                     {member.socials.linkedin && (
@@ -265,20 +277,20 @@ export default function TeamSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} LinkedIn`}
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200/60 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-105"
+                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200/80 hover:border-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-2xs"
                       >
-                        <LinkedInIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                        <LinkedInIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </a>
                     )}
                   </div>
                 </div>
 
                 {/* Bottom Row: Name and Role */}
-                <div className="mt-3.5 sm:mt-4">
-                  <h4 className="text-sm sm:text-base font-bold text-zinc-900 tracking-tight group-hover:text-purple-700 transition-colors">
+                <div className="mt-4 sm:mt-5">
+                  <h4 className="text-base sm:text-lg font-bold text-zinc-900 tracking-tight group-hover:text-purple-700 transition-colors">
                     {member.name}
                   </h4>
-                  <p className="text-[0.72rem] sm:text-xs text-zinc-500 font-medium mt-0.5">
+                  <p className="text-xs sm:text-[0.82rem] text-zinc-600 font-medium mt-1">
                     {member.role}
                   </p>
                 </div>
