@@ -139,11 +139,6 @@ export default function IndustriesSection() {
           >
             I architect custom full-stack web solutions, headless platforms, and local search dominance tailored to the specific conversion mechanics of high-growth sectors.
           </motion.p>
-
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-zinc-400 font-mono">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
-            <span>Interactive 3D Carousel • Drag or Swipe to Rotate</span>
-          </div>
         </div>
 
         {/* 3D Circular Gallery Stage */}
