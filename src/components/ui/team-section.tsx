@@ -244,19 +244,19 @@ export default function TeamSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className={`${member.cardGradient} border ${member.cardBorder} rounded-[10px] p-5 sm:p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(147,51,234,0.10)] transition-all duration-300 group min-h-[200px] sm:min-h-[220px]`}
+                className={`${member.cardGradient} border ${member.cardBorder} rounded-[10px] p-5 sm:p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(147,51,234,0.12)] transition-all duration-300 group min-h-[220px] sm:min-h-[240px]`}
               >
-                {/* Top Row: Large Avatar Image (rounded-[10px]) + Right Socials */}
-                <div className="flex items-start justify-between w-full">
-                  {/* Big Square Avatar (w-20 sm:w-24) on Studio Gradient */}
-                  <div className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-[10px] overflow-hidden bg-gradient-to-br ${member.avatarGradient} shadow-xs shrink-0 ring-1 ring-slate-300/60`}>
+                {/* Top Row: Substantially Enlarged Avatar Image (rounded-[10px]) + Right Socials */}
+                <div className="flex items-start justify-between w-full gap-3">
+                  {/* Big Square Avatar (w-28 sm:w-32 lg:w-36 = 112px to 144px) */}
+                  <div className={`relative w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-[10px] overflow-hidden bg-gradient-to-br ${member.avatarGradient} shadow-sm shrink-0 ring-1 ring-slate-300/60`}>
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {/* Top-Right Social Icons */}
@@ -288,10 +288,10 @@ export default function TeamSection() {
 
                 {/* Bottom Row: Name and Role */}
                 <div className="mt-4 sm:mt-5">
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight group-hover:text-purple-700 transition-colors">
+                  <h4 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight group-hover:text-purple-700 transition-colors">
                     {member.name}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                  <p className="text-xs sm:text-sm text-purple-700 font-semibold mt-1">
                     {member.role}
                   </p>
                 </div>
