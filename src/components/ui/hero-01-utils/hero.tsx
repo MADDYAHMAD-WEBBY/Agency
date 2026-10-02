@@ -123,10 +123,10 @@ export default function HeroSection({ avatarList }: HeroProps) {
       </div>
 
       {/* Whitish Soft Frosted Backdrop Blur Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-white/40 backdrop-blur-[8px] sm:backdrop-blur-[12px] z-0" />
+      <div className="pointer-events-none absolute inset-0 bg-white/65 backdrop-blur-[12px] sm:backdrop-blur-[20px] z-0" />
 
       {/* Soft White Top & Bottom Gradient Overlay for Seamless Contrast */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/50 via-white/10 to-white z-0" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-white/45 to-white z-0" />
 
       {/* Noise Overlay for Subtle Film Grain Finish */}
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-overlay z-0" />
