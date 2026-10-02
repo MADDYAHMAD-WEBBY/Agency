@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { cn } from "@/lib/utils";
 import React, { createContext, useState, useContext, useRef, useEffect } from "react";
@@ -61,10 +61,10 @@ export const CardItem = ({
   rotateX = 0, rotateY = 0, rotateZ = 0,
   ...rest
 }: {
-  as?: React.ElementType; children: React.ReactNode; className?: string;
+  as?: any; children?: React.ReactNode; className?: string;
   translateX?: number | string; translateY?: number | string; translateZ?: number | string;
   rotateX?: number | string; rotateY?: number | string; rotateZ?: number | string;
-  [key: string]: unknown;
+  [key: string]: any;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
@@ -78,10 +78,12 @@ export const CardItem = ({
     }
   }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
+  const Component: any = Tag;
+
   return (
-    <Tag ref={ref} className={cn("w-fit transition duration-200 ease-linear", className)} {...rest}>
+    <Component ref={ref} className={cn("w-fit transition duration-200 ease-linear", className)} {...rest}>
       {children}
-    </Tag>
+    </Component>
   );
 };
 

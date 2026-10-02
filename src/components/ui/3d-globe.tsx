@@ -484,7 +484,7 @@ function Scene({ markers, arcs = [], config, onMarkerClick, onMarkerHover }: Sce
     <>
       {/* Bright daylight 360-degree illumination so Earth colors are light, clear, and visible from all angles */}
       <ambientLight intensity={2.2} />
-      <hemisphereLight skyColor="#ffffff" groundColor="#7dd3fc" intensity={1.5} />
+      <hemisphereLight args={["#ffffff", "#7dd3fc", 1.5]} />
       <directionalLight
         position={[config.radius * 4, config.radius * 4, config.radius * 5]}
         intensity={2.0}

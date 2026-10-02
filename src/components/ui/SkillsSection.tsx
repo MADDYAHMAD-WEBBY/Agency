@@ -41,7 +41,7 @@ import { VscCode } from "react-icons/vsc";
 
 interface SkillItem {
   name: string;
-  icon: React.ElementType;
+  icon: any;
   color: string;
 }
 
