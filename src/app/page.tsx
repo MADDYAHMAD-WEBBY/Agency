@@ -7,6 +7,7 @@ import SkillsSection from "@/components/ui/SkillsSection";
 import IndustriesSection from "@/components/ui/industries-section";
 import TestimonialsSection from "@/components/ui/testimonials-section";
 import TeamSection from "@/components/ui/team-section";
+import CtaSection from "@/components/ui/cta-section";
 
 const navigationData: NavigationSection[] = [
   {
@@ -47,6 +48,7 @@ export default function Home() {
         <IndustriesSection />
         <TestimonialsSection />
         <TeamSection />
+        <CtaSection />
       </main>
     </div>
   );
