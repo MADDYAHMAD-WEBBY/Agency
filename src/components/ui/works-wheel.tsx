@@ -70,21 +70,57 @@ const rad = (deg: number) => (deg * Math.PI) / 180;
 const bowAt = (drumDeg: number, bow: number) =>
   -bow * (1 - Math.cos(rad(drumDeg)));
 
-/** Both states in one chain: the ring terms fall away as `m` reaches the drum,
-    and the drum terms are still zero while the ring is up. */
-function place(
-  ringDeg: number,
-  drumDeg: number,
+/** Computes 3D coordinates & angles in world space to avoid chained-axis tilting and card intersection */
+function getCardTransform(
+  i: number,
+  count: number,
+  pos: number,
+  s: number,
   ringR: number,
   drumR: number,
   bow: number,
-  s: number,
 ) {
-  return (
-    `translateX(${s * bowAt(drumDeg, bow)}px)` +
-    ` rotateZ(${(1 - s) * ringDeg}deg) translateY(${-(1 - s) * ringR}px)` +
-    ` rotateX(${s * drumDeg}deg) translateZ(${s * drumR}px)`
-  );
+  // Shortest-path ring angle normalized to [-180, 180] deg
+  let ringDeg = (i * 360) / count;
+  if (ringDeg > 180) ringDeg -= 360;
+  const ringRad = rad(ringDeg);
+
+  // 1. Ring coordinates (s = 0): Flat circle in XY plane, tangent to circle
+  const xRing = ringR * Math.sin(ringRad);
+  const yRing = -ringR * Math.cos(ringRad);
+  const zRing = 0;
+  const rotZRing = ringDeg;
+  const rotXRing = 0;
+
+  // 2. Drum coordinates:
+  // When s < 1 (during transition), each card maps to its closest drum slot around Card 0:
+  // dTrans in [-count/2, count/2]
+  // When s = 1 (full drum scrolling), card follows the scroll position:
+  // dDrum = i - pos
+  const dDrum = i - pos;
+  const dTrans = ringDeg / (360 / count);
+  const d = s < 1 ? dTrans : dDrum;
+
+  const drumDeg = d * STEP;
+  const drumRad = rad(drumDeg);
+  const xDrum = bowAt(drumDeg, bow);
+  const yDrum = drumR * Math.sin(drumRad);
+  const zDrum = -drumR * (1 - Math.cos(drumRad));
+  const rotZDrum = 0;
+  const rotXDrum = drumDeg;
+
+  // 3. Interpolate in world space: zero crossed axes, zero clashing
+  const x = lerp(xRing, xDrum, s);
+  const y = lerp(yRing, yDrum, s);
+  const z = lerp(zRing, zDrum, s);
+  const rotZ = lerp(rotZRing, rotZDrum, s);
+  const rotX = lerp(rotXRing, rotXDrum, s);
+
+  return {
+    transform: `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, ${z.toFixed(2)}px) rotateZ(${rotZ.toFixed(2)}deg) rotateX(${rotX.toFixed(2)}deg)`,
+    d,
+    dDrum,
+  };
 }
 
 export function WorksWheel({
@@ -173,34 +209,53 @@ export function WorksWheel({
 
       const shiftX = s * (metrics.isMobile ? metrics.cardW * 0.28 : 0);
       if (wheelRef.current) {
-        wheelRef.current.style.transform = `translateX(${shiftX}px) translateZ(${-s * drumR}px)`;
+        wheelRef.current.style.transform = `translateX(${shiftX}px)`;
       }
 
       for (let i = 0; i < count; i++) {
-        const d = i - pos;
-        const drumDeg = d * STEP;
         const card = cardRefs.current[i];
-        if (card) {
-          card.style.transform = place(
-            d * (360 / count),
-            drumDeg,
-            ringR,
-            drumR,
-            bow,
-            s,
-          );
+        if (!card) continue;
 
-          // Continuous smooth opacity interpolation: zero popping!
-          let cardOpacity = 1;
-          if (Math.abs(d) > CULL) {
-            // Smoothly fade out as drum forms, fade back in when returning to ring
-            const fade = clamp((s - 0.12) / 0.55, 0, 1);
+        const { transform, d, dDrum } = getCardTransform(
+          i,
+          count,
+          pos,
+          s,
+          ringR,
+          drumR,
+          bow,
+        );
+
+        card.style.transform = transform;
+
+        // Smooth opacity transition without sudden popping
+        let cardOpacity = 1;
+        if (s < 1) {
+          // In transition: Card 0 & Card 1 stay visible, others smoothly fade out as drum forms
+          if (i === 0 || i === 1) {
+            cardOpacity = 1;
+          } else {
+            const fade = clamp((s - 0.10) / 0.50, 0, 1);
             cardOpacity = 1 - fade;
           }
-          card.style.opacity = String(cardOpacity);
-          card.style.zIndex = String(Math.round(100 - Math.abs(d) * (14 * s + 2)));
+        } else {
+          // In Drum mode: Cards outside viewing window (|dDrum| > CULL) fade out
+          const dist = Math.abs(dDrum);
+          if (dist > CULL) {
+            cardOpacity = 0;
+          } else if (dist > 1) {
+            cardOpacity = 1 - (dist - 1) / (CULL - 1);
+          } else {
+            cardOpacity = 1;
+          }
         }
-        const face = card?.firstElementChild as HTMLElement | null;
+
+        card.style.opacity = String(cardOpacity);
+        const zIndexRing = 100 - Math.abs(d) * 2;
+        const zIndexDrum = 100 - Math.abs(dDrum) * 15;
+        card.style.zIndex = String(Math.round(lerp(zIndexRing, zIndexDrum, s)));
+
+        const face = card.firstElementChild as HTMLElement | null;
         if (face) face.style.transform = `scale(${lerp(ringScale, 1, s)})`;
       }
 
