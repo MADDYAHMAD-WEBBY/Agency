@@ -88,7 +88,7 @@ const row2Skills: SkillItem[] = [
 function SkillIcon({ skill }: { skill: SkillItem }) {
   const Icon = skill.icon;
   return (
-    <div className="group relative shrink-0 w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] md:w-[60px] md:h-[60px] lg:w-[62px] lg:h-[62px] rounded-[16px] bg-white border border-slate-200/90 hover:border-purple-400 hover:bg-purple-50/50 transition-all duration-300 flex items-center justify-center cursor-pointer shadow-md hover:scale-110 hover:-translate-y-1 transform-gpu">
+    <div className="group relative shrink-0 w-[52px] h-[52px] sm:w-[56px] sm:h-[56px] md:w-[60px] md:h-[60px] lg:w-[62px] lg:h-[62px] rounded-[16px] bg-white border border-slate-200/90 hover:border-purple-400/80 hover:bg-purple-50/50 transition-all duration-300 flex items-center justify-center cursor-pointer shadow-sm hover:shadow-md hover:scale-105 hover:-translate-y-0.5 transform-gpu">
       <Icon
         className="w-[24px] h-[24px] sm:w-[26px] sm:h-[26px] md:w-[28px] md:h-[28px] lg:w-[30px] lg:h-[30px] transition-transform duration-200 group-hover:scale-110"
         style={{ color: skill.color }}
@@ -158,14 +158,14 @@ export default function SkillsSection() {
         </motion.p>
       </div>
 
-      {/* Marquee Rows Container with localized edge fades */}
-      <div className="relative z-10 w-full flex flex-col gap-3 sm:gap-4 overflow-hidden py-2">
+      {/* Marquee Rows Container with localized edge fades and generous vertical clearance */}
+      <div className="relative z-10 w-full flex flex-col gap-2 sm:gap-3 overflow-hidden py-4 sm:py-6">
         {/* Soft edge gradient fades isolated ONLY to icon rows */}
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-white via-white/80 to-transparent z-20" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-white via-white/80 to-transparent z-20" />
 
         {/* Row 1: Leftward Hardware-Accelerated Marquee */}
-        <div className="w-full overflow-hidden py-3">
+        <div className="w-full overflow-visible py-3 sm:py-4">
           <div className="flex items-center gap-3 sm:gap-4 md:gap-5 w-max animate-marquee-left pause-on-hover">
             {row1Doubled.map((skill, index) => (
               <SkillIcon key={`row1-${skill.name}-${index}`} skill={skill} />
@@ -174,7 +174,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Row 2: Rightward Hardware-Accelerated Marquee */}
-        <div className="w-full overflow-hidden py-3">
+        <div className="w-full overflow-visible py-3 sm:py-4">
           <div className="flex items-center gap-3 sm:gap-4 md:gap-5 w-max animate-marquee-right pause-on-hover">
             {row2Doubled.map((skill, index) => (
               <SkillIcon key={`row2-${skill.name}-${index}`} skill={skill} />
