@@ -115,7 +115,7 @@ function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 export default function TeamSection() {
   return (
-    <section id="team" className="relative z-20 w-full py-10 sm:py-16 bg-white text-zinc-900 overflow-hidden">
+    <section id="team" className="relative z-20 w-full pt-10 sm:pt-16 pb-2 sm:pb-4 bg-white text-zinc-900 overflow-hidden">
       {/* Background Ambient Glow matching purple agency theme */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
