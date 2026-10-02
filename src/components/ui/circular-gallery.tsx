@@ -23,59 +23,182 @@ export interface CircularGalleryProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
-  ({ items, className, radius: customRadius, autoRotateSpeed = 0.06, ...props }, ref) => {
-    const [rotation, setRotation] = useState(0);
-    const [isInteracting, setIsInteracting] = useState(false);
+  ({ items, className, radius: customRadius, autoRotateSpeed = 0.05, ...props }, ref) => {
     const [isMobile, setIsMobile] = useState(false);
-    const animationFrameRef = useRef<number | null>(null);
-    const dragStartX = useRef<number | null>(null);
-    const lastRotation = useRef(0);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const cylinderRef = useRef<HTMLDivElement>(null);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    const currentRot = useRef(0);
+    const targetRot = useRef(0);
+    const velocity = useRef(0);
+    const isDragging = useRef(false);
+    const dragStartX = useRef(0);
+    const dragStartY = useRef(0);
+    const lastDragX = useRef(0);
+    const lastDragTime = useRef(0);
+    const isHorizontalDrag = useRef<boolean | null>(null);
+    const autoRotateActive = useRef(true);
+    const idleTimeout = useRef<number | null>(null);
 
     // Responsive check
     useEffect(() => {
       const check = () => setIsMobile(window.innerWidth < 640);
       check();
-      window.addEventListener('resize', check);
+      window.addEventListener('resize', check, { passive: true });
       return () => window.removeEventListener('resize', check);
     }, []);
 
-    const radius = customRadius ?? (isMobile ? 260 : 425);
+    const radius = customRadius ?? (isMobile ? 250 : 425);
+    const count = items.length;
+    const anglePerItem = count > 0 ? 360 / count : 45;
 
-    // Effect for auto-rotation when not interacting
+    // Direct 60-120fps physics loop with ZERO React state updates per frame
     useEffect(() => {
-      const autoRotate = () => {
-        if (!isInteracting) {
-          setRotation((prev) => (prev + autoRotateSpeed) % 360);
+      let frame = 0;
+      let lastTime = performance.now();
+
+      const loop = (now: number) => {
+        frame = requestAnimationFrame(loop);
+        const dt = Math.min((now - lastTime) / 1000, 0.1);
+        lastTime = now;
+
+        if (!isDragging.current) {
+          if (Math.abs(velocity.current) > 0.04) {
+            // Apply fluid momentum friction decay
+            targetRot.current += velocity.current;
+            velocity.current *= isMobile ? 0.93 : 0.94;
+          } else {
+            velocity.current = 0;
+            // Resume gentle auto-rotation when idle
+            if (autoRotateActive.current) {
+              targetRot.current += autoRotateSpeed;
+            }
+          }
         }
-        animationFrameRef.current = requestAnimationFrame(autoRotate);
+
+        // High-precision smooth lerp easing toward target
+        const diff = targetRot.current - currentRot.current;
+        if (Math.abs(diff) < 0.003) {
+          currentRot.current = targetRot.current;
+        } else {
+          currentRot.current += diff * (isMobile ? 0.16 : 0.12);
+        }
+
+        const rot = currentRot.current;
+
+        // 1. Direct GPU transform on cylinder
+        if (cylinderRef.current) {
+          cylinderRef.current.style.transform = `rotateY(${rot.toFixed(2)}deg)`;
+        }
+
+        // 2. Direct DOM update on cards (opacity, zIndex, front highlight)
+        const rotNorm = ((rot % 360) + 360) % 360;
+        let bestDist = 999;
+        let frontIdx = 0;
+
+        for (let i = 0; i < count; i++) {
+          const card = cardRefs.current[i];
+          if (!card) continue;
+
+          const itemAngle = i * anglePerItem;
+          const relAngle = (itemAngle + rotNorm + 360) % 360;
+          const normAngle = Math.abs(relAngle > 180 ? 360 - relAngle : relAngle);
+
+          if (normAngle < bestDist) {
+            bestDist = normAngle;
+            frontIdx = i;
+          }
+
+          // Smooth curved falloff: front card is crisp, side cards recede gracefully
+          const opacity = Math.max(0.18, 1 - Math.pow(normAngle / 180, 1.35));
+          card.style.opacity = opacity.toFixed(3);
+          card.style.zIndex = String(Math.round(50 - normAngle / 5));
+          card.style.pointerEvents = normAngle < 50 ? 'auto' : 'none';
+
+          const isFront = normAngle < 35;
+          const inner = card.firstElementChild as HTMLElement | null;
+          if (inner) {
+            if (isFront) {
+              inner.style.borderColor = 'rgba(168, 85, 247, 0.45)';
+              inner.style.boxShadow = '0 24px 50px -10px rgba(147, 51, 234, 0.28)';
+            } else {
+              inner.style.borderColor = 'rgba(255, 255, 255, 0.10)';
+              inner.style.boxShadow = '0 20px 40px -15px rgba(0, 0, 0, 0.50)';
+            }
+          }
+        }
+
+        setActiveIndex((prev) => (prev === frontIdx ? prev : frontIdx));
       };
 
-      animationFrameRef.current = requestAnimationFrame(autoRotate);
+      frame = requestAnimationFrame(loop);
+      return () => cancelAnimationFrame(frame);
+    }, [count, anglePerItem, autoRotateSpeed, isMobile]);
 
-      return () => {
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-        }
-      };
-    }, [isInteracting, autoRotateSpeed]);
-
-    const anglePerItem = 360 / items.length;
-
-    // Pointer drag handlers for interactive rotation
+    // Touch & pointer interaction with velocity tracking & non-blocking vertical scroll
     const handlePointerDown = (e: React.PointerEvent) => {
+      isDragging.current = true;
+      autoRotateActive.current = false;
+      velocity.current = 0;
       dragStartX.current = e.clientX;
-      lastRotation.current = rotation;
-      setIsInteracting(true);
-      try {
-        e.currentTarget.setPointerCapture(e.pointerId);
-      } catch (_) {}
+      dragStartY.current = e.clientY;
+      lastDragX.current = e.clientX;
+      lastDragTime.current = performance.now();
+      isHorizontalDrag.current = null;
+
+      if (idleTimeout.current) clearTimeout(idleTimeout.current);
     };
 
     const handlePointerMove = (e: React.PointerEvent) => {
-      if (dragStartX.current === null) return;
-      const deltaX = e.clientX - dragStartX.current;
-      // Dragging left turns forward, dragging right turns back
-      setRotation(lastRotation.current - deltaX * (isMobile ? 0.35 : 0.25));
+      if (!isDragging.current) return;
+
+      const now = performance.now();
+      const dx = e.clientX - dragStartX.current;
+      const dy = e.clientY - dragStartY.current;
+
+      // Discriminate vertical page scroll vs horizontal carousel swipe on touch devices
+      if (e.pointerType === 'touch' && isHorizontalDrag.current === null) {
+        if (Math.abs(dy) > 7 || Math.abs(dx) > 7) {
+          if (Math.abs(dy) > Math.abs(dx)) {
+            // User is scrolling the page vertically: release immediately!
+            isHorizontalDrag.current = false;
+            isDragging.current = false;
+            autoRotateActive.current = true;
+            return;
+          } else {
+            // Horizontal swipe detected: lock to carousel
+            isHorizontalDrag.current = true;
+            try {
+              e.currentTarget.setPointerCapture(e.pointerId);
+            } catch (_) {}
+          }
+        } else {
+          return;
+        }
+      } else if (e.pointerType !== 'touch') {
+        try {
+          if (!e.currentTarget.hasPointerCapture(e.pointerId)) {
+            e.currentTarget.setPointerCapture(e.pointerId);
+          }
+        } catch (_) {}
+      }
+
+      // Calculate instantaneous movement
+      const stepX = e.clientX - lastDragX.current;
+      const dt = Math.max(now - lastDragTime.current, 1);
+      
+      // Calculate velocity for natural momentum on release
+      velocity.current = -(stepX / dt) * (isMobile ? 14 : 10);
+      velocity.current = Math.max(-12, Math.min(12, velocity.current));
+
+      // 1:1 responsive rotation sensitivity
+      const dragSensitivity = isMobile ? 0.38 : 0.28;
+      targetRot.current -= stepX * dragSensitivity;
+
+      lastDragX.current = e.clientX;
+      lastDragTime.current = now;
     };
 
     const handlePointerUp = (e: React.PointerEvent) => {
@@ -84,9 +207,38 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
           e.currentTarget.releasePointerCapture(e.pointerId);
         }
       } catch (_) {}
-      dragStartX.current = null;
-      setTimeout(() => setIsInteracting(false), 800);
+
+      isDragging.current = false;
+      isHorizontalDrag.current = null;
+
+      // If finger was stationary before lift, snap to nearest card
+      if (Math.abs(velocity.current) < 0.3) {
+        const nearestSlot = Math.round(targetRot.current / anglePerItem);
+        targetRot.current = nearestSlot * anglePerItem;
+        velocity.current = 0;
+      }
+
+      // Resume smooth auto-rotation after 2.5s of inactivity
+      idleTimeout.current = window.setTimeout(() => {
+        autoRotateActive.current = true;
+      }, 2500);
     };
+
+    // Helper to rotate to next / previous card on tap
+    const stepTo = (dir: 1 | -1) => {
+      autoRotateActive.current = false;
+      velocity.current = 0;
+      const currentSlot = Math.round(targetRot.current / anglePerItem);
+      targetRot.current = (currentSlot + dir) * anglePerItem;
+
+      if (idleTimeout.current) clearTimeout(idleTimeout.current);
+      idleTimeout.current = window.setTimeout(() => {
+        autoRotateActive.current = true;
+      }, 3000);
+    };
+
+    const cardW = isMobile ? 220 : 300;
+    const cardH = isMobile ? 310 : 410;
 
     return (
       <div
@@ -97,7 +249,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
           "relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none touch-pan-y",
           className
         )}
-        style={{ perspective: isMobile ? '1000px' : '1600px' }}
+        style={{ perspective: isMobile ? '1100px' : '1600px' }}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -105,30 +257,24 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
         {...props}
       >
         <div
-          className="relative w-full h-full"
+          ref={cylinderRef}
+          className="relative w-full h-full will-change-transform"
           style={{
-            transform: `rotateY(${rotation}deg)`,
             transformStyle: 'preserve-3d',
-            transition: isInteracting ? 'none' : 'transform 0.1s ease-out',
           }}
         >
           {items.map((item, i) => {
             const itemAngle = i * anglePerItem;
-            const totalRotation = rotation % 360;
-            const relativeAngle = (itemAngle + totalRotation + 360) % 360;
-            const normalizedAngle = Math.abs(relativeAngle > 180 ? 360 - relativeAngle : relativeAngle);
-            const opacity = Math.max(0.2, 1 - Math.pow(normalizedAngle / 180, 1.4));
-            const isFront = normalizedAngle < 40;
-
-            const cardW = isMobile ? 210 : 300;
-            const cardH = isMobile ? 295 : 410;
 
             return (
               <div
                 key={item.common}
                 role="group"
                 aria-label={item.common}
-                className="absolute transition-opacity duration-300"
+                ref={(node) => {
+                  cardRefs.current[i] = node;
+                }}
+                className="absolute will-change-transform transition-[border-color,box-shadow] duration-300"
                 style={{
                   width: `${cardW}px`,
                   height: `${cardH}px`,
@@ -137,16 +283,14 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   top: '50%',
                   marginLeft: `-${cardW / 2}px`,
                   marginTop: `-${cardH / 2}px`,
-                  opacity: opacity,
-                  zIndex: isFront ? 30 : Math.round(20 - normalizedAngle / 10),
                 }}
               >
-                <div className={cn(
-                  "relative w-full h-full rounded-[10px] overflow-hidden group border transition-all duration-500 bg-zinc-950",
-                  isFront 
-                    ? "border-purple-500/40 shadow-[0_24px_50px_-10px_rgba(147,51,234,0.28)] ring-1 ring-purple-400/30" 
-                    : "border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:border-white/25"
-                )}>
+                <div
+                  className="relative w-full h-full rounded-[10px] overflow-hidden group border border-white/10 transition-all duration-300 bg-zinc-950"
+                  style={{
+                    boxShadow: '0 20px 40px -15px rgba(0,0,0,0.5)',
+                  }}
+                >
                   {/* Background Image with smooth zoom on hover */}
                   <img
                     src={item.photo.url}
@@ -168,7 +312,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     <span className="text-[0.6rem] sm:text-[0.68rem] font-mono font-bold tracking-widest text-purple-400 uppercase block mb-1">
                       Vertical Case
                     </span>
-                    <h3 className="text-lg sm:text-xl font-bold font-serif tracking-tight leading-snug drop-shadow-sm text-white group-hover:text-purple-100 transition-colors">
+                    <h3 className="text-base sm:text-xl font-bold font-serif tracking-tight leading-snug drop-shadow-sm text-white group-hover:text-purple-100 transition-colors">
                       {item.common}
                     </h3>
                     <p className="text-xs sm:text-[0.8rem] font-sans text-zinc-300 font-normal mt-1 leading-relaxed line-clamp-2">
@@ -177,8 +321,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
 
                     {/* Refined capability footer */}
                     {item.photo.by ? (
-                      <div className="border-t border-white/10 pt-2.5 mt-2.5 flex items-center justify-between">
-                        <span className="text-[0.62rem] sm:text-[0.68rem] font-mono text-zinc-400 tracking-wide">
+                      <div className="border-t border-white/10 pt-2 sm:pt-2.5 mt-2 sm:mt-2.5 flex items-center justify-between">
+                        <span className="text-[0.6rem] sm:text-[0.68rem] font-mono text-zinc-400 tracking-wide line-clamp-1">
                           {item.photo.by}
                         </span>
                       </div>
@@ -188,6 +332,35 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
               </div>
             );
           })}
+        </div>
+
+        {/* Mobile Smooth Quick-Tap Controls (Prev / Next & Counter) */}
+        <div className="sm:hidden absolute -bottom-2 z-30 flex items-center gap-2 bg-white/95 backdrop-blur-md rounded-full px-3 py-1 shadow-md border border-zinc-200/80">
+          <button
+            type="button"
+            aria-label="Previous industry"
+            onClick={() => stepTo(1)}
+            className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-600 hover:text-purple-600 active:bg-purple-100 active:scale-95 transition-all"
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          <span className="text-[0.68rem] font-mono font-semibold text-zinc-700 px-1 select-none">
+            {activeIndex + 1} / {count}
+          </span>
+
+          <button
+            type="button"
+            aria-label="Next industry"
+            onClick={() => stepTo(-1)}
+            className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-600 hover:text-purple-600 active:bg-purple-100 active:scale-95 transition-all"
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     );
