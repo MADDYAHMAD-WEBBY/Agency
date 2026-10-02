@@ -257,12 +257,22 @@ export function WorksWheel({
         card.style.zIndex = String(Math.round(lerp(zIndexRing, zIndexDrum, s)));
 
         // Scale management:
-        // Only front cards (0 & 1) expand on the drum, using smoothstep so there is zero acceleration shock.
-        // Dissolving cards stay at ringScale so they NEVER swell up and crash into each other!
+        // In Drum mode (s >= 1), all cards displayed on the drum are full scale (1.0).
+        // During ring <-> drum transition (s < 1), only front cards (0 & 1) expand to full size;
+        // dissolving cards stay at ringScale so they never swell into each other.
         const face = card.firstElementChild as HTMLElement | null;
         if (face) {
-          const scaleProg = s * s * (3 - 2 * s);
-          const targetScale = (i === 0 || i === 1) ? lerp(ringScale, 1, scaleProg) : ringScale;
+          let targetScale = 1;
+          if (s < 1) {
+            if (i === 0 || i === 1) {
+              const scaleProg = s * s * (3 - 2 * s);
+              targetScale = lerp(ringScale, 1, scaleProg);
+            } else {
+              targetScale = ringScale;
+            }
+          } else {
+            targetScale = 1;
+          }
           face.style.transform = `scale(${targetScale.toFixed(4)}) translateZ(0)`;
         }
       }
