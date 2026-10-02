@@ -89,7 +89,7 @@ const industriesData: GalleryItem[] = [
 
 export default function IndustriesSection() {
   return (
-    <section id="industries" className="relative z-10 w-full py-16 sm:py-24 bg-white text-zinc-900 overflow-hidden">
+    <section id="industries" className="relative z-10 w-full py-10 sm:py-16 bg-white text-zinc-900 overflow-hidden">
       {/* Rich Purple Ambient Background Glow matching Skills, Works & Services */}
       <div
         className="absolute inset-0 pointer-events-none z-0"

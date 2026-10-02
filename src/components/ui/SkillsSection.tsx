@@ -108,7 +108,7 @@ export default function SkillsSection() {
   const row2Doubled = [...row2Skills, ...row2Skills];
 
   return (
-    <section id="skills" className="relative z-10 w-full py-16 sm:py-24 flex flex-col items-center overflow-hidden bg-white text-zinc-900 transition-colors duration-300 border-t-0">
+    <section id="skills" className="relative z-10 w-full py-10 sm:py-16 flex flex-col items-center overflow-hidden bg-white text-zinc-900 transition-colors duration-300 border-t-0">
       {/* ===== RICH PURPLE AMBIENT BACKGROUND GLOW ===== */}
       <div
         className="absolute inset-0 pointer-events-none z-0"

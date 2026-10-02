@@ -238,7 +238,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="relative z-10 w-full py-16 sm:py-24 bg-white text-zinc-900 overflow-hidden select-none">
+    <section id="testimonials" className="relative z-10 w-full py-10 sm:py-16 bg-white text-zinc-900 overflow-hidden select-none">
       {/* Rich Purple Ambient Background Glow matching Skills, Works & Services */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -251,7 +251,7 @@ export default function TestimonialsSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header matching Brand Style */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

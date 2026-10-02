@@ -115,7 +115,7 @@ function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 export default function TeamSection() {
   return (
-    <section id="team" className="relative z-20 w-full py-16 sm:py-24 bg-white text-zinc-900 overflow-hidden">
+    <section id="team" className="relative z-20 w-full py-10 sm:py-16 bg-white text-zinc-900 overflow-hidden">
       {/* Background Ambient Glow matching purple agency theme */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -127,7 +127,7 @@ export default function TeamSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

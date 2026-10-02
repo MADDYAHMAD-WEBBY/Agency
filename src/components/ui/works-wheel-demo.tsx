@@ -56,7 +56,7 @@ const WORKS: WorksWheelItem[] = [
 
 export default function WorksWheelDemo() {
   return (
-    <div className="relative w-full py-6 sm:py-20 lg:py-24 bg-white text-zinc-900 overflow-hidden">
+    <div className="relative w-full py-6 sm:py-12 lg:py-14 bg-white text-zinc-900 overflow-hidden">
       
       {/* Rich Purple Ambient Background Glow matching Skills & About sections */}
       <div

@@ -34,11 +34,11 @@ const arcs = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="w-full py-16 sm:py-24 bg-white relative z-20 overflow-hidden">
+    <section id="about" className="w-full py-10 sm:py-16 bg-white relative z-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
