@@ -26,18 +26,6 @@ const navigationData: NavigationSection[] = [
     href: "#works",
   },
   {
-    title: "Skills",
-    href: "#skills",
-  },
-  {
-    title: "Industries",
-    href: "#industries",
-  },
-  {
-    title: "Testimonials",
-    href: "#testimonials",
-  },
-  {
     title: "Pricing",
     href: "#pricing",
   },

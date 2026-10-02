@@ -1,55 +1,234 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { AnimatedTestimonials, type Testimonial } from "@/components/ui/animated-testimonials";
 
-const clientTestimonials: Testimonial[] = [
+interface TestimonialCardData {
+  title: string;
+  quote: string;
+  name: string;
+  designation: string;
+  avatar: string;
+  bgClass: string;
+  borderClass: string;
+}
+
+const testimonials: TestimonialCardData[] = [
   {
+    title: "Page speed jumped from 35 to 99 on mobile",
     quote:
-      "Hamad rebuilt our entire legacy WordPress store into a custom Headless architecture with Next.js. Our mobile Google PageSpeed score jumped from 48 to 99, and our checkout drop-off rate fell by 38% in the first month.",
-    name: "Marcus Vance",
-    designation: "Founder & CEO, Vance Luxury Goods",
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    metric: "+38% Mobile Checkout Rate",
+      "“They migrated our sluggish bloated WordPress store into a custom Next.js App Router + Headless WP architecture. Sub-second load times, zero downtime, and instant checkout.”",
+    name: "Usman Tariq",
+    designation: "CTO, CloudScale Solutions Lahore",
+    avatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80",
+    bgClass: "bg-[#f5f3ff]",
+    borderClass: "border-[#ddd6fe]",
   },
   {
+    title: "Caught hidden image bottlenecks we never knew existed",
     quote:
-      "Before hiring Hamad, our clinic was buried on page 3 of local Google searches. Within 90 days of his Local SEO overhaul and technical site rebuild, we took the #1 spot in the Google 3-Pack across 12 high-intent keywords.",
-    name: "Dr. Elena Rostova",
-    designation: "Medical Director, Apex Health Group",
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-    metric: "#1 Google Map Pack Rank",
+      "“During our store revamp, the team caught that our image pipeline was serving uncompressed 5MB files. They engineered an automated edge optimization pipeline that reduced payload by 80% with zero quality loss. Outstanding agency.”",
+    name: "Hassaan Ahmed",
+    designation: "Co-founder, Apparel E-Commerce Karachi",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=250&q=80",
+    bgClass: "bg-[#f0f9ff]",
+    borderClass: "border-[#bae6fd]",
   },
   {
+    title: "Turned our complex wireframes into a masterpiece",
     quote:
-      "The full-stack web application Hamad engineered for our venture firm replaced three disconnected SaaS tools. His code quality, API architecture, and speed of delivery exceeded agencies that quoted us triple the cost.",
-    name: "Julian Thorne",
-    designation: "Managing Partner, Thorne Capital Partners",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-    metric: "Custom Next.js 15 Web App",
+      "“We handed over raw Figma components and ambiguous briefs. The agency delivered an interactive prototype cleaner than what we imagined. Smooth animations, pixel-perfect responsiveness, and flawless execution.”",
+    name: "Zainab Chaudhry",
+    designation: "Creative Director, Studio Zosh Rawalpindi",
+    avatar:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=250&q=80",
+    bgClass: "bg-[#fff1f2]",
+    borderClass: "border-[#fecdd3]",
   },
   {
+    title: "Ranked #1 for local search keywords within 60 days",
     quote:
-      "Working with Hamad was completely frictionless. He delivered our enterprise platform with zero fluff, solved every Core Web Vital bottleneck, and gave us a backend that our marketing team actually loves editing.",
-    name: "Sophia Sterling",
-    designation: "Head of Marketing, Lumina Cloud Solutions",
-    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
-    metric: "Sub-Second TTFB & Core Web Vitals",
+      "“Their local SEO architecture and programmatic JSON-LD schema synthesis completely transformed our organic reach. Google Business Profile rankings skyrocketed and organic leads increased by 300%.”",
+    name: "Waleed Jutt",
+    designation: "Head of Digital Growth, SEO Islamabad",
+    avatar:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=250&q=80",
+    bgClass: "bg-[#f0fdf4]",
+    borderClass: "border-[#bbf7d0]",
   },
   {
+    title: "Shipped 3 complex full-stack applications on time",
     quote:
-      "If you need an uncompromising technical developer who understands how design and search algorithms intersect to drive revenue, Hamad is in a league of his own. The ROI on our new platform was instant.",
-    name: "David Kelling",
-    designation: "Principal Architect, Kelling Modern Real Estate",
-    src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
-    metric: "Dynamic IDX Platform & Geo-SEO",
+      "“Working with this agency was completely seamless. From building custom API gateways to responsive frontend dashboards, every milestone was delivered ahead of deadline. Rare technical clarity.”",
+    name: "Hamza Shafique",
+    designation: "Operations Lead, Logistics Hub Faisalabad",
+    avatar:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=250&q=80",
+    bgClass: "bg-[#eef2ff]",
+    borderClass: "border-[#c7d2fe]",
+  },
+  {
+    title: "Doubled our organic inbound revenue in under 90 days",
+    quote:
+      "“The team diagnosed our Core Web Vitals crawl budget waste and fixed our indexation bloat. Organic traffic grew by 140% and our customer acquisition cost dropped dramatically.”",
+    name: "Ayesha Malik",
+    designation: "Founder, Bloom Digital Islamabad",
+    avatar:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=250&q=80",
+    bgClass: "bg-[#fefce8]",
+    borderClass: "border-[#fde68a]",
   },
 ];
 
 export default function TestimonialsSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // Physics state (persisted across renders without causing re-renders)
+  const offsetRef = useRef(0);
+  const velocityRef = useRef(0);
+  const isDraggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartYRef = useRef(0);
+  const lastDragXRef = useRef(0);
+  const lastTimeRef = useRef(0);
+  const isHoveredRef = useRef(false);
+  const isHorizontalGestureRef = useRef<boolean | null>(null);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile, { passive: true });
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Card geometry: width + gap
+  const cardWidth = isMobile ? 320 : 380;
+  const gap = 14;
+  const singleSetWidth = testimonials.length * (cardWidth + gap);
+
+  // High-performance direct GPU animation loop (60-120fps)
+  useEffect(() => {
+    let frameId: number;
+    let prevTimestamp = performance.now();
+
+    const animate = (timestamp: number) => {
+      frameId = requestAnimationFrame(animate);
+      const deltaMs = Math.min(timestamp - prevTimestamp, 50);
+      prevTimestamp = timestamp;
+
+      // Base auto-scroll speed: serene, readable drift (approx 36px per second on desktop, 30px on mobile)
+      const baseSpeed = isMobile ? 0.52 : 0.62;
+
+      if (!isDraggingRef.current) {
+        if (Math.abs(velocityRef.current) > 0.08) {
+          // Natural momentum friction decay
+          offsetRef.current += velocityRef.current;
+          velocityRef.current *= 0.94;
+        } else {
+          velocityRef.current = 0;
+          // Apply auto-drift when not hovered (slows down to 20% on hover for effortless reading)
+          const currentSpeed = isHoveredRef.current ? baseSpeed * 0.15 : baseSpeed;
+          offsetRef.current -= currentSpeed;
+        }
+      }
+
+      // Infinite modular wrap-around: seamless looping in BOTH forward and backward directions
+      if (singleSetWidth > 0) {
+        while (offsetRef.current <= -singleSetWidth) {
+          offsetRef.current += singleSetWidth;
+        }
+        while (offsetRef.current > 0) {
+          offsetRef.current -= singleSetWidth;
+        }
+      }
+
+      // Direct GPU transform update on track
+      if (trackRef.current) {
+        trackRef.current.style.transform = `translate3d(${offsetRef.current.toFixed(2)}px, 0, 0)`;
+      }
+    };
+
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [singleSetWidth, isMobile]);
+
+  // Touch and Mouse interactive dragging handlers
+  const handlePointerDown = (e: React.PointerEvent) => {
+    isDraggingRef.current = true;
+    velocityRef.current = 0;
+    dragStartXRef.current = e.clientX;
+    dragStartYRef.current = e.clientY;
+    lastDragXRef.current = e.clientX;
+    lastTimeRef.current = performance.now();
+    isHorizontalGestureRef.current = null;
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDraggingRef.current) return;
+
+    const now = performance.now();
+    const dx = e.clientX - dragStartXRef.current;
+    const dy = e.clientY - dragStartYRef.current;
+
+    // Smart gesture detection on touch: do NOT intercept vertical page scroll!
+    if (e.pointerType === "touch" && isHorizontalGestureRef.current === null) {
+      if (Math.abs(dy) > 7 || Math.abs(dx) > 7) {
+        if (Math.abs(dy) > Math.abs(dx)) {
+          // User is scrolling the page vertically: cancel drag immediately
+          isHorizontalGestureRef.current = false;
+          isDraggingRef.current = false;
+          return;
+        } else {
+          // User is swiping horizontally: lock to carousel
+          isHorizontalGestureRef.current = true;
+          try {
+            e.currentTarget.setPointerCapture(e.pointerId);
+          } catch (_) {}
+        }
+      } else {
+        return;
+      }
+    } else if (e.pointerType !== "touch") {
+      try {
+        if (!e.currentTarget.hasPointerCapture(e.pointerId)) {
+          e.currentTarget.setPointerCapture(e.pointerId);
+        }
+      } catch (_) {}
+    }
+
+    // Step delta
+    const stepX = e.clientX - lastDragXRef.current;
+    const dt = Math.max(now - lastTimeRef.current, 1);
+
+    // Track velocity for inertia release
+    velocityRef.current = (stepX / dt) * 14;
+    velocityRef.current = Math.max(-18, Math.min(18, velocityRef.current));
+
+    // Update position directly
+    offsetRef.current += stepX;
+
+    lastDragXRef.current = e.clientX;
+    lastTimeRef.current = now;
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    try {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      }
+    } catch (_) {}
+
+    isDraggingRef.current = false;
+    isHorizontalGestureRef.current = null;
+  };
+
   return (
-    <section id="testimonials" className="relative z-10 w-full py-16 sm:py-24 bg-white text-zinc-900 overflow-hidden">
+    <section id="testimonials" className="relative z-10 w-full py-16 sm:py-24 bg-white text-zinc-900 overflow-hidden select-none">
       {/* Rich Purple Ambient Background Glow matching Skills, Works & Services */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -62,7 +241,7 @@ export default function TestimonialsSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header matching Brand Style */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -97,13 +276,81 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xs sm:text-sm text-zinc-600 font-medium max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed tracking-normal"
           >
-            Direct testimonials from founders, clinicians, and executives who scaled their search visibility, page speeds, and conversion pipelines with my technical architectures.
+            Direct feedback from founders, agency owners, and growth executives who scaled their search visibility, page speeds, and conversion pipelines with our engineering solutions.
           </motion.p>
         </div>
 
-        {/* Animated Testimonials Interactive Display */}
-        <AnimatedTestimonials testimonials={clientTestimonials} autoplay={true} />
+      </div>
 
+      {/* Interactive Infinite Drag + Auto-Glide Container */}
+      <div
+        ref={containerRef}
+        className="relative w-full overflow-hidden py-4 cursor-grab active:cursor-grabbing touch-pan-y"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
+        onMouseEnter={() => {
+          isHoveredRef.current = true;
+        }}
+        onMouseLeave={() => {
+          isHoveredRef.current = false;
+        }}
+      >
+        {/* Left & Right Soft Fade Gradients */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 z-20 bg-gradient-to-r from-white via-white/80 to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 z-20 bg-gradient-to-l from-white via-white/80 to-transparent" />
+
+        {/* GPU Composited Physics Track: renders 3 sets for infinite bidirectional scrolling */}
+        <div
+          ref={trackRef}
+          className="flex will-change-transform"
+          style={{
+            gap: `${gap}px`,
+            width: "max-content",
+          }}
+        >
+          {/* Triple set guarantees flawless wrap-around buffer in both directions */}
+          {[...testimonials, ...testimonials, ...testimonials].map((item, idx) => (
+            <div
+              key={`card-${idx}`}
+              className={`shrink-0 rounded-[10px] p-5 sm:p-6 flex flex-col justify-between border ${item.borderClass} ${item.bgClass} transition-shadow duration-300 hover:shadow-md select-none`}
+              style={{
+                width: `${cardWidth}px`,
+              }}
+            >
+              <div>
+                <h4 className="font-bold text-zinc-900 text-sm sm:text-base leading-snug tracking-tight mb-2.5">
+                  {item.title}
+                </h4>
+                <p className="text-zinc-600 text-xs sm:text-[0.80rem] leading-relaxed font-mono">
+                  {item.quote}
+                </p>
+              </div>
+
+              <div>
+                <div className="border-t border-black/8 my-3.5 sm:my-4" />
+                <div className="flex items-center gap-3">
+                  <img
+                    src={item.avatar}
+                    alt={item.name}
+                    loading="lazy"
+                    draggable={false}
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover ring-1 ring-black/10 shrink-0 pointer-events-none"
+                  />
+                  <div>
+                    <h5 className="font-bold text-zinc-900 text-xs sm:text-sm font-sans tracking-tight">
+                      {item.name}
+                    </h5>
+                    <p className="text-[0.65rem] sm:text-xs text-zinc-500 font-mono tracking-tight mt-0.5">
+                      {item.designation}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
