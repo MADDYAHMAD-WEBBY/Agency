@@ -171,9 +171,9 @@ export function WorksWheel({
     const cardW = Math.min(h * cardHFactor * CARD_RATIO, w * maxWFactor);
     const cardH = cardW / CARD_RATIO;
     const drumR = cardH * DRUM;
-    const ringR = cardH * (isMobile ? 1.02 : RING_R);
+    const ringR = cardH * (isMobile ? 1.10 : RING_R);
     const ringScale = count
-      ? clamp((((2 * Math.PI * ringR) / count) * 0.90) / (cardW || 1), isMobile ? 0.30 : 0.20, 1)
+      ? clamp((((2 * Math.PI * ringR) / count) * 0.88) / (cardW || 1), isMobile ? 0.27 : 0.20, 1)
       : 1;
     return {
       cardW,
@@ -182,7 +182,7 @@ export function WorksWheel({
       ringScale,
       drumR,
       bow: cardH * (isMobile ? 0.85 : BOW),
-      depth: cardH * LENS,
+      depth: cardH * (isMobile ? 3.2 : LENS),
       title: Math.max(isMobile ? 18 : 28, cardH * TITLE),
       index: Math.max(14, cardH * INDEX),
       isMobile,
@@ -207,9 +207,10 @@ export function WorksWheel({
       const s = m * m * (3 - 2 * m);
       const pos = Math.max(0, t - 1);
 
-      const shiftX = s * (metrics.isMobile ? metrics.cardW * 0.28 : 0);
+      const shiftProgress = s * s * (3 - 2 * s);
+      const shiftX = shiftProgress * (metrics.isMobile ? metrics.cardW * 0.24 : 0);
       if (wheelRef.current) {
-        wheelRef.current.style.transform = `translateX(${shiftX}px)`;
+        wheelRef.current.style.transform = `translateX(${shiftX.toFixed(2)}px)`;
       }
 
       for (let i = 0; i < count; i++) {
@@ -235,8 +236,8 @@ export function WorksWheel({
           if (i === 0 || i === 1) {
             cardOpacity = 1;
           } else {
-            const fade = clamp((s - 0.10) / 0.50, 0, 1);
-            cardOpacity = 1 - fade;
+            const fade = clamp(s / 0.40, 0, 1);
+            cardOpacity = 1 - Math.pow(fade, 1.2);
           }
         } else {
           // In Drum mode: Cards outside viewing window (|dDrum| > CULL) fade out
@@ -250,13 +251,20 @@ export function WorksWheel({
           }
         }
 
-        card.style.opacity = String(cardOpacity);
+        card.style.opacity = cardOpacity.toFixed(3);
         const zIndexRing = 100 - Math.abs(d) * 2;
         const zIndexDrum = 100 - Math.abs(dDrum) * 15;
         card.style.zIndex = String(Math.round(lerp(zIndexRing, zIndexDrum, s)));
 
+        // Scale management:
+        // Only front cards (0 & 1) expand on the drum, and they expand only after leaving the circle.
+        // Dissolving cards stay at ringScale so they NEVER swell up and crash into each other!
         const face = card.firstElementChild as HTMLElement | null;
-        if (face) face.style.transform = `scale(${lerp(ringScale, 1, s)})`;
+        if (face) {
+          const scaleProg = Math.pow(s, 2.2);
+          const targetScale = (i === 0 || i === 1) ? lerp(ringScale, 1, scaleProg) : ringScale;
+          face.style.transform = `scale(${targetScale.toFixed(3)})`;
+        }
       }
 
       // Rapid fade-out: label completely disappears as soon as wheel starts turning (gone by m = 0.25)
