@@ -2,6 +2,7 @@ import Header, { NavigationSection } from "@/components/ui/hero-01-utils/header"
 import AgencyHeroSection from "@/components/ui/hero-01";
 import AboutSection from "@/components/ui/about-section";
 import ServicesSection from "@/components/ui/services-section";
+import WorksWheelDemo from "@/components/ui/works-wheel-demo";
 import SkillsSection from "@/components/ui/SkillsSection";
 
 const navigationData: NavigationSection[] = [
@@ -17,6 +18,10 @@ const navigationData: NavigationSection[] = [
   {
     title: "Services",
     href: "#services",
+  },
+  {
+    title: "Works",
+    href: "#works",
   },
   {
     title: "Skills",
@@ -40,6 +45,9 @@ export default function Home() {
         <AgencyHeroSection />
         <AboutSection />
         <ServicesSection />
+        <section id="works" className="w-full relative z-20">
+          <WorksWheelDemo />
+        </section>
         <SkillsSection />
       </main>
     </div>
