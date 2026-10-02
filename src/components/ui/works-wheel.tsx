@@ -117,7 +117,7 @@ function getCardTransform(
   const rotX = lerp(rotXRing, rotXDrum, s);
 
   return {
-    transform: `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, ${z.toFixed(2)}px) rotateZ(${rotZ.toFixed(2)}deg) rotateX(${rotX.toFixed(2)}deg)`,
+    transform: `translate3d(${x.toFixed(3)}px, ${y.toFixed(3)}px, ${z.toFixed(3)}px) rotateZ(${rotZ.toFixed(3)}deg) rotateX(${rotX.toFixed(3)}deg)`,
     d,
     dDrum,
   };
@@ -257,13 +257,13 @@ export function WorksWheel({
         card.style.zIndex = String(Math.round(lerp(zIndexRing, zIndexDrum, s)));
 
         // Scale management:
-        // Only front cards (0 & 1) expand on the drum, and they expand only after leaving the circle.
+        // Only front cards (0 & 1) expand on the drum, using smoothstep so there is zero acceleration shock.
         // Dissolving cards stay at ringScale so they NEVER swell up and crash into each other!
         const face = card.firstElementChild as HTMLElement | null;
         if (face) {
-          const scaleProg = Math.pow(s, 2.2);
+          const scaleProg = s * s * (3 - 2 * s);
           const targetScale = (i === 0 || i === 1) ? lerp(ringScale, 1, scaleProg) : ringScale;
-          face.style.transform = `scale(${targetScale.toFixed(3)})`;
+          face.style.transform = `scale(${targetScale.toFixed(4)}) translateZ(0)`;
         }
       }
 
@@ -428,16 +428,17 @@ export function WorksWheel({
                   ref={(node: HTMLElement | null) => {
                     cardRefs.current[i] = node;
                   }}
-                  className="group absolute"
+                  className="group absolute will-change-transform"
                   style={{
                     width: metrics.cardW,
                     height: metrics.cardH,
                     marginLeft: -metrics.cardW / 2,
                     marginTop: -metrics.cardH / 2,
                     transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
                   }}
                 >
-                  <span className="bg-zinc-900 shadow-2xl relative block size-full overflow-hidden rounded-2xl ring-1 ring-black/5 group-hover:ring-purple-500/50 transition-all duration-500 group-hover:shadow-[0_24px_50px_rgba(147,51,234,0.18)]">
+                  <span className="bg-zinc-900 shadow-2xl relative block size-full overflow-hidden rounded-2xl ring-1 ring-black/5 group-hover:ring-purple-500/50 transition-[border-color,box-shadow] duration-300 group-hover:shadow-[0_24px_50px_rgba(147,51,234,0.18)] will-change-transform">
                     <img
                       src={item.image}
                       alt={item.title}
