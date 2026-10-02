@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
-const NovatrixBackground = dynamic(
-  () => import("@/components/ui/novatrix-background").then((m) => m.NovatrixBackground),
+const GLSLHills = dynamic(
+  () => import("@/components/ui/glsl-hills").then((m) => m.GLSLHills),
   { ssr: false }
 );
 
@@ -117,19 +117,16 @@ export default function HeroSection({ avatarList }: HeroProps) {
 
   return (
     <section className="relative w-full min-h-[105vh] sm:min-h-[118vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-36 sm:pb-56 bg-white">
-      {/* Official Novatrix WebGL Silk Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <NovatrixBackground />
+      {/* 3D GLSL Hills Background Canvas */}
+      <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
+        <GLSLHills width="100%" height="100%" cameraZ={125} speed={0.4} />
       </div>
 
-      {/* Whitish Soft Frosted Backdrop Blur Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-white/65 backdrop-blur-[12px] sm:backdrop-blur-[20px] z-0" />
-
-      {/* Soft White Top & Bottom Gradient Overlay for Seamless Contrast */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-white/45 to-white z-0" />
+      {/* Soft Light Overlay for Elegant Contrast & Soft Lavender Blend */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 via-white/35 to-white/95 z-0 backdrop-blur-[0.5px]" />
 
       {/* Noise Overlay for Subtle Film Grain Finish */}
-      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-overlay z-0" />
+      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-overlay z-0" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12 pb-10 sm:pb-20">
         
