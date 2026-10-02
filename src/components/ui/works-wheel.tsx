@@ -78,12 +78,12 @@ function place(
   ringR: number,
   drumR: number,
   bow: number,
-  m: number,
+  s: number,
 ) {
   return (
-    `translateX(${m * bowAt(drumDeg, bow)}px)` +
-    ` rotateZ(${(1 - m) * ringDeg}deg) translateY(${-(1 - m) * ringR}px)` +
-    ` rotateX(${m * drumDeg}deg) translateZ(${m * drumR}px)`
+    `translateX(${s * bowAt(drumDeg, bow)}px)` +
+    ` rotateZ(${(1 - s) * ringDeg}deg) translateY(${-(1 - s) * ringR}px)` +
+    ` rotateX(${s * drumDeg}deg) translateZ(${s * drumR}px)`
   );
 }
 
@@ -167,11 +167,13 @@ export function WorksWheel({
 
       const t = turn.current;
       const m = clamp(t, 0, 1);
+      // Cubic smoothstep for seamless acceleration/deceleration between Ring (0) & Drum (1)
+      const s = m * m * (3 - 2 * m);
       const pos = Math.max(0, t - 1);
 
-      const shiftX = m * (metrics.isMobile ? metrics.cardW * 0.28 : 0);
+      const shiftX = s * (metrics.isMobile ? metrics.cardW * 0.28 : 0);
       if (wheelRef.current) {
-        wheelRef.current.style.transform = `translateX(${shiftX}px) translateZ(${-m * drumR}px)`;
+        wheelRef.current.style.transform = `translateX(${shiftX}px) translateZ(${-s * drumR}px)`;
       }
 
       for (let i = 0; i < count; i++) {
@@ -185,13 +187,21 @@ export function WorksWheel({
             ringR,
             drumR,
             bow,
-            m,
+            s,
           );
-          card.style.opacity = m > 0.5 && Math.abs(d) > CULL ? "0" : "1";
-          card.style.zIndex = String(Math.round(100 - Math.abs(d) * 2));
+
+          // Continuous smooth opacity interpolation: zero popping!
+          let cardOpacity = 1;
+          if (Math.abs(d) > CULL) {
+            // Smoothly fade out as drum forms, fade back in when returning to ring
+            const fade = clamp((s - 0.12) / 0.55, 0, 1);
+            cardOpacity = 1 - fade;
+          }
+          card.style.opacity = String(cardOpacity);
+          card.style.zIndex = String(Math.round(100 - Math.abs(d) * (14 * s + 2)));
         }
         const face = card?.firstElementChild as HTMLElement | null;
-        if (face) face.style.transform = `scale(${lerp(ringScale, 1, m)})`;
+        if (face) face.style.transform = `scale(${lerp(ringScale, 1, s)})`;
       }
 
       // Rapid fade-out: label completely disappears as soon as wheel starts turning (gone by m = 0.25)
@@ -323,7 +333,7 @@ export function WorksWheel({
           } catch (_) {}
           dragStart.current = null;
           isHorizontalDrag.current = null;
-          if (target.current > 1) to(Math.round(target.current));
+          to(Math.round(target.current));
         }}
         onPointerCancel={() => {
           dragStart.current = null;

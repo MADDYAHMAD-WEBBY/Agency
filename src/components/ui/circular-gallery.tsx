@@ -39,7 +39,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
       return () => window.removeEventListener('resize', check);
     }, []);
 
-    const radius = customRadius ?? (isMobile ? 320 : 540);
+    const radius = customRadius ?? (isMobile ? 260 : 425);
 
     // Effect for auto-rotation when not interacting
     useEffect(() => {
@@ -97,7 +97,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
           "relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none touch-pan-y",
           className
         )}
-        style={{ perspective: isMobile ? '1200px' : '2200px' }}
+        style={{ perspective: isMobile ? '1000px' : '1600px' }}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -120,8 +120,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
             const opacity = Math.max(0.2, 1 - Math.pow(normalizedAngle / 180, 1.4));
             const isFront = normalizedAngle < 40;
 
-            const cardW = isMobile ? 220 : 280;
-            const cardH = isMobile ? 310 : 390;
+            const cardW = isMobile ? 210 : 300;
+            const cardH = isMobile ? 295 : 410;
 
             return (
               <div
@@ -142,43 +142,60 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 }}
               >
                 <div className={cn(
-                  "relative w-full h-full rounded-2xl shadow-xl overflow-hidden group border transition-all duration-300 bg-zinc-900",
+                  "relative w-full h-full rounded-[22px] overflow-hidden group border transition-all duration-500 bg-zinc-950",
                   isFront 
-                    ? "border-purple-500/50 shadow-[0_20px_40px_rgba(147,51,234,0.22)] ring-1 ring-purple-500/30" 
-                    : "border-white/10 hover:border-white/30"
+                    ? "border-purple-500/40 shadow-[0_24px_50px_-10px_rgba(147,51,234,0.28)] ring-1 ring-purple-400/30" 
+                    : "border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:border-white/25"
                 )}>
+                  {/* Background Image with smooth zoom on hover */}
                   <img
                     src={item.photo.url}
                     alt={item.photo.text}
                     loading="lazy"
                     draggable={false}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
 
-                  {/* Dark subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-90 transition-opacity" />
+                  {/* Multi-layered cinematic gradient overlays for pristine readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 via-50% to-black/25 opacity-95 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent opacity-80" />
 
-                  {/* Badge top tag */}
-                  <div className="absolute top-3 left-3 z-10">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[0.65rem] sm:text-xs font-mono font-semibold bg-black/60 text-purple-300 border border-purple-500/30 backdrop-blur-md">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                      Industry
+                  {/* Subtle top edge light reflection */}
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+                  {/* Top Bar: Sector index & minimal arrow */}
+                  <div className="absolute top-3.5 inset-x-3.5 z-10 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[0.62rem] sm:text-[0.68rem] font-mono font-medium bg-black/50 text-zinc-300 border border-white/10 backdrop-blur-md">
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                      Sector 0{i + 1}
+                    </span>
+                    <span className="w-6 h-6 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white/70 group-hover:text-purple-300 group-hover:border-purple-400/30 transition-all duration-300 group-hover:scale-105">
+                      <svg viewBox="0 0 12 12" className="w-2.5 h-2.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                        <path d="M3 9L9 3M4 3h5v5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </span>
                   </div>
 
-                  {/* Card Content at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 text-white z-10">
-                    <h3 className="text-lg sm:text-xl font-bold font-serif tracking-tight leading-snug drop-shadow-sm text-white group-hover:text-purple-200 transition-colors">
+                  {/* Editorial Bottom Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 text-white z-10 flex flex-col justify-end">
+                    <span className="text-[0.6rem] sm:text-[0.68rem] font-mono font-bold tracking-widest text-purple-400 uppercase block mb-1">
+                      Vertical Case
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold font-serif tracking-tight leading-snug drop-shadow-sm text-white group-hover:text-purple-100 transition-colors">
                       {item.common}
                     </h3>
-                    <p className="text-xs sm:text-sm font-sans text-purple-300/90 font-medium mt-1 leading-snug">
+                    <p className="text-xs sm:text-[0.8rem] font-sans text-zinc-300 font-normal mt-1 leading-relaxed line-clamp-2">
                       {item.binomial}
                     </p>
+
+                    {/* Refined capability footer */}
                     {item.photo.by ? (
-                      <span className="text-[0.65rem] sm:text-[0.7rem] text-zinc-400 block mt-2 opacity-80">
-                        {item.photo.by}
-                      </span>
+                      <div className="border-t border-white/10 pt-2.5 mt-2.5 flex items-center justify-between">
+                        <span className="text-[0.62rem] sm:text-[0.68rem] font-mono text-zinc-400 tracking-wide">
+                          {item.photo.by}
+                        </span>
+                      </div>
                     ) : null}
                   </div>
                 </div>
