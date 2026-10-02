@@ -5,31 +5,19 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
-const CobeGlobe = dynamic(
-  () => import("@/components/ui/cobe-globe").then((m) => m.Globe),
+import type { GlobeMarker } from "@/components/ui/3d-globe";
+
+const Globe3D = dynamic(
+  () => import("@/components/ui/3d-globe").then((m) => m.Globe3D),
   { ssr: false }
 );
 
-const markers = [
-  { id: "bwp", location: [29.3544, 71.6911] as [number, number], label: "Bahawalpur" },
-  { id: "london", location: [51.5074, -0.1278] as [number, number], label: "London" },
-  { id: "tokyo", location: [35.6762, 139.6503] as [number, number], label: "Tokyo" },
-  { id: "dubai", location: [25.2048, 55.2708] as [number, number], label: "Dubai" },
-  { id: "nyc", location: [40.7128, -74.006] as [number, number], label: "New York" },
-];
-
-const arcs = [
-  {
-    id: "bwp-london",
-    from: [29.3544, 71.6911] as [number, number],
-    to: [51.5074, -0.1278] as [number, number],
-    label: "Global Reach",
-  },
-  {
-    id: "bwp-nyc",
-    from: [29.3544, 71.6911] as [number, number],
-    to: [40.7128, -74.006] as [number, number],
-  },
+const globeMarkers: GlobeMarker[] = [
+  { lat: 29.3544, lng: 71.6911, label: "Bahawalpur" },
+  { lat: 51.5074, lng: -0.1278, label: "London" },
+  { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
+  { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+  { lat: 40.7128, lng: -74.006, label: "New York" },
 ];
 
 export default function AboutSection() {
@@ -109,21 +97,21 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* Bottom Cobe Globe Container */}
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-[210px] xs:-bottom-[250px] sm:-bottom-[318px] lg:-bottom-[366px] w-[130%] sm:w-[142%] max-w-none z-0 pointer-events-auto flex items-end justify-center">
+            {/* Bottom 3D Earth Globe Container */}
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-[240px] xs:-bottom-[280px] sm:-bottom-[340px] lg:-bottom-[380px] w-[136%] sm:w-[146%] max-w-none z-0 pointer-events-auto flex items-end justify-center">
               <div className="w-full aspect-square">
-                <CobeGlobe 
-                  markers={markers}
-                  arcs={arcs}
-                  markerColor={[0.85, 0.2, 0.2]}
-                  baseColor={[0.95, 0.94, 0.99]}
-                  arcColor={[0.4, 0.35, 0.9]}
-                  glowColor={[0.92, 0.91, 0.98]}
-                  dark={0}
-                  mapBrightness={8}
-                  markerSize={0.035}
-                  markerElevation={0.02}
+                <Globe3D 
+                  markers={globeMarkers}
                   className="w-full h-full"
+                  config={{
+                    radius: 2.1,
+                    showAtmosphere: false,
+                    bumpScale: 2.2,
+                    autoRotateSpeed: 1.5,
+                    enableZoom: false,
+                    enablePan: false,
+                    backgroundColor: null,
+                  }}
                 />
               </div>
             </div>

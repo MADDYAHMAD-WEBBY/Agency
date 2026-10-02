@@ -12,9 +12,16 @@ import { cn } from "@/lib/utils";
 export interface GlobeMarker {
   lat: number;
   lng: number;
-  src: string;
+  src?: string;
   label?: string;
   size?: number;
+}
+
+export interface GlobeArc {
+  id?: string;
+  from: [number, number];
+  to: [number, number];
+  color?: string;
 }
 
 export interface Globe3DConfig {
@@ -58,6 +65,10 @@ export interface Globe3DConfig {
   ambientIntensity?: number;
   /** Point light intensity */
   pointLightIntensity?: number;
+  /** Emissive glow color for lighting up dark oceans */
+  emissiveColor?: string;
+  /** Emissive intensity */
+  emissiveIntensity?: number;
   /** Background color (null for transparent) */
   backgroundColor?: string | null;
 }
@@ -65,6 +76,8 @@ export interface Globe3DConfig {
 interface Globe3DProps {
   /** Array of markers to display on the globe */
   markers?: GlobeMarker[];
+  /** Array of connecting arcs between markers */
+  arcs?: GlobeArc[];
   /** Globe configuration */
   config?: Globe3DConfig;
   /** Additional CSS classes */
@@ -178,69 +191,64 @@ function Marker({
     onClick?.(marker);
   }, [marker, onClick]);
 
-  // Calculate line center and orientation
-  const { lineCenter, lineQuaternion } = useMemo(() => {
-    const center = surfacePosition.clone().lerp(topPosition, 0.5);
-
-    // Calculate rotation to align cylinder with the direction from surface to top
-    const direction = topPosition.clone().sub(surfacePosition).normalize();
-    const quaternion = new THREE.Quaternion();
-    quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction);
-
-    return { lineCenter: center, lineQuaternion: quaternion };
-  }, [surfacePosition, topPosition]);
+  // Position badge just slightly above surface dot
+  const badgePosition = useMemo(() => {
+    return latLngToVector3(marker.lat, marker.lng, radius * 1.035);
+  }, [marker.lat, marker.lng, radius]);
 
   return (
     <group ref={groupRef} visible={isVisible}>
-      {/* Pin line from surface to image - properly oriented */}
-      <mesh position={lineCenter} quaternion={lineQuaternion}>
-        <cylinderGeometry args={[0.003, 0.003, lineHeight, 8]} />
-        <meshBasicMaterial
-          color={hovered ? "#ffffff" : "#94a3b8"}
-          transparent
-          opacity={hovered ? 0.9 : 0.6}
-        />
-      </mesh>
-
-      {/* Pin point at the surface */}
-      <mesh position={surfacePosition} quaternion={lineQuaternion}>
-        <coneGeometry args={[0.015, 0.04, 8]} />
+      {/* Red dot pin directly on the globe surface */}
+      <mesh position={surfacePosition}>
+        <sphereGeometry args={[0.025, 16, 16]} />
         <meshBasicMaterial color={hovered ? "#f97316" : "#ef4444"} />
       </mesh>
 
-      {/* Circular image at the top */}
-      <group ref={imageGroupRef} position={topPosition}>
+      {/* Clean badge tooltip hovering directly above the pin */}
+      <group ref={imageGroupRef} position={badgePosition}>
         <Html
-          transform
           center
-          sprite
-          distanceFactor={10}
           style={{
             pointerEvents: isVisible ? "auto" : "none",
             opacity: isVisible ? 1 : 0,
-            transition: "opacity 0.15s ease-out",
+            transition: "opacity 0.2s ease-out",
           }}
         >
-          <div
-            className={cn(
-              "cursor-pointer overflow-hidden rounded-full bg-neutral-900 shadow-lg transition-transform duration-200",
-              hovered && "scale-125 shadow-xl ring-1 ring-white/50",
-            )}
-            style={{
-              width: "8px",
-              height: "8px",
-            }}
-            onMouseEnter={handlePointerEnter}
-            onMouseLeave={handlePointerLeave}
-            onClick={handleClick}
-          >
-            <img
-              src={marker.src}
-              alt={marker.label || "Marker"}
-              className="h-full w-full object-cover"
-              draggable={false}
-            />
-          </div>
+          {marker.src ? (
+            <div
+              className={cn(
+                "cursor-pointer overflow-hidden rounded-full bg-neutral-900 shadow-lg transition-transform duration-200",
+                hovered && "scale-125 shadow-xl ring-1 ring-white/50"
+              )}
+              style={{
+                width: "8px",
+                height: "8px",
+              }}
+              onMouseEnter={handlePointerEnter}
+              onMouseLeave={handlePointerLeave}
+              onClick={handleClick}
+            >
+              <img
+                src={marker.src}
+                alt={marker.label || "Marker"}
+                className="h-full w-full object-cover"
+                draggable={false}
+              />
+            </div>
+          ) : null}
+
+          {marker.label && (
+            <div
+              className="flex flex-col items-center select-none pointer-events-none -translate-y-1"
+              onMouseEnter={handlePointerEnter}
+              onMouseLeave={handlePointerLeave}
+            >
+              <div className="px-2 py-0.5 rounded-[2px] bg-[#1a1a2e] text-white text-[9.5px] font-mono font-bold tracking-wider uppercase border border-white/10 shadow-lg whitespace-nowrap">
+                {marker.label}
+              </div>
+              <div className="w-0 h-0 border-x-[3.5px] border-x-transparent border-t-[4px] border-t-[#1a1a2e]" />
+            </div>
+          )}
         </Html>
       </group>
     </group>
@@ -248,12 +256,59 @@ function Marker({
 }
 
 // ============================================================================
-// Rotating Globe with Markers (all rotate together)
+// Arc Component (Smooth 3D Curved Tube connecting 2 lat/lng points)
+// ============================================================================
+
+function GlobeArcTube({
+  from,
+  to,
+  radius,
+  color = "#6366f1",
+}: {
+  from: [number, number];
+  to: [number, number];
+  radius: number;
+  color?: string;
+}) {
+  const tubeGeometry = useMemo(() => {
+    const v1 = latLngToVector3(from[0], from[1], radius * 1.002);
+    const v2 = latLngToVector3(to[0], to[1], radius * 1.002);
+
+    const dist = v1.distanceTo(v2);
+    const maxAltitude = Math.min(radius * 0.38, Math.max(radius * 0.12, dist * 0.22));
+
+    const points: THREE.Vector3[] = [];
+    const segments = 36;
+
+    for (let i = 0; i <= segments; i++) {
+      const t = i / segments;
+      // Interpolate vector and normalize to stay on sphere surface
+      const point = new THREE.Vector3().copy(v1).lerp(v2, t).normalize();
+      // Parabolic altitude arch: 4 * t * (1 - t) reaches 1 at t = 0.5
+      const altitude = maxAltitude * (4 * t * (1 - t));
+      point.multiplyScalar(radius * 1.004 + altitude);
+      points.push(point);
+    }
+
+    const curve = new THREE.CatmullRomCurve3(points);
+    return new THREE.TubeGeometry(curve, 44, radius * 0.0065, 8, false);
+  }, [from, to, radius]);
+
+  return (
+    <mesh geometry={tubeGeometry}>
+      <meshBasicMaterial color={color} transparent opacity={0.9} />
+    </mesh>
+  );
+}
+
+// ============================================================================
+// Rotating Globe with Markers & Arcs (all rotate together)
 // ============================================================================
 
 interface RotatingGlobeProps {
   config: Required<Globe3DConfig>;
   markers: GlobeMarker[];
+  arcs?: GlobeArc[];
   onMarkerClick?: (marker: GlobeMarker) => void;
   onMarkerHover?: (marker: GlobeMarker | null) => void;
 }
@@ -261,6 +316,7 @@ interface RotatingGlobeProps {
 function RotatingGlobe({
   config,
   markers,
+  arcs = [],
   onMarkerClick,
   onMarkerHover,
 }: RotatingGlobeProps) {
@@ -294,14 +350,17 @@ function RotatingGlobe({
 
   return (
     <group ref={groupRef}>
-      {/* Main globe mesh with Earth texture */}
+      {/* Main globe mesh with natural light Earth colors and crisp sapphire oceans */}
       <mesh geometry={geometry}>
         <meshStandardMaterial
           map={earthTexture}
           bumpMap={bumpTexture}
           bumpScale={config.bumpScale * 0.05}
-          roughness={0.7}
-          metalness={0.0}
+          color="#ffffff"
+          emissive="#0e345c"
+          emissiveIntensity={0.35}
+          roughness={0.4}
+          metalness={0.04}
         />
       </mesh>
 
@@ -316,6 +375,17 @@ function RotatingGlobe({
           />
         </mesh>
       )}
+
+      {/* Arcs connecting locations */}
+      {arcs?.map((arc, index) => (
+        <GlobeArcTube
+          key={arc.id || `arc-${index}`}
+          from={arc.from}
+          to={arc.to}
+          radius={config.radius}
+          color={arc.color || "#6366f1"}
+        />
+      ))}
 
       {/* Markers - now inside the rotating group */}
       {markers.map((marker, index) => (
@@ -382,7 +452,7 @@ function Atmosphere({ radius, color, intensity, blur }: AtmosphereProps) {
   }, [color, intensity, fresnelPower]);
 
   return (
-    <mesh scale={[1.12, 1.12, 1.12]}>
+    <mesh scale={[1.03, 1.03, 1.03]}>
       <sphereGeometry args={[radius, 64, 32]} />
       <primitive object={atmosphereMaterial} attach="material" />
     </mesh>
@@ -395,39 +465,47 @@ function Atmosphere({ radius, color, intensity, blur }: AtmosphereProps) {
 
 interface SceneProps {
   markers: GlobeMarker[];
+  arcs?: GlobeArc[];
   config: Required<Globe3DConfig>;
   onMarkerClick?: (marker: GlobeMarker) => void;
   onMarkerHover?: (marker: GlobeMarker | null) => void;
 }
 
-function Scene({ markers, config, onMarkerClick, onMarkerHover }: SceneProps) {
+function Scene({ markers, arcs = [], config, onMarkerClick, onMarkerHover }: SceneProps) {
   const { camera } = useThree();
 
-  // Set initial camera position (pulled back to accommodate markers)
+  // Set camera position so globe is larger and more prominent
   React.useEffect(() => {
-    camera.position.set(0, 0, config.radius * 3.5);
+    camera.position.set(0, 0, config.radius * 3.4);
     camera.lookAt(0, 0, 0);
   }, [camera, config.radius]);
 
   return (
     <>
-      {/* Lighting */}
-      <ambientLight intensity={config.ambientIntensity} />
+      {/* Bright daylight 360-degree illumination so Earth colors are light, clear, and visible from all angles */}
+      <ambientLight intensity={2.2} />
+      <hemisphereLight skyColor="#ffffff" groundColor="#7dd3fc" intensity={1.5} />
       <directionalLight
-        position={[config.radius * 5, config.radius * 2, config.radius * 5]}
-        intensity={config.pointLightIntensity}
+        position={[config.radius * 4, config.radius * 4, config.radius * 5]}
+        intensity={2.0}
         color="#ffffff"
       />
       <directionalLight
-        position={[-config.radius * 3, config.radius, -config.radius * 2]}
-        intensity={config.pointLightIntensity * 0.3}
-        color="#88ccff"
+        position={[-config.radius * 4, config.radius * 2, -config.radius * 3]}
+        intensity={1.4}
+        color="#bae6fd"
+      />
+      <directionalLight
+        position={[0, -config.radius * 3, config.radius * 3]}
+        intensity={1.0}
+        color="#e0f2fe"
       />
 
-      {/* Rotating Globe with Markers */}
+      {/* Rotating Globe with Markers & Arcs */}
       <RotatingGlobe
         config={config}
         markers={markers}
+        arcs={arcs}
         onMarkerClick={onMarkerClick}
         onMarkerHover={onMarkerHover}
       />
@@ -481,7 +559,7 @@ function LoadingFallback() {
 
 const defaultConfig: Required<Globe3DConfig> = {
   radius: 2,
-  globeColor: "#1a1a2e",
+  globeColor: "#c7d2fe",
   textureUrl: DEFAULT_EARTH_TEXTURE,
   bumpMapUrl: DEFAULT_BUMP_TEXTURE,
   showAtmosphere: false,
@@ -489,7 +567,7 @@ const defaultConfig: Required<Globe3DConfig> = {
   atmosphereIntensity: 0.5,
   atmosphereBlur: 2,
   bumpScale: 1,
-  autoRotateSpeed: 0.3,
+  autoRotateSpeed: 1.5,
   enableZoom: false,
   enablePan: false,
   minDistance: 5,
@@ -498,13 +576,16 @@ const defaultConfig: Required<Globe3DConfig> = {
   markerSize: 0.06,
   showWireframe: false,
   wireframeColor: "#4a9eff",
-  ambientIntensity: 0.6,
-  pointLightIntensity: 1.5,
+  ambientIntensity: 2.2,
+  pointLightIntensity: 1.2,
+  emissiveColor: "#e8e5fb",
+  emissiveIntensity: 0.78,
   backgroundColor: null,
 };
 
 export function Globe3D({
   markers = [],
+  arcs = [],
   config = {},
   className,
   onMarkerClick,
@@ -528,7 +609,7 @@ export function Globe3D({
           fov: 45,
           near: 0.1,
           far: 1000,
-          position: [0, 0, mergedConfig.radius * 3.5],
+          position: [0, 0, mergedConfig.radius * 3.4],
         }}
         style={{
           background: mergedConfig.backgroundColor || "transparent",
@@ -537,6 +618,7 @@ export function Globe3D({
         <Suspense fallback={<LoadingFallback />}>
           <Scene
             markers={markers}
+            arcs={arcs}
             config={mergedConfig}
             onMarkerClick={onMarkerClick}
             onMarkerHover={onMarkerHover}
