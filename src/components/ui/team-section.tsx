@@ -19,8 +19,8 @@ interface TeamMember {
 
 // Owner / Featured Leader Card (Mature Executive Periwinkle-Indigo Palette)
 const featuredLeader = {
-  name: "Hamad Ahmad",
-  role: "Founder & Full-Stack Architect",
+  name: "Muhammad Hafeez Khan",
+  role: "Founder",
   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85",
   cardGradient: "bg-gradient-to-br from-[#ede9fe] via-[#f3f0ff] to-[#e0e7ff]",
   cardBorder: "border-purple-300/90 hover:border-purple-500",
@@ -34,6 +34,18 @@ const featuredLeader = {
 
 // 4 Team Members with mature, executive slate/lavender/indigo gradients (No black, No candy colors)
 const teamMembers: TeamMember[] = [
+  {
+    name: "Hamad Ahmad",
+    role: "Full-Stack Developer & Local SEO Expert",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85",
+    cardGradient: "bg-gradient-to-br from-[#f0f4ff] via-[#e8efff] to-[#ede9fe]",
+    cardBorder: "border-indigo-200/90 hover:border-indigo-400",
+    avatarGradient: "from-[#1e1b4b] via-[#3730a3] to-[#4f46e5]",
+    socials: {
+      github: "https://github.com",
+      linkedin: "https://linkedin.com",
+    },
+  },
   {
     name: "Bilal Tariq",
     role: "Senior Full-Stack Engineer",
@@ -53,18 +65,6 @@ const teamMembers: TeamMember[] = [
     cardGradient: "bg-gradient-to-br from-[#faf5ff] via-[#f5f3ff] to-[#ede9fe]",
     cardBorder: "border-purple-200/90 hover:border-purple-400",
     avatarGradient: "from-[#581c87] via-[#7c3aed] to-[#a855f7]",
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-    },
-  },
-  {
-    name: "Usman Farooq",
-    role: "Technical SEO & Growth Specialist",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85",
-    cardGradient: "bg-gradient-to-br from-[#f0f4ff] via-[#e8efff] to-[#ede9fe]",
-    cardBorder: "border-indigo-200/90 hover:border-indigo-400",
-    avatarGradient: "from-[#1e1b4b] via-[#3730a3] to-[#4f46e5]",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
