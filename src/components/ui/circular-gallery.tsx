@@ -50,7 +50,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
       return () => window.removeEventListener('resize', check);
     }, []);
 
-    const radius = customRadius ?? (isMobile ? 250 : 425);
+    const radius = customRadius ?? (isMobile ? 340 : 440);
     const count = items.length;
     const anglePerItem = count > 0 ? 360 / count : 45;
 
@@ -237,8 +237,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
       }, 3000);
     };
 
-    const cardW = isMobile ? 220 : 300;
-    const cardH = isMobile ? 310 : 410;
+    const cardW = isMobile ? 195 : 290;
+    const cardH = isMobile ? 285 : 405;
 
     return (
       <div
