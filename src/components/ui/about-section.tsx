@@ -5,17 +5,19 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
-const CobeGlobe = dynamic(
-  () => import("@/components/ui/cobe-globe").then((m) => m.Globe),
+import type { GlobeMarker } from "@/components/ui/3d-globe";
+
+const Globe3D = dynamic(
+  () => import("@/components/ui/3d-globe").then((m) => m.Globe3D),
   { ssr: false }
 );
 
-const globeMarkers = [
-  { id: "bwp", location: [29.3544, 71.6911] as [number, number], label: "Bahawalpur" },
-  { id: "london", location: [51.5074, -0.1278] as [number, number], label: "London" },
-  { id: "tokyo", location: [35.6762, 139.6503] as [number, number], label: "Tokyo" },
-  { id: "dubai", location: [25.2048, 55.2708] as [number, number], label: "Dubai" },
-  { id: "nyc", location: [40.7128, -74.006] as [number, number], label: "New York" },
+const globeMarkers: GlobeMarker[] = [
+  { lat: 29.3544, lng: 71.6911, label: "Bahawalpur" },
+  { lat: 51.5074, lng: -0.1278, label: "London" },
+  { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
+  { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+  { lat: 40.7128, lng: -74.006, label: "New York" },
 ];
 
 export default function AboutSection() {
@@ -95,21 +97,25 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* Bottom Globe Container */}
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-[210px] xs:-bottom-[250px] sm:-bottom-[318px] lg:-bottom-[360px] w-[130%] sm:w-[142%] max-w-none z-0 pointer-events-auto flex items-end justify-center">
+            {/* Bottom 3D NASA Earth Globe Container */}
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-[220px] xs:-bottom-[260px] sm:-bottom-[320px] lg:-bottom-[360px] w-[132%] sm:w-[144%] max-w-none z-0 pointer-events-auto flex items-end justify-center">
               <div className="w-full aspect-square">
-                <CobeGlobe 
+                <Globe3D 
                   markers={globeMarkers}
                   arcs={[]}
-                  markerColor={[0.92, 0.25, 0.25]}
-                  baseColor={[0.85, 0.82, 0.95]}
-                  glowColor={[0.94, 0.93, 0.98]}
-                  dark={0}
-                  mapBrightness={7}
-                  markerSize={0.035}
-                  markerElevation={0.015}
-                  speed={0.007}
                   className="w-full h-full"
+                  config={{
+                    radius: 2.1,
+                    showAtmosphere: true,
+                    atmosphereColor: "#818cf8",
+                    atmosphereIntensity: 0.6,
+                    atmosphereBlur: 3,
+                    bumpScale: 1.5,
+                    autoRotateSpeed: 2.2,
+                    enableZoom: false,
+                    enablePan: false,
+                    backgroundColor: null,
+                  }}
                 />
               </div>
             </div>

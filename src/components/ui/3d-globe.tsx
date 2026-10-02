@@ -92,10 +92,8 @@ interface Globe3DProps {
 // Constants - Earth Texture URLs (NASA Blue Marble)
 // ============================================================================
 
-const DEFAULT_EARTH_TEXTURE =
-  "https://cdn.21st.dev/assets/localized/228deba2e4b600146bdcb6cfa359b8ead6aacc2b1c13550a29cd82824cfa1c01.jpg";
-const DEFAULT_BUMP_TEXTURE =
-  "https://cdn.21st.dev/assets/localized/839b12da2e4dd346b256cebae72e10c479a102c8980a22084c41275e4b9a0e12.png";
+const DEFAULT_EARTH_TEXTURE = "/textures/earth-map.jpg";
+const DEFAULT_BUMP_TEXTURE = "/textures/earth-bump.png";
 
 // ============================================================================
 // Utility Functions
