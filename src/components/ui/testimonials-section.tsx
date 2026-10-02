@@ -121,19 +121,25 @@ export default function TestimonialsSection() {
       const deltaMs = Math.min(timestamp - prevTimestamp, 50);
       prevTimestamp = timestamp;
 
-      // Base auto-scroll speed: serene, readable drift (approx 36px per second on desktop, 30px on mobile)
-      const baseSpeed = isMobile ? 0.52 : 0.62;
+      // Delta time factor normalized to 60fps (16.666ms) for buttery 60Hz/120Hz ProMotion consistency
+      const dtFactor = Math.min(deltaMs / 16.666, 2.5);
+
+      // Movement speed:
+      // Mobile: fast, fluid continuous marquee (~70px/sec at baseSpeed 1.15)
+      // Desktop: refined, smooth pace (~55px/sec at baseSpeed 0.85)
+      const baseSpeed = isMobile ? 1.15 : 0.85;
 
       if (!isDraggingRef.current) {
-        if (Math.abs(velocityRef.current) > 0.08) {
-          // Natural momentum friction decay
-          offsetRef.current += velocityRef.current;
-          velocityRef.current *= 0.94;
+        if (Math.abs(velocityRef.current) > 0.06) {
+          // Natural momentum friction decay with dtFactor
+          offsetRef.current += velocityRef.current * dtFactor;
+          velocityRef.current *= Math.pow(isMobile ? 0.96 : 0.94, dtFactor);
         } else {
           velocityRef.current = 0;
-          // Apply auto-drift when not hovered (slows down to 20% on hover for effortless reading)
-          const currentSpeed = isHoveredRef.current ? baseSpeed * 0.15 : baseSpeed;
-          offsetRef.current -= currentSpeed;
+          // Hover pause only applies to desktop mouse interactions (never freeze on mobile touch)
+          const isSlowed = !isMobile && isHoveredRef.current;
+          const currentSpeed = isSlowed ? baseSpeed * 0.20 : baseSpeed;
+          offsetRef.current -= currentSpeed * dtFactor;
         }
       }
 
@@ -177,7 +183,7 @@ export default function TestimonialsSection() {
 
     // Smart gesture detection on touch: do NOT intercept vertical page scroll!
     if (e.pointerType === "touch" && isHorizontalGestureRef.current === null) {
-      if (Math.abs(dy) > 7 || Math.abs(dx) > 7) {
+      if (Math.abs(dy) > 5 || Math.abs(dx) > 5) {
         if (Math.abs(dy) > Math.abs(dx)) {
           // User is scrolling the page vertically: cancel drag immediately
           isHorizontalGestureRef.current = false;
@@ -186,6 +192,8 @@ export default function TestimonialsSection() {
         } else {
           // User is swiping horizontally: lock to carousel
           isHorizontalGestureRef.current = true;
+          lastDragXRef.current = e.clientX;
+          lastTimeRef.current = now;
           try {
             e.currentTarget.setPointerCapture(e.pointerId);
           } catch (_) {}
@@ -205,9 +213,10 @@ export default function TestimonialsSection() {
     const stepX = e.clientX - lastDragXRef.current;
     const dt = Math.max(now - lastTimeRef.current, 1);
 
-    // Track velocity for inertia release
-    velocityRef.current = (stepX / dt) * 14;
-    velocityRef.current = Math.max(-18, Math.min(18, velocityRef.current));
+    // Track responsive velocity for inertia release
+    const instantVelocity = (stepX / dt) * 16;
+    velocityRef.current = velocityRef.current * 0.25 + instantVelocity * 0.75;
+    velocityRef.current = Math.max(-28, Math.min(28, velocityRef.current));
 
     // Update position directly
     offsetRef.current += stepX;
@@ -224,6 +233,7 @@ export default function TestimonialsSection() {
     } catch (_) {}
 
     isDraggingRef.current = false;
+    isHoveredRef.current = false;
     isHorizontalGestureRef.current = null;
   };
 
@@ -291,10 +301,10 @@ export default function TestimonialsSection() {
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
         onMouseEnter={() => {
-          isHoveredRef.current = true;
+          if (!isMobile) isHoveredRef.current = true;
         }}
         onMouseLeave={() => {
-          isHoveredRef.current = false;
+          if (!isMobile) isHoveredRef.current = false;
         }}
       >
         {/* Left & Right Soft Fade Gradients */}
