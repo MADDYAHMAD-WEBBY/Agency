@@ -4,6 +4,7 @@ import AboutSection from "@/components/ui/about-section";
 import ServicesSection from "@/components/ui/services-section";
 import WorksWheelDemo from "@/components/ui/works-wheel-demo";
 import SkillsSection from "@/components/ui/SkillsSection";
+import IndustriesSection from "@/components/ui/industries-section";
 
 const navigationData: NavigationSection[] = [
   {
@@ -28,6 +29,10 @@ const navigationData: NavigationSection[] = [
     href: "#skills",
   },
   {
+    title: "Industries",
+    href: "#industries",
+  },
+  {
     title: "Team",
     href: "#team",
   },
@@ -49,6 +54,7 @@ export default function Home() {
           <WorksWheelDemo />
         </section>
         <SkillsSection />
+        <IndustriesSection />
       </main>
     </div>
   );
