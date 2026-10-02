@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
-const GLSLHills = dynamic(
-  () => import("@/components/ui/glsl-hills").then((m) => m.GLSLHills),
+const NovatrixBackground = dynamic(
+  () => import("@/components/ui/novatrix-background").then((m) => m.NovatrixBackground),
   { ssr: false }
 );
 
@@ -116,19 +116,19 @@ export default function HeroSection({ avatarList }: HeroProps) {
     "At shadcn space, I help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.";
 
   return (
-    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-20 sm:pb-28 bg-white">
-      {/* 3D GLSL Hills Background Canvas */}
-      <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
-        <GLSLHills width="100%" height="100%" cameraZ={125} speed={0.4} />
+    <section className="relative w-full min-h-[105vh] sm:min-h-[118vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-36 sm:pb-56 bg-white">
+      {/* Official Novatrix WebGL Silk Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <NovatrixBackground />
       </div>
 
-      {/* Soft Light Overlay for Elegant Contrast & Soft Lavender Blend */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 via-white/35 to-white/95 z-0 backdrop-blur-[0.5px]" />
+      {/* Subtle Top & Bottom Fade Overlay for Smooth Header/Footer Blend */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/80 z-0" />
 
       {/* Noise Overlay for Subtle Film Grain Finish */}
       <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-overlay z-0" />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12 pb-10 sm:pb-20">
         
         {/* Dynamic Rotating Headline with Fade-Up */}
         <motion.div
@@ -153,7 +153,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.48, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-12"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-20"
         >
           {/* Black Get Started Button */}
           <AnimatedPillButton text="Get Started" />
@@ -192,7 +192,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
       </div>
 
       {/* Ultra-Smooth Seamless Blend Transition to Light Brand Slider */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-gradient-to-b from-transparent via-white/90 to-white pointer-events-none z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-36 sm:h-52 bg-gradient-to-b from-transparent via-white/80 to-white pointer-events-none z-10" />
     </section>
   );
 }
