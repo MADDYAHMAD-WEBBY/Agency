@@ -110,7 +110,7 @@ export default function IndustriesSection() {
             transition={{ duration: 0.6 }}
             className="text-xs sm:text-sm font-semibold tracking-wider text-purple-600 uppercase mb-2 sm:mb-3"
           >
-            Sectors & Specialized Verticals
+            Industries & Specialized Verticals
           </motion.h2>
 
           <motion.h3
