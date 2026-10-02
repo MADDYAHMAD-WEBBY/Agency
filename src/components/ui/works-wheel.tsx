@@ -51,6 +51,7 @@ const CULL = 1.6;
 /** How much of a wheel-notch or a dragged pixel counts as one item. */
 const WHEEL_UNITS = 900;
 const DRAG_UNITS = 420;
+const TOUCH_DRAG_UNITS = 240;
 /** Quiet time after the last wheel event before the wheel settles on an item. */
 const SETTLE = 140;
 /** Fraction of the remaining distance closed each frame. 1 = no smoothing. */
@@ -241,7 +242,8 @@ export function WorksWheel({
     };
   }, [to, last]);
 
-  const drag = React.useRef<number | null>(null);
+  const dragStart = React.useRef<{ x: number; y: number; turn: number } | null>(null);
+  const isHorizontalDrag = React.useRef<boolean | null>(null);
   const settling = React.useRef(0);
 
   return (
@@ -259,23 +261,73 @@ export function WorksWheel({
         role="listbox"
         aria-label={label}
         aria-activedescendant={`works-wheel-${active}`}
-        className="focus-visible:outline-purple-600 absolute inset-0 cursor-grab touch-pan-x outline-none active:cursor-grabbing"
+        className="focus-visible:outline-purple-600 absolute inset-0 cursor-grab touch-pan-y outline-none active:cursor-grabbing"
         style={{
           perspective: `${metrics.depth}px`,
           transformStyle: "preserve-3d",
         }}
         onPointerDown={(event) => {
-          drag.current = event.clientY;
-          event.currentTarget.setPointerCapture(event.pointerId);
+          dragStart.current = {
+            x: event.clientX,
+            y: event.clientY,
+            turn: target.current,
+          };
+          isHorizontalDrag.current = null;
         }}
         onPointerMove={(event) => {
-          if (drag.current === null) return;
-          to(target.current + (drag.current - event.clientY) / DRAG_UNITS);
-          drag.current = event.clientY;
+          if (!dragStart.current) return;
+          const dx = event.clientX - dragStart.current.x;
+          const dy = event.clientY - dragStart.current.y;
+
+          if (event.pointerType === "touch") {
+            // Determine horizontal swipe vs vertical page scroll
+            if (isHorizontalDrag.current === null) {
+              if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+                if (Math.abs(dx) > Math.abs(dy)) {
+                  // User intentionally swiped horizontally to turn the wheel
+                  isHorizontalDrag.current = true;
+                  try {
+                    event.currentTarget.setPointerCapture(event.pointerId);
+                  } catch (_) {}
+                } else {
+                  // User is swiping vertically to scroll the page: DO NOT intercept!
+                  isHorizontalDrag.current = false;
+                  dragStart.current = null;
+                  return;
+                }
+              } else {
+                return;
+              }
+            }
+
+            if (isHorizontalDrag.current) {
+              to(dragStart.current.turn - dx / TOUCH_DRAG_UNITS);
+            }
+          } else {
+            // Desktop mouse drag
+            if (Math.abs(dy) > 4 || Math.abs(dx) > 4) {
+              try {
+                if (!event.currentTarget.hasPointerCapture(event.pointerId)) {
+                  event.currentTarget.setPointerCapture(event.pointerId);
+                }
+              } catch (_) {}
+            }
+            to(dragStart.current.turn + (dragStart.current.y - event.clientY) / DRAG_UNITS);
+          }
         }}
-        onPointerUp={() => {
-          drag.current = null;
+        onPointerUp={(event) => {
+          try {
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId);
+            }
+          } catch (_) {}
+          dragStart.current = null;
+          isHorizontalDrag.current = null;
           if (target.current > 1) to(Math.round(target.current));
+        }}
+        onPointerCancel={() => {
+          dragStart.current = null;
+          isHorizontalDrag.current = null;
         }}
         onKeyDown={(event) => {
           if (event.key === "ArrowDown") to(Math.round(target.current) + 1);
@@ -361,7 +413,7 @@ export function WorksWheel({
         </span>
         <span className="text-[0.6rem] sm:text-xs font-mono font-medium tracking-widest text-purple-600/80 uppercase mt-0.5 sm:mt-1 flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
-          <span>Drag or Scroll</span>
+          <span>{metrics.isMobile ? "Swipe ↔ or Tap" : "Drag or Scroll"}</span>
         </span>
       </div>
 
@@ -413,6 +465,37 @@ export function WorksWheel({
           </li>
         ))}
       </ol>
+
+      {/* Mobile Touch Navigation Controls (Prev / Next & Counter) */}
+      <div className="sm:hidden absolute bottom-2 right-3 z-30 flex items-center gap-1.5 bg-white/90 backdrop-blur-md rounded-full px-2.5 py-1 shadow-md border border-zinc-200/80">
+        <button
+          type="button"
+          aria-label="Previous project"
+          onClick={() => to(Math.max(0, Math.round(target.current) - 1))}
+          disabled={active === 0 && target.current <= 0}
+          className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-600 hover:text-purple-600 hover:bg-purple-50 active:scale-95 transition-all disabled:opacity-30 disabled:pointer-events-none"
+        >
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        <span className="text-[0.68rem] font-mono font-semibold text-zinc-700 px-1 select-none">
+          {target.current < 0.5 ? "Ring" : `${active + 1} / ${count}`}
+        </span>
+
+        <button
+          type="button"
+          aria-label="Next project"
+          onClick={() => to(Math.min(last + 1, Math.round(target.current) + 1))}
+          disabled={target.current >= last + 1}
+          className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-600 hover:text-purple-600 hover:bg-purple-50 active:scale-95 transition-all disabled:opacity-30 disabled:pointer-events-none"
+        >
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </section>
   );
 }
