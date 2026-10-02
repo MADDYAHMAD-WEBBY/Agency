@@ -122,11 +122,14 @@ export default function HeroSection({ avatarList }: HeroProps) {
         <NovatrixBackground />
       </div>
 
-      {/* Subtle Top & Bottom Fade Overlay for Smooth Header/Footer Blend */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/80 z-0" />
+      {/* Whitish Soft Frosted Backdrop Blur Overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-white/40 backdrop-blur-[8px] sm:backdrop-blur-[12px] z-0" />
+
+      {/* Soft White Top & Bottom Gradient Overlay for Seamless Contrast */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/50 via-white/10 to-white z-0" />
 
       {/* Noise Overlay for Subtle Film Grain Finish */}
-      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-overlay z-0" />
+      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-overlay z-0" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12 pb-10 sm:pb-20">
         
