@@ -6,6 +6,7 @@ import WorksWheelDemo from "@/components/ui/works-wheel-demo";
 import SkillsSection from "@/components/ui/SkillsSection";
 import IndustriesSection from "@/components/ui/industries-section";
 import TestimonialsSection from "@/components/ui/testimonials-section";
+import TeamSection from "@/components/ui/team-section";
 
 const navigationData: NavigationSection[] = [
   {
@@ -45,6 +46,7 @@ export default function Home() {
         <SkillsSection />
         <IndustriesSection />
         <TestimonialsSection />
+        <TeamSection />
       </main>
     </div>
   );
