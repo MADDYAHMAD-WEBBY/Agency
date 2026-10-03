@@ -36,16 +36,16 @@ export default function Header({ navigationData }: HeaderProps) {
           </div>
         </Link>
 
-        {/* Center Nav: Light Glass Segmented Pill */}
-        <nav className="hidden md:flex items-center gap-1 bg-zinc-100/90 backdrop-blur-md p-1.5 rounded-full border border-zinc-200/80 shadow-xs">
+        {/* Center Nav: Premium Glassmorphic Segmented Pill */}
+        <nav className="hidden md:flex items-center gap-1 bg-white/40 backdrop-blur-xl p-1.5 rounded-full border border-white/70 shadow-[inset_0_1px_2px_0_rgba(255,255,255,0.95),0_8px_32px_0_rgba(147,51,234,0.08)] transition-all">
           {navigationData.map((item, index) => (
             <Link
               key={index}
               href={item.href}
-              className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+              className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                 item.isActive
-                  ? "bg-white text-black font-semibold shadow-xs border border-zinc-200/80"
-                  : "text-zinc-600 hover:text-black hover:bg-zinc-200/60"
+                  ? "bg-white/95 text-black font-semibold shadow-sm border border-white/80 backdrop-blur-md"
+                  : "text-zinc-700 hover:text-purple-950 hover:bg-white/60"
               }`}
             >
               {item.title}

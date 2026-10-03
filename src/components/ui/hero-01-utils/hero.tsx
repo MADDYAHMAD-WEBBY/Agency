@@ -1,14 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
-
-const GLSLHills = dynamic(
-  () => import("@/components/ui/glsl-hills").then((m) => m.GLSLHills),
-  { ssr: false }
-);
+import ParticlesComponent from "@/components/ui/particles-bg";
 
 export interface AvatarList {
   image: string;
@@ -47,7 +42,7 @@ function TypewriterSubtitle({ text, delayStart = 850 }: { text: string; delaySta
   }, [text, delayStart]);
 
   return (
-    <p className="text-xs sm:text-sm text-zinc-800 font-medium max-w-lg sm:max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed px-2 sm:px-4 min-h-[52px] sm:min-h-[44px] flex items-center justify-center">
+    <p className="text-xs sm:text-sm text-zinc-700 font-medium max-w-lg sm:max-w-xl mx-auto mb-6 sm:mb-10 leading-relaxed px-2 sm:px-4 min-h-[52px] sm:min-h-[44px] flex items-center justify-center">
       <span>
         {displayedText}
         <span
@@ -96,11 +91,11 @@ function RotatingServicesHeadline() {
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
               transition={{
-                duration: 5,
+                duration: 4,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent pb-1"
+              className="inline-block bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-[length:200%_auto] bg-clip-text text-transparent pb-1"
             >
               {services[currentIndex]}
             </motion.span>
@@ -113,28 +108,26 @@ function RotatingServicesHeadline() {
 
 export default function HeroSection({ avatarList }: HeroProps) {
   const subtitleText =
-    "At shadcn space, I help small startups tackle the world's biggest challenges with tailored solutions, guiding you from strategy to success in a competitive market.";
+    "I help ambitious startups and businesses build high-performing web platforms, Headless WordPress solutions, and local SEO strategies to drive organic growth.";
 
   return (
-    <section className="relative w-full min-h-[105vh] sm:min-h-[118vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-36 sm:pb-56 bg-white">
-      {/* 3D GLSL Hills Background Canvas */}
-      <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
-        <GLSLHills width="100%" height="100%" cameraZ={125} speed={0.4} />
+    <section className="relative w-full min-h-[105vh] sm:min-h-[118vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-36 sm:pb-56 bg-white text-zinc-900">
+      {/* Interactive Lavender Purple Particles Background */}
+      <div className="absolute inset-0 z-0 opacity-100 pointer-events-auto">
+        <ParticlesComponent />
       </div>
 
-      {/* Soft Light Overlay for Elegant Contrast & Soft Lavender Blend */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 via-white/35 to-white/95 z-0 backdrop-blur-[0.5px]" />
+      {/* Film Grain Noise Overlay */}
+      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay z-0" />
 
-      {/* Noise Overlay for Subtle Film Grain Finish */}
-      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-overlay z-0" />
-
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12 pb-10 sm:pb-20">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-7xl pt-6 sm:pt-12 pb-10 sm:pb-20 pointer-events-none">
         
         {/* Dynamic Rotating Headline with Fade-Up */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="pointer-events-none"
         >
           <RotatingServicesHeadline />
         </motion.div>
@@ -144,6 +137,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="pointer-events-none"
         >
           <TypewriterSubtitle text={subtitleText} />
         </motion.div>
@@ -153,7 +147,7 @@ export default function HeroSection({ avatarList }: HeroProps) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.48, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-20"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-20 pointer-events-auto"
         >
           {/* Black Get Started Button */}
           <AnimatedPillButton text="Get Started" />
@@ -191,11 +185,8 @@ export default function HeroSection({ avatarList }: HeroProps) {
 
       </div>
 
-      {/* Ultra-Smooth Seamless Blend Transition to Light Brand Slider */}
+      {/* Smooth Blend Transition to white content section below */}
       <div className="absolute bottom-0 left-0 right-0 h-36 sm:h-52 bg-gradient-to-b from-transparent via-white/80 to-white pointer-events-none z-10" />
     </section>
   );
 }
-
-
-

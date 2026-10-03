@@ -1,24 +1,9 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
-
-import type { GlobeMarker } from "@/components/ui/3d-globe";
-
-const Globe3D = dynamic(
-  () => import("@/components/ui/3d-globe").then((m) => m.Globe3D),
-  { ssr: false }
-);
-
-const globeMarkers: GlobeMarker[] = [
-  { lat: 29.3544, lng: 71.6911, label: "Bahawalpur" },
-  { lat: 51.5074, lng: -0.1278, label: "London" },
-  { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
-  { lat: 25.2048, lng: 55.2708, label: "Dubai" },
-  { lat: 40.7128, lng: -74.006, label: "New York" },
-];
+import Bucket from "@/components/ui/bucket";
 
 export default function AboutSection() {
   return (
@@ -57,16 +42,16 @@ export default function AboutSection() {
         {/* Bento Grid: 3 Aesthetic Pastel Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
           
-          {/* Card 1: Left Main Globe Card (Soft Periwinkle / Lavender) */}
+          {/* Card 1: Left Main Feature Bucket Card (Soft Periwinkle / Lavender) */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[12px] p-5 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[420px] xs:min-h-[460px] sm:min-h-[540px] lg:min-h-[620px]"
+            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[12px] pt-5 sm:pt-10 px-5 sm:px-10 pb-0 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[420px] xs:min-h-[460px] sm:min-h-[540px] lg:min-h-[620px]"
           >
             {/* Top Content */}
-            <div className="relative z-10 flex flex-col items-center text-center space-y-4 sm:space-y-5 pt-1 sm:pt-2">
+            <div className="relative z-10 flex flex-col items-center text-center space-y-3.5 sm:space-y-4 pt-1 sm:pt-2">
               
               {/* Pulsating Availability Badge */}
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-purple-200/90 shadow-2xs backdrop-blur-md">
@@ -97,24 +82,9 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* Bottom 3D NASA Earth Globe Container */}
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-[220px] xs:-bottom-[260px] sm:-bottom-[320px] lg:-bottom-[360px] w-[132%] sm:w-[144%] max-w-none z-0 pointer-events-auto flex items-end justify-center">
-              <div className="w-full aspect-square">
-                <Globe3D 
-                  markers={globeMarkers}
-                  arcs={[]}
-                  className="w-full h-full"
-                  config={{
-                    radius: 2.1,
-                    showAtmosphere: false,
-                    bumpScale: 1.5,
-                    autoRotateSpeed: 2.2,
-                    enableZoom: false,
-                    enablePan: false,
-                    backgroundColor: null,
-                  }}
-                />
-              </div>
+            {/* Bottom Interactive Feature Bucket Component - Grounded at Card Bottom */}
+            <div className="relative z-10 mt-4 sm:mt-6 w-full max-w-[560px] mx-auto flex items-end justify-center -mb-1">
+              <Bucket />
             </div>
           </motion.div>
 

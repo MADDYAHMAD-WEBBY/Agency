@@ -14,8 +14,8 @@ const serifFont = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "shadcnspace - Building bold brands with thoughtful design",
-  description: "At shadcn space, we help small startups tackle the world's biggest challenges with tailored solutions.",
+  title: "shadcnspace. — Web Development, Headless WordPress & Local SEO Agency",
+  description: "shadcnspace. is a high-performance digital agency by Hamad Ahmad, specializing in custom Web Development, Headless WordPress solutions, and Local SEO strategies to turn ambitious brands into growth machines.",
 };
 
 export default function RootLayout({
@@ -26,9 +26,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${sansFont.variable} ${serifFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-sans bg-white text-slate-900 selection:bg-slate-900 selection:text-white"
+      >
         {children}
       </body>
     </html>
