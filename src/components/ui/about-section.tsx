@@ -31,14 +31,14 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="w-full relative mb-12 sm:mb-16"
+          className="w-full relative mb-16 sm:mb-24 lg:mb-28"
         >
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-center relative z-10">
             
             {/* Left Column: Minimalist Typography & Bio */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 tracking-tight leading-[1.2]">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight">
                 Meet M. Hafeez Khan <br />
                 <span className="font-serif italic font-normal bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent inline-block pt-1">
                   E-Commerce & SEO Specialist
@@ -72,7 +72,7 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <div className="text-sm font-extrabold text-zinc-900 leading-tight">E-Commerce</div>
-                    <div className="text-[11px] font-medium text-zinc-500">Shopify & Stripe Expert</div>
+                    <div className="text-[11px] font-medium text-zinc-500">TikTok & Shopify E-Commerce</div>
                   </div>
                 </div>
 
@@ -141,7 +141,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* Section Sub-Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <div className="text-center max-w-3xl mx-auto pt-6 sm:pt-10 mb-8 sm:mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
