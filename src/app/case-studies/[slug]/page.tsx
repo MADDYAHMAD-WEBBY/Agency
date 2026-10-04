@@ -52,7 +52,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
       <Header navigationData={navigationData} />
 
-      <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-20 overflow-hidden relative">
+      <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-hidden relative">
         {/* Full-Height Right Side Blurred Cover Image Background (Under Header, InstaGhost Reference Style) */}
         <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[55%] h-[650px] sm:h-[780px] pointer-events-none select-none z-0 overflow-hidden">
           <div className="w-full h-full relative">
