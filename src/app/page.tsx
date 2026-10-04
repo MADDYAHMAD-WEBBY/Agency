@@ -10,6 +10,7 @@ import TestimonialsSection from "@/components/ui/testimonials-section";
 import TeamSection from "@/components/ui/team-section";
 import FaqSection from "@/components/ui/faq-section";
 import CtaSection from "@/components/ui/cta-section";
+import SiteFooter from "@/components/ui/site-footer";
 
 const navigationData: NavigationSection[] = [
   {
@@ -58,6 +59,7 @@ export default function Home() {
         <FaqSection />
         <CtaSection />
       </main>
+      <SiteFooter />
     </div>
   );
 }

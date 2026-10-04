@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CASE_STUDIES } from "@/lib/content-data";
 import Header, { NavigationSection } from "@/components/ui/hero-01-utils/header";
-import StudioFooterHero from "@/components/ui/studio-footer-hero";
+import SiteFooter from "@/components/ui/site-footer";
 import ConsultationCtaBanner from "@/components/ui/consultation-cta-banner";
 
 interface PageProps {
@@ -210,7 +210,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
         </div>
       </main>
 
-      <StudioFooterHero />
+      <SiteFooter />
     </div>
   );
 }
