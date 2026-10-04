@@ -508,7 +508,7 @@ export default function ServicesSection() {
           <div className="lg:col-span-4 flex flex-col justify-between bg-slate-50/80 border border-slate-200/90 rounded-[10px] p-2.5 sm:p-4 shadow-2xs overflow-hidden h-auto lg:h-full lg:min-h-[530px]">
             <div className="flex-1 min-h-0 flex flex-col">
               {/* Tab Buttons List: Horizontal scroll on mobile/tablet, vertical stack on lg desktop */}
-              <div className="flex flex-row lg:flex-col gap-1.5 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto max-h-none lg:max-h-[405px] pb-1.5 lg:pb-0 pr-0 lg:pr-1 thin-scrollbar">
+              <div className="flex flex-row lg:flex-col gap-1.5 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto max-h-none lg:max-h-[405px] pb-1.5 lg:pb-0 pr-0 lg:pr-1 no-scrollbar">
                 {servicesList.map((item) => {
                   const isActive = item.id === activeTabId;
                   const Icon = item.icon;
