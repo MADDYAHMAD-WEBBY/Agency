@@ -38,6 +38,7 @@ export interface ServiceDetail {
   deliverables: string[];
   processSteps: { step: string; title: string; desc: string }[];
   coverImage: string;
+  techStack?: string[];
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -170,5 +171,17 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       },
     ],
     coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    techStack: [
+      "NEXT.JS 15",
+      "HEADLESS WORDPRESS",
+      "WP GRAPHQL API",
+      "CORE WEB VITALS 100/100",
+      "GEO 2026 AI SEARCH",
+      "TAILWIND CSS",
+      "TYPESCRIPT",
+      "VERCEL EDGE",
+      "CLOUDFLARE WORKERS",
+      "JSON-LD SCHEMA",
+    ],
   },
 ];

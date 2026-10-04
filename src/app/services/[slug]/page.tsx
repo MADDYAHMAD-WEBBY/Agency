@@ -53,40 +53,77 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <Header navigationData={navigationData} />
 
       <main className="w-full pt-28 sm:pt-36 pb-20 overflow-hidden relative">
+        {/* Background Ambient Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] pointer-events-none select-none overflow-hidden z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/60 via-purple-50/20 to-transparent" />
+          <div
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[100px] opacity-40"
+            style={{
+              background: "radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, rgba(59, 130, 246, 0.2) 60%, transparent 80%)",
+            }}
+          />
+        </div>
+
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           
+          {/* Top Back Navigation Button Pill */}
           <div className="mb-6">
             <Link
               href="/#services"
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-600 uppercase tracking-widest hover:underline"
+              className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-mono font-bold tracking-widest text-zinc-600 hover:text-purple-600 uppercase transition-colors group"
             >
-              ← ALL SERVICES & CAPABILITIES
+              <div className="w-8 h-8 rounded-full border border-zinc-200 bg-zinc-50 group-hover:border-purple-300 group-hover:bg-purple-50 flex items-center justify-center transition-all">
+                <span className="transform group-hover:-translate-x-0.5 transition-transform">←</span>
+              </div>
+              <span>SERVICE CAPABILITY</span>
             </Link>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-900 tracking-tight leading-[1.18] font-sans">
+          {/* Main Title Heading in High-Contrast Editorial Serif Typography */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-extrabold text-zinc-900 tracking-tight leading-[1.12] max-w-4xl">
             {service.title}
           </h1>
 
-          <p className="mt-4 text-base sm:text-xl font-medium text-purple-700 leading-relaxed max-w-3xl">
-            {service.tagline}
-          </p>
+          {/* CTA Action Pill Button below Title */}
+          <div className="mt-6 flex items-center gap-4">
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 text-white text-xs font-mono font-bold tracking-wider uppercase hover:bg-black active:scale-95 transition-all shadow-md hover:shadow-zinc-950/20"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Book Strategy Call</span>
+              <span>↗</span>
+            </Link>
+          </div>
 
-          {/* Cover Showcase Image */}
-          <div className="mt-8 w-full aspect-[16/9] rounded-2xl overflow-hidden border border-zinc-200 shadow-xl bg-zinc-950 relative">
+          {/* Tech Stack Badges Row */}
+          {service.techStack && service.techStack.length > 0 && (
+            <div className="mt-8 flex flex-wrap gap-2">
+              {service.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-zinc-200/90 bg-zinc-100/80 text-[11px] font-mono font-bold tracking-wider uppercase text-zinc-800 shadow-2xs"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Overview Lead Description */}
+          <div className="mt-8 text-zinc-700 text-sm sm:text-base font-normal leading-relaxed max-w-3xl">
+            {service.description}
+          </div>
+
+          {/* Cover Showcase Image Container */}
+          <div className="mt-10 sm:mt-12 w-full aspect-[16/9] rounded-2xl overflow-hidden border border-zinc-200 shadow-2xl bg-zinc-950 relative group">
             <img
               src={service.coverImage}
               alt={service.title}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
             />
-          </div>
-
-          {/* Description */}
-          <div className="mt-12 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold font-serif text-zinc-900">Overview</h2>
-            <p className="text-zinc-700 text-sm sm:text-base leading-relaxed max-w-3xl">
-              {service.description}
-            </p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Deliverables Checklist */}
