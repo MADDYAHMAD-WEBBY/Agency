@@ -65,3 +65,12 @@ This document records the complete architecture, design system, performance rule
 ### E. Seamless Bottom Transition to Brand Slider
 - Seamless bottom transition layer (`h-32 sm:h-48 bg-gradient-to-b from-transparent via-white/90 to-white`) smoothly blends the hero canvas video into the white Brand Slider container (`bg-white`) with zero hard edges.
 - Brand Slider divider lines (`border-zinc-200`), text (`text-zinc-600 font-medium`), and marquee logos (`text-zinc-700 hover:text-black`).
+
+### F. Consultation CTA Banner Invariant (`ConsultationCtaBanner`)
+- Must be placed outside the inner `max-w-7xl` container at `max-w-[1562px]` so that its unclipped rotating sticker badge has sufficient margin to extend on desktop views.
+- Includes cyan ambient background aura, dark high-contrast inner card (`bg-gradient-to-br from-zinc-950 via-zinc-900 to-black`), and custom CTA prop hooks.
+
+### G. Unified Site Footer (`SiteFooter`)
+- Standard 3-column responsive layout (`lg:grid-cols-12`) rendered on all routes (`/`, `/services/[slug]`, `/case-studies/[slug]`, `/blog/[slug]`).
+- Includes lead digital architect metadata ("Lead Digital Architect: M. Hafeez Khan | shadcnspace"), interactive dynamic navigation links, social profile links, and live UTC status indicator ("Available for Q4 Enterprise Projects").
+
