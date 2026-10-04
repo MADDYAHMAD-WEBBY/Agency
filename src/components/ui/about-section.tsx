@@ -4,13 +4,132 @@ import React from "react";
 import { motion } from "framer-motion";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 import Bucket from "@/components/ui/bucket";
+import { Zap, TrendingUp, ShoppingBag, Bot, Award } from "lucide-react";
 
 export default function AboutSection() {
   return (
     <section id="about" className="w-full py-10 sm:py-16 bg-white relative z-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* TOP MINIMALIST GLASSY WHITE CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="w-full bg-gradient-to-br from-white/95 via-white/90 to-purple-50/40 backdrop-blur-2xl border border-purple-100/70 rounded-[10px] p-6 sm:p-12 lg:p-14 shadow-lg relative overflow-hidden mb-12 sm:mb-16"
+        >
+          {/* Glassy Background Ambient Lighting Effects */}
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-pink-300/20 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-14 items-center relative z-10">
+            
+            {/* Left Column: Minimalist Typography & Bio */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 tracking-tight leading-[1.2]">
+                Meet M. Hafeez Khan <br />
+                <span className="font-serif italic font-normal bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent inline-block pt-1">
+                  E-Commerce & SEO Specialist
+                </span>
+              </h2>
+
+              <div className="space-y-3 text-zinc-600 text-xs sm:text-sm leading-relaxed max-w-xl font-normal">
+                <p>
+                  M. Hafeez Khan is a CEO & Lead Digital Architect with over 16+ years of industry experience turning ambitious brands into market leaders. Specializing in high-converting E-Commerce platforms, advanced Local & Global SEO, Headless WordPress, and custom AI automations, he builds high-ROI digital systems.
+                </p>
+                <p>
+                  With nearly two decades of technical mastery, he crafts sub-second web experiences, optimizes Core Web Vitals, and secures top-tier organic Google rankings for client platforms worldwide.
+                </p>
+              </div>
+
+              {/* Mature Executive Credentials Grid with 10px Border Radius */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div className="flex items-center gap-3 p-3 rounded-[10px] border border-zinc-200/80 bg-zinc-50/80 shadow-2xs hover:border-zinc-300 transition-colors">
+                  <div className="w-8 h-8 rounded-[8px] bg-purple-500/10 border border-purple-200/80 flex items-center justify-center text-purple-600 shrink-0">
+                    <Award className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-extrabold text-zinc-900 leading-tight">16+ Years</div>
+                    <div className="text-[11px] font-medium text-zinc-500">Industry Leadership</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-[10px] border border-zinc-200/80 bg-zinc-50/80 shadow-2xs hover:border-zinc-300 transition-colors">
+                  <div className="w-8 h-8 rounded-[8px] bg-emerald-500/10 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
+                    <ShoppingBag className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-extrabold text-zinc-900 leading-tight">E-Commerce</div>
+                    <div className="text-[11px] font-medium text-zinc-500">Shopify & Stripe Expert</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-[10px] border border-zinc-200/80 bg-zinc-50/80 shadow-2xs hover:border-zinc-300 transition-colors">
+                  <div className="w-8 h-8 rounded-[8px] bg-indigo-500/10 border border-indigo-200/80 flex items-center justify-center text-indigo-600 shrink-0">
+                    <TrendingUp className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-extrabold text-zinc-900 leading-tight">#1 Rankings</div>
+                    <div className="text-[11px] font-medium text-zinc-500">Local & Global SEO</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons Row */}
+              <div className="pt-2 flex flex-wrap items-center gap-3.5">
+                <AnimatedPillButton 
+                  text="Explore More"
+                  onClick={() => {
+                    const el = document.getElementById("contact");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
+                />
+                
+                <button
+                  onClick={() => {
+                    const el = document.getElementById("contact");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="px-4 py-2.5 rounded-full border border-zinc-200 text-xs sm:text-sm font-semibold text-zinc-700 hover:text-zinc-900 hover:border-zinc-400 hover:bg-zinc-50 transition-all cursor-pointer shadow-2xs"
+                >
+                  🗓️ Book 15-Min Strategy Call
+                </button>
+              </div>
+            </div>
+
+            {/* Right Column: Tilted Polaroid Frame matching reference image */}
+            <div className="lg:col-span-5 flex justify-center">
+              <motion.div
+                whileHover={{ rotate: 0, scale: 1.04 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="w-full max-w-[320px] sm:max-w-[360px] bg-[#1a1a1e] text-white p-3.5 sm:p-4 rounded-[26px] shadow-2xl border border-zinc-800 transform -rotate-2 sm:-rotate-3 hover:rotate-0 transition-all duration-300 relative cursor-pointer"
+              >
+                {/* Photo Container */}
+                <div className="w-full aspect-[4/5] rounded-[18px] overflow-hidden bg-zinc-900 relative shadow-inner">
+                  <img
+                    src="/images/ceo.webp"
+                    alt="M. Hafeez Khan CEO portrait"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+
+                {/* Bottom Details Bar */}
+                <div className="flex items-center justify-between pt-3.5 px-2 text-zinc-300">
+                  <span className="font-serif italic text-xs sm:text-sm font-semibold tracking-wide text-zinc-100">
+                    M. Hafeez Khan
+                  </span>
+                  <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-widest text-zinc-400 uppercase">
+                    16+ YRS EXP | CEO
+                  </span>
+                </div>
+              </motion.div>
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* Section Sub-Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +193,7 @@ export default function AboutSection() {
 
               {/* Hero Animated Pill Button */}
               <AnimatedPillButton 
-                text="Start a Project"
+                text="Explore More"
                 onClick={() => {
                   const el = document.getElementById("contact");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -121,7 +240,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Hero Animated Pill Button */}
-                <AnimatedPillButton text="Explore Results" />
+                <AnimatedPillButton text="Explore More" />
               </div>
             </motion.div>
 
@@ -136,9 +255,9 @@ export default function AboutSection() {
               {/* Profile Image Portrait */}
               <div className="w-28 h-36 sm:w-36 sm:h-44 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-white bg-zinc-200">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" 
+                  src="/images/ceo.webp" 
                   alt="Muhammad Hafeez Khan portrait"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 
@@ -165,7 +284,7 @@ export default function AboutSection() {
 
                 {/* Hero Animated Pill Button */}
                 <div className="pt-2 flex justify-center sm:justify-start">
-                  <AnimatedPillButton text="Let's Talk" />
+                  <AnimatedPillButton text="Explore More" />
                 </div>
               </div>
             </motion.div>

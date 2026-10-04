@@ -36,8 +36,9 @@ export default function RotatingEarth({
     if (!context) return
 
     // Responsive dimensions
-    const containerWidth = Math.min(width, window.innerWidth)
-    const containerHeight = Math.min(height, window.innerHeight)
+    const parent = canvas.parentElement
+    const containerWidth = parent ? Math.min(width, parent.clientWidth || width) : Math.min(width, window.innerWidth)
+    const containerHeight = parent ? Math.min(height, parent.clientHeight || height) : Math.min(height, window.innerHeight)
     const radius = (Math.min(containerWidth, containerHeight) / 2) * scaleMultiplier
 
     const dpr = window.devicePixelRatio || 1
@@ -47,7 +48,7 @@ export default function RotatingEarth({
     canvas.style.height = `${containerHeight}px`
     context.scale(dpr, dpr)
 
-    // Center Earth lower for Horizon Arc curvature effect
+    // Center Earth
     const centerX = containerWidth / 2
     const centerY = containerHeight * centerYRatio
 

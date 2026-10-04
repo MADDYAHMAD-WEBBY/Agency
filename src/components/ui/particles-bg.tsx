@@ -20,6 +20,8 @@ export default function ParticlesComponent() {
       window.pJSDom = [];
     }
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     // Rich Lavender Purple Color Palette
     const colors = {
       particles: "#9333ea", // Vibrant Purple
@@ -32,29 +34,29 @@ export default function ParticlesComponent() {
       // @ts-ignore
       window.particlesJS("particles-js", {
         particles: {
-          number: { value: 140, density: { enable: true, value_area: 800 } },
+          number: { value: isMobile ? 55 : 140, density: { enable: true, value_area: 800 } },
           color: { value: colors.particles },
           shape: { type: "circle", stroke: { width: 0.5, color: colors.accent } },
           opacity: {
             value: 0.75,
             random: true,
-            anim: { enable: true, speed: 1, opacity_min: 0.35 },
+            anim: { enable: !isMobile, speed: 1, opacity_min: 0.35 },
           },
           size: {
-            value: 3.5,
+            value: isMobile ? 3 : 3.5,
             random: true,
-            anim: { enable: true, speed: 2, size_min: 1 },
+            anim: { enable: !isMobile, speed: 2, size_min: 1 },
           },
           line_linked: {
             enable: true,
-            distance: 175,
+            distance: isMobile ? 130 : 175,
             color: colors.lines,
-            opacity: 0.55,
-            width: 1.3,
+            opacity: isMobile ? 0.4 : 0.35,
+            width: isMobile ? 1.1 : 1.3,
           },
           move: {
             enable: true,
-            speed: 2,
+            speed: isMobile ? 1.2 : 2,
             random: false,
             straight: false,
             out_mode: "out",

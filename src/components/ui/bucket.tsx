@@ -35,6 +35,21 @@ const Bucket = () => {
   const [items, setItems] = useState(INITIAL_CHIPS);
 
   const isMobile = useIsMobile();
+
+  const blurFilterStyle = isMobile
+    ? {}
+    : {
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+      };
+
+  const blurFilterStyleHeavy = isMobile
+    ? {}
+    : {
+        backdropFilter: "blur(60.03px)",
+        WebkitBackdropFilter: "blur(60.03px)",
+      };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setItems((prev) => {
@@ -868,37 +883,34 @@ const Bucket = () => {
                   <motion.div
                     key={chip.id}
                     initial={{
-                      y: isMobile ? -40 : -60,
+                      y: -50,
                       opacity: 0,
-                      scale: 0.8,
-                      transition: {
-                        duration: 1.8,
-                        delay: 0.4,
-                        ease: [0.455, 0.03, 0.515, 0.955],
-                      },
+                      scale: 0.75,
                     }}
-                    animate={{ y: 0, opacity: 1, scale: isMobile ? 1 : 1.25 }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                      scale: 1.0,
+                    }}
                     exit={{
-                      y: isMobile ? 100 : 130,
-                      scale: 0.8,
-                      transition: {
-                        duration: 0.8,
-                      },
+                      y: 110,
+                      opacity: 0,
+                      scale: 0.75,
                     }}
                     transition={{
-                      duration: 0.5,
+                      duration: 0.8,
                       ease: [0.455, 0.03, 0.515, 0.955],
                     }}
-                    className="bg-white/95 backdrop-blur-md border border-zinc-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-10 rounded-full py-2.5 px-4 sm:px-5 w-auto max-w-[340px] absolute pointer-events-auto flex items-center gap-3.5 origin-bottom"
+                    className="bg-white/50 backdrop-blur-xl border border-white/90 shadow-[inset_0_1px_2px_0_rgba(255,255,255,0.95),0_8px_25px_-5px_rgba(147,51,234,0.12)] z-10 rounded-full py-1.5 sm:py-2 px-3.5 sm:px-4 w-auto max-w-[280px] sm:max-w-[310px] absolute pointer-events-auto flex items-center gap-2.5 sm:gap-3 origin-bottom transform-gpu will-change-transform"
                   >
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-800 shadow-2xs">
-                      <IconComponent className="size-5 text-zinc-700" />
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white/70 backdrop-blur-md border border-white/90 text-zinc-800 shadow-2xs">
+                      <IconComponent className="size-4 text-zinc-800" />
                     </div>
                     <div className="flex flex-col text-left justify-center gap-0.5">
-                      <span className="text-sm sm:text-base font-bold text-zinc-900 leading-tight">
+                      <span className="text-xs sm:text-sm font-bold text-zinc-900 leading-tight">
                         {chip.title}
                       </span>
-                      <span className="text-xs sm:text-sm text-zinc-500 font-normal leading-tight">
+                      <span className="text-[11px] sm:text-xs text-zinc-600 font-medium leading-tight">
                         {chip.description}
                       </span>
                     </div>
@@ -937,8 +949,7 @@ const Bucket = () => {
             <foreignObject x="0" y="0" width="655" height="352">
               <div
                 style={{
-                  backdropFilter: "blur(60.03px)",
-                  WebkitBackdropFilter: "blur(60.03px)",
+                  ...blurFilterStyleHeavy,
                   height: "100%",
                   width: "100%",
                   background: "rgba(255, 255, 255, 0.01)",
