@@ -151,15 +151,14 @@ export default async function BlogDetailPage({ params }: PageProps) {
               </span>
             ))}
           </div>
-
-          {/* Bottom CEO Consultation Callout */}
-          <ConsultationCtaBanner
-            title={`Have questions about ${post.category}?`}
-            subtitle="Speak directly with Lead Architect M. Hafeez Khan."
-            buttonText="Book Strategy Call"
-          />
-
         </div>
+
+        {/* Bottom CEO Consultation Callout matching Homepage */}
+        <ConsultationCtaBanner
+          title={`Have questions about ${post.category}?`}
+          subtitle="Speak directly with Lead Architect M. Hafeez Khan."
+          buttonText="Book Strategy Call"
+        />
       </main>
 
       <SiteFooter />

@@ -68,7 +68,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           {/* Top Back Button Navigation */}
           <div className="mb-6">
             <Link
@@ -199,15 +199,14 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
             </div>
 
           </div>
-
-          {/* Bottom Strategy Call Consultation Banner */}
-          <ConsultationCtaBanner
-            title="Ready for similar business results?"
-            subtitle="Book a direct technical architecture consultation with CEO M. Hafeez Khan today."
-            buttonText="Book CEO Strategy Call"
-          />
-
         </div>
+
+        {/* Bottom Strategy Call Consultation Banner matching Homepage */}
+        <ConsultationCtaBanner
+          title="Ready for similar business results?"
+          subtitle="Book a direct technical architecture consultation with CEO M. Hafeez Khan today."
+          buttonText="Book CEO Strategy Call"
+        />
       </main>
 
       <SiteFooter />

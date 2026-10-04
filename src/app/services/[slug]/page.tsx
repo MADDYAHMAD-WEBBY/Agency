@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           
           {/* Top Back Navigation Button Pill */}
           <div className="mb-6">
@@ -344,15 +344,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <OnThisPageNav items={pageNavItems} />
 
           </div>
-
-          {/* Bottom CTA Hero Banner matching media_1791130889246 */}
-          <ConsultationCtaBanner
-            title="READY TO ELEVATE YOUR DIGITAL IMPACT? LET'S ENGINEER YOUR GROWTH MACHINE"
-            subtitle="Turning high-performance engineering & organic search into lasting revenue."
-            buttonText="Start a Conversation"
-          />
-
         </div>
+
+        {/* Bottom CTA Hero Banner matching Homepage CtaSection */}
+        <ConsultationCtaBanner
+          title="READY TO ELEVATE YOUR DIGITAL IMPACT? LET'S ENGINEER YOUR GROWTH MACHINE"
+          subtitle="Turning high-performance engineering & organic search into lasting revenue."
+          buttonText="Start a Conversation"
+        />
       </main>
 
       <SiteFooter />
