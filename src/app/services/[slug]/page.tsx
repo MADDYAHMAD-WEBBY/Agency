@@ -53,15 +53,19 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <Header navigationData={navigationData} />
 
       <main className="w-full pt-28 sm:pt-36 pb-20 overflow-hidden relative">
-        {/* Background Ambient Glow & Blurred Cover Image (InstaGhost Style) */}
-        <div className="absolute top-0 right-0 w-full sm:w-2/3 lg:w-1/2 h-[550px] pointer-events-none select-none overflow-hidden z-0">
-          <img
-            src={service.coverImage}
-            alt=""
-            className="w-full h-full object-cover object-center filter blur-3xl opacity-30 scale-125 transform origin-top-right"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white" />
+        {/* Full-Height Right Side Blurred Cover Image Background (Under Header, InstaGhost Reference Style) */}
+        <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[55%] h-[650px] sm:h-[780px] pointer-events-none select-none z-0 overflow-hidden">
+          <div className="w-full h-full relative">
+            <img
+              src={service.coverImage}
+              alt=""
+              className="w-full h-full object-cover object-top filter blur-[8px] opacity-40 sm:opacity-55 scale-110"
+            />
+            {/* Smooth Edge Fade Gradients */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white" />
+            <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-white/70 to-transparent" />
+          </div>
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -79,8 +83,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* Main Title Heading in High-Contrast Editorial Serif Typography */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-extrabold text-zinc-900 tracking-tight leading-[1.12] max-w-4xl">
+          {/* Main Title Heading in Elegant Serif Italic Typography */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14] max-w-3xl">
             {service.title}
           </h1>
 
@@ -98,13 +102,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
           {/* Tech Stack Badges Row */}
           {service.techStack && service.techStack.length > 0 && (
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-8 flex flex-wrap gap-2 max-w-3xl">
               {service.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-zinc-200/90 bg-zinc-100/80 text-[11px] font-mono font-bold tracking-wider uppercase text-zinc-800 shadow-2xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-zinc-200 bg-zinc-100/90 text-[11px] font-mono font-semibold tracking-wide text-zinc-700 shadow-2xs"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   {tech}
                 </span>
               ))}
