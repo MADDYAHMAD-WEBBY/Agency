@@ -6,7 +6,7 @@ import AnimatedPillButton from "@/components/ui/animated-pill-button";
 
 export default function CtaSection() {
   return (
-    <section id="contact" className="relative z-20 w-full pt-2 sm:pt-4 pb-12 sm:pb-20 bg-white overflow-hidden">
+    <section id="contact" className="relative z-20 w-full pt-4 sm:pt-6 pb-12 sm:pb-16 bg-white overflow-hidden">
       <div className="max-w-[1562px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Card with 10px Border Radius and Soft Blue-Cyan Atmosphere Glow */}

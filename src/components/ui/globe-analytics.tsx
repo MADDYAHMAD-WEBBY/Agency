@@ -17,13 +17,13 @@ interface GlobeAnalyticsProps {
 }
 
 const defaultMarkers: AnalyticsMarker[] = [
-  { id: "vis-1", location: [40.71, -74.01], visitors: 847, trend: 12 },
-  { id: "vis-2", location: [51.51, -0.13], visitors: 623, trend: -3 },
-  { id: "vis-3", location: [35.68, 139.65], visitors: 412, trend: 8 },
-  { id: "vis-4", location: [48.86, 2.35], visitors: 385, trend: 5 },
-  { id: "vis-5", location: [-33.87, 151.21], visitors: 201, trend: 15 },
-  { id: "vis-6", location: [52.52, 13.41], visitors: 178, trend: -1 },
-]
+  { id: "vis-1", location: [40.71, -74.01], visitors: 1240, trend: 15 }, // USA (New York)
+  { id: "vis-2", location: [51.51, -0.13], visitors: 980, trend: 12 },   // UK (London)
+  { id: "vis-3", location: [25.20, 55.27], visitors: 1450, trend: 22 },  // UAE (Dubai)
+  { id: "vis-4", location: [52.52, 13.41], visitors: 820, trend: 9 },    // Germany (Berlin)
+  { id: "vis-5", location: [-33.87, 151.21], visitors: 610, trend: 14 }, // Australia (Sydney)
+  { id: "vis-6", location: [31.52, 74.35], visitors: 1650, trend: 28 },  // Pakistan (Lahore)
+];
 
 export function GlobeAnalytics({
   markers: initialMarkers = defaultMarkers,

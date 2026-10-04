@@ -97,7 +97,7 @@ function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 export default function TeamSection() {
   return (
-    <section id="team" className="relative z-20 w-full pt-10 sm:pt-16 pb-2 sm:pb-4 bg-white text-zinc-900 overflow-hidden">
+    <section id="team" className="relative z-20 w-full pt-10 sm:pt-16 pb-10 sm:pb-16 bg-white text-zinc-900 overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">

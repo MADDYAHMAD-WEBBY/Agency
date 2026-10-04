@@ -334,33 +334,58 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
           })}
         </div>
 
-        {/* Mobile Smooth Quick-Tap Controls (Prev / Next & Counter) */}
-        <div className="sm:hidden absolute -bottom-2 z-30 flex items-center gap-2 bg-white/95 backdrop-blur-md rounded-full px-3 py-1 shadow-md border border-zinc-200/80">
-          <button
-            type="button"
-            aria-label="Previous industry"
-            onClick={() => stepTo(1)}
-            className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-600 hover:text-purple-600 active:bg-purple-100 active:scale-95 transition-all"
+        {/* Left Floating Navigation Arrow Button */}
+        <button
+          type="button"
+          aria-label="Previous industry"
+          onClick={(e) => {
+            e.stopPropagation();
+            stepTo(-1);
+          }}
+          className="absolute left-2 sm:left-6 lg:left-10 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-purple-200/90 shadow-xl hover:shadow-purple-500/20 backdrop-blur-md flex items-center justify-center text-zinc-900 hover:text-purple-600 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer"
+        >
+          <svg
+            className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:-translate-x-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+            <path d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
 
-          <span className="text-[0.68rem] font-mono font-semibold text-zinc-700 px-1 select-none">
+        {/* Right Floating Navigation Arrow Button */}
+        <button
+          type="button"
+          aria-label="Next industry"
+          onClick={(e) => {
+            e.stopPropagation();
+            stepTo(1);
+          }}
+          className="absolute right-2 sm:right-6 lg:right-10 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 border border-purple-200/90 shadow-xl hover:shadow-purple-500/20 backdrop-blur-md flex items-center justify-center text-zinc-900 hover:text-purple-600 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer"
+        >
+          <svg
+            className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:translate-x-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        {/* Active Industry Counter Badge */}
+        <div className="absolute -bottom-2 z-30 flex items-center gap-2 bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5 shadow-md border border-purple-200/80">
+          <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse" />
+          <span className="text-xs font-mono font-semibold text-zinc-800 select-none">
             {activeIndex + 1} / {count}
           </span>
-
-          <button
-            type="button"
-            aria-label="Next industry"
-            onClick={() => stepTo(-1)}
-            className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-600 hover:text-purple-600 active:bg-purple-100 active:scale-95 transition-all"
-          >
-            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
         </div>
       </div>
     );

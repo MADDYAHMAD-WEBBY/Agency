@@ -32,7 +32,7 @@ export default function Header({ navigationData }: HeaderProps) {
         {/* Logo: Black pill */}
         <Link href="/" className="inline-flex items-center">
           <div className="bg-black text-white border border-zinc-900 px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-bold text-sm sm:text-lg tracking-tight hover:opacity-95 transition-opacity">
-            shadcnspace.
+            MHKMarkedia
           </div>
         </Link>
 
@@ -69,7 +69,7 @@ export default function Header({ navigationData }: HeaderProps) {
             <SheetContent side="right" className="w-[280px] xs:w-[320px] bg-white p-6">
               <SheetHeader className="border-b pb-4 mb-6">
                 <SheetTitle className="text-left font-bold text-xl text-black">
-                  shadcnspace.
+                  MHKMarkedia
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-3">

@@ -69,10 +69,10 @@ function TypewriterSubtitle({ text, delayStart = 850 }: { text: string; delaySta
 
 function RotatingServicesHeadline() {
   const services = [
-    "AI Automation",
-    "Web Development",
-    "Software Development",
-    "Growth Marketing",
+    "Headless WordPress",
+    "Full-Stack Web Dev",
+    "AI Search (GEO & AEO)",
+    "Local SEO Dominance",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -86,8 +86,8 @@ function RotatingServicesHeadline() {
 
   return (
     <h1 className="text-3xl sm:text-6xl lg:text-[76px] font-extrabold tracking-tight text-[#0a0a0c] leading-[1.14] sm:leading-[1.16] mb-4 sm:mb-6">
-      We Turn Your Business Into <br />
-      Growth Machine with <br />
+      Engineer High-ROI <br />
+      Digital Platforms with <br />
       <span className="inline-block py-1 sm:py-2 pr-1 sm:pr-3 font-serif-italic font-normal align-baseline">
         <AnimatePresence mode="wait">
           <motion.span
@@ -120,7 +120,7 @@ function RotatingServicesHeadline() {
 
 export default function HeroSection({ avatarList }: HeroProps) {
   const subtitleText =
-    "I help ambitious startups and businesses build high-performing web platforms, Headless WordPress solutions, and local SEO strategies to drive organic growth.";
+    "MHKMarkedia crafts sub-second Next.js web applications, Headless WordPress architectures, and AI-driven SEO strategies that rank your business #1 on Google, ChatGPT, Perplexity & Gemini.";
 
   return (
     <section className="relative w-full min-h-[105vh] sm:min-h-[118vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-36 sm:pb-56 bg-white text-zinc-900">

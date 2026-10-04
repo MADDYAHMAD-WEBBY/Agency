@@ -44,7 +44,7 @@ export default function StudioFooterHero() {
       </div>
 
       {/* Center Brand Logo */}
-      <div className="logo" role="img" aria-label="Hamad Ahmad Studio Logo">
+      <div className="logo" role="img" aria-label="MHKMarkedia Studio Logo">
         <BrandLogo />
       </div>
 

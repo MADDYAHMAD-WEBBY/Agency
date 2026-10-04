@@ -8,6 +8,7 @@ import SkillsSection from "@/components/ui/SkillsSection";
 import IndustriesSection from "@/components/ui/industries-section";
 import TestimonialsSection from "@/components/ui/testimonials-section";
 import TeamSection from "@/components/ui/team-section";
+import FaqSection from "@/components/ui/faq-section";
 import CtaSection from "@/components/ui/cta-section";
 
 const navigationData: NavigationSection[] = [
@@ -27,6 +28,10 @@ const navigationData: NavigationSection[] = [
   {
     title: "Works",
     href: "#works",
+  },
+  {
+    title: "FAQ",
+    href: "#faq",
   },
   {
     title: "Pricing",
@@ -50,6 +55,7 @@ export default function Home() {
         <IndustriesSection />
         <TestimonialsSection />
         <TeamSection />
+        <FaqSection />
         <CtaSection />
       </main>
     </div>
