@@ -24,7 +24,7 @@ export default function StudioFooterHero() {
         </h1>
 
         <nav className="footer-nav text-zinc-700 font-medium">
-          <a href="#services" className="hover:text-black transition-colors flex items-center gap-1.5 group">
+          <a href="/services/headless-wordpress-development" className="hover:text-black transition-colors flex items-center gap-1.5 group">
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
             Headless WordPress
           </a>

@@ -14,12 +14,12 @@ const WORKS: WorksWheelItem[] = [
   {
     title: "Headless E-Commerce",
     image: ART("prismatic-rift-anime"),
-    href: "#services",
+    href: "/case-studies/cloudscale-lahore-headless-migration",
   },
   {
     title: "FinTech Portal",
     image: ART("black-hole-ember-clouds"),
-    href: "#services",
+    href: "/case-studies/fintech-cloud-portal-case-study",
   },
   {
     title: "AI Legal System",

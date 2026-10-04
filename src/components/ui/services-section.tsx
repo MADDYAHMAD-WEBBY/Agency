@@ -103,7 +103,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "wordpress-webflow",
     category: "web",
-    href: "#contact",
+    href: "/services/headless-wordpress-development",
     title: "WordPress & Webflow Development",
     description:
       "Custom Headless WordPress and Webflow builds engineered with clean code, sub-second Core Web Vitals, and effortless CMS editing.",
