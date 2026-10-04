@@ -53,15 +53,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <Header navigationData={navigationData} />
 
       <main className="w-full pt-28 sm:pt-36 pb-20 overflow-hidden relative">
-        {/* Background Ambient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] pointer-events-none select-none overflow-hidden z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/60 via-purple-50/20 to-transparent" />
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[100px] opacity-40"
-            style={{
-              background: "radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, rgba(59, 130, 246, 0.2) 60%, transparent 80%)",
-            }}
+        {/* Background Ambient Glow & Blurred Cover Image (InstaGhost Style) */}
+        <div className="absolute top-0 right-0 w-full sm:w-2/3 lg:w-1/2 h-[550px] pointer-events-none select-none overflow-hidden z-0">
+          <img
+            src={service.coverImage}
+            alt=""
+            className="w-full h-full object-cover object-center filter blur-3xl opacity-30 scale-125 transform origin-top-right"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white" />
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
