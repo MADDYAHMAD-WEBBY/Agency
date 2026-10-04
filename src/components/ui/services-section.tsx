@@ -31,7 +31,7 @@ interface ServiceFeature {
 interface ServiceItem {
   id: string;
   tabLabel: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   subtitle: string;
   features: ServiceFeature[];
