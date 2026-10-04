@@ -52,7 +52,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
       <Header navigationData={navigationData} />
 
-      <main className="w-full pt-28 sm:pt-36 pb-20 overflow-hidden relative">
+      <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-20 overflow-hidden relative">
         {/* Full-Height Right Side Blurred Cover Image Background (Under Header, InstaGhost Reference Style) */}
         <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[55%] h-[650px] sm:h-[780px] pointer-events-none select-none z-0 overflow-hidden">
           <div className="w-full h-full relative">
@@ -68,7 +68,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           {/* Top Back Button Navigation */}
           <div className="mb-6">
             <Link
@@ -83,7 +83,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           </div>
 
           {/* Main Title Heading in Serif Typography */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14] max-w-3xl">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14] max-w-4xl">
             {cs.title}
           </h1>
 
@@ -104,7 +104,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           </div>
 
           {/* Tech Stack Badges Row */}
-          <div className="mt-8 flex flex-wrap gap-2 max-w-3xl">
+          <div className="mt-8 flex flex-wrap gap-2 max-w-4xl">
             {cs.techStack.map((tech) => (
               <span
                 key={tech}

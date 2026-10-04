@@ -53,7 +53,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
       <Header navigationData={navigationData} />
 
-      <main className="w-full pt-28 sm:pt-36 pb-20 overflow-hidden relative">
+      <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-20 overflow-hidden relative">
         {/* Ambient Top Lighting */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] pointer-events-none select-none overflow-hidden z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-purple-100/50 via-purple-50/20 to-transparent" />
