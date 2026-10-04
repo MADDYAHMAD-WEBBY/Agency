@@ -137,7 +137,7 @@ export default function IndustriesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xs sm:text-sm text-zinc-600 font-medium max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed tracking-normal"
           >
-            I architect custom full-stack web solutions, headless platforms, and local search dominance tailored to the specific conversion mechanics of high-growth sectors.
+            Tailored digital engineering designed for the compliance standards, operational workflows, and customer acquisition channels of specialized commercial sectors.
           </motion.p>
         </div>
 

@@ -12,43 +12,43 @@ const ART = (name: string) => `https://www.crafterui.com/art/${name}.jpg`;
 
 const WORKS: WorksWheelItem[] = [
   {
-    title: "Headless E-Commerce Engine",
+    title: "Headless E-Commerce",
     image: ART("prismatic-rift-anime"),
     href: "#services",
   },
   {
-    title: "FinTech Cloud Portal",
+    title: "FinTech Portal",
     image: ART("black-hole-ember-clouds"),
     href: "#services",
   },
   {
-    title: "AI Legal Intake Platform",
+    title: "AI Legal System",
     image: ART("neon-cave-portal-silhouette"),
     href: "#services",
   },
   {
-    title: "Luxury Real Estate Showcase",
+    title: "Real Estate Web",
     image: ART("red-ribbon-typography"),
     href: "#services",
   },
   {
-    title: "SaaS Analytics Dashboard",
+    title: "SaaS Dashboard",
     image: ART("celestial-light-figure"),
     href: "#services",
   },
-  { title: "Healthcare Booking System", image: ART("neon-portrait-uplight"), href: "#services" },
+  { title: "Healthcare App", image: ART("neon-portrait-uplight"), href: "#services" },
   {
-    title: "B2B Enterprise Portal",
+    title: "B2B Portal",
     image: ART("indigo-liquid-marble"),
     href: "#services",
   },
   {
-    title: "Local SEO Map Pack Dominator",
+    title: "Local SEO Engine",
     image: ART("rocket-launch-gradient"),
     href: "#services",
   },
   {
-    title: "Automated CRM Integration",
+    title: "CRM Automation",
     image: ART("astronaut-cosmic-wave"),
     href: "#services",
   },
@@ -105,7 +105,7 @@ export default function WorksWheelDemo() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xs sm:text-sm text-zinc-500 font-medium max-w-xl mx-auto mt-2 sm:mt-4 leading-relaxed tracking-normal"
           >
-            A curated showcase of my custom Headless WordPress architectures, full-stack Next.js web applications, and conversion-engineered digital experiences.
+            An editorial showcase of recent production deployments, bespoke web applications, and high-converting digital interfaces created for ambitious clients.
           </motion.p>
         </div>
 

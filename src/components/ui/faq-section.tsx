@@ -124,7 +124,7 @@ export default function FaqSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xs sm:text-sm text-zinc-600 font-medium max-w-lg mx-auto mt-3 sm:mt-4 leading-relaxed"
           >
-            Everything you need to know about our Next.js engineering stack, Headless WordPress architectures, and 2026 AI Search Optimization (GEO) strategies.
+            Clear technical transparency regarding our development process, security protocols, post-launch maintenance care, and organic growth strategies.
           </motion.p>
         </div>
 

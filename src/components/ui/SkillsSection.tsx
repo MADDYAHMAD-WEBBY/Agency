@@ -154,7 +154,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xs sm:text-sm text-zinc-600 font-medium max-w-xl mx-auto mt-3 sm:mt-4 leading-relaxed tracking-normal"
         >
-          From high-performance edge runtimes to custom Headless WordPress architectures — the battle-tested engineering stack behind my digital solutions.
+          Modern frontend frameworks, cloud infrastructure, and database ecosystems engineered for sub-second load times and enterprise-grade reliability.
         </motion.p>
       </div>
 
