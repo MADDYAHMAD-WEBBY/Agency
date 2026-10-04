@@ -12,45 +12,45 @@ const ART = (name: string) => `https://www.crafterui.com/art/${name}.jpg`;
 
 const WORKS: WorksWheelItem[] = [
   {
-    title: "Prismatic Rift",
+    title: "Headless E-Commerce Engine",
     image: ART("prismatic-rift-anime"),
-    href: "#prismatic-rift",
+    href: "#services",
   },
   {
-    title: "Ember Clouds",
+    title: "FinTech Cloud Portal",
     image: ART("black-hole-ember-clouds"),
-    href: "#ember-clouds",
+    href: "#services",
   },
   {
-    title: "Neon Portal",
+    title: "AI Legal Intake Platform",
     image: ART("neon-cave-portal-silhouette"),
-    href: "#neon-portal",
+    href: "#services",
   },
   {
-    title: "Red Ribbon",
+    title: "Luxury Real Estate Showcase",
     image: ART("red-ribbon-typography"),
-    href: "#red-ribbon",
+    href: "#services",
   },
   {
-    title: "Celestial",
+    title: "SaaS Analytics Dashboard",
     image: ART("celestial-light-figure"),
-    href: "#celestial",
+    href: "#services",
   },
-  { title: "Uplight", image: ART("neon-portrait-uplight"), href: "#uplight" },
+  { title: "Healthcare Booking System", image: ART("neon-portrait-uplight"), href: "#services" },
   {
-    title: "Indigo Marble",
+    title: "B2B Enterprise Portal",
     image: ART("indigo-liquid-marble"),
-    href: "#indigo-marble",
+    href: "#services",
   },
   {
-    title: "Launch Window",
+    title: "Local SEO Map Pack Dominator",
     image: ART("rocket-launch-gradient"),
-    href: "#launch-window",
+    href: "#services",
   },
   {
-    title: "Cosmic Wave",
+    title: "Automated CRM Integration",
     image: ART("astronaut-cosmic-wave"),
-    href: "#cosmic-wave",
+    href: "#services",
   },
 ];
 
