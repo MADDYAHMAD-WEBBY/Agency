@@ -60,7 +60,7 @@ export default function SiteFooter() {
                 <Link href="/services/business-websites" className="hover:text-purple-400 transition-colors">🌐 Business Websites</Link>
               </li>
               <li>
-                <Link href="/services/headless-wordpress-development" className="hover:text-purple-400 transition-colors">Headless WordPress</Link>
+                <Link href="/services/wordpress-website" className="hover:text-purple-400 transition-colors">Custom WordPress Development</Link>
               </li>
               <li>
                 <Link href="/#works" className="hover:text-white transition-colors">Portfolio & Works</Link>
