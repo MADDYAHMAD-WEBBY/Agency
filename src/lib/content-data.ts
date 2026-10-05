@@ -1251,9 +1251,10 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       "GOOGLE GEMINI 1.5",
       "LANGCHAIN & LLAMAINDEX",
       "PINECONE VECTOR DB",
-      "PYTHON & NODE.JS",
-      "NEXT.JS 15",
-      "AWS  {
+      "AWS & CLOUD HARDENING",
+    ],
+  },
+  {
     slug: "wordpress-website",
     title: "Custom WordPress Development",
     category: "web",
@@ -1572,8 +1573,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       "ON-PAGE SEO & SCHEMA",
       "ENGLISH & URDU RTL SUPPORT",
       "CLOUDWAYS & KINSTA HOSTING",
-    ],
-  },& VERCEL HOSTING",
+      "CLOUDFLARE CDN & VERCEL HOSTING",
     ],
   },
   {
