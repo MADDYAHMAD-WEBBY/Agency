@@ -41,8 +41,8 @@ export default function OnThisPageNav({ items }: OnThisPageNavProps) {
   }, [items]);
 
   return (
-    <div className="hidden lg:block lg:col-span-4 sticky top-28 space-y-4 pl-6 border-l border-zinc-200/80">
-      <div className="text-xs font-mono font-bold text-zinc-400 tracking-wider uppercase mb-4">
+    <div className="hidden lg:block lg:col-span-4 sticky top-28 sm:top-32 self-start space-y-4 pl-6 border-l border-zinc-200/80 max-h-[calc(100vh-150px)] overflow-y-auto scrollbar-thin">
+      <div className="text-xs font-mono font-bold text-zinc-400 tracking-wider uppercase mb-4 sticky top-0 bg-white/90 backdrop-blur-xs py-1 z-10">
         ON THIS PAGE
       </div>
       <nav className="space-y-3.5 text-xs font-mono">

@@ -7,17 +7,6 @@ import SiteFooter from "@/components/ui/site-footer";
 import ConsultationCtaBanner from "@/components/ui/consultation-cta-banner";
 import OnThisPageNav from "@/components/ui/on-this-page-nav";
 
-const pageNavItems = [
-  { id: "overview", label: "Overview & Dual-Target Architecture", icon: "⚡" },
-  { id: "zero-footprint", label: "Zero-Footprint Anonymous Access", icon: "🛡️" },
-  { id: "zero-buffer", label: "Zero-Buffer Media Streaming & Reverse Proxy", icon: "🌊" },
-  { id: "resilient-network", label: "Resilient Network Layer & Concurrency Locks", icon: "🔄" },
-  { id: "security-mitigation", label: "Multi-Layered Security & Bot Mitigation", icon: "🔒" },
-  { id: "headless-cms", label: "Headless WordPress & Decoupled CMS Integration", icon: "🔌" },
-  { id: "vanilla-frontend", label: "Vanilla Frontend Engine & Interactive UX", icon: "🎨" },
-  { id: "tech-specs", label: "Technology Stack Specifications", icon: "🛠️" },
-];
-
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -43,7 +32,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return {
     title: `${service.title} | Services | MHKMarkedia`,
-    description: service.tagline,
+    description: service.headline || service.tagline,
     openGraph: {
       title: service.title,
       description: service.tagline,
@@ -60,17 +49,39 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  // Build dynamic navigation for OnThisPageNav
+  const pageNavItems = [
+    { id: "overview", label: "Overview & Strategy", icon: "⚡" },
+    ...(service.leadJourney ? [{ id: "lead-journey", label: "Lead Journey Flow", icon: "🗺️" }] : []),
+    ...(service.comparisonTable ? [{ id: "comparison", label: "Chatbot vs AI Agent", icon: "⚖️" }] : []),
+    ...(service.buildVsBuy ? [{ id: "build-vs-buy", label: "Build vs Buy Analysis", icon: "⚔️" }] : []),
+    ...(service.problems ? [{ id: "problems", label: "Key Challenges Solved", icon: "⚠️" }] : []),
+    ...(service.botTypes ? [{ id: "bot-types", label: "Capabilities We Engineer", icon: "🤖" }] : []),
+    ...(service.securityPillars ? [{ id: "security-pillars", label: "Data Security & Privacy", icon: "🛡️" }] : []),
+    ...(service.leadSources ? [{ id: "lead-sources", label: "Connected Lead Sources", icon: "🔌" }] : []),
+    ...(service.automationsTable ? [{ id: "automations", label: "Department Automations", icon: "⚙️" }] : []),
+    ...(service.dashboardMetrics ? [{ id: "dashboard-metrics", label: "Reporting & Dashboards", icon: "📊" }] : []),
+    ...(service.useCases ? [{ id: "use-cases", label: "Industry Use Cases", icon: "🏢" }] : []),
+    ...(service.tools ? [{ id: "tools", label: "Tools & Platforms", icon: "🛠️" }] : []),
+    ...(service.processSteps ? [{ id: "process", label: "Implementation Process", icon: "🔄" }] : []),
+    ...(service.benefits ? [{ id: "benefits", label: "Key Business Benefits", icon: "📈" }] : []),
+    ...(service.beforeAfter ? [{ id: "before-after", label: "Before vs After Impact", icon: "🚀" }] : []),
+    ...(service.pricingModels ? [{ id: "pricing", label: "Pricing & Packages", icon: "💎" }] : []),
+    ...(service.deliverables ? [{ id: "deliverables", label: "Key Deliverables", icon: "📦" }] : []),
+    ...(service.faqs ? [{ id: "faqs", label: "Frequently Asked Questions", icon: "❓" }] : []),
+  ];
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
       <Header navigationData={navigationData} />
 
-      <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-hidden relative">
-        {/* Full-Height Right Side Blurred Cover Image Background (Under Header, InstaGhost Reference Style) */}
+      <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-x-clip relative">
+        {/* Full-Height Right Side Blurred Cover Image Background */}
         <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[55%] h-[650px] sm:h-[780px] pointer-events-none select-none z-0 overflow-hidden">
           <div className="w-full h-full relative">
             <img
               src={service.coverImage}
-              alt=""
+              alt={service.title}
               className="w-full h-full object-cover object-top filter blur-[8px] opacity-40 sm:opacity-55 scale-110"
             />
             {/* Smooth Edge Fade Gradients */}
@@ -95,20 +106,31 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* Main Title Heading in Elegant Serif Italic Typography */}
+          {/* 1. Hero Section: Main Title & Sub-Heading */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14] max-w-5xl">
-            {service.title}
+            {service.headline || service.title}
           </h1>
 
+          <p className="mt-4 text-base sm:text-xl font-medium text-purple-950/80 max-w-3xl leading-relaxed">
+            {service.tagline}
+          </p>
+
           {/* CTA Action Pill Button below Title */}
-          <div className="mt-6 flex items-center gap-4">
+          <div className="mt-6 flex flex-wrap items-center gap-4">
             <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 text-white text-xs font-mono font-bold tracking-wider uppercase hover:bg-black active:scale-95 transition-all shadow-md hover:shadow-zinc-950/20"
+              href="#contact"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/25"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Book Strategy Call</span>
+              <span>{service.heroCtaText || "Book Free Demo Call"}</span>
               <span>↗</span>
+            </Link>
+
+            <Link
+              href="#pricing"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-zinc-300 bg-white/80 hover:bg-zinc-100 text-zinc-800 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all"
+            >
+              <span>Explore Engagement & Pricing</span>
             </Link>
           </div>
 
@@ -120,7 +142,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   key={tech}
                   className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-zinc-200 bg-zinc-100/90 text-[11px] font-mono font-semibold tracking-wide text-zinc-700 shadow-2xs"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
                   {tech}
                 </span>
               ))}
@@ -138,205 +160,486 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             {/* Left Column: Main Narrative & Sections (8 cols) */}
             <div className="lg:col-span-8 space-y-14">
               
-              {/* Section 1: Overview & Dual-Target Architecture */}
+              {/* Overview & Core Strategy */}
               <div id="overview" className="space-y-4 scroll-mt-28">
                 <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>⚡</span> Overview & Dual-Target Architecture
+                  <span>⚡</span> Executive Strategy & System Architecture
                 </h2>
-                <p className="text-zinc-700 text-sm sm:text-base leading-relaxed">
-                  This architecture is an enterprise-grade, privacy-first web platform engineered for sub-second edge rendering, low-latency API proxying, and unhackable security—without requiring bloated monolith plugins or database locks.
-                </p>
-                
-                {/* Styled Purple Feature Callout Box */}
                 <div className="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3">
                   <h3 className="text-base sm:text-lg font-bold text-zinc-900 flex items-center gap-2 font-serif">
-                    <span>🏛️</span> Dual-Target Runtime Architecture
+                    <span>🚀</span> Enterprise System Architecture
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                    To achieve extreme global responsiveness while supporting heavy continuous binary data transfers, the platform was architected with a decoupled dual-target runtime:
+                    By combining state-of-the-art machine learning models, cloud CRM infrastructure, and custom API webhooks, MHKMarkedia builds robust digital systems that automate customer engagement and scale business revenue effortlessly.
                   </p>
-                  <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-800">
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-purple-600 font-bold">•</span>
-                      <span><strong>Serverless Edge Runtime (Cloudflare Pages & Workers):</strong> Executes request routing, bot mitigation, edge cache lookups, and token authentication within V8 Isolates distributed across 300+ global edge locations.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <span className="text-purple-600 font-bold">•</span>
-                      <span><strong>Containerized Node.js Streaming Cluster:</strong> Manages high-throughput binary proxying, long-lived HTTP Range pipelines, and upstream CDN socket pooling without exhausting server RAM.</span>
-                    </li>
-                  </ul>
                 </div>
               </div>
 
-              {/* Section 2: Zero-Footprint Anonymous Access */}
-              <div id="zero-footprint" className="space-y-4 scroll-mt-28">
-                <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>🛡️</span> Zero-Footprint Anonymous Access
-                </h2>
-                
-                <div className="p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3">
-                  <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                    Browsing legacy platforms natively requires active user sessions, third-party cookies, and tracking pixels. This architecture acts as an air-gapped cryptographic barrier:
-                  </p>
-                  <ul className="space-y-2 text-xs sm:text-sm text-zinc-800 font-medium">
-                    <li className="flex items-start gap-2">• Zero viewer authentication cookies or session states transmitted to upstream hosts.</li>
-                    <li className="flex items-start gap-2">• Ephemeral data can be inspected without triggering telemetry receipts.</li>
-                    <li className="flex items-start gap-2">• All client requests terminate at the edge; upstream networks only see isolated proxy pools.</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Section 3: Zero-Buffer Media Streaming & Reverse Proxy */}
-              <div id="zero-buffer" className="space-y-4 scroll-mt-28">
-                <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>🌊</span> Zero-Buffer Media Streaming & Reverse Proxy
-                </h2>
-                <p className="text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                  Traditional media download utilities buffer entire video files (e.g. 50MB to 200MB 4K Reels) into application server RAM before transmitting bytes to the user. Under heavy concurrency, this causes severe memory bloat, high GC pauses, and server crashes.
-                </p>
-
-                <div className="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3">
-                  <h3 className="text-base font-bold text-zinc-900 flex items-center gap-2 font-serif">
-                    <span>🚀</span> Direct Binary Pipeline via HTTP Streams
-                  </h3>
-                  <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                    Eliminates in-memory buffering using the modern HTTP Streams API and Undici stream dispatchers:
-                  </p>
-                  <ul className="space-y-2 text-xs sm:text-sm text-zinc-800">
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-600 font-bold">•</span>
-                      <span><strong>Direct Chunk Piping:</strong> Video chunks incoming from upstream CDNs are immediately piped chunk-by-chunk to the client response stream with zero intermediate disk writes or memory retention.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-purple-600 font-bold">•</span>
-                      <span><strong>Constant RAM Footprint:</strong> Server memory usage remains static at &lt;50MB even when processing thousands of concurrent high-bitrate streams.</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Code Block Callout: HTTP Range Header Forwarding */}
-                <div className="space-y-2">
-                  <h3 className="text-sm font-bold text-zinc-900 flex items-center gap-2 font-mono uppercase">
-                    <span>⏩</span> HTTP Range Header Forwarding
-                  </h3>
-                  <p className="text-xs text-zinc-600">
-                    When an HTML5 &lt;video&gt; element initiates playback, it requests specific byte windows (e.g., bytes=0-1048575). The streaming engine validates, signs, and proxies these byte offsets directly:
-                  </p>
-                  <div className="p-4 rounded-xl bg-zinc-950 text-emerald-400 font-mono text-[11px] sm:text-xs overflow-x-auto shadow-lg space-y-1">
-                    <div><span className="text-purple-400">GET</span> /api/stream?src=... HTTP/1.1</div>
-                    <div><span className="text-zinc-400">Range:</span> bytes=1048576-2097151</div>
-                    <div className="text-zinc-500">// Engine pipes directly with 206 Partial Content</div>
-                    <div><span className="text-emerald-300">HTTP/1.1 206 Partial Content</span></div>
-                    <div><span className="text-zinc-400">Content-Range:</span> bytes 1048576-2097151/15728640</div>
-                    <div><span className="text-zinc-400">Content-Type:</span> video/mp4</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Section 4: Resilient Network Layer & Concurrency Locks */}
-              <div id="resilient-network" className="space-y-4 scroll-mt-28">
-                <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>🔄</span> Resilient Network Layer & Concurrency Locks
-                </h2>
-                <p className="text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                  Public endpoints enforce strict rate limits and IP reputation filters. To guarantee 99.99% uptime and prevent traffic blacklisting, a multi-layer network dispatcher is deployed:
-                </p>
-
-                <div className="p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3 text-xs sm:text-sm">
-                  <ul className="space-y-2.5 text-zinc-800">
-                    <li><strong>• Automated Proxy Dispatcher & Port Rotation:</strong> Outbound queries cycle through dedicated IP pools using round-robin port allocation with health checks.</li>
-                    <li><strong>• Resilient Undici Connection Pooling:</strong> Maintains persistent TCP keep-alive sockets, eliminating TLS handshake overhead on rapid repetitive requests.</li>
-                    <li><strong>• Token Lifecycle Management & Mutex Lockouts:</strong> Concurrency locks guarantee that simultaneous identical user requests coalesce into a single upstream fetch, thwarting <em>thundering-herd</em> bottlenecks.</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Section 5: Multi-Layered Security & Bot Mitigation */}
-              <div id="security-mitigation" className="space-y-4 scroll-mt-28">
-                <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>🔒</span> Multi-Layered Security & Bot Mitigation
-                </h2>
-                <p className="text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                  Reverse proxy engines handling dynamic external URLs face severe security vectors, most notably Server-Side Request Forgery (SSRF) and scraper abuse. Strict defense-in-depth protocols are enforced:
-                </p>
-
-                {/* Table Layout matching Screenshot media_1791130799793 */}
-                <div className="rounded-2xl border border-zinc-200/80 overflow-hidden text-xs sm:text-sm">
-                  <div className="grid grid-cols-12 bg-zinc-100/90 p-4 font-mono font-bold text-zinc-600 border-b border-zinc-200/80 uppercase">
-                    <div className="col-span-4">DEFENSE LAYER</div>
-                    <div className="col-span-8">IMPLEMENTATION MECHANISM</div>
-                  </div>
-                  <div className="grid grid-cols-12 p-4 bg-white border-b border-zinc-100 items-center">
-                    <div className="col-span-4 font-mono font-bold text-purple-600">SSRF IP Validation</div>
-                    <div className="col-span-8 text-zinc-700 leading-relaxed font-mono text-[11px] sm:text-xs">
-                      Strict DNS pre-resolution & CIDR validation blocking loopback (127.0.0.1), private subnets (RFC 1918), link-local (169.254.0.0/16), and cloud metadata endpoints.
+              {/* Lead Journey Visual Pipeline Flow Diagram */}
+              {service.leadJourney && (
+                <div id="lead-journey" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🗺️</span> Visual Lead Journey & Automation Map
+                  </h2>
+                  <div className="relative p-6 sm:p-8 rounded-2xl bg-zinc-950 text-white space-y-6 shadow-xl border border-zinc-800">
+                    <div className="text-xs font-mono font-bold text-purple-400 uppercase tracking-widest">
+                      REAL-TIME PIPELINE AUTOMATION MAP
+                    </div>
+                    <div className="space-y-4">
+                      {service.leadJourney.map((step, idx) => (
+                        <div key={idx} className="flex items-start gap-4 relative group">
+                          <div className="shrink-0 w-8 h-8 rounded-full bg-purple-600 text-white font-mono font-bold text-xs flex items-center justify-center shadow-md">
+                            {step.step}
+                          </div>
+                          <div className="space-y-1 pb-3 border-b border-zinc-800/80 w-full last:border-0">
+                            <h3 className="text-sm sm:text-base font-serif font-bold text-white flex items-center justify-between">
+                              <span>{step.title}</span>
+                              <span className="text-purple-400 font-mono text-xs opacity-75">Step {idx + 1}</span>
+                            </h3>
+                            <p className="text-xs text-zinc-400 leading-relaxed">
+                              {step.desc}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
-              {/* Section 6: Headless WordPress & Decoupled CMS Integration */}
-              <div id="headless-cms" className="space-y-4 scroll-mt-28">
-                <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>🔌</span> Headless WordPress & Decoupled CMS Integration
-                </h2>
-                <p className="text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                  To enable easy deployment across existing publishing properties and high-ranking SEO domains without exposing backend clusters, a custom Headless PHP Integration Layer was architected:
-                </p>
-
-                <div className="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3 text-xs sm:text-sm text-zinc-800">
-                  <ul className="space-y-2.5">
-                    <li><strong>• Custom WordPress REST API Endpoints:</strong> Acts as a secured intermediary that communicates with edge proxies using signed internal tokens.</li>
-                    <li><strong>• Reusable Shortcodes & Gutenberg Blocks:</strong> Enables content editors to embed live interactive tools onto any WP page with simple markup.</li>
-                    <li><strong>• Origin Shielding:</strong> The core streaming cluster IP remains completely hidden from DNS registries and public scrutiny.</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Section 7: Vanilla Frontend Engine & Interactive UX */}
-              <div id="vanilla-frontend" className="space-y-4 scroll-mt-28">
-                <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>🎨</span> Vanilla Frontend Engine & Interactive UX
-                </h2>
-                <p className="text-zinc-700 text-xs sm:text-sm leading-relaxed">
-                  The client interface is handcrafted in pure Vanilla JavaScript (ES6+) and CSS3 with zero third-party framework runtime overhead, delivering instant page loads and 60 FPS mobile animations.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
-                    <div className="text-sm font-bold text-zinc-900 flex items-center gap-2 font-serif">
-                      <span>⏱️</span> Multi-Segment Story Timers
+              {/* Chatbot vs AI Agent Comparison Section */}
+              {service.comparisonTable && (
+                <div id="comparison" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>⚖️</span> Traditional Chatbots vs Autonomous AI Agents
+                  </h2>
+                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
+                    <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
+                      <div className="col-span-4">FEATURE / CAPABILITY</div>
+                      <div className="col-span-4 text-purple-300">TRADITIONAL CHATBOT</div>
+                      <div className="col-span-4 text-emerald-400">AUTONOMOUS AI AGENT</div>
                     </div>
-                    <div className="text-xs text-zinc-600 leading-relaxed">
-                      Custom segmented progress bars matching native mobile Instagram story playback with pause, resume, and auto-advance mechanics.
-                    </div>
-                  </div>
-
-                  <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
-                    <div className="text-sm font-bold text-zinc-900 flex items-center gap-2 font-serif">
-                      <span>👆</span> Hold-to-Pause Touch Listeners
-                    </div>
-                    <div className="text-xs text-zinc-600 leading-relaxed">
-                      Intuitive gesture handlers that freeze playback timers and hide UI overlays when holding down on mobile screens or desktop mouse click.
-                    </div>
+                    {service.comparisonTable.map((row, idx) => (
+                      <div
+                        key={idx}
+                        className={`grid grid-cols-12 p-4 items-center ${
+                          idx % 2 === 0 ? "bg-white" : "bg-zinc-50/80"
+                        } border-b border-zinc-200/60 last:border-0`}
+                      >
+                        <div className="col-span-4 font-bold text-zinc-900 font-serif">
+                          {row.feature}
+                        </div>
+                        <div className="col-span-4 text-zinc-600 text-xs leading-relaxed pr-2">
+                          {row.chatbot}
+                        </div>
+                        <div className="col-span-4 text-purple-950 font-medium text-xs leading-relaxed">
+                          {row.agent}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
+              )}
 
-              {/* Section 8: Technology Stack Specifications */}
-              <div id="tech-specs" className="space-y-4 scroll-mt-28">
-                <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>🛠️</span> Key Engineering Deliverables
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-zinc-800 p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80">
-                  {service.deliverables.map((item) => (
-                    <div key={item} className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-purple-600" />
-                      <span>{item}</span>
+              {/* Build vs Buy Comparison Section */}
+              {service.buildVsBuy && (
+                <div id="build-vs-buy" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>⚔️</span> Off-the-Shelf Tools vs Custom Engineering
+                  </h2>
+                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
+                    <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
+                      <div className="col-span-4">EVALUATION CRITERIA</div>
+                      <div className="col-span-4 text-red-300">READY-MADE AI TOOLS</div>
+                      <div className="col-span-4 text-emerald-400">CUSTOM AI INTEGRATION</div>
                     </div>
-                  ))}
+                    {service.buildVsBuy.map((row, idx) => (
+                      <div
+                        key={idx}
+                        className={`grid grid-cols-12 p-4 items-center ${
+                          idx % 2 === 0 ? "bg-white" : "bg-zinc-50/80"
+                        } border-b border-zinc-200/60 last:border-0`}
+                      >
+                        <div className="col-span-4 font-bold text-zinc-900 font-serif">
+                          {row.feature}
+                        </div>
+                        <div className="col-span-4 text-zinc-600 text-xs leading-relaxed pr-2">
+                          {row.readyMade}
+                        </div>
+                        <div className="col-span-4 text-purple-950 font-medium text-xs leading-relaxed">
+                          {row.custom}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {/* Problem Section */}
+              {service.problems && (
+                <div id="problems" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>⚠️</span> Operational Bottlenecks & Friction Solved
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.problems.map((prob, idx) => (
+                      <div
+                        key={idx}
+                        className="p-6 rounded-2xl bg-red-50/40 border border-red-200/60 space-y-2 hover:border-red-300 transition-colors"
+                      >
+                        <div className="text-sm font-bold text-red-950 flex items-center gap-2 font-serif">
+                          <span className="text-red-500 font-bold">✕</span> {prob.title}
+                        </div>
+                        <p className="text-xs text-zinc-600 leading-relaxed">
+                          {prob.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Types of Bots / Capabilities We Build */}
+              {service.botTypes && (
+                <div id="bot-types" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🤖</span> Core Capabilities & System Modules
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.botTypes.map((bot, idx) => (
+                      <div key={idx} className="p-6 rounded-2xl bg-purple-50/40 border border-purple-200/60 space-y-2 hover:border-purple-300 transition-colors">
+                        <h3 className="text-base font-bold text-zinc-900 font-serif flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">•</span> {bot.title}
+                        </h3>
+                        <p className="text-xs text-zinc-600 leading-relaxed">
+                          {bot.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Security & Data Privacy Pillars Section */}
+              {service.securityPillars && (
+                <div id="security-pillars" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🛡️</span> Enterprise Data Privacy & Security Framework
+                  </h2>
+                  <div className="p-6 sm:p-8 rounded-2xl bg-slate-950 text-white space-y-6 shadow-xl border border-slate-800">
+                    <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+                      ZERO-DATA-LEAKAGE PRIVACY FRAMEWORK
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {service.securityPillars.map((sec, idx) => (
+                        <div key={idx} className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+                          <h3 className="text-sm font-bold text-emerald-400 font-serif flex items-center gap-2">
+                            <span>🔒</span> {sec.title}
+                          </h3>
+                          <p className="text-xs text-slate-300 leading-relaxed">
+                            {sec.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Lead Sources Section */}
+              {service.leadSources && (
+                <div id="lead-sources" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🔌</span> Connected Ingestion Channels & Sources
+                  </h2>
+                  <div className="p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3">
+                    <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-sans">
+                      We connect every prospective touchpoint into a unified CRM pipeline with zero lead leakage:
+                    </p>
+                    <div className="flex flex-wrap gap-2.5 pt-2">
+                      {service.leadSources.map((source, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3.5 py-2 rounded-xl bg-white border border-zinc-200 text-xs font-mono font-semibold text-purple-900 shadow-2xs flex items-center gap-2"
+                        >
+                          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                          {source}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Department Automations Table */}
+              {service.automationsTable && (
+                <div id="automations" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>⚙️</span> Department-Level Automation Use Cases
+                  </h2>
+                  
+                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
+                    <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
+                      <div className="col-span-4">DEPARTMENT</div>
+                      <div className="col-span-8">AUTOMATION EXAMPLES & WORKFLOWS</div>
+                    </div>
+                    {service.automationsTable.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className={`grid grid-cols-12 p-4 items-center ${
+                          idx % 2 === 0 ? "bg-white" : "bg-zinc-50/80"
+                        } border-b border-zinc-200/60 last:border-0`}
+                      >
+                        <div className="col-span-4 font-bold text-purple-700 font-serif">
+                          {item.department}
+                        </div>
+                        <div className="col-span-8 text-zinc-700 leading-relaxed font-sans font-medium text-xs sm:text-sm">
+                          {item.examples}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Executive Dashboard Reporting Metrics */}
+              {service.dashboardMetrics && (
+                <div id="dashboard-metrics" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>📊</span> Executive Dashboards & Analytics
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.dashboardMetrics.map((m, idx) => (
+                      <div key={idx} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
+                        <h3 className="text-sm font-bold text-zinc-900 font-serif text-purple-900">
+                          {m.metric}
+                        </h3>
+                        <p className="text-xs text-zinc-600 leading-relaxed">
+                          {m.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Industry Use Cases */}
+              {service.useCases && (
+                <div id="use-cases" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🏢</span> Industry Applications & Real-World Impact
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.useCases.map((uc, idx) => (
+                      <div key={idx} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
+                        <h3 className="text-sm font-bold text-zinc-900 font-serif text-purple-900">
+                          {uc.industry}
+                        </h3>
+                        <p className="text-xs text-zinc-600 leading-relaxed">
+                          {uc.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Tools & Integrations */}
+              {service.tools && (
+                <div id="tools" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🛠️</span> Technologies, Frameworks & Integrations
+                  </h2>
+                  <div className="grid grid-cols-1 gap-4">
+                    {service.tools.map((toolGroup, idx) => (
+                      <div key={idx} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3">
+                        <h3 className="text-sm font-bold text-zinc-900 font-serif tracking-wide text-purple-900">
+                          {toolGroup.category}
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {toolGroup.items.map((item) => (
+                            <span
+                              key={item}
+                              className="px-3 py-1.5 rounded-lg bg-white border border-zinc-200 text-xs font-mono font-medium text-zinc-800 shadow-2xs"
+                            >
+                              ✓ {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Process Steps */}
+              {service.processSteps && (
+                <div id="process" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🔄</span> Implementation Roadmap & Deployment
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.processSteps.map((step) => (
+                      <div key={step.step} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2 relative">
+                        <span className="text-xs font-mono font-bold text-purple-600 bg-purple-100 px-2.5 py-1 rounded-full">
+                          {step.step}
+                        </span>
+                        <h3 className="text-base font-bold text-zinc-900 font-serif pt-1">
+                          {step.title}
+                        </h3>
+                        <p className="text-xs text-zinc-600 leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Benefits */}
+              {service.benefits && (
+                <div id="benefits" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>📈</span> Quantifiable Business Value & ROI
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.benefits.map((b, idx) => (
+                      <div key={idx} className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2">
+                        <h3 className="text-sm font-bold text-emerald-950 font-serif flex items-center gap-2">
+                          <span className="text-emerald-600 font-bold">✓</span> {b.title}
+                        </h3>
+                        <p className="text-xs text-zinc-700 leading-relaxed">
+                          {b.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Before vs After Impact */}
+              {service.beforeAfter && (
+                <div id="before-after" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>🚀</span> Operational Transformation & Performance Impact
+                  </h2>
+                  <div className="space-y-4">
+                    {service.beforeAfter.map((ba, idx) => (
+                      <div key={idx} className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80">
+                        <div className="space-y-1.5 p-4 rounded-xl bg-red-50/60 border border-red-200/60">
+                          <div className="text-xs font-mono font-bold text-red-600 uppercase">BEFORE AUTOMATION</div>
+                          <p className="text-xs text-zinc-700 leading-relaxed">{ba.before}</p>
+                        </div>
+                        <div className="space-y-1.5 p-4 rounded-xl bg-emerald-50/60 border border-emerald-200/60">
+                          <div className="text-xs font-mono font-bold text-emerald-700 uppercase">AFTER AUTOMATION</div>
+                          <p className="text-xs text-zinc-800 leading-relaxed">{ba.after}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Pricing / Engagement */}
+              {service.pricingModels && (
+                <div id="pricing" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>💎</span> Engagement Models & Investment Options
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {service.pricingModels.map((plan, idx) => (
+                      <div
+                        key={idx}
+                        className={`p-6 rounded-2xl border flex flex-col justify-between relative transition-all ${
+                          plan.highlight
+                            ? "bg-purple-950 text-white border-purple-800 shadow-xl scale-[1.02]"
+                            : "bg-zinc-50 text-zinc-900 border-zinc-200"
+                        }`}
+                      >
+                        {plan.highlight && (
+                          <span className="absolute -top-3 right-4 px-3 py-0.5 rounded-full bg-purple-500 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-sm">
+                            MOST POPULAR
+                          </span>
+                        )}
+                        <div className="space-y-3">
+                          <h3 className={`text-base font-bold font-serif ${plan.highlight ? "text-white" : "text-zinc-900"}`}>
+                            {plan.title}
+                          </h3>
+                          <p className={`text-xs ${plan.highlight ? "text-purple-200" : "text-zinc-500"}`}>
+                            {plan.subtitle}
+                          </p>
+                          {plan.price && (
+                            <div className={`text-xl font-extrabold font-mono pt-2 ${plan.highlight ? "text-emerald-400" : "text-purple-700"}`}>
+                              {plan.price}
+                            </div>
+                          )}
+                          <ul className="space-y-2 pt-4 text-xs">
+                            {plan.features.map((feat, fIdx) => (
+                              <li key={fIdx} className="flex items-start gap-2">
+                                <span className={plan.highlight ? "text-emerald-400 font-bold" : "text-purple-600 font-bold"}>
+                                  ✓
+                                </span>
+                                <span className={plan.highlight ? "text-purple-100" : "text-zinc-700"}>{feat}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="mt-6 pt-4 border-t border-zinc-200/30">
+                          <Link
+                            href="#contact"
+                            className={`w-full text-center block py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                              plan.highlight
+                                ? "bg-purple-500 hover:bg-purple-400 text-white"
+                                : "bg-zinc-900 hover:bg-black text-white"
+                            }`}
+                          >
+                            Get Started
+                          </Link>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Key Deliverables */}
+              {service.deliverables && (
+                <div id="deliverables" className="space-y-4 scroll-mt-28">
+                  <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>📦</span> Technical Deliverables & Handover
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-zinc-800 p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80">
+                    {service.deliverables.map((item) => (
+                      <div key={item} className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-purple-600" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* FAQs */}
+              {service.faqs && (
+                <div id="faqs" className="space-y-6 scroll-mt-28">
+                  <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
+                    <span>❓</span> Frequently Asked Questions
+                  </h2>
+                  <div className="space-y-4">
+                    {service.faqs.map((faq, idx) => (
+                      <div key={idx} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
+                        <h3 className="text-sm font-bold text-zinc-900 font-serif flex items-center gap-2">
+                          <span className="text-purple-600 font-mono font-bold">Q:</span> {faq.question}
+                        </h3>
+                        <p className="text-xs text-zinc-700 leading-relaxed pl-6">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
             </div>
 
@@ -346,11 +649,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Bottom CTA Hero Banner matching Homepage CtaSection */}
+        {/* 9. Final CTA Banner */}
         <ConsultationCtaBanner
-          title="READY TO ELEVATE YOUR DIGITAL IMPACT? LET'S ENGINEER YOUR GROWTH MACHINE"
-          subtitle="Turning high-performance engineering & organic search into lasting revenue."
-          buttonText="Start a Conversation"
+          title={service.ctaTitle || `READY TO ELEVATE YOUR ${service.title.toUpperCase()}?`}
+          subtitle="Book a free strategy audit call and discover how your business can save 20+ hours every single week."
+          subtext={`Whether you need enterprise ${service.title.toLowerCase()}, n8n & Zapier cloud orchestration, or custom AI integrations, MHKMarkedia engineers robust digital systems built for speed, conversion, and scale.`}
+          buttonText="Book Free Audit Call"
         />
       </main>
 

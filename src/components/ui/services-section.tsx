@@ -23,7 +23,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "workflow-automation",
     category: "ai",
-    href: "#contact",
+    href: "/services/workflow-automation",
     title: "Workflow Automation",
     description:
       "Automate repetitive business operations, eliminate manual bottlenecks, and connect software tools seamlessly to save hundreds of hours monthly.",
@@ -36,7 +36,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "ai-chatbots",
     category: "ai",
-    href: "#contact",
+    href: "/services/ai-chatbots",
     title: "AI Chatbots & Autonomous Agents",
     description:
       "Deploy intelligent LLM chatbots and 24/7 AI agents that engage website visitors, qualify leads, and close sales automatically.",
@@ -49,7 +49,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "crm-lead-automation",
     category: "ai",
-    href: "#contact",
+    href: "/services/crm-lead-automation",
     title: "CRM / Lead Automation",
     description:
       "Capture, track, and nurture incoming leads automatically with custom CRM pipelines, SMS/Email sequences, and instant team alerts.",
@@ -62,7 +62,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "custom-ai-integrations",
     category: "ai",
-    href: "#contact",
+    href: "/services/custom-ai-integrations",
     title: "Custom AI Integrations",
     description:
       "Embed custom artificial intelligence capabilities directly into your existing web platforms for intelligent analytics and smart recommendations.",
@@ -77,7 +77,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "business-websites",
     category: "web",
-    href: "#contact",
+    href: "/services/business-websites",
     title: "Business Websites",
     description:
       "High-converting, mobile-responsive business websites built to showcase your brand, establish immediate authority, and turn traffic into clients.",

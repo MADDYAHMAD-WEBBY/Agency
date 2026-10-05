@@ -92,7 +92,7 @@ export default function CtaSection() {
                 Turning high-performance engineering &amp; organic search into lasting revenue.
               </p>
               <p className="text-xs sm:text-sm text-zinc-600 font-sans font-normal leading-relaxed">
-                Whether you need an enterprise Next.js web application, a headless WordPress migration, or dominant local search visibility, I architect custom web solutions built for speed, conversion, and scale.
+                Whether you need an enterprise Next.js web application, a headless WordPress migration, or dominant local search visibility, MHKMarkedia architects custom web solutions built for speed, conversion, and scale.
               </p>
             </div>
 

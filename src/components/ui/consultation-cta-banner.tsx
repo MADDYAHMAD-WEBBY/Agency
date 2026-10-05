@@ -14,7 +14,7 @@ interface BannerProps {
 export default function ConsultationCtaBanner({
   title = "READY TO ELEVATE YOUR DIGITAL IMPACT?",
   subtitle = "Turning high-performance engineering & organic search into lasting revenue.",
-  subtext = "Whether you need an enterprise Next.js web application, a headless WordPress migration, or dominant local search visibility, I architect custom web solutions built for speed, conversion, and scale.",
+  subtext = "Whether you need an enterprise Next.js web application, a headless WordPress migration, or dominant local search visibility, MHKMarkedia architects custom web solutions built for speed, conversion, and scale.",
   buttonText = "Start a Conversation",
   buttonHref,
 }: BannerProps) {

@@ -39,16 +39,28 @@ export default function SiteFooter() {
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-white transition-colors">Services & Capabilities</Link>
+                <Link href="/#services" className="hover:text-white transition-colors">All Services & Capabilities</Link>
+              </li>
+              <li>
+                <Link href="/services/custom-ai-integrations" className="hover:text-purple-400 transition-colors text-purple-300 font-semibold">🔮 Custom AI Integrations</Link>
+              </li>
+              <li>
+                <Link href="/services/crm-lead-automation" className="hover:text-purple-400 transition-colors">📊 CRM & Lead Automation</Link>
+              </li>
+              <li>
+                <Link href="/services/ai-chatbots" className="hover:text-purple-400 transition-colors">🤖 AI Chatbots & Agents</Link>
+              </li>
+              <li>
+                <Link href="/services/workflow-automation" className="hover:text-purple-400 transition-colors">⚡ Workflow Automation</Link>
+              </li>
+              <li>
+                <Link href="/services/business-websites" className="hover:text-purple-400 transition-colors">🌐 Business Websites</Link>
+              </li>
+              <li>
+                <Link href="/services/headless-wordpress-development" className="hover:text-purple-400 transition-colors">Headless WordPress</Link>
               </li>
               <li>
                 <Link href="/#works" className="hover:text-white transition-colors">Portfolio & Works</Link>
-              </li>
-              <li>
-                <Link href="/#about" className="hover:text-white transition-colors">About M. Hafeez Khan</Link>
-              </li>
-              <li>
-                <Link href="/#faq" className="hover:text-white transition-colors">Frequently Asked Questions</Link>
               </li>
             </ul>
           </div>
@@ -59,7 +71,7 @@ export default function SiteFooter() {
               Direct Strategy Inquiry
             </div>
             <p className="text-zinc-400 leading-relaxed">
-              Have an architecture or full-stack web engineering question? Speak directly with CEO & Lead Digital Architect M. Hafeez Khan.
+              Have an architecture or full-stack web engineering question? Speak directly with the MHKMarkedia team.
             </p>
             <div className="pt-2">
               <Link
@@ -77,7 +89,7 @@ export default function SiteFooter() {
         {/* Bottom Bar & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
           <div>
-            © {new Date().getFullYear()} MHKMarkedia. Designed & Engineered by M. Hafeez Khan.
+            © {new Date().getFullYear()} MHKMarkedia. Designed & Engineered for Enterprise Scale.
           </div>
           <div className="flex items-center gap-6 text-zinc-400">
             <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
