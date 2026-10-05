@@ -53,7 +53,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const pageNavItems = [
     { id: "overview", label: "Overview & Strategy", icon: "⚡" },
     ...(service.leadJourney ? [{ id: "lead-journey", label: "Lead Journey Flow", icon: "🗺️" }] : []),
-    ...(service.comparisonTable ? [{ id: "comparison", label: "Chatbot vs AI Agent", icon: "⚖️" }] : []),
+    ...(service.comparisonTable ? [{ id: "comparison", label: service.slug === "ecommerce" ? "Shopify vs WooCommerce" : "Chatbot vs AI Agent", icon: "⚖️" }] : []),
     ...(service.buildVsBuy ? [{ id: "build-vs-buy", label: "Build vs Buy Analysis", icon: "⚔️" }] : []),
     ...(service.problems ? [{ id: "problems", label: "Key Challenges Solved", icon: "⚠️" }] : []),
     ...(service.botTypes ? [{ id: "bot-types", label: "Capabilities We Engineer", icon: "🤖" }] : []),
@@ -207,17 +207,17 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </div>
               )}
 
-              {/* Chatbot vs AI Agent Comparison Section */}
+              {/* Comparison Section (Chatbot vs AI Agent or Shopify vs WooCommerce) */}
               {service.comparisonTable && (
                 <div id="comparison" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>⚖️</span> Traditional Chatbots vs Autonomous AI Agents
+                    <span>⚖️</span> {service.slug === "ecommerce" ? "Shopify vs WooCommerce Platform Comparison" : "Traditional Chatbots vs Autonomous AI Agents"}
                   </h2>
                   <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
                     <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
-                      <div className="col-span-4">FEATURE / CAPABILITY</div>
-                      <div className="col-span-4 text-purple-300">TRADITIONAL CHATBOT</div>
-                      <div className="col-span-4 text-emerald-400">AUTONOMOUS AI AGENT</div>
+                      <div className="col-span-4">{service.comparisonHeaders?.col1 || "FEATURE / CAPABILITY"}</div>
+                      <div className="col-span-4 text-purple-300">{service.comparisonHeaders?.col2 || "TRADITIONAL CHATBOT"}</div>
+                      <div className="col-span-4 text-emerald-400">{service.comparisonHeaders?.col3 || "AUTONOMOUS AI AGENT"}</div>
                     </div>
                     {service.comparisonTable.map((row, idx) => (
                       <div
@@ -238,6 +238,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                       </div>
                     ))}
                   </div>
+                  {service.slug === "ecommerce" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Confused between Shopify and WooCommerce? We provide a free platform consultation to select the optimal e-commerce tech stack for your business.</span>
+                    </div>
+                  )}
                 </div>
               )}
 

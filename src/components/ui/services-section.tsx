@@ -90,7 +90,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "ecommerce",
     category: "web",
-    href: "#contact",
+    href: "/services/ecommerce",
     title: "E-Commerce (Shopify & WooCommerce)",
     description:
       "Scalable online store solutions engineered for seamless checkout, high conversion rates, inventory synchronization, and sub-second loading.",

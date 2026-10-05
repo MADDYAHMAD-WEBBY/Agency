@@ -54,6 +54,9 @@ export default function SiteFooter() {
                 <Link href="/services/workflow-automation" className="hover:text-purple-400 transition-colors">⚡ Workflow Automation</Link>
               </li>
               <li>
+                <Link href="/services/ecommerce" className="hover:text-purple-400 transition-colors">🛒 E-Commerce (Shopify & WooCommerce)</Link>
+              </li>
+              <li>
                 <Link href="/services/business-websites" className="hover:text-purple-400 transition-colors">🌐 Business Websites</Link>
               </li>
               <li>

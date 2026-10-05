@@ -39,6 +39,7 @@ export interface ServiceDetail {
   heroCtaText?: string;
   problems?: { title: string; desc: string }[];
   automationsTable?: { department: string; examples: string }[];
+  comparisonHeaders?: { col1: string; col2: string; col3: string };
   comparisonTable?: { feature: string; chatbot: string; agent: string }[];
   botTypes?: { title: string; desc: string }[];
   useCases?: { industry: string; desc: string }[];
@@ -1555,6 +1556,345 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       "ENGLISH & URDU RTL SUPPORT",
       "BANK-GRADE SSL SECURITY",
       "VERCEL & CLOUDWAYS HOSTING",
+    ],
+  },
+  {
+    slug: "ecommerce",
+    title: "E-Commerce Stores (Shopify & WooCommerce)",
+    category: "web",
+    headline: "E-commerce Stores Built to Sell. Launch Your Online Store and Grow Sales.",
+    tagline: "Fast, mobile-friendly Shopify & WooCommerce stores engineered to convert visitors into repeat customers, eliminate cart abandonment, and scale revenue automatically.",
+    heroCtaText: "Book Free Store Consultation",
+    description:
+      "Having an online store is not enough—your store must be an engineered sales machine that converts incoming traffic into high-margin revenue. MHKMarkedia builds high-converting e-commerce stores on Shopify and WooCommerce designed for fast loading speed, seamless mobile checkout, and frictionless customer journeys. From custom liquid theme design and bulk product imports to automated local payment gateways (COD, JazzCash, Easypaisa, Card) and courier shipping API integrations (TCS, Leopards, Trax, PostEx), we handle every technical detail. Furthermore, we equip your store with automated abandoned cart recovery, WhatsApp order notifications, COD verification engines, and advanced Meta/Google conversion tracking to maximize average order value (AOV) and return on ad spend (ROAS).",
+
+    comparisonHeaders: {
+      col1: "EVALUATION CRITERIA",
+      col2: "SHOPIFY PLATFORM",
+      col3: "WOOCOMMERCE PLATFORM",
+    },
+
+    comparisonTable: [
+      {
+        feature: "Store Setup & Deployment Speed",
+        chatbot: "Fast, turnkey launch with hosted SaaS infrastructure.",
+        agent: "Requires hosting setup & configuration; highly flexible timeline.",
+      },
+      {
+        feature: "Hosting & Cloud Infrastructure",
+        chatbot: "100% managed by Shopify with built-in global CDN & SSL.",
+        agent: "Self-hosted cloud (Cloudways, AWS, or host of your choice).",
+      },
+      {
+        feature: "Customization & Code Control",
+        chatbot: "Liquid themes & apps; subject to Shopify platform rules.",
+        agent: "100% open-source control; unlimited custom PHP & React code.",
+      },
+      {
+        feature: "Cost Structure & Expenses",
+        chatbot: "Monthly SaaS subscription + paid app fees & transaction fees.",
+        agent: "Free core plugin; pay only for cloud hosting & custom add-ons.",
+      },
+      {
+        feature: "Ideal Growth & Business Fit",
+        chatbot: "Fast launch, D2C brands, dropshipping & international scaling.",
+        agent: "Custom B2B features, WordPress users, total budget control.",
+      },
+      {
+        feature: "Local & Regional Payment Support",
+        chatbot: "Supports major gateways; local provider verification required.",
+        agent: "Extensive native support for local payment gateways & COD rules.",
+      },
+    ],
+
+    problems: [
+      {
+        title: "High Visitor Traffic but Low Sales & Zero Conversions",
+        desc: "Store receives visitor traffic from paid ads, but clunky UI layouts and uninspiring product presentation result in poor sales conversion rates.",
+      },
+      {
+        title: "Severe Checkout Friction & High Cart Abandonment",
+        desc: "Complex multi-page checkouts, unexpected shipping costs, and missing payment options force prospective buyers to abandon their carts.",
+      },
+      {
+        title: "Slow Mobile Load Speed & Poor Smartphone UX",
+        desc: "Unoptimized product images and heavy scripts cause mobile store pages to lag, driving frustrated shoppers directly to competitor stores.",
+      },
+      {
+        title: "Frustrating Payment & Courier Integration Hurdles",
+        desc: "Struggling to connect local payment gateways (JazzCash, Easypaisa, Cards) and courier APIs for automated shipping slip generation.",
+      },
+      {
+        title: "Manual Order Processing, Stock Errors & Fake COD Orders",
+        desc: "Operations teams waste hours manually updating inventory, writing shipping labels, and losing money on unverified fake COD orders.",
+      },
+      {
+        title: "Product Catalog Invisible on Google Search Results",
+        desc: "Unoptimized product listings and missing Schema structured data prevent your catalog from ranking on Google Shopping and search engine results.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "Turnkey Online Store Engineering (Start to Launch)",
+        desc: "End-to-end e-commerce store architecture including domain configuration, payment gateways, courier shipping APIs, and full catalog setup.",
+      },
+      {
+        title: "Bespoke Shopify Store Design & Liquid Customization",
+        desc: "Custom Shopify Liquid theme development tailored to your visual brand identity with zero reliance on slow generic templates.",
+      },
+      {
+        title: "WooCommerce Store Development & Custom Extensions",
+        desc: "Scalable, high-performance WooCommerce stores built on custom WordPress code with tailored functionality and lightning speed.",
+      },
+      {
+        title: "Store Redesign & Platform Migration",
+        desc: "Seamless store migrations (WooCommerce to Shopify or vice versa) preserving all product data, customer accounts, and SEO rankings.",
+      },
+      {
+        title: "Bulk Product Import, Catalog & Variant Setup",
+        desc: "Automated bulk product uploads, category structuring, SKU management, size/color variant configurations, and inventory sync.",
+      },
+      {
+        title: "Custom Features (Bundles, Wholesale & Subscriptions)",
+        desc: "Engineering custom product bundling engines, B2B wholesale volume pricing tiers, and recurring subscription checkouts.",
+      },
+      {
+        title: "Multi-Vendor Marketplace Architecture",
+        desc: "Building complex multi-vendor e-commerce platforms enabling third-party sellers to list products, manage orders, and receive automated payouts.",
+      },
+      {
+        title: "Automated Dropshipping Store Setup",
+        desc: "Turnkey dropshipping store builds connected to AliExpress, CJ Dropshipping, or local supplier APIs for automated order fulfillment.",
+      },
+      {
+        title: "Store Speed & Core Web Vitals Optimization",
+        desc: "Optimizing product image loading, script execution, and database queries to achieve sub-second load times on mobile devices.",
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "Abandoned Cart Recovery",
+        examples: "Automated multi-step Email & WhatsApp messages sent 15 mins and 24 hours after cart abandonment with dynamic discount codes.",
+      },
+      {
+        department: "Order Confirmation & Tracking",
+        examples: "Instant automated WhatsApp order confirmation messages and real-time courier tracking links sent directly to customer phones.",
+      },
+      {
+        department: "COD Order Verification Engine",
+        examples: "Automated WhatsApp button verification for Cash on Delivery orders to filter out fake addresses and reduce return-to-origin (RTO) costs.",
+      },
+      {
+        department: "Inventory & Low-Stock Alerts",
+        examples: "Real-time Slack/WhatsApp notifications sent to warehouse management when product stock drops below critical threshold levels.",
+      },
+      {
+        department: "Post-Delivery Review Requests",
+        examples: "Automated customer review requests triggered 3 days after courier delivery confirmation to collect 5-star ratings and photo reviews.",
+      },
+      {
+        department: "AI Conversational Shopping Assistant",
+        examples: "24/7 AI chatbot deployed on store pages to guide shoppers, answer product questions, and look up real-time order tracking status.",
+      },
+      {
+        department: "Executive Daily Sales Reporting",
+        examples: "Automated daily PDF/email reports detailing net revenue, top-selling products, average order value, and conversion rates.",
+      },
+      {
+        department: "CRM & Email Marketing Integration",
+        examples: "Seamless bi-directional sync with Klaviyo, Mailchimp, or HubSpot for automated customer segmentation and VIP win-back flows.",
+      },
+    ],
+
+    deliverables: [
+      "Bespoke Conversion-Focused Responsive UI/UX Store Design",
+      "Mobile-First Store Layout Optimized for One-Hand Navigation",
+      "High-Impact Product, Category & Collection Page Layouts",
+      "Frictionless 1-Page Checkout Flow (Guest Checkout + Minimal Fields)",
+      "Payment Gateway Setup (COD, JazzCash, Easypaisa, Bank, Card, Stripe)",
+      "Automated Courier Shipping API Integration (TCS, Leopards, Trax, PostEx)",
+      "Complete Product SEO (Meta Titles, Descriptions, Schema Markup & Sitemaps)",
+      "Google Analytics 4, Meta Pixel, TikTok Pixel & Conversion API Setup",
+      "Bank-Grade SSL Security, Cloud Backups & Threat Monitoring",
+      "Complete Store Admin Video Training & Staff Handover",
+    ],
+
+    tools: [
+      {
+        category: "E-Commerce Platforms & Engines",
+        items: ["Shopify & Shopify Plus", "WooCommerce", "Next.js E-Commerce (Headless)", "WordPress"],
+      },
+      {
+        category: "Payment Gateways (Local & Global)",
+        items: ["Cash on Delivery (COD)", "JazzCash API", "Easypaisa API", "PayFast", "Stripe", "PayPal", "2Checkout"],
+      },
+      {
+        category: "Courier & Shipping API Integrations",
+        items: ["TCS Courier API", "Leopards Courier", "Trax Logistics", "PostEx", "M&P Express", "ShipRocket"],
+      },
+      {
+        category: "Marketing, Analytics & Automation",
+        items: ["Meta Pixel & CAPI", "Google Merchant Center", "TikTok Pixel", "Klaviyo", "n8n Webhooks", "WhatsApp Business API"],
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery & Platform Strategy",
+        desc: "MHKMarkedia analyzes your catalog, target buyers, competitor pricing, and shipping logistics to recommend Shopify vs WooCommerce.",
+      },
+      {
+        step: "02",
+        title: "Store Structure & Wireframe Mapping",
+        desc: "Structuring category navigation, product filters, checkout flows, and upsell placement during week 1.",
+      },
+      {
+        step: "03",
+        title: "Custom Visual UX Design Mockups",
+        desc: "Crafting high-conversion homepage, collection, and product page mockups aligned with your brand for approval during week 2.",
+      },
+      {
+        step: "04",
+        title: "Store Engineering & Product Bulk Upload",
+        desc: "Building custom theme templates, configuring product variants, and executing bulk catalog imports during weeks 3 to 4.",
+      },
+      {
+        step: "05",
+        title: "Payment Gateway & Courier API Integration",
+        desc: "Connecting COD verification, JazzCash/Easypaisa/Card checkout, and automated courier shipping label generators during week 4.",
+      },
+      {
+        step: "06",
+        title: "End-to-End Order Testing & Speed Audit",
+        desc: "Conducting live test orders, mobile checkout checks, pixel event tracking, and Core Web Vitals speed tuning during week 5.",
+      },
+      {
+        step: "07",
+        title: "Store Launch & Staff Training",
+        desc: "Connecting domain DNS, launching to production, and conducting 1-on-1 video training for order processing and inventory management.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "24/7 Automated Revenue Machine",
+        desc: "Your online store processes orders, accepts payments, and notifies couriers automatically 365 days a year without manual delay.",
+      },
+      {
+        title: "Higher Conversion Rates & Lower Cart Abandonment",
+        desc: "Frictionless 1-page checkouts, trust badges, and automated WhatsApp cart recovery turn browsing visitors into paying buyers.",
+      },
+      {
+        title: "Reduced Manual Processing & Zero Inventory Errors",
+        desc: "Automated shipping label creation, stock alerts, and COD verification save your operations team 20+ hours weekly.",
+      },
+      {
+        title: "Infinitely Scalable Cloud Infrastructure",
+        desc: "Engineered to handle high-volume ad traffic spikes and flash sales without server crashes or slow response times.",
+      },
+      {
+        title: "Instant Brand Trust & High Customer Loyalty",
+        desc: "Bespoke visual design, verified reviews, and instant WhatsApp tracking build immediate credibility and repeat purchases.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Store",
+        subtitle: "Ideal for Launching Emerging D2C Brands",
+        price: "Starting from $699",
+        features: [
+          "Up to 50 Products Included",
+          "Customized Shopify / WooCommerce Theme",
+          "Payment Gateway (COD, Card, Local API)",
+          "Basic Courier Shipping Integration",
+          "Mobile-First 1-Page Checkout",
+          "Basic Product SEO & GA4 Setup",
+          "15-Day Post-Launch Support & Training",
+          "2 Design Revision Rounds Included",
+          "(Domain, Hosting & Shopify monthly fees separate)",
+        ],
+      },
+      {
+        title: "Growth Store",
+        subtitle: "Complete Scaling Solution for Established Retailers",
+        highlight: true,
+        price: "Starting from $1,299",
+        features: [
+          "Up to 200 Products Included",
+          "100% Fully Custom Theme UI/UX Design",
+          "Advanced Payment + Courier API Integrations",
+          "Meta Pixel, CAPI, Google Merchant Feed & TikTok Pixel",
+          "Automated Abandoned Cart Email & WhatsApp Recovery",
+          "COD WhatsApp Order Verification Engine",
+          "30-Day Support & Staff Video Guides",
+          "Unlimited Revisions During Design Phase",
+          "(Includes 1-Yr Hosting Setup for WooCommerce)",
+        ],
+      },
+      {
+        title: "Advanced Enterprise Store",
+        subtitle: "High-Volume Stores, B2B Wholesale & Multi-Vendor",
+        price: "Custom Quote",
+        features: [
+          "200+ Products / Unlimited Catalog",
+          "Fully Custom Features (Wholesale, Subscriptions, Bundles)",
+          "Multi-Vendor Marketplace or Headless Next.js Build",
+          "AI Conversational Shopping Chatbot Integration",
+          "HubSpot / Klaviyo CRM & Automated Review System",
+          "Advanced Speed Optimization (LCP < 0.8s)",
+          "60-Day Dedicated Post-Launch Support & Care Plan",
+          "100% Full Source Code & Catalog Data Ownership",
+        ],
+      },
+    ],
+
+    faqs: [
+      {
+        question: "Which platform is better for my business: Shopify or WooCommerce?",
+        answer: "Shopify is ideal for businesses wanting a fast, fully-managed cloud launch with minimal technical maintenance. WooCommerce offers 100% open-source code control, custom B2B features, and lower recurring app fees. During our free consultation, MHKMarkedia evaluates your catalog and growth goals to recommend the optimal platform.",
+      },
+      {
+        question: "How much time and budget is required to build a high-converting e-commerce store?",
+        answer: "Turnkey store builds typically take 3 to 6 weeks depending on product catalog size and custom features. Starter store packages begin from $699 with transparent, fixed pricing and zero hidden fees.",
+      },
+      {
+        question: "Can local payment gateways like JazzCash, Easypaisa, and COD be integrated?",
+        answer: "Yes. We integrate Cash on Delivery (COD), JazzCash, Easypaisa, bank transfers, credit/debit card gateways (PayFast, Stripe), and international gateways like PayPal.",
+      },
+      {
+        question: "Will our team be able to add new products and manage inventory easily?",
+        answer: "Yes. Every store includes a user-friendly admin dashboard. We provide comprehensive video training showing your team how to add products, adjust prices, manage inventory, and process customer orders.",
+      },
+      {
+        question: "Can you migrate our existing store from WooCommerce to Shopify (or vice versa)?",
+        answer: "Yes. We perform seamless store migrations, safely transferring all product catalogs, customer accounts, order history, and category structures while setting up 301 redirects to protect existing Google SEO rankings.",
+      },
+      {
+        question: "Are marketing tracking pixels, Google Merchant Center, and SEO included?",
+        answer: "Yes. Our Growth and Advanced packages include complete marketing integration: Meta Pixel & Conversions API, Google Merchant Center Shopping Feed, TikTok Pixel, and product schema SEO.",
+      },
+      {
+        question: "Who will provide technical maintenance and updates after the store goes live?",
+        answer: "We provide 30 to 60 days of complimentary post-launch technical support with every store build. Following launch support, we offer flexible monthly maintenance plans covering speed monitoring, plugin updates, and backup security.",
+      },
+    ],
+
+    ctaTitle: "READY TO LAUNCH A HIGH-CONVERTING ONLINE STORE?",
+    coverImage: "/images/services/ecommerce.webp",
+    techStack: [
+      "SHOPIFY & SHOPIFY PLUS",
+      "WOOCOMMERCE & WORDPRESS",
+      "LOCAL PAYMENTS (COD, JAZZCASH, EASYPAISA)",
+      "COURIER APIS (TCS, LEOPARDS, TRAX, POSTEX)",
+      "ABANDONED CART AUTOMATION",
+      "META PIXEL & GOOGLE SHOPPING ADS",
+      "WHATSAPP ORDER NOTIFICATIONS",
+      "NEXT.JS HEADLESS E-COMMERCE",
+      "CORE WEB VITALS OPTIMIZATION",
     ],
   },
 ];
