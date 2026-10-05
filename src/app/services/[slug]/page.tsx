@@ -53,7 +53,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const pageNavItems = [
     { id: "overview", label: "Overview & Strategy", icon: "⚡" },
     ...(service.leadJourney ? [{ id: "lead-journey", label: "Lead Journey Flow", icon: "🗺️" }] : []),
-    ...(service.comparisonTable ? [{ id: "comparison", label: service.slug === "ecommerce" ? "Shopify vs WooCommerce" : "Chatbot vs AI Agent", icon: "⚖️" }] : []),
+    ...(service.comparisonTable ? [{ id: "comparison", label: service.slug === "ecommerce" ? "Shopify vs WooCommerce" : service.slug === "headless-wordpress-development" ? "WordPress vs Webflow" : "Chatbot vs AI Agent", icon: "⚖️" }] : []),
     ...(service.buildVsBuy ? [{ id: "build-vs-buy", label: "Build vs Buy Analysis", icon: "⚔️" }] : []),
     ...(service.problems ? [{ id: "problems", label: "Key Challenges Solved", icon: "⚠️" }] : []),
     ...(service.botTypes ? [{ id: "bot-types", label: "Capabilities We Engineer", icon: "🤖" }] : []),
@@ -211,7 +211,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.comparisonTable && (
                 <div id="comparison" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>⚖️</span> {service.slug === "ecommerce" ? "Shopify vs WooCommerce Platform Comparison" : "Traditional Chatbots vs Autonomous AI Agents"}
+                    <span>⚖️</span> {service.slug === "ecommerce" ? "Shopify vs WooCommerce Platform Comparison" : service.slug === "headless-wordpress-development" ? "WordPress vs Webflow Platform Comparison" : "Traditional Chatbots vs Autonomous AI Agents"}
                   </h2>
                   <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
                     <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
@@ -242,6 +242,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Confused between Shopify and WooCommerce? We provide a free platform consultation to select the optimal e-commerce tech stack for your business.</span>
+                    </div>
+                  )}
+                  {service.slug === "headless-wordpress-development" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Confused between WordPress and Webflow? We evaluate your business goals for free and recommend the perfect platform for your brand.</span>
                     </div>
                   )}
                 </div>

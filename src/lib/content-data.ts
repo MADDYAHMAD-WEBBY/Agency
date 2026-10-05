@@ -1258,52 +1258,346 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
   },
   {
     slug: "headless-wordpress-development",
-    title: "Headless WordPress & Next.js Architecture",
+    title: "WordPress & Webflow Development",
     category: "web",
-    tagline: "Sub-Second Edge Performance, 100/100 Core Web Vitals & Enterprise React Frontends",
-    description: "Traditional WordPress sites suffer from bloated PHP rendering, database locks, and plugin vulnerabilities that tank your Google rankings and ad conversions. MHKMarkedia decouples WordPress into a headless CMS API backed by Next.js 15 App Router static site generation (SSG) and edge caching. You get the seamless WordPress editing dashboard your marketing team loves, paired with unhackable static speed and instant mobile load times.",
-    deliverables: [
-      "Custom Next.js 15 App Router React Frontend",
-      "Decoupled WP GraphQL API Setup & Custom Post Types",
-      "100/100 Google Core Web Vitals (LCP < 0.8s)",
-      "JSON-LD Schema & GEO 2026 AI Search Optimization",
-      "Vercel & Cloudflare Global Edge Deployment",
-      "Automated CI/CD Pipeline & GitHub Integration",
+    headline: "WordPress & Webflow Websites You Can Edit Yourself. Built Fast, Designed to Convert.",
+    tagline: "Custom WordPress and Webflow websites engineered for sub-second speed, search engine rankings, and effortless self-service content editing without developer delays.",
+    heroCtaText: "Book Free Platform Consultation",
+    description:
+      "Relying on external developers for simple text updates or dealing with slow, bloated WordPress sites causes unnecessary frustration and lost business revenue. MHKMarkedia specializes in building custom WordPress and Webflow websites that combine pixel-perfect visual design, sub-second Core Web Vitals performance, and intuitive client-facing editing dashboards. Whether you prefer the open-source flexibility and massive plugin ecosystem of WordPress or the visual design precision and zero-maintenance hosting of Webflow, we deliver a search-optimized web platform tailored to your operational goals. Every project includes clean custom code, responsive mobile layouts, automated lead capture forms, bank-grade security hardening, and comprehensive video training so your team remains in complete control.",
+
+    comparisonHeaders: {
+      col1: "EVALUATION CRITERIA",
+      col2: "WORDPRESS PLATFORM",
+      col3: "WEBFLOW PLATFORM",
+    },
+
+    comparisonTable: [
+      {
+        feature: "Setup & Development Approach",
+        chatbot: "Flexible; block builder (Gutenberg / Elementor) or Headless React API.",
+        agent: "Visual design engine; pixel-perfect visual layout mapping.",
+      },
+      {
+        feature: "Hosting & Cloud Infrastructure",
+        chatbot: "Self-hosted cloud (Cloudways, Kinsta, AWS, host of choice).",
+        agent: "100% managed Webflow AWS/Fastly global edge hosting.",
+      },
+      {
+        feature: "Design Freedom & Customization",
+        chatbot: "Extensive theme customization & unlimited custom PHP/React code.",
+        agent: "Pixel-perfect visual design freedom with clean HTML/CSS output.",
+      },
+      {
+        feature: "Plugin Ecosystem & Features",
+        chatbot: "60,000+ open-source plugins for any conceivable business feature.",
+        agent: "Built-in CMS & native features; clean execution with zero plugin bloat.",
+      },
+      {
+        feature: "Security & Technical Maintenance",
+        chatbot: "Requires regular plugin updates, firewall hardening & security scans.",
+        agent: "Managed by Webflow; SSL, security patches & uptime automated.",
+      },
+      {
+        feature: "Cost Structure & Expenses",
+        chatbot: "Pay for cloud hosting + optional premium plugins/themes.",
+        agent: "Monthly or annual Webflow workspace & site hosting plan.",
+      },
+      {
+        feature: "Ideal Business & Growth Fit",
+        chatbot: "Blogs, large content sites, e-commerce, custom features & scalability.",
+        agent: "Marketing websites, creative agency portfolios & design-driven brands.",
+      },
+      {
+        feature: "Client Content Editing Experience",
+        chatbot: "Familiar WordPress admin dashboard & block editor.",
+        agent: "Intuitive on-page visual Webflow Editor for easy client updates.",
+      },
     ],
+
+    problems: [
+      {
+        title: "Waiting Days for Developers to Execute Simple Content Edits",
+        desc: "Teams get bottlenecked waiting for external developers to change text, post blogs, or update team photos on their website.",
+      },
+      {
+        title: "Slow WordPress Performance & Heavy Plugin Bloat",
+        desc: "Unoptimized WordPress sites loaded with 30+ heavy plugins suffer from database lag, slow page rendering, and poor Google rankings.",
+      },
+      {
+        title: "Security Vulnerabilities, Malware Attacks & Outdated Plugins",
+        desc: "Unmaintained WordPress installations with outdated plugins get infected with malware, leading to server blacklists and data loss.",
+      },
+      {
+        title: "Generic Template Designs That Lack Brand Uniqueness",
+        desc: "Off-the-shelf pre-made themes make your business look like thousands of competitors, weakening brand authority and client trust.",
+      },
+      {
+        title: "Abandoned by Previous Developers with Zero Documentation",
+        desc: "Businesses get stranded when previous freelancers vanish without delivering admin credentials, code documentation, or training.",
+      },
+      {
+        title: "Platform Confusion: Deciding Between WordPress vs Webflow",
+        desc: "Organizations struggle to evaluate whether open-source WordPress flexibility or visual Webflow speed better serves long-term growth.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "Custom WordPress Theme Development (Gutenberg & Elementor)",
+        desc: "Bespoke WordPress theme engineering utilizing clean Block Editor (Gutenberg) or Elementor Pro for modular page building without bloat.",
+      },
+      {
+        title: "Headless WordPress & Next.js React Architecture",
+        desc: "Decoupling WordPress into a GraphQL backend powered by Next.js 15 App Router for sub-second static speed and unhackable security.",
+      },
+      {
+        title: "WooCommerce Store Development & Plugin Customization",
+        desc: "Scalable WooCommerce e-commerce stores with custom checkout flows, payment gateway APIs, and automated order management.",
+      },
+      {
+        title: "WordPress Speed Optimization & Core Web Vitals Hardening",
+        desc: "Database cleanup, image WebP compression, script minification, and redis caching to achieve sub-second load times.",
+      },
+      {
+        title: "WordPress Security Hardening & Malware Removal",
+        desc: "Firewall deployment, brute-force protection, file integrity monitoring, database sanitization, and clean malware removal.",
+      },
+      {
+        title: "Bespoke Webflow UI/UX Design & Development",
+        desc: "Designing and engineering custom Webflow websites with pixel-perfect visual layouts, clean CSS structures, and responsive breakpoints.",
+      },
+      {
+        title: "Webflow CMS Architecture (Blogs, Case Studies & Collections)",
+        desc: "Structuring multi-reference Webflow CMS collections for dynamic blog publishing, portfolio case studies, and team directories.",
+      },
+      {
+        title: "Webflow Custom Animations & Micro-Interactions",
+        desc: "Crafting fluid scroll-triggered animations, hover states, interactive Lottie graphics, and WebGL visual effects.",
+      },
+      {
+        title: "Figma to Webflow / WordPress Pixel-Perfect Conversion",
+        desc: "Translating Figma UI design files directly into clean, semantic Webflow or WordPress code with 100% visual fidelity.",
+      },
+      {
+        title: "Platform Migration (WordPress to Webflow or Vice Versa)",
+        desc: "Safely migrating content, images, blogs, and URLs between platforms while implementing 301 redirects to preserve SEO rankings.",
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "WordPress Care & Maintenance Plan",
+        examples: "Weekly core/plugin updates, automated daily cloud backups, 24/7 uptime monitoring, security malware scans, and database optimization.",
+      },
+      {
+        department: "Webflow Care & Support Package",
+        examples: "Monthly content updates, page layout adjustments, small design tweaks, speed checks, and ongoing SEO monitoring.",
+      },
+      {
+        department: "AI Conversational Chatbot Add-On",
+        examples: "24/7 AI chatbot deployed on WordPress/Webflow to answer visitor inquiries, capture lead details, and schedule calls.",
+      },
+      {
+        department: "Lead Automation (Form to CRM to WhatsApp)",
+        examples: "Form submissions instantly trigger CRM entry (HubSpot/Zoho), email notification to sales, and automated WhatsApp welcome messages.",
+      },
+      {
+        department: "Appointment & Calendar Booking Integration",
+        examples: "Embedding Calendly, SavvyCal, or custom WordPress booking engines with automated Google Calendar sync and SMS reminders.",
+      },
+      {
+        department: "Automated Blog & Content Hub Setup",
+        examples: "Structuring optimized blog layouts, category tags, author boxes, social share buttons, and automated newsletter RSS feeds.",
+      },
+    ],
+
+    deliverables: [
+      "100% Bespoke Responsive UI/UX Design (Zero Generic Templates)",
+      "Sub-Second Core Web Vitals Speed Optimization (LCP < 0.8s)",
+      "Complete On-Page SEO (Meta Titles, Descriptions, Schema & XML Sitemap)",
+      "Contact & Lead Forms Connected to CRM Systems & Email Alerts",
+      "Google Analytics 4 (GA4) & Google Search Console Setup",
+      "User-Friendly Admin Panel / Webflow Editor for Easy Self-Editing",
+      "1-on-1 Client CMS Video Training & Admin Credential Handover",
+      "Bank-Grade SSL Security, Threat Protection & Automated Daily Backups",
+      "100% Full Source Code, Asset & Content Ownership",
+      "30-Day Post-Launch Technical Support & Warranty",
+    ],
+
+    tools: [
+      {
+        category: "WordPress Stack & CMS Frameworks",
+        items: ["WordPress Core", "Custom Gutenberg Blocks", "Elementor Pro", "WP GraphQL", "WooCommerce"],
+      },
+      {
+        category: "Webflow Ecosystem & Tools",
+        items: ["Webflow Designer", "Webflow CMS", "Webflow E-Commerce", "Relume Library", "Finsweet Client-First"],
+      },
+      {
+        category: "Frontend & Headless Architecture",
+        items: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      },
+      {
+        category: "Hosting, Security & Performance",
+        items: ["Cloudways", "Kinsta", "Vercel Edge", "Cloudflare CDN", "Wordfence Security"],
+      },
+    ],
+
     processSteps: [
       {
         step: "01",
-        title: "Database & Performance Audit",
-        desc: "MHKMarkedia analyzes your current WordPress database queries, plugin dependencies, and Core Web Vitals bottlenecks to architect a zero-latency headless strategy.",
+        title: "Discovery & Platform Strategy",
+        desc: "MHKMarkedia evaluates your business goals, content needs, and team workflow to recommend WordPress vs Webflow.",
       },
       {
         step: "02",
-        title: "Headless GraphQL API Configuration",
-        desc: "Setting up secure GraphQL endpoints, custom ACF fields, and caching policies so WP content syncs seamlessly with Next.js.",
+        title: "Sitemap & UX Wireframe Architecture",
+        desc: "Structuring website navigation, page hierarchy, content strategy, and conversion funnels during days 2 to 3.",
       },
       {
         step: "03",
-        title: "Next.js 15 Frontend Engineering",
-        desc: "Building pixel-perfect React components with dynamic SSG & ISR caching, ambient dark modes, and micro-interactions.",
+        title: "Figma Visual Design Mockups & Approval",
+        desc: "Crafting bespoke visual UI design mockups in Figma for desktop and mobile screens for your review and approval.",
       },
       {
         step: "04",
-        title: "Global Edge Launch & CEO Support",
-        desc: "Deploying to Vercel/Cloudflare global edge networks with 30 days of direct technical support and 1-on-1 strategy handoff.",
+        title: "Clean Code Development & CMS Engineering",
+        desc: "Building custom theme code in WordPress or visual styling in Webflow, structuring dynamic CMS collections and forms.",
+      },
+      {
+        step: "05",
+        title: "Cross-Device, Speed & SEO Audit",
+        desc: "Rigorously testing mobile smartphone responsiveness, form delivery, SSL security, and Google Core Web Vitals load speed.",
+      },
+      {
+        step: "06",
+        title: "Official Launch & Staff CMS Video Training",
+        desc: "Connecting domain DNS, deploying to live cloud servers, and providing recorded 1-on-1 video training for self-editing.",
+      },
+      {
+        step: "07",
+        title: "Post-Launch Support & Care Plan",
+        desc: "Providing 30 days of complimentary technical support, backup verification, and continuous performance monitoring.",
       },
     ],
+
+    benefits: [
+      {
+        title: "Total Self-Service Content Editing Freedom",
+        desc: "Update text, publish blogs, upload images, and add team members in seconds without waiting for external developers.",
+      },
+      {
+        title: "Sub-Second Load Speeds & Core Web Vitals Compliance",
+        desc: "Clean code execution and optimized assets deliver lightning page speed scores that keep visitors engaged.",
+      },
+      {
+        title: "Dominant Search Engine Rankings & SEO Performance",
+        desc: "Built-in technical SEO, clean semantic HTML markup, and Schema data help your website rank high on Google search.",
+      },
+      {
+        title: "Unshakable Security & Automated Daily Backups",
+        desc: "Hardened security protocols, SSL encryption, and automated daily cloud backups guarantee your website stays protected.",
+      },
+      {
+        title: "100% Full Ownership & Account Control",
+        desc: "You retain full administrative ownership of your domain, hosting, Webflow workspace, and code assets with zero lock-in.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Package",
+        subtitle: "Ideal for Small Businesses & Personal Brands",
+        price: "Starting from $599",
+        features: [
+          "Up to 5 Custom Pages",
+          "Customized WordPress or Webflow Design",
+          "Basic CMS Setup (Blog / Portfolio)",
+          "Mobile-First Responsive Layout",
+          "Basic On-Page SEO & Contact Forms",
+          "15-Day Post-Launch Technical Support",
+          "2 Design Revision Rounds Included",
+          "(Hosting, domain & Webflow plan fees separate)",
+        ],
+      },
+      {
+        title: "Business Package",
+        subtitle: "Complete Solution for Growing Companies & Agencies",
+        highlight: true,
+        price: "Starting from $1,199",
+        features: [
+          "Up to 12 Custom Pages",
+          "100% Fully Custom UI/UX Design + Micro-Animations",
+          "Advanced CMS Collections (Blog, Work, Team, Services)",
+          "Advanced Technical SEO & Schema Markup",
+          "Lead Capture Forms Connected to CRM & WhatsApp",
+          "Google Analytics 4 & Search Console Setup",
+          "30-Day Support & Recorded Video Training Guide",
+          "Unlimited Design Revisions Prior to Code Build",
+          "(Includes 1-Year Cloud Hosting Setup for WordPress)",
+        ],
+      },
+      {
+        title: "Premium Enterprise Package",
+        subtitle: "Complex Web Platforms, Headless & Custom Apps",
+        price: "Custom Quote",
+        features: [
+          "12+ Custom Pages or Bespoke Headless Web App",
+          "Custom Next.js 15 / React High-Speed Build",
+          "Custom Webflow Animations & Lottie 3D Interactions",
+          "Optional WooCommerce Store or AI Chatbot Add-On",
+          "Multi-Language & Urdu RTL Support",
+          "Dedicated Monthly Maintenance & Security Care Plan",
+          "60-Day Dedicated Post-Launch Support & Warranty",
+          "100% Full Source Code & Account Transfer",
+        ],
+      },
+    ],
+
+    faqs: [
+      {
+        question: "Which platform is better for my business: WordPress or Webflow?",
+        answer: "WordPress is ideal if you want open-source freedom, e-commerce capability, massive plugin availability, and lower recurring costs. Webflow is perfect if you want pixel-perfect visual design control, clean code without plugins, and fully managed cloud hosting. During our free consultation, MHKMarkedia evaluates your goals to recommend the optimal platform.",
+      },
+      {
+        question: "Will our internal team be able to edit text, post blogs, and update images without coding skills?",
+        answer: "Yes. Every project includes an intuitive admin dashboard (WordPress Block Editor or Webflow Visual Editor). We provide 1-on-1 video training showing your team how to effortlessly edit text, add blog posts, upload photos, and update team members.",
+      },
+      {
+        question: "Why do some WordPress sites get slow or hacked, and how does MHKMarkedia protect them?",
+        answer: "WordPress sites usually slow down due to heavy unoptimized themes, bloated plugins, and poor hosting. They get hacked when plugins remain outdated. MHKMarkedia builds clean, bloat-free WordPress themes with minimal plugins, hardens server security, deploys firewalls, and configures automated daily backups.",
+      },
+      {
+        question: "What are the recurring hosting costs for Webflow vs WordPress?",
+        answer: "WordPress hosting ranges from $10 to $35/month on high-speed managed cloud hosts like Cloudways. Webflow hosting ranges from $14 to $39/month depending on your CMS needs. We provide total cost transparency before starting.",
+      },
+      {
+        question: "Can you migrate our existing legacy website to WordPress or Webflow?",
+        answer: "Yes. We perform seamless website migrations, safely transferring all text, images, blog archives, and media files while implementing 301 redirects to protect existing Google SEO rankings.",
+      },
+      {
+        question: "Do you provide multi-language and Urdu (RTL) support?",
+        answer: "Yes. We build multi-language websites with complete Right-to-Left (RTL) layout support, allowing your visitors to toggle seamlessly between English, Urdu, or other international languages.",
+      },
+      {
+        question: "What is included in your monthly website maintenance care plans?",
+        answer: "Our WordPress care plans cover core/plugin updates, automated daily backups, 24/7 uptime monitoring, security scans, and speed optimization. Webflow care plans cover content updates, layout tweaks, and ongoing SEO checks.",
+      },
+    ],
+
+    ctaTitle: "READY TO BUILD AN EDIT-FRIENDLY WEBSITE?",
     coverImage: "/images/services/wordpress-webflow.webp",
     techStack: [
-      "NEXT.JS 15",
-      "HEADLESS WORDPRESS",
-      "WP GRAPHQL API",
+      "WORDPRESS & GUTENBERG",
+      "WEBFLOW & WEBFLOW CMS",
+      "NEXT.JS 15 HEADLESS WP",
+      "WOOCOMMERCE",
+      "ELEMENTOR PRO",
       "CORE WEB VITALS 100/100",
-      "GEO 2026 AI SEARCH",
-      "TAILWIND CSS",
-      "TYPESCRIPT",
-      "VERCEL EDGE",
-      "CLOUDFLARE WORKERS",
-      "JSON-LD SCHEMA",
+      "ON-PAGE SEO & SCHEMA",
+      "ENGLISH & URDU RTL SUPPORT",
+      "CLOUDWAYS & VERCEL HOSTING",
     ],
   },
   {
