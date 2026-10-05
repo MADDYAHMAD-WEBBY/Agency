@@ -7,7 +7,9 @@ This document records the complete architecture, design system, performance rule
 ## 1. Branding & Identity Persona
 - **Developer Persona**: Hamad Ahmad — solo Full-Stack Web Developer, Headless WordPress Specialist, and Local SEO Expert.
 - **Tone**: Always use first-person singular ("I", "My") instead of agency plurals ("We", "Our team").
+- **Public Agency Copywriting Invariant**: Service pages and landing page copy must strictly use **MHKMarkedia** agency branding. Headlines and sub-headings MUST position the agency as a high-ticket service provider to hire (focusing on custom engineering, Core Web Vitals, Google rankings, and sales conversions). NEVER use DIY/self-service framing (e.g., avoid "Edit yourself").
 - **Copywriting**: Zero fluff, E-E-A-T signals, NLP keywords, Core Web Vitals optimization focus.
+- **Language Invariant**: 100% English copy across all content files and FAQs (no Roman Urdu in public UI).
 
 ---
 
@@ -73,4 +75,23 @@ This document records the complete architecture, design system, performance rule
 ### G. Unified Site Footer (`SiteFooter`)
 - Standard 3-column responsive layout (`lg:grid-cols-12`) rendered on all routes (`/`, `/services/[slug]`, `/case-studies/[slug]`, `/blog/[slug]`).
 - Includes lead digital architect metadata ("Lead Digital Architect: M. Hafeez Khan | shadcnspace"), interactive dynamic navigation links, social profile links, and live UTC status indicator ("Available for Q4 Enterprise Projects").
+
+---
+
+## 5. Service Pages Architecture & Dynamic Slugs
+- **Route Location**: `src/app/services/[slug]/page.tsx` driven by `SERVICE_DETAILS` array in `src/lib/content-data.ts`.
+- **Active Service Slugs**:
+  1. `business-websites` — High-Converting Business Websites
+  2. `ecommerce` — E-Commerce Stores (Shopify & WooCommerce)
+  3. `wordpress-website` — Custom WordPress Development (Custom Gutenberg, zero-plugin bloat, LCP < 0.8s, top SEO rankings)
+  4. `custom-ai-integrations` — AI Integrations & Autonomous Agents
+- **Link Consistency**: Footer (`site-footer.tsx`, `studio-footer-hero.tsx`) and service cards (`services-section.tsx`) must link strictly to `/services/wordpress-website`.
+
+---
+
+## 6. Development & Environment Execution Rules
+- **Shell Environment**: Windows PowerShell.
+- **Command Chaining**: Do NOT use `&&` to chain commands in PowerShell. Use `;` or separate commands.
+- **Git Operations**: `git push` commands require `BypassSandbox: true` when running background commands.
+
 
