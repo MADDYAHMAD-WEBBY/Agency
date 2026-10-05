@@ -1258,8 +1258,8 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     slug: "wordpress-website",
     title: "Custom WordPress Development",
     category: "web",
-    headline: "WordPress Websites You Can Edit Yourself. Built Fast, Designed to Convert.",
-    tagline: "Custom WordPress websites engineered for sub-second speed, Google search rankings, custom Gutenberg blocks, and effortless self-service content editing without developer delays.",
+    headline: "High-Performance Custom WordPress Websites. Built Fast, Engineered to Rank & Convert.",
+    tagline: "Bespoke WordPress website development tailored for sub-second page speed, top Google rankings, zero plugin bloat, and maximum business conversion.",
     heroCtaText: "Book Free WordPress Consultation",
     description:
       "Relying on external developers for simple text updates or dealing with slow, bloated WordPress sites causes unnecessary frustration and lost business revenue. MHKMarkedia specializes in building custom, high-speed WordPress websites that combine bespoke visual design, sub-second Core Web Vitals performance, and intuitive Gutenberg editing dashboards. We eliminate plugin bloat by writing clean, custom PHP and React block code, hardening database security, and configuring enterprise caching. Whether you need a corporate business platform, a high-traffic news portal, or a WooCommerce store, we deliver a search-optimized WordPress site tailored to your goals. Every project includes responsive mobile layouts, automated lead capture forms, bank-grade security hardening, and comprehensive video training so your team remains in complete control.",
