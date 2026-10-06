@@ -5,9 +5,10 @@ This document records the complete architecture, design system, performance rule
 ---
 
 ## 1. Branding & Identity Persona
-- **Developer Persona**: Hamad Ahmad — solo Full-Stack Web Developer, Headless WordPress Specialist, and Local SEO Expert.
-- **Tone**: Always use first-person singular ("I", "My") instead of agency plurals ("We", "Our team").
+- **Agency Persona**: MHKMarkedia / MADDYAHMAD Agency — Full-Stack Web Engineering, Headless WordPress, AI Automation, and Local SEO Agency.
+- **Tone**: Always use agency plurals (**"We"**, **"Our"**, **"Our team"**) instead of first-person singular ("I", "My"). This website represents a client agency.
 - **Public Agency Copywriting Invariant**: Service pages and landing page copy must strictly use **MHKMarkedia** agency branding. Headlines and sub-headings MUST position the agency as a high-ticket service provider to hire (focusing on custom engineering, Core Web Vitals, Google rankings, and sales conversions). NEVER use DIY/self-service framing (e.g., avoid "Edit yourself").
+- **SEO Heading Uniqueness Invariant**: Every service page (`/services/[slug]`) MUST maintain 100% unique `<h2>` section headings across all services. Use custom `sectionTitles` in `content-data.ts` to ensure zero heading duplication on SERP indexation.
 - **Copywriting**: Zero fluff, E-E-A-T signals, NLP keywords, Core Web Vitals optimization focus.
 - **Language Invariant**: 100% English copy across all content files and FAQs (no Roman Urdu in public UI).
 
@@ -85,7 +86,17 @@ This document records the complete architecture, design system, performance rule
   2. `ecommerce` — E-Commerce Stores (Shopify & WooCommerce)
   3. `wordpress-website` — Custom WordPress Development (Custom Gutenberg, zero-plugin bloat, LCP < 0.8s, top SEO rankings)
   4. `custom-ai-integrations` — AI Integrations & Autonomous Agents
-- **Link Consistency**: Footer (`site-footer.tsx`, `studio-footer-hero.tsx`) and service cards (`services-section.tsx`) must link strictly to `/services/wordpress-website`.
+  5. `workflow-automation` — Workflow & Operations Automation
+  6. `ai-chatbots` — AI Chatbots & Autonomous Agents
+  7. `crm-lead-automation` — CRM & Lead Automation
+  8. `web-applications` — Web Applications (React & Next.js 15)
+  9. `custom-software-saas` — Custom Software & SaaS Platforms
+  10. `mobile-apps` — Mobile Apps (iOS & Android)
+  11. `api-integrations` — API & Software Integrations
+  12. `gbp-optimization` — Google Business Profile Optimization & Local SEO
+  13. `citation-building` — Local Citation Building & NAP Consistency
+  14. `review-management` — Review Management & Online Reputation Automation
+- **Link Consistency**: Footer (`site-footer.tsx`, `studio-footer-hero.tsx`) and service cards (`services-section.tsx`) must link strictly to `/services/[slug]`.
 
 ---
 

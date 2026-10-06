@@ -116,7 +116,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "web-apps",
     category: "web",
-    href: "#contact",
+    href: "/services/web-applications",
     title: "Web Apps (React / Next.js)",
     description:
       "Modern web applications built with Next.js 15 and React delivering lightning performance, dynamic routing, and pixel-perfect design.",
@@ -129,7 +129,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "custom-software-saas",
     category: "web",
-    href: "#contact",
+    href: "/services/custom-software-saas",
     title: "Custom Software / SaaS Solutions",
     description:
       "End-to-end full-stack software architecture, MVP product builds, and multi-tenant SaaS platforms engineered for security and scale.",
@@ -142,7 +142,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "mobile-apps",
     category: "web",
-    href: "#contact",
+    href: "/services/mobile-apps",
     title: "Mobile Apps",
     description:
       "Cross-platform mobile applications for iOS and Android delivering native fluidity, push notifications, and intuitive interfaces.",
@@ -155,7 +155,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "api-integrations",
     category: "web",
-    href: "#contact",
+    href: "/services/api-integrations",
     title: "API & Third-Party Integrations",
     description:
       "Secure REST & GraphQL API integrations connecting payment systems, CRMs, ERPs, and custom backend microservices seamlessly.",
@@ -165,38 +165,12 @@ const servicesData: ServiceItem[] = [
     accent: "#475569",
     accentForeground: "#ffffff",
   },
-  {
-    id: "apk-websites",
-    category: "web",
-    href: "#contact",
-    title: "APK & App Download Portals",
-    description:
-      "High-traffic APK download portals and Android directory websites optimized for rapid search indexing, high ad revenue, and instant file downloads.",
-    image: "/images/services/apk-websites.webp",
-    badge: "Niche Web",
-    tags: ["APK Portals", "High Traffic", "AdSense & SEO"],
-    accent: "#16a34a",
-    accentForeground: "#ffffff",
-  },
-  {
-    id: "tool-websites",
-    category: "web",
-    href: "#contact",
-    title: "Tool-Based Websites & Utilities",
-    description:
-      "Custom interactive web tools, online calculators, converters, and browser utilities engineered for high user retention and viral organic traffic.",
-    image: "/images/services/tool-websites.webp",
-    badge: "Interactive Utilities",
-    tags: ["Online Tools", "Calculators & Converters", "Passive Traffic"],
-    accent: "#0284c7",
-    accentForeground: "#ffffff",
-  },
 
   // --- Category: Local SEO & Reputation ---
   {
     id: "gbp-optimization",
     category: "seo",
-    href: "#contact",
+    href: "/services/gbp-optimization",
     title: "Google Business Profile Optimization",
     description:
       "Claim, optimize, and rank your Google Business Profile to capture top 3 map-pack positions and dominate local organic search traffic.",
@@ -209,7 +183,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "citation-building",
     category: "seo",
-    href: "#contact",
+    href: "/services/citation-building",
     title: "Citation Building",
     description:
       "Consistent, high-authority NAP (Name, Address, Phone) citations built across premium directory networks to boost local trust scores.",
@@ -222,7 +196,7 @@ const servicesData: ServiceItem[] = [
   {
     id: "review-management",
     category: "seo",
-    href: "#contact",
+    href: "/services/review-management",
     title: "Review Management & Reputation",
     description:
       "Automate customer review requests, monitor feedback across Google & Trustpilot, and build glowing 5-star social proof continuously.",

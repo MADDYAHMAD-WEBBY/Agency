@@ -30,12 +30,36 @@ export async function generateMetadata({ params }: PageProps) {
   const service = SERVICE_DETAILS.find((item) => item.slug === slug);
   if (!service) return {};
 
+  const title = `${service.title} | MHKMarkedia Agency`;
+  const description = service.headline
+    ? `${service.headline} ${service.tagline}`
+    : service.tagline;
+
   return {
-    title: `${service.title} | Services | MHKMarkedia`,
-    description: service.headline || service.tagline,
+    title,
+    description,
+    alternates: {
+      canonical: `https://mhkmarkedia.com/services/${service.slug}`,
+    },
     openGraph: {
-      title: service.title,
-      description: service.tagline,
+      title,
+      description,
+      url: `https://mhkmarkedia.com/services/${service.slug}`,
+      siteName: "MHKMarkedia",
+      images: [
+        {
+          url: service.coverImage,
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
       images: [service.coverImage],
     },
   };
@@ -53,7 +77,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const pageNavItems = [
     { id: "overview", label: "Overview & Strategy", icon: "⚡" },
     ...(service.leadJourney ? [{ id: "lead-journey", label: "Lead Journey Flow", icon: "🗺️" }] : []),
-    ...(service.comparisonTable ? [{ id: "comparison", label: service.slug === "ecommerce" ? "Shopify vs WooCommerce" : service.slug === "wordpress-website" ? "Generic Themes vs Custom WP" : "Traditional Chatbots vs Autonomous AI Agents", icon: "⚖️" }] : []),
+    ...(service.comparisonTable ? [{ id: "comparison", label: service.slug === "ecommerce" ? "Shopify vs WooCommerce" : service.slug === "wordpress-website" ? "Generic Themes vs Custom WP" : service.slug === "web-applications" ? "Website vs Web App" : service.slug === "custom-software-saas" ? "Ready-Made vs Custom / SaaS" : service.slug === "mobile-apps" ? "Native vs Cross-Platform" : "Traditional Chatbots vs Autonomous AI Agents", icon: "⚖️" }] : []),
     ...(service.buildVsBuy ? [{ id: "build-vs-buy", label: "Build vs Buy Analysis", icon: "⚔️" }] : []),
     ...(service.problems ? [{ id: "problems", label: "Key Challenges Solved", icon: "⚠️" }] : []),
     ...(service.botTypes ? [{ id: "bot-types", label: "Capabilities We Engineer", icon: "🤖" }] : []),
@@ -71,8 +95,72 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     ...(service.faqs ? [{ id: "faqs", label: "Frequently Asked Questions", icon: "❓" }] : []),
   ];
 
+  // Structured Data (JSON-LD) for Search Engines & GEO (Generative Engine Optimization)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `https://mhkmarkedia.com/services/${service.slug}#service`,
+        "name": service.title,
+        "serviceType": service.title,
+        "provider": {
+          "@type": "Organization",
+          "name": "MHKMarkedia",
+          "url": "https://mhkmarkedia.com"
+        },
+        "description": service.description,
+        "areaServed": "Worldwide"
+      },
+      ...(service.faqs && service.faqs.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `https://mhkmarkedia.com/services/${service.slug}#faq`,
+              "mainEntity": service.faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer,
+                },
+              })),
+            },
+          ]
+        : []),
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mhkmarkedia.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://mhkmarkedia.com/#services",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": service.title,
+            "item": `https://mhkmarkedia.com/services/${service.slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
+      {/* Embedded JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header navigationData={navigationData} />
 
       <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-x-clip relative">
@@ -163,14 +251,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {/* Overview & Core Strategy */}
               <div id="overview" className="space-y-4 scroll-mt-28">
                 <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>⚡</span> Executive Strategy & System Architecture
+                  <span>⚡</span> {service.title} Strategy & Architecture
                 </h2>
                 <div className="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3">
                   <h3 className="text-base sm:text-lg font-bold text-zinc-900 flex items-center gap-2 font-serif">
-                    <span>🚀</span> Enterprise System Architecture
+                    <span>🚀</span> Enterprise Engineering & Execution
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
-                    By combining state-of-the-art machine learning models, cloud CRM infrastructure, and custom API webhooks, MHKMarkedia builds robust digital systems that automate customer engagement and scale business revenue effortlessly.
+                    By combining modern engineering frameworks, cloud databases, and bespoke software architecture, MHKMarkedia builds robust digital systems that streamline business operations and scale revenue effortlessly.
                   </p>
                 </div>
               </div>
@@ -207,11 +295,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </div>
               )}
 
-              {/* Comparison Section (Chatbot vs AI Agent or Shopify vs WooCommerce) */}
+              {/* Comparison Section */}
               {service.comparisonTable && (
                 <div id="comparison" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>⚖️</span> {service.slug === "ecommerce" ? "Shopify vs WooCommerce Platform Comparison" : service.slug === "wordpress-website" ? "Generic Pre-Made Themes vs Custom WordPress Engineering" : "Traditional Chatbots vs Autonomous AI Agents"}
+                    <span>⚖️</span> {service.slug === "ecommerce" ? "Shopify vs WooCommerce Platform Comparison" : service.slug === "wordpress-website" ? "Generic Pre-Made Themes vs Custom WordPress Engineering" : service.slug === "web-applications" ? "Standard Website vs Interactive Web Application" : service.slug === "custom-software-saas" ? "Ready-Made Software vs Custom Software & SaaS Platforms" : service.slug === "mobile-apps" ? "Native (Swift/Kotlin) vs Cross-Platform (React Native/Flutter)" : service.slug === "api-integrations" ? "No-Code (Zapier/Make) vs Custom Integration & API Development" : service.slug === "gbp-optimization" ? "Unoptimized Google Profile vs Fully Optimized Map Pack Asset" : service.slug === "citation-building" ? "Unaudited Directory Listings vs Synchronized Citation Platform" : service.slug === "review-management" ? "Manual Review Requests vs Automated Reputation System" : "Traditional Chatbots vs Autonomous AI Agents"}
                   </h2>
                   <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
                     <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
@@ -248,6 +336,48 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Confused between pre-made themes and custom WordPress engineering? We evaluate your business requirements for free and design the ideal WordPress architecture.</span>
+                    </div>
+                  )}
+                  {service.slug === "web-applications" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Not sure whether you need a website or a full web app? We provide a free architectural consultation to guide your business.</span>
+                    </div>
+                  )}
+                  {service.slug === "custom-software-saas" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Not sure whether you need internal custom software or a commercial SaaS product? We provide a free architectural scoping consultation to guide your product strategy.</span>
+                    </div>
+                  )}
+                  {service.slug === "mobile-apps" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Confused between Native (Swift/Kotlin) and Cross-Platform (React Native/Flutter)? We provide a free technical consultation to select the optimal mobile architecture for your budget.</span>
+                    </div>
+                  )}
+                  {service.slug === "api-integrations" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Not sure which integration approach is right for your stack? We suggest the optimal approach for free. In many cases, no-code connectors (Zapier/Make) are sufficient, and we will honestly advise you if that fits your requirements.</span>
+                    </div>
+                  )}
+                  {service.slug === "gbp-optimization" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Not sure where your business ranks on local Google Maps? We provide a 100% free Google Business Profile audit and competitor map pack analysis.</span>
+                    </div>
+                  )}
+                  {service.slug === "citation-building" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Unsure whether your NAP data is consistent across online directories? We provide a 100% free local citation and duplicate listing audit.</span>
+                    </div>
+                  )}
+                  {service.slug === "review-management" && (
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                      <span>💡</span>
+                      <span>Struggling to collect fresh 5-star customer reviews? We provide a 100% free online reputation audit and review workflow scoping call.</span>
                     </div>
                   )}
                 </div>
@@ -291,7 +421,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.problems && (
                 <div id="problems" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>⚠️</span> Operational Bottlenecks & Friction Solved
+                    <span>⚠️</span> Operational Bottlenecks Solved by {service.title}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.problems.map((prob, idx) => (
@@ -315,7 +445,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.botTypes && (
                 <div id="bot-types" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🤖</span> Core Capabilities & System Modules
+                    <span>🤖</span> {service.sectionTitles?.capabilities || `${service.title} Capabilities & System Modules`}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.botTypes.map((bot, idx) => (
@@ -336,7 +466,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.securityPillars && (
                 <div id="security-pillars" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🛡️</span> Enterprise Data Privacy & Security Framework
+                    <span>🛡️</span> {service.sectionTitles?.security || `${service.title} Security, Privacy & Access Control`}
                   </h2>
                   <div className="p-6 sm:p-8 rounded-2xl bg-slate-950 text-white space-y-6 shadow-xl border border-slate-800">
                     <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
@@ -460,7 +590,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.tools && (
                 <div id="tools" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🛠️</span> Technologies, Frameworks & Integrations
+                    <span>🛠️</span> {service.sectionTitles?.tools || `${service.title} Tech Stack & Battle-Tested Tools`}
                   </h2>
                   <div className="grid grid-cols-1 gap-4">
                     {service.tools.map((toolGroup, idx) => (
@@ -488,7 +618,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.processSteps && (
                 <div id="process" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🔄</span> Implementation Roadmap & Deployment
+                    <span>🔄</span> {service.sectionTitles?.process || `${service.title} Engineering & Implementation Roadmap`}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.processSteps.map((step) => (
@@ -512,7 +642,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.benefits && (
                 <div id="benefits" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>📈</span> Quantifiable Business Value & ROI
+                    <span>📈</span> {service.sectionTitles?.benefits || `${service.title} Business Benefits & ROI`}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.benefits.map((b, idx) => (
@@ -556,7 +686,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.pricingModels && (
                 <div id="pricing" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>💎</span> Engagement Models & Investment Options
+                    <span>💎</span> {service.sectionTitles?.pricing || `${service.title} Engagement Models & Pricing`}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {service.pricingModels.map((plan, idx) => (
@@ -619,7 +749,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.deliverables && (
                 <div id="deliverables" className="space-y-4 scroll-mt-28">
                   <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>📦</span> Technical Deliverables & Handover
+                    <span>📦</span> {service.sectionTitles?.deliverables || `${service.title} Deliverables & Asset Handoff`}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-zinc-800 p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80">
                     {service.deliverables.map((item) => (
@@ -636,7 +766,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.faqs && (
                 <div id="faqs" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>❓</span> Frequently Asked Questions
+                    <span>❓</span> {service.sectionTitles?.faqs || `Frequently Asked Questions About ${service.title}`}
                   </h2>
                   <div className="space-y-4">
                     {service.faqs.map((faq, idx) => (

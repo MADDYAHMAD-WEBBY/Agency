@@ -60,6 +60,27 @@ export default function SiteFooter() {
                 <Link href="/services/business-websites" className="hover:text-purple-400 transition-colors">🌐 Business Websites</Link>
               </li>
               <li>
+                <Link href="/services/web-applications" className="hover:text-purple-400 transition-colors">💻 Web Applications (React & Next.js)</Link>
+              </li>
+              <li>
+                <Link href="/services/custom-software-saas" className="hover:text-purple-400 transition-colors">🚀 Custom Software & SaaS Solutions</Link>
+              </li>
+              <li>
+                <Link href="/services/mobile-apps" className="hover:text-purple-400 transition-colors">📱 Mobile Apps (iOS & Android)</Link>
+              </li>
+              <li>
+                <Link href="/services/api-integrations" className="hover:text-purple-400 transition-colors">🔌 API & Software Integrations</Link>
+              </li>
+              <li>
+                <Link href="/services/gbp-optimization" className="hover:text-purple-400 transition-colors">📍 Google Business Profile (GBP) Optimization</Link>
+              </li>
+              <li>
+                <Link href="/services/citation-building" className="hover:text-purple-400 transition-colors">📌 Local Citation Building & NAP Sync</Link>
+              </li>
+              <li>
+                <Link href="/services/review-management" className="hover:text-purple-400 transition-colors">⭐ Review Management & Reputation Automation</Link>
+              </li>
+              <li>
                 <Link href="/services/wordpress-website" className="hover:text-purple-400 transition-colors">Custom WordPress Development</Link>
               </li>
               <li>
