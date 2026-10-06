@@ -8,7 +8,7 @@ This document records the complete architecture, design system, performance rule
 - **Agency Persona**: MHKMarkedia / MADDYAHMAD Agency — Full-Stack Web Engineering, Headless WordPress, AI Automation, and Local SEO Agency.
 - **Tone**: Always use agency plurals (**"We"**, **"Our"**, **"Our team"**) instead of first-person singular ("I", "My"). This website represents a client agency.
 - **Public Agency Copywriting Invariant**: Service pages and landing page copy must strictly use **MHKMarkedia** agency branding. Headlines and sub-headings MUST position the agency as a high-ticket service provider to hire (focusing on custom engineering, Core Web Vitals, Google rankings, and sales conversions). NEVER use DIY/self-service framing (e.g., avoid "Edit yourself").
-- **SEO Heading Uniqueness Invariant**: Every service page (`/services/[slug]`) MUST maintain 100% unique `<h2>` section headings across all services. Use custom `sectionTitles` in `content-data.ts` to ensure zero heading duplication on SERP indexation.
+- **SEO Heading Uniqueness & Natural Phrasing Invariant**: Every service page (`/services/[slug]`) MUST maintain 100% unique `<h2>` section headings using clean, natural, and distinct wording. Do NOT forcefully repeat or stuff the main target keyword string into every single section heading; instead, use elegant and contextually unique section titles (e.g., *"Strategy & Technical Architecture"*, *"Visual Lead Journey & Pipeline Map"*, *"Operational Transformation & Performance Impact"*).
 - **Copywriting**: Zero fluff, E-E-A-T signals, NLP keywords, Core Web Vitals optimization focus.
 - **Language Invariant**: 100% English copy across all content files and FAQs (no Roman Urdu in public UI).
 
