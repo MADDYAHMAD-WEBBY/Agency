@@ -251,7 +251,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {/* Overview & Core Strategy */}
               <div id="overview" className="space-y-4 scroll-mt-28">
                 <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                  <span>⚡</span> {service.title} Strategy & Architecture
+                  <span>⚡</span> Strategy & Technical Architecture
                 </h2>
                 <div className="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3">
                   <h3 className="text-base sm:text-lg font-bold text-zinc-900 flex items-center gap-2 font-serif">
@@ -262,12 +262,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   </p>
                 </div>
               </div>
-
-              {/* Lead Journey Visual Pipeline Flow Diagram */}
               {service.leadJourney && (
                 <div id="lead-journey" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🗺️</span> Visual Lead Journey & Automation Map
+                    <span>🗺️</span> Visual Lead Journey & Pipeline Map
                   </h2>
                   <div className="relative p-6 sm:p-8 rounded-2xl bg-zinc-950 text-white space-y-6 shadow-xl border border-zinc-800">
                     <div className="text-xs font-mono font-bold text-purple-400 uppercase tracking-widest">
@@ -392,8 +390,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
                     <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
                       <div className="col-span-4">EVALUATION CRITERIA</div>
-                      <div className="col-span-4 text-red-300">READY-MADE AI TOOLS</div>
-                      <div className="col-span-4 text-emerald-400">CUSTOM AI INTEGRATION</div>
+                      <div className="col-span-4 text-red-300">READY-MADE TOOLS</div>
+                      <div className="col-span-4 text-emerald-400">CUSTOM ENGINEERING</div>
                     </div>
                     {service.buildVsBuy.map((row, idx) => (
                       <div
@@ -421,7 +419,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.problems && (
                 <div id="problems" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>⚠️</span> Operational Bottlenecks Solved by {service.title}
+                    <span>⚠️</span> Key Business & Operational Challenges Solved
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.problems.map((prob, idx) => (
@@ -445,7 +443,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.botTypes && (
                 <div id="bot-types" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🤖</span> {service.sectionTitles?.capabilities || `${service.title} Capabilities & System Modules`}
+                    <span>🤖</span> {service.sectionTitles?.capabilities || "System Capabilities & Core Modules"}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.botTypes.map((bot, idx) => (
@@ -466,7 +464,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.securityPillars && (
                 <div id="security-pillars" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🛡️</span> {service.sectionTitles?.security || `${service.title} Security, Privacy & Access Control`}
+                    <span>🛡️</span> {service.sectionTitles?.security || "Security, Privacy & Access Control"}
                   </h2>
                   <div className="p-6 sm:p-8 rounded-2xl bg-slate-950 text-white space-y-6 shadow-xl border border-slate-800">
                     <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
@@ -548,7 +546,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.dashboardMetrics && (
                 <div id="dashboard-metrics" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>📊</span> Executive Dashboards & Analytics
+                    <span>📊</span> Executive Dashboards & Reporting Analytics
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.dashboardMetrics.map((m, idx) => (
@@ -590,7 +588,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.tools && (
                 <div id="tools" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🛠️</span> {service.sectionTitles?.tools || `${service.title} Tech Stack & Battle-Tested Tools`}
+                    <span>🛠️</span> {service.sectionTitles?.tools || "Battle-Tested Tech Stack & Tools"}
                   </h2>
                   <div className="grid grid-cols-1 gap-4">
                     {service.tools.map((toolGroup, idx) => (
@@ -618,7 +616,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.processSteps && (
                 <div id="process" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>🔄</span> {service.sectionTitles?.process || `${service.title} Engineering & Implementation Roadmap`}
+                    <span>🔄</span> {service.sectionTitles?.process || "Engineering & Implementation Roadmap"}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.processSteps.map((step) => (
@@ -642,7 +640,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               {service.benefits && (
                 <div id="benefits" className="space-y-6 scroll-mt-28">
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
-                    <span>📈</span> {service.sectionTitles?.benefits || `${service.title} Business Benefits & ROI`}
+                    <span>📈</span> {service.sectionTitles?.benefits || "Business Benefits & Strategic ROI"}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.benefits.map((b, idx) => (
