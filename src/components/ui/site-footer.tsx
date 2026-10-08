@@ -12,40 +12,6 @@ export default function SiteFooter() {
       <div className="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-indigo-900/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Top Direct Inquiry Callout Box */}
-        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-zinc-900 via-purple-950/40 to-zinc-900 border border-purple-800/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 text-center md:text-left">
-            <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-mono font-semibold uppercase tracking-wider border border-purple-500/30">
-              Direct Strategy Inquiry
-            </span>
-            <h3 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight">
-              Ready to engineer your next digital platform?
-            </h3>
-            <p className="text-xs sm:text-sm text-zinc-400 font-sans max-w-xl">
-              Get an architectural review and technical audit. Zero sales pressure, 100% actionable execution strategy within 24 hours.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <Link
-              href="/contact"
-              className="px-6 py-3 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-lg shadow-purple-600/30 active:scale-95 flex items-center gap-2"
-            >
-              <span>Book Strategy Call</span>
-              <span>↗</span>
-            </Link>
-            <a
-              href="https://wa.me/923000000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-2"
-            >
-              <span>WhatsApp Chat</span>
-              <span>💬</span>
-            </a>
-          </div>
-        </div>
-
         {/* Main Footer Links Grid: 4 Well-Arranged Columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-zinc-800/80">
           
