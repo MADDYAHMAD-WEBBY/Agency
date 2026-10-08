@@ -154,3 +154,21 @@ body > div[style*="position: fixed"][style*="z-index:"] {
   pointer-events: none !important;
   visibility: hidden !important;
 }
+
+@keyframes logoMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.333333%, 0, 0);
+  }
+}
+
+.animate-logo-marquee {
+  animation: logoMarquee 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-logo-marquee:hover {
+  animation-play-state: paused;
+}

@@ -94,21 +94,14 @@ export const LogoMarquee = memo(function LogoMarquee({
         className
       )}
     >
-      <motion.div
-        className="flex items-center flex-nowrap gap-4 sm:gap-6 w-max shrink-0 will-change-transform transform-gpu"
-        animate={{ x: ["0%", "-33.333333%"] }}
-        transition={{
-          duration: 35,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "loop",
-        }}
-        style={{ y: 0 }}
+      <div
+        className="flex items-center flex-nowrap gap-4 sm:gap-6 w-max shrink-0 animate-logo-marquee"
+        style={{ transform: "translate3d(0, 0, 0)" }}
       >
         {duplicatedLogos.map((logo, i) => (
           <LogoItem key={`${logo.alt}-${i}`} logo={logo} />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 });
