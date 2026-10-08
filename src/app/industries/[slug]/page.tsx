@@ -230,15 +230,15 @@ export default async function IndustryDetailPage({ params }: PageProps) {
               className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/25"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>{industry.heroCtaText || "Book Your Free Growth Audit"}</span>
+              <span>Book Free Digital Audit</span>
               <span>↗</span>
             </Link>
 
             <Link
-              href="/#works"
+              href="#pricing"
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-purple-200 bg-white/90 hover:bg-purple-50 text-purple-950 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all shadow-2xs"
             >
-              <span>View {industry.title} Projects</span>
+              <span>Explore Packages & Pricing</span>
             </Link>
           </div>
 
@@ -2121,7 +2121,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
           title={industry.ctaTitle || `READY TO SCALE YOUR ${industry.title.toUpperCase()}?`}
           subtitle="Book a free 1-on-1 strategy consultation and transform your digital presence."
           subtext={`Whether you need direct booking engines, 24/7 WhatsApp reservation bots, local Google Map Pack dominance, or automated 5-star review growth, MHKMarkedia architects custom web solutions built for speed, conversion, and scale.`}
-          buttonText={industry.heroCtaText || "Book Your Free Growth Audit"}
+          buttonText="Book Free Growth Audit"
           buttonHref={`/contact?industry=${encodeURIComponent(industry.title)}`}
         />
       </main>
