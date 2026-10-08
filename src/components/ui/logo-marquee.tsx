@@ -90,19 +90,20 @@ export const LogoMarquee = memo(function LogoMarquee({
   return (
     <div
       className={cn(
-        "w-full overflow-hidden py-4 relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]",
+        "w-full overflow-hidden py-2 sm:py-3 relative flex items-center h-16 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]",
         className
       )}
     >
       <motion.div
-        className="flex items-center gap-4 sm:gap-6 w-max"
-        animate={{ x: ["0%", "-33.333%"] }}
+        className="flex items-center flex-nowrap gap-4 sm:gap-6 w-max shrink-0 will-change-transform transform-gpu"
+        animate={{ x: ["0%", "-33.333333%"] }}
         transition={{
-          duration: 40,
+          duration: 35,
           ease: "linear",
           repeat: Infinity,
           repeatType: "loop",
         }}
+        style={{ y: 0 }}
       >
         {duplicatedLogos.map((logo, i) => (
           <LogoItem key={`${logo.alt}-${i}`} logo={logo} />

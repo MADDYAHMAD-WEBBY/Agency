@@ -5,19 +5,35 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Award, ShoppingBag, TrendingUp } from "lucide-react";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
-import type { GlobeMarker } from "@/components/ui/3d-globe";
 
-const Globe3D = dynamic(
-  () => import("@/components/ui/3d-globe").then((m) => m.Globe3D),
+const Globe = dynamic(
+  () => import("@/components/ui/cobe-globe").then((m) => m.Globe),
   { ssr: false }
 );
 
-const globeMarkers: GlobeMarker[] = [
-  { lat: 29.3544, lng: 71.6911, label: "Pakistan" },
-  { lat: 51.5074, lng: -0.1278, label: "London" },
-  { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
-  { lat: 25.2048, lng: 55.2708, label: "Dubai" },
-  { lat: 40.7128, lng: -74.006, label: "New York" },
+const globeMarkers = [
+  { id: "lahore", location: [31.5204, 74.3587] as [number, number], label: "Lahore" },
+  { id: "dubai", location: [25.2048, 55.2708] as [number, number], label: "Dubai" },
+  { id: "nyc", location: [40.7128, -74.006] as [number, number], label: "New York" },
+  { id: "london", location: [51.5074, -0.1278] as [number, number], label: "London" },
+  { id: "sf", location: [37.7595, -122.4367] as [number, number], label: "San Francisco" },
+  { id: "tokyo", location: [35.6762, 139.6503] as [number, number], label: "Tokyo" },
+  { id: "sydney", location: [-33.8688, 151.2093] as [number, number], label: "Sydney" },
+];
+
+const globeArcs = [
+  {
+    id: "lahore-dubai",
+    from: [31.5204, 74.3587] as [number, number],
+    to: [25.2048, 55.2708] as [number, number],
+    label: "Lahore → Dubai",
+  },
+  {
+    id: "nyc-london",
+    from: [40.7128, -74.006] as [number, number],
+    to: [51.5074, -0.1278] as [number, number],
+    label: "NYC → London",
+  },
 ];
 
 export default function AboutSection() {
@@ -218,11 +234,24 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Bottom 3D Interactive Globe Container (Sleek 3D NASA Globe with No Side Clipping) */}
-            <div className="relative z-10 mt-4 sm:mt-6 w-full h-[280px] sm:h-[360px] lg:h-[400px] mx-auto flex items-center justify-center overflow-hidden rounded-b-[12px]">
+            {/* Bottom 3D Interactive Globe Container (Cobe Globe with Arcs & Markers - Compact Height) */}
+            <div className="relative z-10 mt-2 sm:mt-4 w-full h-[260px] sm:h-[320px] lg:h-[360px] mx-auto flex items-center justify-center overflow-hidden rounded-b-[12px]">
               {/* Globe Canvas Container */}
-              <div className="w-[380px] h-[380px] sm:w-[480px] sm:h-[480px] lg:w-[540px] lg:h-[540px] relative flex items-center justify-center translate-y-8 sm:translate-y-12 lg:translate-y-16 pointer-events-auto">
-                <Globe3D markers={globeMarkers} className="w-full h-full" />
+              <div className="w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[400px] aspect-square relative flex items-center justify-center translate-y-6 sm:translate-y-10 lg:translate-y-12 pointer-events-auto">
+                <Globe
+                  markers={globeMarkers}
+                  arcs={globeArcs}
+                  markerColor={[0.3, 0.45, 0.85]}
+                  baseColor={[1, 1, 1]}
+                  arcColor={[0.3, 0.45, 0.85]}
+                  glowColor={[0.94, 0.93, 0.91]}
+                  dark={0}
+                  mapBrightness={10}
+                  markerSize={0.03}
+                  markerElevation={0.01}
+                  speed={0.012}
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </motion.div>
@@ -291,7 +320,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="bg-gradient-to-br from-[#fdeaf2] via-[#fef2f7] to-[#fde5f0] border border-pink-200/80 rounded-[12px] p-5 sm:p-7 flex flex-col sm:flex-row items-center gap-5 relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-auto lg:h-full"
+              className="bg-gradient-to-br from-[#fdeaf2] via-[#fef2f7] to-[#fde5f0] border border-pink-200/80 rounded-[12px] p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 relative overflow-hidden shadow-xs hover:shadow-md transition-shadow h-auto lg:h-full"
             >
               {/* Profile Image Portrait */}
               <div className="w-24 h-32 sm:w-32 sm:h-40 rounded-2xl overflow-hidden shrink-0 shadow-md border-2 border-white bg-zinc-200">

@@ -16,7 +16,7 @@ const navigationData: NavigationSection[] = [
   { title: "Services", href: "/#services" },
   { title: "Works", href: "/#works" },
   { title: "Blog", href: "/#blog", isActive: true },
-  { title: "FAQ", href: "/#faq" },
+
 ];
 
 export async function generateStaticParams() {
@@ -63,7 +63,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
           {/* Category & Breadcrumbs */}
           <div className="flex items-center gap-3 mb-6">
             <Link
-              href="/"
+              href="/blog"
               className="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-600 uppercase tracking-widest hover:underline"
             >
               ← BLOG & TECHNICAL INSIGHTS
@@ -156,7 +156,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
         {/* Bottom CEO Consultation Callout matching Homepage */}
         <ConsultationCtaBanner
           title={`Have questions about ${post.category}?`}
-          subtitle="Speak directly with Lead Architect M. Hafeez Khan."
+          subtitle="Speak directly with our technical lead."
           buttonText="Book Strategy Call"
         />
       </main>

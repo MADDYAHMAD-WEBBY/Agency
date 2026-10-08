@@ -1,11 +1,13 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { CircularGallery, type GalleryItem } from "@/components/ui/circular-gallery";
 
 const industriesData: GalleryItem[] = [
   {
+    slug: "ecommerce-dtc",
     common: "E-Commerce & DTC",
     binomial: "Headless WooCommerce & High-Speed Shopify",
     photo: {
@@ -16,16 +18,7 @@ const industriesData: GalleryItem[] = [
     },
   },
   {
-    common: "SaaS & Tech Startups",
-    binomial: "Next.js 15 Web Applications & Cloud Portals",
-    photo: {
-      url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      text: "Modern tech analytics dashboard",
-      pos: "center",
-      by: "Scalable Architecture & Instant Onboarding",
-    },
-  },
-  {
+    slug: "healthcare-clinics",
     common: "Healthcare & Clinics",
     binomial: "Patient Portals & Local Google Map Dominance",
     photo: {
@@ -36,6 +29,7 @@ const industriesData: GalleryItem[] = [
     },
   },
   {
+    slug: "real-estate-architecture",
     common: "Real Estate & Architecture",
     binomial: "Dynamic IDX Listings & High-Ticket Leads",
     photo: {
@@ -46,6 +40,7 @@ const industriesData: GalleryItem[] = [
     },
   },
   {
+    slug: "law-legal-services",
     common: "Law & Legal Services",
     binomial: "Authority Web Builds & Client Acquisition",
     photo: {
@@ -56,6 +51,7 @@ const industriesData: GalleryItem[] = [
     },
   },
   {
+    slug: "finance-wealth-tech",
     common: "Finance & Wealth Tech",
     binomial: "Interactive Calculators & Encrypted Portals",
     photo: {
@@ -66,6 +62,7 @@ const industriesData: GalleryItem[] = [
     },
   },
   {
+    slug: "hospitality-dining",
     common: "Hospitality & Dining",
     binomial: "Direct Booking Engines & 5-Star Reputation",
     photo: {
@@ -76,10 +73,11 @@ const industriesData: GalleryItem[] = [
     },
   },
   {
+    slug: "home-trades-contractors",
     common: "Home Trades & Contractors",
     binomial: "Instant Call Capture & Google Map Pack #1",
     photo: {
-      url: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+      url: "/images/services/home-trades-contractors.webp",
       text: "Industrial architectural craftsmanship",
       pos: "center",
       by: "High-Intent Local Search Dominance",
@@ -145,6 +143,7 @@ export default function IndustriesSection() {
         <div className="w-full h-[520px] sm:h-[620px] lg:h-[700px] relative flex items-center justify-center">
           <CircularGallery items={industriesData} autoRotateSpeed={0.07} />
         </div>
+
 
       </div>
     </section>

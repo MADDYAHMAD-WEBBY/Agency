@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, HTMLAttributes } from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-// Define the type for a single gallery item
 export interface GalleryItem {
+  slug?: string;
   common: string;
   binomial: string;
   photo: {
@@ -286,11 +287,15 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                 }}
               >
                 <div
-                  className="relative w-full h-full rounded-[10px] overflow-hidden group border border-white/10 transition-all duration-300 bg-zinc-950"
+                  className="relative w-full h-full rounded-[10px] overflow-hidden group border border-white/10 transition-all duration-300 bg-zinc-950 block"
                   style={{
                     boxShadow: '0 20px 40px -15px rgba(0,0,0,0.5)',
                   }}
                 >
+                  {item.slug ? (
+                    <Link href={`/industries/${item.slug}`} className="absolute inset-0 z-20" aria-label={`View ${item.common} industry page`} />
+                  ) : null}
+
                   {/* Background Image with smooth zoom on hover */}
                   <img
                     src={item.photo.url}
@@ -309,8 +314,11 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
 
                   {/* Editorial Bottom Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 text-white z-10 flex flex-col justify-end">
-                    <span className="text-[0.6rem] sm:text-[0.68rem] font-mono font-bold tracking-widest text-purple-400 uppercase block mb-1">
-                      Vertical Case
+                    <span className="text-[0.6rem] sm:text-[0.68rem] font-mono font-bold tracking-widest text-purple-400 uppercase flex items-center justify-between mb-1">
+                      <span>Vertical Case</span>
+                      {item.slug && (
+                        <span className="text-purple-300 group-hover:translate-x-0.5 transition-transform">↗</span>
+                      )}
                     </span>
                     <h3 className="text-base sm:text-xl font-bold font-serif tracking-tight leading-snug drop-shadow-sm text-white group-hover:text-purple-100 transition-colors">
                       {item.common}

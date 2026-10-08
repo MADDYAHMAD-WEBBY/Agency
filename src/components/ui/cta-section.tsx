@@ -80,7 +80,7 @@ export default function CtaSection() {
             <div className="mb-8 sm:mb-10 flex justify-center">
               <AnimatedPillButton
                 text="Start a Conversation"
-                href="mailto:hammadahmad749@gmail.com"
+                href="/contact"
                 variant="glass"
                 className="h-[50px] px-2 text-base shadow-md"
               />

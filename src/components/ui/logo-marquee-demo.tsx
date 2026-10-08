@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-// Official Claude starburst brand emblem icon
 import { LogoMarquee, Logo } from "@/components/ui/logo-marquee";
 import {
   SiShopify,
@@ -18,27 +17,37 @@ import {
   SiTurso,
   SiClaude,
   SiMake,
+  SiTiktok,
+  SiEtsy,
+  SiEbay,
+  SiBigcommerce,
+  SiSquarespace,
 } from "react-icons/si";
+import { FaAmazon, FaMagento, FaMeta } from "react-icons/fa6";
+import { RiOpenaiFill } from "react-icons/ri";
 
-// GoHighLevel Custom Brand Icon Component
+// Official GoHighLevel (GHL) 3-Arrow Brand Logo Component
 const GoHighLevelIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className} style={style}>
-    <path d="M12 2L2 7.5l10 5.5 10-5.5L12 2zm0 4.2L17.5 9 12 12 6.5 9 12 6.2zM4 9.8v7.2l7 3.8v-7.2L4 9.8zm16 0l-7 3.8v7.2l7-3.8V9.8z"/>
-  </svg>
-);
+  <svg viewBox="0 0 100 100" fill="none" className={className} style={style}>
+    {/* Left Yellow Arrow */}
+    <path d="M4 34L20 8L36 34H27V92H13V34H4Z" fill="#F59E0B" />
+    <path d="M20 8L36 34H20V8Z" fill="#000000" opacity="0.15" />
 
-// OpenAI Custom Brand Icon Component
-const OpenAiIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className} style={style}>
-    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3423 8.787a4.485 4.485 0 0 1 2.3655-1.9728V12.4a.7665.7665 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3423 8.787zm15.6304 3.0184-5.8428-3.3733 2.02-1.1685a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.402-.6765zm2.706-2.6775l-.1419-.0852-4.783-2.7582a.7712.7712 0 0 0-.7806 0L9.1304 9.653V7.3206a.0804.0804 0 0 1 .0332-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6754 4.6606zm-10.7416-6.666a4.4755 4.4755 0 0 1 2.8764 1.0408l-.1419.0804-4.7783 2.7582a.7948.7948 0 0 0-.3927.6813v6.7369L7.48 12.611a.071.071 0 0 1-.038-.052V6.9764a4.504 4.504 0 0 1 4.4945-4.4945zm-1.6322 9.479 2.692-1.5546 2.692 1.5546v3.1092l-2.692 1.5546-2.692-1.5546z"/>
+    {/* Middle Blue Arrow */}
+    <path d="M34 54L50 28L66 54H57V92H43V54H34Z" fill="#3B82F6" />
+    <path d="M50 28L66 54H50V28Z" fill="#000000" opacity="0.15" />
+
+    {/* Right Green Arrow */}
+    <path d="M64 34L80 8L96 34H87V92H73V34H64Z" fill="#10B981" />
+    <path d="M80 8L96 34H80V8Z" fill="#000000" opacity="0.15" />
   </svg>
 );
 
 export const logos: Logo[] = [
   {
-    alt: "GoHighLevel",
-    icon: GoHighLevelIcon,
-    color: "#FF5722",
+    alt: "TikTok Shop",
+    icon: SiTiktok,
+    color: "#000000",
   },
   {
     alt: "Shopify",
@@ -49,6 +58,46 @@ export const logos: Logo[] = [
     alt: "WooCommerce",
     icon: SiWoocommerce,
     color: "#96588A",
+  },
+  {
+    alt: "Amazon",
+    icon: FaAmazon,
+    color: "#FF9900",
+  },
+  {
+    alt: "Etsy",
+    icon: SiEtsy,
+    color: "#F1641E",
+  },
+  {
+    alt: "eBay",
+    icon: SiEbay,
+    color: "#E53238",
+  },
+  {
+    alt: "BigCommerce",
+    icon: SiBigcommerce,
+    color: "#121118",
+  },
+  {
+    alt: "Magento",
+    icon: FaMagento,
+    color: "#EE6723",
+  },
+  {
+    alt: "Squarespace",
+    icon: SiSquarespace,
+    color: "#000000",
+  },
+  {
+    alt: "Meta Shop",
+    icon: FaMeta,
+    color: "#0081FB",
+  },
+  {
+    alt: "GoHighLevel",
+    icon: GoHighLevelIcon,
+    color: "#FF5722",
   },
   {
     alt: "WordPress",
@@ -77,7 +126,7 @@ export const logos: Logo[] = [
   },
   {
     alt: "OpenAI",
-    icon: OpenAiIcon,
+    icon: RiOpenaiFill,
     color: "#10A37F",
   },
   {

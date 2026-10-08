@@ -72,6 +72,8 @@ export interface ServiceDetail {
   };
 }
 
+export type IndustryDetail = ServiceDetail;
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "generative-engine-optimization-geo-2026-guide",
@@ -4625,6 +4627,2190 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ],
   },
 ];
+
+export const INDUSTRY_DETAILS: IndustryDetail[] = [
+  {
+    slug: "ecommerce-dtc",
+    title: "E-Commerce & DTC Growth: Lightning-Fast Stores Built to Convert",
+    category: "web",
+    headline: "E-Commerce & DTC Growth. Lightning-Fast Stores Built to Convert.",
+    tagline: "We build high-speed Shopify and headless WooCommerce stores engineered to load instantly, deliver frictionless checkouts, and convert maximum visitors into paying customers.",
+    heroCtaText: "Book Free Speed & Conversion Audit",
+    description:
+      "Direct-to-Consumer (DTC) brands cannot afford slow page loads, bloated app scripts, or complex checkout flows. Heavy plugins and 4+ second load times destroy return on ad spend (ROAS). MHKMarkedia engineers high-performance custom Shopify themes, headless WooCommerce architectures (Next.js + WPGraphQL), sub-second checkout optimizations, and automated WhatsApp/email cart recovery systems that maximize average order value (AOV) and customer lifetime value (LTV).",
+
+    problems: [
+      {
+        title: "Slow Store Loading Speed Drops Ad Traffic",
+        desc: "Mobile ad traffic bounces instantly when product pages take longer than 2 seconds to render.",
+      },
+      {
+        title: "Heavy Ad Spend With Low Checkout Conversion",
+        desc: "Spending thousands on Meta and TikTok ads yields minimal profit when the checkout funnel is clunky and slow.",
+      },
+      {
+        title: "High Abandoned Cart Rates",
+        desc: "Up to 75% of shoppers abandon carts without completing purchase due to lack of automated multi-channel follow-ups.",
+      },
+      {
+        title: "Poor Mobile UX & App Bloatware",
+        desc: "Stacking 20+ third-party Shopify/WooCommerce apps degrades Core Web Vitals (LCP, INP, CLS) and breaks mobile responsiveness.",
+      },
+      {
+        title: "Low Repeat Purchase Rates",
+        desc: "Without automated post-purchase drip campaigns and win-back flows, every single sale requires re-acquiring customers via paid ad spend.",
+      },
+      {
+        title: "Rigid Monolithic Theme Limitations",
+        desc: "Off-the-shelf WordPress or Shopify themes lock your brand into generic layouts, limiting custom landing page design freedom.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "High-Speed Custom Shopify Stores",
+        desc: "Custom Liquid & Online Store 2.0 theme development, heavy app removal, Shopify Plus checkout customization, bundles, and Shopify Markets multi-currency setup.",
+      },
+      {
+        title: "Headless WooCommerce Engine (Next.js)",
+        desc: "Decoupled Next.js / React frontend connected to WooCommerce REST/WPGraphQL APIs for sub-second page loads and complete design freedom.",
+      },
+      {
+        title: "Frictionless Speed Checkout Optimization",
+        desc: "Guest checkout, 1-click Shop Pay / Apple Pay / Google Pay, COD & regional gateway integrations, address autofill, and dynamic cart drawers.",
+      },
+      {
+        title: "Automated Customer Retention & Recoveries",
+        desc: "Automated WhatsApp, SMS, and Klaviyo email flows for cart recovery, COD verification, post-purchase cross-sells, and win-back campaigns.",
+      },
+    ],
+
+    securityPillars: [
+      {
+        title: "Honest Architectural Platform Advice",
+        desc: "Not every store needs headless commerce. We provide transparent recommendations: we recommend Headless Next.js strictly when large product catalogs, custom UI requirements, or high traffic justify it. For smaller stores, optimized Shopify or WooCommerce is faster and more cost-effective.",
+      },
+      {
+        title: "Core Web Vitals & Speed Guarantee",
+        desc: "We prioritize LCP, INP, and CLS performance metrics. Every extra second degrades conversion rates; speed is our core architectural priority.",
+      },
+      {
+        title: "100% Brand Asset & Data Ownership",
+        desc: "You retain 100% primary ownership of your Shopify account, WooCommerce database, domain, repository source code, and customer records.",
+      },
+    ],
+
+    leadJourney: [
+      { step: "01", title: "Ad / Organic Discovery", desc: "Shopper clicks Meta, TikTok, or Google Shopping ad and arrives on landing page." },
+      { step: "02", title: "Sub-Second Page Load", desc: "Next.js / Shopify store renders product images and pricing in under 1 second." },
+      { step: "03", title: "Conversion-Focused Product Page", desc: "Shopper views high-res galleries, trust badges, customer reviews, and bundle offers." },
+      { step: "04", title: "Slide-Out Cart Drawer", desc: "1-tap Add to Cart opens interactive drawer with free-shipping progress bar and instant upsells." },
+      { step: "05", title: "Frictionless 1-Click Checkout", desc: "Fast guest checkout with 1-click Shop Pay, Apple Pay, credit cards, or COD verification." },
+      { step: "06", title: "Instant Order Confirmation", desc: "Automated WhatsApp and Email confirmation sent instantly with receipt and tracking link." },
+      { step: "07", title: "Live Delivery Tracking & SMS", desc: "Real-time courier tracking updates sent via SMS/WhatsApp as the package ships." },
+      { step: "08", title: "Post-Delivery Review Trigger", desc: "Automated review request sent post-delivery to collect verified photo/video reviews." },
+      { step: "09", title: "Automated Repeat Purchase Offer", desc: "Personalized win-back or replenishment offer triggered 30 days post-purchase." },
+    ],
+
+    tools: [
+      {
+        category: "E-Commerce Platforms & Headless Stack",
+        items: ["Shopify / Shopify Plus", "Liquid / Online Store 2.0", "Headless WooCommerce", "Next.js 16", "WPGraphQL", "Vercel Edge"],
+      },
+      {
+        category: "Payment & Checkout Gateways",
+        items: ["Shop Pay", "Apple Pay / Google Pay", "Stripe API", "COD Verification", "Local Regional Gateways"],
+      },
+      {
+        category: "Retention, Email & WhatsApp Automation",
+        items: ["Klaviyo", "WhatsApp Business API", "Twilio SMS", "n8n Cloud Workflows", "Mailchimp"],
+      },
+      {
+        category: "Analytics, Pixels & Ad Tracking",
+        items: ["Meta Conversions API (CAPI)", "Google Analytics 4 (GA4)", "TikTok Pixel", "Google Merchant Center"],
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "E-Commerce Development",
+        examples: "Shopify Liquid theme, WooCommerce, or headless Next.js storefront engineering.",
+      },
+      {
+        department: "Web Applications (Next.js)",
+        examples: "Decoupled headless frontend, custom interactive product configurators, sub-second landing pages.",
+      },
+      {
+        department: "Workflow Automation",
+        examples: "Order status sync, inventory management, courier fulfillment webhooks, daily executive sales digest.",
+      },
+      {
+        department: "CRM / Lead Automation",
+        examples: "Klaviyo email/SMS flows, customer segmentation, VIP customer rewards, win-back sequences.",
+      },
+      {
+        department: "AI Chatbots & Agents",
+        examples: "24/7 AI product recommendation guide, order tracking assistant, instant customer support bot.",
+      },
+      {
+        department: "API & Integrations",
+        examples: "ERP sync, accounting software, payment gateways, Meta Conversions API (CAPI) server tracking.",
+      },
+      {
+        department: "Local SEO / Product SEO",
+        examples: "Product Schema markup, Google Merchant Center feed optimization, high-ranking product pages.",
+      },
+      {
+        department: "Review Management",
+        examples: "Automated post-delivery photo/video review request flows, Judge.me / Loox review integration.",
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Speed & Conversion Audit",
+        desc: "Analyzing mobile Core Web Vitals, app script bloat, checkout drop-off points, and tracking setups.",
+      },
+      {
+        step: "02",
+        title: "Platform Strategy & Architecture",
+        desc: "Determining optimal stack (Custom Shopify Theme vs Headless Next.js WooCommerce) based on catalog size and budget.",
+      },
+      {
+        step: "03",
+        title: "Figma UX/UI Store Design",
+        desc: "Designing mobile-first, high-converting product pages, cart drawers, and checkout funnels.",
+      },
+      {
+        step: "04",
+        title: "Development & Integration Build",
+        desc: "Engineering custom Liquid / Next.js code, connecting payment gateways, and setting up tracking pixels.",
+      },
+      {
+        step: "05",
+        title: "Rigor Speed & Checkout Testing",
+        desc: "Executing mobile speed tests, test orders, COD verification webhooks, and cross-browser QA.",
+      },
+      {
+        step: "06",
+        title: "Launch & Monthly A/B Optimization",
+        desc: "Going live on production servers with continuous monthly conversion rate optimization (CRO) and A/B testing.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "Sub-Second Mobile Page Load Speed",
+        desc: "100/100 Core Web Vitals performance that slashes ad bounce rates and keeps shoppers engaged.",
+      },
+      {
+        title: "Higher Conversion Rate & Reduced Abandonment",
+        desc: "Frictionless checkout and 5-second WhatsApp cart text-backs turn up to 35% of abandoned carts into sales.",
+      },
+      {
+        title: "Increased Average Order Value (AOV)",
+        desc: "Slide-out cart drawers with free-shipping progress bars, product bundles, and 1-click upsells boost cart size.",
+      },
+      {
+        title: "Accurate Ad Attribution (CAPI & GA4)",
+        desc: "Server-side Meta Conversions API (CAPI) tracking ensures 100% ad signal accuracy despite iOS privacy limits.",
+      },
+      {
+        title: "100% Asset & Data Ownership",
+        desc: "Full source code, store admin, customer database, and domain ownership handed directly to you.",
+      },
+    ],
+
+    beforeAfter: [
+      {
+        before: "4.5s mobile load time → 72% abandoned carts → Heavy app bloat → Inaccurate pixel tracking → Zero automated email/SMS flows.",
+        after: "0.8s sub-second load time → 35% recovered carts → Clean custom codebase → Server-side CAPI tracking → Automated Klaviyo & WhatsApp retention.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Launch Package",
+        subtitle: "Custom Shopify / WooCommerce Store",
+        price: "$699",
+        features: [
+          "Customized Shopify or WooCommerce Store",
+          "Mobile Speed & App Bloat Optimization",
+          "Standard Payment & Shipping Gateway Integration",
+          "Automated Order Confirmation Emails",
+          "Basic Pixel & Analytics Tracking Setup",
+          "30 Days Post-Launch Engineering Support",
+        ],
+        highlight: false,
+      },
+      {
+        title: "Growth Package",
+        subtitle: "Fully Custom Theme + Cart Recovery",
+        price: "$1,299",
+        features: [
+          "Fully Custom Shopify Theme or WooCommerce Build",
+          "Sub-Second Mobile Core Web Vitals Optimization",
+          "Automated WhatsApp & Klaviyo Cart Recovery Drips",
+          "Interactive Cart Drawer + Free Shipping Progress Bar",
+          "Meta Conversions API (CAPI) & GA4 Tracking",
+          "60 Days Post-Launch Support & CRO Monitoring",
+        ],
+        highlight: true,
+      },
+      {
+        title: "Scale Package",
+        subtitle: "Headless Next.js Storefront / Shopify Plus",
+        price: "$2,499",
+        features: [
+          "Bespoke Headless Next.js Storefront + Micro-Animations",
+          "Shopify Storefront API or Headless WooCommerce WPGraphQL",
+          "Full Lifecycle Customer Automation (Cart, Post-Purchase, Win-back)",
+          "ERP, Custom Courier & Accounting API Synchronizations",
+          "Multi-Currency & International Localization Setup",
+          "Dedicated Monthly Retainer & Priority Engineering Support",
+        ],
+        highlight: false,
+      },
+    ],
+
+    faqs: [
+      {
+        question: "Is Shopify, WooCommerce, or Headless commerce better for my brand?",
+        answer: "Shopify is ideal for fast setup and reliability. WooCommerce offers total plugin flexibility. Headless Next.js is best for brands with large catalogs, high traffic, or custom design needs requiring sub-second performance. We provide honest advice so you only pay for headless when your scale requires it.",
+      },
+      {
+        question: "What is Headless Commerce and do I need it?",
+        answer: "Headless commerce separates the frontend (the customer-facing UI built in Next.js) from the backend (products and orders managed in WooCommerce or Shopify). It delivers sub-second page loads and complete design freedom. It's recommended for high-volume stores.",
+      },
+      {
+        question: "How much can store loading speed be improved?",
+        answer: "By removing heavy app scripts, optimizing images, and building clean Liquid or Next.js code, we typically reduce mobile load times from 4+ seconds down to under 1 second.",
+      },
+      {
+        question: "Can Cash on Delivery (COD) and regional/international payment gateways be integrated?",
+        answer: "Yes! We integrate 1-click credit card gateways (Shop Pay, Stripe, PayPal), Cash on Delivery (COD) with automated OTP verification, and regional payment gateways seamlessly.",
+      },
+      {
+        question: "Can you migrate my existing store from another platform?",
+        answer: "Yes, we handle complete data migration including products, customer records, order history, and SEO redirects from WooCommerce, Magento, or custom legacy platforms to Shopify or Headless Next.js.",
+      },
+      {
+        question: "Is automated abandoned cart recovery included?",
+        answer: "Yes! In our Growth and Scale packages, we set up automated multi-channel cart recovery sequences using WhatsApp Business API, SMS, and Klaviyo email flows.",
+      },
+      {
+        question: "Do you configure Meta Pixel and Google Ads tracking?",
+        answer: "Yes, we implement server-side Meta Conversions API (CAPI), Google Analytics 4 (GA4), Google Merchant Center product feeds, and TikTok Pixels for accurate ad attribution.",
+      },
+    ],
+
+    deliverables: [
+      "Custom Fast Shopify / Headless Next.js Storefront Codebase",
+      "Sub-Second Mobile Core Web Vitals Speed Optimization",
+      "Automated WhatsApp & Klaviyo Cart Recovery Setup",
+      "1-Click & Regional Payment Gateway Integrations",
+      "Server-Side Meta CAPI & GA4 Tracking Implementation",
+      "Product Catalog & Customer Data Migration",
+      "Full Source Code & Account Admin Ownership Handoff",
+    ],
+
+    ctaTitle: "READY TO BOOST YOUR STORE SPEED & E-COMMERCE SALES?",
+    coverImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    techStack: ["NEXT.JS 16", "HEADLESS WOOCOMMERCE", "SHOPIFY PLUS API", "SUB-SECOND SPEED", "WHATSAPP AUTOMATION", "META CAPI"],
+  },
+  {
+    slug: "saas-tech-startups",
+    title: "SaaS & Tech Startups Digital Engineering & Growth",
+    category: "web",
+    headline: "High-Converting Web Platforms, Custom Dashboards & AI Integration for Tech Startups",
+    tagline: "Building scalable React/Next.js SaaS web applications, interactive product demos, automated onboarding, and bank-grade cloud portals.",
+    heroCtaText: "Book SaaS Consultation",
+    description:
+      "Tech startups and SaaS companies need web infrastructure that instills buyer trust, communicates complex software value instantly, and automates user onboarding. MHKMarkedia builds modern SaaS web platforms, interactive ROI calculators, custom admin dashboards, and OpenAI API integrations built to scale to millions of users.",
+    problems: [
+      {
+        title: "High Visitor Churn & Unclear Product Messaging",
+        desc: "Complex SaaS products often fail to explain their core value within the first 5 seconds, causing prospective clients to drop off.",
+      },
+      {
+        title: "Slow Onboarding & Manual User Activation",
+        desc: "Without automated onboarding flows and instant account provisioning, user drop-off during free trials remains high.",
+      },
+    ],
+    botTypes: [
+      {
+        title: "Custom Next.js SaaS Platform",
+        desc: "Bank-grade client portal with role-based access control, subscription billing, and real-time data sync.",
+      },
+      {
+        title: "Interactive Product Demos & Calculators",
+        desc: "Engaging interactive widgets allowing prospects to simulate ROI before signing up.",
+      },
+    ],
+    tools: [
+      {
+        category: "Frontend & Web Apps",
+        items: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      },
+      {
+        category: "Cloud Backend & AI",
+        items: ["Node.js", "PostgreSQL / Supabase", "OpenAI API", "Stripe Billing", "n8n Cloud"],
+      },
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: "Product & User Journey Mapping",
+        desc: "Defining target buyer personas, key conversion funnels, and trial onboarding steps.",
+      },
+      {
+        step: "02",
+        title: "Full-Stack Development & Portal Build",
+        desc: "Engineering secure APIs, responsive UI components, and automated payment gateways.",
+      },
+    ],
+    benefits: [
+      {
+        title: "3x Inbound Free Trial Conversions",
+        desc: "Clarity-first UI architecture and interactive product demos boost user sign-up rates.",
+      },
+      {
+        title: "Scalable Bank-Grade Cloud Security",
+        desc: "Encrypted API endpoints, OAuth authentication, and compliance-ready data architecture.",
+      },
+    ],
+    pricingModels: [
+      {
+        title: "SaaS Web Platform Project",
+        subtitle: "Full Design & Frontend Development",
+        price: "Starting from $1,499",
+        features: [
+          "Custom Next.js 16 Web Application",
+          "Interactive Product Demos & Calculators",
+          "Stripe Billing & Subscription Integration",
+          "SEO & Generative Engine Optimization (GEO)",
+        ],
+        highlight: true,
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you integrate custom AI models into our SaaS application?",
+        answer: "Yes, our engineering team builds custom OpenAI ChatGPT, Google Gemini, and Claude API connections directly into your SaaS frontend and backend workflows.",
+      },
+    ],
+    deliverables: [
+      "Custom SaaS Next.js Frontend Codebase",
+      "Stripe Subscription & Billing Gateway",
+      "Interactive ROI Calculator Components",
+      "Full Technical Documentation",
+    ],
+    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    techStack: ["NEXT.JS 16", "TYPESCRIPT", "REACT 19", "OPENAI API", "TAILWIND CSS", "POSTGRESQL"],
+  },
+  {
+    slug: "healthcare-clinics",
+    title: "Healthcare & Clinic Growth. Secure Patient Portals and Top Google Map Visibility.",
+    category: "seo",
+    headline: "Healthcare & Clinic Growth. Secure Patient Portals and Top Google Map Visibility.",
+    tagline: "We build professional websites, online appointment booking systems, secure patient portals, and local SEO for clinics, doctors, and hospitals to attract patients and streamline care.",
+    heroCtaText: "Book Free Clinic Digital Audit",
+    description:
+      "Patients place their health and personal data in your care—demanding utmost privacy, professional trust, and seamless digital access. Relying on phone calls during clinic hours or sending lab reports over standard messaging apps creates privacy risks and frustrates modern patients. MHKMarkedia engineers high-speed medical web platforms, 24/7 automated appointment engines, privacy-first patient portals (MFA, encrypted report downloads), and ethical local Google Map Pack SEO for dental practices, general practitioners, specialists, diagnostic labs, aesthetics, and hospitals.",
+
+    problems: [
+      {
+        title: "Competitors Outranking You for 'Dentist Near Me' & Specialists",
+        desc: "Failing to rank in top local Google Maps searches for 'skin specialist in [city]' or 'dental clinic near me' sends prospective patients directly to competitors.",
+      },
+      {
+        title: "Phone-Only Booking & Unanswered After-Hours Calls",
+        desc: "Limiting appointments to office phone calls causes missed bookings during busy clinic hours, weekends, and after-hours.",
+      },
+      {
+        title: "High Patient No-Show Rates & Unfilled Slots",
+        desc: "Without automated multi-channel appointment reminders (SMS/WhatsApp), no-shows leave valuable practitioner schedule slots empty.",
+      },
+      {
+        title: "Insecure Sharing of Lab Reports & Prescriptions",
+        desc: "Sending diagnostic lab reports and medical prescriptions via standard email or WhatsApp exposes patient data to privacy breaches.",
+      },
+      {
+        title: "Sparse Online Reviews & Lack of Digital Trust",
+        desc: "Sparse 5-star Google ratings make new patients hesitant to book consultations with your specialists over established clinics.",
+      },
+      {
+        title: "Outdated Website & Manual Patient Recall",
+        desc: "Legacy websites fail to display doctor qualifications, PMDC/medical board registrations, or specialized services, while staff waste hours on manual follow-ups.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "Secure Patient Portals & Encrypted Vaults",
+        desc: "MFA/2FA authenticated patient login portal for digital lab report downloads, prescription history, medical record access, digital intake consent forms, and invoice records.",
+      },
+      {
+        title: "24/7 Automated Appointment & WhatsApp Bot",
+        desc: "Conversational booking bot that checks doctor schedules, books slots, triggers automated appointment reminders, handles rescheduling, and fills cancelled slots.",
+      },
+      {
+        title: "Local Google Map Pack & Doctor Profile Engine",
+        desc: "Hyper-local Google Business Profile optimization, medical directory citations (Marham, Oladoc, local registries), service-wise landing pages, and doctor credential showcases.",
+      },
+      {
+        title: "Automated Patient Recall & Follow-Up System",
+        desc: "6-month dental checkup, annual physical, vaccination, and repeat visit automated recall sequences to maximize long-term patient retention.",
+      },
+    ],
+
+    securityPillars: [
+      {
+        title: "Privacy-First & Compliance-Ready Architecture",
+        desc: "TLS 1.3 encryption in transit, AES-256 database storage encryption, multi-factor authentication (MFA/2FA), role-based access control (RBAC), and immutable audit logs. We build privacy-first, compliance-ready technical structures (BAA support available for US cloud vendors).",
+      },
+      {
+        title: "Strict Patient Confidentiality & Notification Rules",
+        desc: "Protected Health Information (PHI) is strictly excluded from unencrypted SMS/WhatsApp notifications. Notifications deliver a secure portal link where patients authenticate to access confidential lab reports.",
+      },
+      {
+        title: "Strict Medical Ethics & Advertising Adherence",
+        desc: "We strictly follow local health authority regulations: We never use misleading promises ('100% cure', 'best doctor') or unverified before/after claims. All medical content is reviewed by your clinic's doctors prior to launch.",
+      },
+    ],
+
+    leadJourney: [
+      { step: "01", title: "Local Google Search Discovery", desc: "Patient searches 'dentist near me', 'dermatologist in [city]', or 'diagnostic lab'." },
+      { step: "02", title: "Map Pack / Doctor Profile Trust Check", desc: "Patient discovers your top-rated Google Business Profile, views doctor qualifications and authentic clinic photos." },
+      { step: "03", title: "Sub-Second Website / Service Exploration", desc: "Patient opens fast mobile site, explores specialized treatment pages, doctor profiles, and clinic hours." },
+      { step: "04", title: "24/7 Online Booking or WhatsApp Click", desc: "Patient selects preferred appointment date/time via online calendar or WhatsApp booking bot." },
+      { step: "05", title: "Instant Auto-Confirmation & Calendar Sync", desc: "Automated confirmation triggers instantly with location pin, doctor details, and calendar invite." },
+      { step: "06", title: "Automated Appointment Reminders", desc: "24-hour and 2-hour SMS/WhatsApp reminders fire automatically, drastically reducing no-shows." },
+      { step: "07", title: "Clinic Consultation & Care Visit", desc: "Patient attends consultation smoothly; staff access digital intake forms via clinic dashboard." },
+      { step: "08", title: "Secure Portal Report & Prescription Delivery", desc: "Patient receives confidential portal link notification to download digital lab reports and prescriptions." },
+      { step: "09", title: "Post-Visit Feedback & Review Trigger", desc: "Automated polite review request triggers encouraging patient to share authentic 5-star Google feedback." },
+      { step: "10", title: "Automated Patient Recall (6 Months)", desc: "Automated recall reminder triggers 6 months later for routine checkups or follow-up care." },
+    ],
+
+    tools: [
+      {
+        category: "Web & Patient Portal Frameworks",
+        items: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel Edge Stack", "MedicalClinic JSON-LD"],
+      },
+      {
+        category: "Privacy, Security & Encryption",
+        items: ["TLS 1.3 Encryption", "AES-256 Storage", "MFA / 2FA Auth", "Role-Based Access (RBAC)", "Audit Logging"],
+      },
+      {
+        category: "Appointment Automation & Integrations",
+        items: ["WhatsApp Business API", "Twilio SMS", "Google Calendar API", "n8n Cloud Workflows", "Stripe / Local Gateways"],
+      },
+      {
+        category: "Local SEO & Healthcare Directories",
+        items: ["Google Business Profile API", "Marham / Oladoc Sync", "Healthcare Directory Citations", "Geo-Grid Rank Tracking"],
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "Business Websites",
+        examples: "Clinic website, doctor profiles, specialized treatment pages, clinic photos, medical disclaimers.",
+      },
+      {
+        department: "Web Apps / Portals",
+        examples: "Secure patient portal, online appointment scheduling engine, digital report vault, billing history.",
+      },
+      {
+        department: "Custom Software",
+        examples: "Clinic Management System (HMS/EMR), diagnostic lab result portal, pharmacy inventory tools.",
+      },
+      {
+        department: "Mobile Apps",
+        examples: "Patient mobile app, appointment reminder notifications, lab report viewer.",
+      },
+      {
+        department: "Local SEO / GBP",
+        examples: "Map Pack 3-Pack ranking for 'doctor near me', 'clinic in [city]', specialty search dominance.",
+      },
+      {
+        department: "Citation Building",
+        examples: "Healthcare directory citations, local medical board listings, NAP consistency.",
+      },
+      {
+        department: "Review Management",
+        examples: "Ethical post-visit patient review requests, owner reply templates, reputation monitoring.",
+      },
+      {
+        department: "CRM / Lead Automation",
+        examples: "Inquiry to appointment pipeline, automated follow-up drips, 6-month patient recall campaigns.",
+      },
+      {
+        department: "AI Chatbots & Agents",
+        examples: "24/7 appointment booking assistant, clinic FAQ guidance (strictly restricted from giving medical advice).",
+      },
+      {
+        department: "Workflow Automation",
+        examples: "Appointment reminders, missed call text-back, report ready alerts, automated invoice generation.",
+      },
+      {
+        department: "API & Integrations",
+        examples: "Payment gateways, lab information systems (LIS), WhatsApp Business API, calendar synchronization.",
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery & Privacy Requirements Audit",
+        desc: "Auditing clinic specialties, patient workflows, data privacy needs, and local competitor search rankings.",
+      },
+      {
+        step: "02",
+        title: "Competitor & Healthcare Keyword Research",
+        desc: "Mapping high-intent medical queries ('teeth whitening in [area]', 'dermatologist near me') and local citations.",
+      },
+      {
+        step: "03",
+        title: "Site Structure & Privacy-First Architecture",
+        desc: "Designing clean, mobile-fast Next.js layouts with doctor credentials, specialized service pages, and portal flows.",
+      },
+      {
+        step: "04",
+        title: "Appointment Engine & WhatsApp Bot Build",
+        desc: "Connecting 24/7 WhatsApp booking bot, automated SMS reminders, and calendar sync webhooks.",
+      },
+      {
+        step: "05",
+        title: "Medical Content Review & Verification",
+        desc: "Verifying all web copy, treatment descriptions, and medical disclaimers with clinic doctors before launch.",
+      },
+      {
+        step: "06",
+        title: "Google Business Profile & Directory Setup",
+        desc: "Optimizing GBP categories, consultation hours, doctor profiles, and healthcare directory citations.",
+      },
+      {
+        step: "07",
+        title: "Testing, Launch & Monthly Reporting",
+        desc: "Rigorously testing appointment forms, security controls, and Core Web Vitals before deploying to production edge servers.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "Top 3 Local Google Map Pack Placement",
+        desc: "Dominating local search results for high-intent medical queries in your city and target service areas.",
+      },
+      {
+        title: "60%+ Reduction in Appointment No-Shows",
+        desc: "Automated multi-channel SMS/WhatsApp reminders ensure patients arrive on time for scheduled consultations.",
+      },
+      {
+        title: "24/7 After-Hours Booking Capture",
+        desc: "Capture patient appointments 24/7 without burdening front-desk staff or missing off-hours inquiries.",
+      },
+      {
+        title: "Privacy-First Data Protection & Trust",
+        desc: "Encrypted patient portal eliminates insecure email/messaging report exchanges, building patient trust.",
+      },
+      {
+        title: "100% Platform, Profile & Data Ownership",
+        desc: "You retain complete primary ownership of your domain, website source code, Google Business Profile, and patient records under NDA.",
+      },
+    ],
+
+    beforeAfter: [
+      {
+        before: "Missing after-hours appointment calls → Hidden on page 2 of Google Maps → High no-show rates → Insecure WhatsApp report sharing.",
+        after: "24/7 automated WhatsApp booking → Top 3 Google Map Pack placement → 60% lower no-show rate → Secure 2FA patient report portal.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Package",
+        subtitle: "Clinic Site + Missed Call Text-Back",
+        price: "$799",
+        features: [
+          "5-8 Page High-Speed Fast Mobile Clinic Website",
+          "Doctor Profile Pages & Service Breakdown",
+          "Google Business Profile Setup & Basic SEO",
+          "1-Tap Click-to-Call & WhatsApp Contact Button",
+          "Missed Call Instant Text-Back System",
+          "SSL Encryption & 30 Days Engineering Support",
+        ],
+        highlight: false,
+      },
+      {
+        title: "Growth Package",
+        subtitle: "Online Booking + WhatsApp Assistant",
+        price: "$1,399",
+        features: [
+          "Full Custom Clinic Site + Specialized Service Pages & Blog",
+          "Google Map Pack 3-Pack SEO & Monthly Posts",
+          "Online Appointment Calendar & Automated Reminders",
+          "24/7 Automated WhatsApp Booking Assistant",
+          "Automated Post-Visit Review Request System",
+          "Healthcare Directory Citations & 60 Days Support",
+        ],
+        highlight: true,
+      },
+      {
+        title: "Platform Package",
+        subtitle: "Custom Site + Encrypted Patient Portal",
+        price: "$2,599",
+        features: [
+          "Full Custom Platform + Secure Encrypted Patient Portal",
+          "MFA / 2FA Authenticated Login & Lab Report Vault",
+          "Role-Based Access Controls (RBAC) & Audit Logging",
+          "Automated Patient Recall Engine (6-Month Checkups)",
+          "Multi-Branch GBP Dominance & Geo-Grid Tracking",
+          "Dedicated Monthly Retainer & Priority SLA Support",
+        ],
+        highlight: false,
+      },
+    ],
+
+    faqs: [
+      {
+        question: "Do you guarantee 100% HIPAA compliance?",
+        answer: "No single web development agency can guarantee complete HIPAA compliance, because HIPAA is a holistic operational framework encompassing cloud hosting, software tools, staff policies, and physical security. We build privacy-first, compliance-ready technical structures (TLS 1.3 encryption, AES-256 storage, MFA, audit logs) and provide Business Associate Agreement (BAA) support for US cloud vendors. Final operational compliance remains a joint effort with your legal and compliance counsel.",
+      },
+      {
+        question: "How long until our clinic ranks in the Google Map Pack?",
+        answer: "Local Map Pack ranking depends on area competition, existing citations, and patient review authority. While we never promise unrealistic instant guarantees, our clients typically see noticeable local search ranking growth within 30 to 90 days of consistent citation building and GBP optimization.",
+      },
+      {
+        question: "How are patient lab reports and prescriptions kept secure?",
+        answer: "Reports and prescriptions are stored in encrypted cloud vaults (AES-256 encryption at rest). Patients receive an unencrypted notification containing a secure link. When clicked, the patient authenticates via MFA/2FA before viewing or downloading their records.",
+      },
+      {
+        question: "How does online appointment scheduling and calendar sync work?",
+        answer: "Patients select available consultation slots on your website or WhatsApp bot. The appointment syncs in real-time with your clinic calendar (Google Calendar, Outlook, or HMS API), triggering instant confirmations and automated SMS reminders.",
+      },
+      {
+        question: "Does the AI chatbot offer medical advice or diagnosis?",
+        answer: "No, absolutely not. The AI assistant is strictly restricted to administrative tasks: answering clinic FAQs (location, hours, fees), capturing patient contact details, and booking appointment slots. It includes mandatory medical disclaimers directing patients to visit the nearest emergency room for urgent health concerns.",
+      },
+      {
+        question: "Is it permissible to request patient reviews and display testimonials?",
+        answer: "Yes, provided it strictly follows local health authority regulations and patient confidentiality rules. We set up ethical, compliant review request flows that politely invite satisfied patients to leave authentic feedback on your Google Business Profile without exposing medical details.",
+      },
+      {
+        question: "Can multiple doctors and clinic branch locations be managed on one platform?",
+        answer: "Yes! In our Growth and Platform packages, we build multi-doctor profile directories and multi-city/branch location pages with individual schedules and location maps.",
+      },
+      {
+        question: "Can this system integrate with our existing EMR or HMS software?",
+        answer: "Yes, we engineer custom REST/GraphQL API connectors to sync appointment bookings and patient lead records with popular EMR/HMS software platforms.",
+      },
+      {
+        question: "Can Urdu language website display and WhatsApp messaging be supported?",
+        answer: "Yes! We build full multi-language clinic web platforms and WhatsApp bots supporting clean English and right-to-left (RTL) Urdu layouts for local patients.",
+      },
+    ],
+
+    deliverables: [
+      "Custom Next.js 16 Healthcare & Clinic Web Platform",
+      "Secure Patient Portal Module with MFA & Encrypted Report Vault",
+      "24/7 Automated WhatsApp Appointment Booking Bot",
+      "Google Business Profile Map Pack 3-Pack Optimization",
+      "Automated Multi-Channel Appointment Reminder System",
+      "Healthcare Directory Citation Building & Sync",
+      "Full Source Code, Technical Documentation & NDA Handoff",
+    ],
+
+    ctaTitle: "READY TO ATTRACT MORE PATIENTS & STREAMLINE CLINIC APPOINTMENTS?",
+    coverImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+    techStack: ["NEXT.JS 16", "PATIENT PORTAL", "LOCAL MAP PACK SEO", "WHATSAPP BOT", "PRIVACY FIRST", "TYPESCRIPT"],
+  },
+  {
+    slug: "real-estate-architecture",
+    title: "Real Estate & Architecture Growth. Dynamic Listings and High-Ticket Leads.",
+    category: "web",
+    headline: "Real Estate & Architecture Growth. Dynamic Listings and High-Ticket Leads.",
+    tagline: "We build property websites, immersive showcases, and lead automation for agencies, developers, and architects to attract serious buyers and high-ticket investors.",
+    heroCtaText: "Book Free Real Estate Digital Audit",
+    description:
+      "In high-ticket real estate and architecture, deal values are massive—meaning lead quality, instant response speed, and immersive visual impact dictate success. Relying on third-party property portals (Zameen.com, Realtor portals) leaves your brand vulnerable to fierce competitor placement and shared lead data. MHKMarkedia engineers custom Next.js property platforms featuring dynamic MLS/IDX listing feeds, 360 virtual tours, 24/7 automated WhatsApp qualification, and hyper-local Google Map Pack SEO for developers, brokers, and architecture studios.",
+
+    problems: [
+      {
+        title: "Listings Scattered Across Excel & WhatsApp Groups",
+        desc: "Property listings remain trapped in manual spreadsheets, WhatsApp groups, and third-party portals, failing to update dynamically on your website.",
+      },
+      {
+        title: "Heavy Portal Reliance & Shared Competitor Leads",
+        desc: "Relying on portal listings (Zameen, Realtor sites) exposes your properties to side-by-side competitor ads while third parties own your buyer data.",
+      },
+      {
+        title: "Delayed Inquiry Replies & Lost Buyers",
+        desc: "Inquiries from Facebook, Instagram, and web forms sit cold for hours. By the time an agent calls back, the serious buyer has moved on.",
+      },
+      {
+        title: "Zero Lead Qualification (Tire-Kickers vs Investors)",
+        desc: "Sales agents waste valuable hours responding to unvetted calls instead of focusing on qualified, high-net-worth investors.",
+      },
+      {
+        title: "Flat 2D Photos With Weak Visual Impact",
+        desc: "Standard 2D photo galleries fail to convey luxury, space, and architectural finishes, depressing remote buyer confidence.",
+      },
+      {
+        title: "Weak Online Project Showcases & Architect Portfolios",
+        desc: "Developers lack high-converting landing pages for new housing projects, while architects' portfolios remain trapped on Instagram without direct inquiry funnels.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "Dynamic MLS / IDX Property Listing Engine",
+        desc: "Advanced multi-category property catalog (Buy, Rent, Commercial, Plots, Projects) with instant filters (city, area, price range, marla/kanal/sq ft), map-based search, and self-service agent admin panels.",
+      },
+      {
+        title: "Automated Buyer Qualification & WhatsApp Bot",
+        desc: "24/7 instant WhatsApp assistant that greets prospective buyers, qualifies budget, timeline, and location preferences, and routes hot leads to sales agents within 60 seconds.",
+      },
+      {
+        title: "Immersive Architectural & Project Showcases",
+        desc: "Integration of 360° virtual tours (Matterport), video walkthroughs, 3D architectural renders, interactive floor plans, and construction timeline updates.",
+      },
+      {
+        title: "Hyper-Local Area & Project SEO Engine",
+        desc: "Dedicated SEO pages for every neighborhood ('Plots in DHA Multan', 'Flats in Gulberg Lahore') and individual housing society projects.",
+      },
+    ],
+
+    securityPillars: [
+      {
+        title: "Sub-Second High-Resolution Media Optimization",
+        desc: "Ultra-fast Next.js architecture with automated image compression, WebP rendering, and Cloudflare CDN caching ensuring crisp luxury visuals load in under 0.8 seconds on mobile.",
+      },
+      {
+        title: "100% Owned Buyer Lead & Property Data",
+        desc: "Break free from third-party portal dependency. All buyer leads, inquiry history, saved searches, and listing databases belong 100% to your firm.",
+      },
+      {
+        title: "100% Data & Asset Ownership Under NDA",
+        desc: "MHKMarkedia delivers 100% primary ownership of domain, website source code, listing admin panel, CRM pipelines, and Google Business Profiles.",
+      },
+    ],
+
+    leadJourney: [
+      { step: "01", title: "Google / Social Ad / Portal Search", desc: "Buyer searches 'luxury apartments in [city]' or clicks a targeted Meta ad for a new project." },
+      { step: "02", title: "Sub-Second Project / Area Page Arrival", desc: "Buyer lands on high-speed Next.js project page or interactive area listing page." },
+      { step: "03", title: "Immersive Property Exploration", desc: "Buyer views 360° virtual tours, interactive floor plans, EMI payment calculators, and amenities." },
+      { step: "04", title: "WhatsApp / Web Inquiry Submission", desc: "Buyer taps the instant WhatsApp button or submits a project brochure download form." },
+      { step: "05", title: "Instant Auto-Reply & AI Qualification", desc: "Automated bot replies within 60 seconds, collecting budget, purchasing timeline, and financing status." },
+      { step: "06", title: "Agent Assignment & Phone Consultation", desc: "Qualified 'Hot' lead is instantly assigned to a dedicated sales agent with full inquiry details." },
+      { step: "07", title: "Automated Site Visit Booking", desc: "Agent schedules a physical site visit; automated WhatsApp reminders reduce no-shows." },
+      { step: "08", title: "Token Payment / Offer Submission", desc: "Buyer submits token deposit or formal purchase offer managed through the CRM pipeline." },
+      { step: "09", title: "Deal Closing & Investor Onboarding", desc: "Transaction closes with automated document checklists, payment schedules, and receipt logs." },
+      { step: "10", title: "Post-Sale Review & Referral Request", desc: "Automated review request fires encouraging satisfied buyers to leave authentic 5-star Google feedback." },
+    ],
+
+    tools: [
+      {
+        category: "Listing & Web Application Frameworks",
+        items: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "Cloudflare Image Edge", "Google Maps JS API"],
+      },
+      {
+        category: "IDX / MLS & Portal API Connectors",
+        items: ["Custom Property Admin Panel", "REST / GraphQL Listing Feed", "Portal API Integration", "CSV / Excel Importer"],
+      },
+      {
+        category: "Lead Automation & Messaging",
+        items: ["WhatsApp Business API", "Twilio SMS", "n8n Cloud Workflows", "GoHighLevel CRM", "HubSpot CRM"],
+      },
+      {
+        category: "Immersive Media & SEO",
+        items: ["Matterport 360 Embed API", "YouTube / Vimeo Video Player", "Google Business Profile API", "RealEstateAgent Schema"],
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "Business Websites / Web Apps",
+        examples: "Listing platform, project landing pages, agent profiles, multi-currency & English + Urdu RTL support.",
+      },
+      {
+        department: "Custom Software",
+        examples: "Property management panel, agent listing submission portal, rent & tenant tracking dashboards.",
+      },
+      {
+        department: "API & Integrations",
+        examples: "Portal feeds, payment gateways, Google Maps distance API, CRM lead synchronization.",
+      },
+      {
+        department: "CRM / Lead Automation",
+        examples: "Lead scoring (Hot/Warm/Cold), automated multi-touch follow-ups (Day 1, 3, 7, 30), site visit booking.",
+      },
+      {
+        department: "AI Chatbots & Agents",
+        examples: "24/7 property assistant, budget matching engine, WhatsApp site visit scheduling bot.",
+      },
+      {
+        department: "Workflow Automation",
+        examples: "Site visit reminders, document checklists, payment schedule alerts, auto-posting listings to social media.",
+      },
+      {
+        department: "Local SEO / GBP",
+        examples: "Map Pack 3-Pack ranking for 'real estate agent near me', 'architect in [city]', housing society SEO pages.",
+      },
+      {
+        department: "Citation Building",
+        examples: "Property directories, local business citations, consistent NAP listings.",
+      },
+      {
+        department: "Review Management",
+        examples: "Post-closing automated WhatsApp review requests, owner reply templates, reputation score tracking.",
+      },
+      {
+        department: "Architect Portfolios",
+        examples: "Visual-first case studies, before/after sliders, design scope forms, Instagram/Pinterest integrations.",
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery & Listing Architecture Plan",
+        desc: "Analyzing target buyer demographics, listing volume, market competition, and property feed requirements.",
+      },
+      {
+        step: "02",
+        title: "Visual Design & UX Prototyping",
+        desc: "Designing luxury visual layouts focused on immersive property galleries, floor plans, and prominent CTAs.",
+      },
+      {
+        step: "03",
+        title: "Next.js Development & Search Filters",
+        desc: "Engineering sub-second listing portal, advanced filters, Google Maps integration, and admin management panel.",
+      },
+      {
+        step: "04",
+        title: "Lead Automation & WhatsApp Bot Build",
+        desc: "Integrating 24/7 WhatsApp lead qualification, automated CRM pipeline routing, and site visit reminders.",
+      },
+      {
+        step: "05",
+        title: "Immersive Media & Content Setup",
+        desc: "Optimizing 360° virtual tours, 3D architectural renders, project brochures, and neighborhood SEO pages.",
+      },
+      {
+        step: "06",
+        title: "Testing & Mobile Performance Optimization",
+        desc: "Rigorously testing search filters, form routing, mobile responsiveness, and Core Web Vitals speed.",
+      },
+      {
+        step: "07",
+        title: "Launch, Local SEO & Monthly Retainer",
+        desc: "Deploying to production edge servers, launching Map Pack SEO, and providing transparent monthly ROI reports.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "100% Owned High-Ticket Buyer Data",
+        desc: "Eliminate reliance on third-party property portals while building your own exclusive buyer database.",
+      },
+      {
+        title: "Sub-1-Minute Inquiry Reply Speed",
+        desc: "24/7 automated WhatsApp bot qualifies leads instantly, keeping serious buyers engaged before they call competitors.",
+      },
+      {
+        title: "Higher Conversion on Site Visits",
+        desc: "Immersive 360° virtual tours, video walkthroughs, and detailed project pages filter out tire-kickers early.",
+      },
+      {
+        title: "Top 3 Local Google Map Pack Ranking",
+        desc: "Dominating local 'near me' searches for real estate agencies, housing projects, and architecture studios.",
+      },
+      {
+        title: "Seamless Multi-Device Luxury Experience",
+        desc: "Sub-second mobile performance that wows high-net-worth buyers on phones, tablets, and desktop displays.",
+      },
+    ],
+
+    beforeAfter: [
+      {
+        before: "Listings scattered across WhatsApp & Excel → Shared leads on third-party portals → Delayed inquiry replies → Tyre-kickers wasting agent time.",
+        after: "Dynamic Next.js listing website → 100% owned buyer leads → Instant 24/7 WhatsApp qualification → Automated site visit booking pipeline.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Package",
+        subtitle: "Showcase Site + Manual Listings",
+        price: "$799",
+        features: [
+          "5-8 Page High-Luxury Next.js Website",
+          "Manual Property Listing CMS (Up to 30 listings)",
+          "Interactive Image Gallery & Contact Forms",
+          "1-Tap Click-to-Call & WhatsApp Floating Button",
+          "Google Business Profile Setup & Basic SEO",
+          "30 Days Post-Launch Engineering Support",
+        ],
+        highlight: false,
+      },
+      {
+        title: "Growth Package",
+        subtitle: "Full Listing Site + CRM & Area SEO",
+        price: "$1,499",
+        features: [
+          "Complete Dynamic Listing Engine (Up to 300 listings)",
+          "Advanced Search Filters (City, Area, Price, Size)",
+          "Automated WhatsApp Lead Reply & CRM Follow-up Drips",
+          "Area & Neighborhood SEO Landing Pages",
+          "Video Tours, Interactive Floor Plans & EMI Calculator",
+          "Google Map Pack 3-Pack SEO & 60 Days Support",
+        ],
+        highlight: true,
+      },
+      {
+        title: "Platform Package",
+        subtitle: "Full Custom Platform + MLS / Feed Admin",
+        price: "$2,899",
+        features: [
+          "Unlimited Property Listings & Portal/MLS Feed Integration",
+          "Custom Multi-Agent & Broker Admin Control Panel",
+          "AI Lead Scoring + 24/7 WhatsApp Qualification Bot",
+          "360° Matterport Virtual Tour Embeds & Project Landing Pages",
+          "Multi-City SEO + Overseas Buyer Drip Sequences",
+          "Dedicated Monthly Retainer & Priority SLA Support",
+        ],
+        highlight: false,
+      },
+    ],
+
+    faqs: [
+      {
+        question: "What is IDX/MLS integration and does it work in Pakistan or the Gulf region?",
+        answer: "IDX (Internet Data Exchange) is the US/Canada standard for syncing property listing feeds directly across agent websites. In Pakistan, the Gulf, and international markets, we engineer custom listing databases, portal API integrations, or automated CSV/Excel importers so your website listings update effortlessly.",
+      },
+      {
+        question: "Can property listings automatically sync from external portals like Zameen.com?",
+        answer: "Automatic portal synchronization depends on the specific portal's terms of service and API availability. We build custom API connectors or centralized admin management dashboards where your team can manage listings in one place.",
+      },
+      {
+        question: "Can individual agents add, edit, and mark properties as sold?",
+        answer: "Yes! In our Growth and Platform packages, we build role-based agent management panels allowing individual agents to log in, upload property photos, update status to 'Sold' or 'Rented', and view their assigned inquiries.",
+      },
+      {
+        question: "How does the automated WhatsApp lead reply and follow-up work?",
+        answer: "When a prospective buyer submits an inquiry on a listing or project page, an automated WhatsApp message triggers within 60 seconds asking for their budget, timeline, and preferred contact time. The lead is scored in your CRM and routed directly to the designated agent.",
+      },
+      {
+        question: "Are 3D virtual tours and drone videos produced by your team?",
+        answer: "3D virtual tours (Matterport) and drone footage are integrated into the web platform using media assets provided by your team or local media partners. We handle 100% of the technical web integration, compression, and player embedding.",
+      },
+      {
+        question: "Can specialized funnels be created for overseas Pakistani and international buyers?",
+        answer: "Yes! We build dedicated overseas investor landing pages featuring multi-currency views (USD, GBP, AED, PKR), digital project brochure downloads, and 1-click WhatsApp video tour scheduling.",
+      },
+      {
+        question: "How fast do qualified buyer leads start arriving?",
+        answer: "Automated WhatsApp lead capture and ad landing pages convert traffic immediately upon launch. Organic Google Map Pack and area SEO ranking growth typically develops over 30 to 90 days of consistent optimization.",
+      },
+      {
+        question: "Can housing societies, developers, and architects be covered on the same platform?",
+        answer: "Yes! We build dedicated sub-sections for developer master projects, housing society plot maps, agency resale listings, and architect portfolio case studies on a single unified web platform.",
+      },
+    ],
+
+    deliverables: [
+      "Custom Next.js 16 Real Estate Listing Platform Codebase",
+      "Dynamic MLS/IDX-Style Search Filter & Property Detail System",
+      "Multi-Agent Admin Control Panel & Property Listing CMS",
+      "24/7 Automated WhatsApp Buyer Qualification Bot",
+      "360° Virtual Tour & Interactive Floor Plan Integration",
+      "Hyper-Local Area & Project SEO Pages",
+      "CRM Lead Scoring & Site Visit Booking Workflows",
+      "Full Source Code & Database Asset Ownership Handoff",
+    ],
+
+    ctaTitle: "READY TO CAPTURE HIGH-TICKET BUYERS & DOMINATE PROPERTY SEARCH?",
+    coverImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    techStack: ["NEXT.JS 16", "DYNAMIC LISTINGS", "WHATSAPP QUALIFICATION", "360 VIRTUAL TOURS", "LOCAL SEO", "TYPESCRIPT"],
+  },
+  {
+    slug: "law-legal-services",
+    title: "Law Firm Marketing: Authority Websites That Win Trusted Clients",
+    category: "seo",
+    headline: "Law Firm Marketing. Authority Websites That Win Trusted Clients.",
+    tagline: "We build professional law firm websites, local Google Maps engines, and high-authority reputation systems that attract high-value clients and streamline consultation bookings while respecting strict Bar Council advertising regulations.",
+    heroCtaText: "Book Free Law Firm Digital Audit",
+    description:
+      "Clients seeking legal representation exercise extreme scrutiny. An outdated brochure website or hidden Google Maps profile destroys client confidence before the first consultation. MHKMarkedia engineers high-authority law firm web platforms, dedicated practice area pages, automated confidential client intake workflows, and ethical local SEO strategies that position your firm as the trusted choice in your jurisdiction.",
+
+    problems: [
+      {
+        title: "Outdated Website Lacking Trust & Authority",
+        desc: "Generic visiting-card websites fail to project legal expertise, causing prospective clients to choose established competitors.",
+      },
+      {
+        title: "Invisible in Local Google Map Pack Searches",
+        desc: "Failing to rank for high-intent queries like 'advocate near me' or 'family lawyer in [city]' loses cases to competing firms.",
+      },
+      {
+        title: "Delayed Inquiry Handling & Lost Consultations",
+        desc: "When legal inquiries sit unaddressed for hours, urgent clients hire another attorney who responds faster.",
+      },
+      {
+        title: "Sparse Online Reviews & Unmanaged Reputation",
+        desc: "Without structured, compliant client feedback systems, your firm lacks the public trust signals needed to win high-retainer clients.",
+      },
+      {
+        title: "Lack of Dedicated Practice Area Pages",
+        desc: "Bundling all legal services onto one generic page prevents individual practice areas (family, criminal, corporate) from ranking on Google.",
+      },
+      {
+        title: "Manual Intake & Bar Council Compliance Fear",
+        desc: "Unstructured manual intake wastes attorney hours, while fear of breaching local Bar Council advertising rules halts digital growth.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "High-Authority Law Firm Web Architecture",
+        desc: "Custom Next.js firm platform with dedicated practice area pages, attorney profiles, credentials, bar admissions, legal insights blog, and multi-language UI (English + Urdu RTL).",
+      },
+      {
+        title: "Client Acquisition & Practice Area SEO Engine",
+        desc: "Hyper-local Google Business Profile optimization, neighborhood location pages, practice area keyword dominance, and 24/7 automated intake screening.",
+      },
+      {
+        title: "High-Authority Citations & Reputation System",
+        desc: "Legal directory listings (Bar associations, legal portals), NAP citation consistency, confidential review response management, and media citation strategy.",
+      },
+      {
+        title: "Automated Intake Assistant & Booking Pipeline",
+        desc: "24/7 AI intake assistant for initial case screening, document checklist requests, and automated consultation scheduling (strictly non-legal advice).",
+      },
+    ],
+
+    securityPillars: [
+      {
+        title: "Strict Bar Council & Legal Ethics Adherence",
+        desc: "Every market operates under distinct legal advertising regulations (Pakistan Bar Council, state/national bar rules). We strictly avoid prohibited terms such as 'best lawyer' or fake outcome guarantees, ensuring all web content passes your firm's legal counsel review before launch.",
+      },
+      {
+        title: "Absolute Client Confidentiality & Secure Storage",
+        desc: "All client intake forms, document uploads, and case inquiries use TLS 1.3 transit encryption and AES-256 encrypted cloud storage with restricted role-based access.",
+      },
+      {
+        title: "100% Brand Asset & Code Ownership",
+        desc: "Your firm retains 100% primary ownership of your Google Business Profile, domain, website source code, directory listings, and client intake database under strict NDA.",
+      },
+    ],
+
+    leadJourney: [
+      { step: "01", title: "High-Intent Local Search", desc: "Client searches 'family lawyer in [city]' or 'corporate attorney near me'." },
+      { step: "02", title: "Map Pack / Practice Page Discovery", desc: "Client discovers your top-rated Google Business Profile or dedicated practice area page." },
+      { step: "03", title: "Credential & Authority Trust Check", desc: "Client reviews attorney credentials, bar admissions, practice expertise, and verified feedback." },
+      { step: "04", title: "Call / WhatsApp / Intake Click", desc: "Client initiates contact via 1-tap call button, WhatsApp, or confidential intake form." },
+      { step: "05", title: "Instant Auto-Reply & Intake Screening", desc: "Automated intake system confirms inquiry receipt and collects preliminary case details." },
+      { step: "06", title: "Consultation Booked & SMS Reminder", desc: "Client schedules initial consultation slot; automated SMS reminder reduces no-shows." },
+      { step: "07", title: "Formal Attorney Engagement", desc: "Attorney conducts consultation and formally onboard client via secure portal." },
+      { step: "08", title: "Compliant Post-Case Review Trigger", desc: "Upon case conclusion, a polite, compliant review request is triggered (where bar rules allow)." },
+    ],
+
+    tools: [
+      {
+        category: "Authority Web Stack & Schema",
+        items: ["Next.js 16", "TypeScript", "Tailwind CSS", "Attorney E-E-A-T JSON-LD Schema", "Multi-Language / RTL"],
+      },
+      {
+        category: "Security, Encryption & Storage",
+        items: ["TLS 1.3 Transit Encryption", "AES-256 Document Storage", "Role-Based Access (RBAC)", "Encrypted Forms API"],
+      },
+      {
+        category: "Intake & Automation Workflows",
+        items: ["HubSpot / GoHighLevel CRM", "WhatsApp Business API", "n8n Cloud Automation", "Twilio SMS"],
+      },
+      {
+        category: "Local SEO & Citation Platforms",
+        items: ["Google Business Profile API", "Legal Directory Citations", "Local Bar Association Listings", "Geo-Grid Rank Tracking"],
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "Business Websites",
+        examples: "Authority firm website, attorney profiles, credentials, dedicated practice area pages.",
+      },
+      {
+        department: "Local SEO / GBP",
+        examples: "Hyper-local search dominance for 'advocate near me', Map Pack 3-Pack placement.",
+      },
+      {
+        department: "Citation Building",
+        examples: "Legal directory listings, local bar association directories, NAP citation consistency.",
+      },
+      {
+        department: "Review Management",
+        examples: "Ethical client review requests and confidential, professional owner replies.",
+      },
+      {
+        department: "Location-Based Pages",
+        examples: "Dedicated landing pages for targeted cities, suburbs, and court jurisdictions.",
+      },
+      {
+        department: "CRM / Lead Automation",
+        examples: "Confidential inquiry intake, practice area lead routing, consultation tracking.",
+      },
+      {
+        department: "AI Chatbots & Agents",
+        examples: "24/7 intake assistant, FAQ guidance, consultation scheduling (strictly no legal advice).",
+      },
+      {
+        department: "Workflow Automation",
+        examples: "Appointment reminders, document checklist requests, automated invoice follow-up.",
+      },
+      {
+        department: "Web Apps / Client Portals",
+        examples: "Encrypted client portal, case status tracking, confidential document upload vault.",
+      },
+      {
+        department: "Custom AI Integrations",
+        examples: "Document OCR summarization, contract review support tools (with mandatory attorney review).",
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery & Bar Advertising Audit",
+        desc: "Auditing firm practice areas, target client demographics, local competitor authority, and bar advertising rules.",
+      },
+      {
+        step: "02",
+        title: "Keyword & Practice Area Architecture",
+        desc: "Mapping high-intent legal keywords and structuring dedicated practice area landing pages.",
+      },
+      {
+        step: "03",
+        title: "High-Authority Design & Content Build",
+        desc: "Designing mobile-fast Next.js layouts with prominent attorney bios, credentials, and trust badges.",
+      },
+      {
+        step: "04",
+        title: "Intake Automation & CRM Integration",
+        desc: "Connecting 24/7 confidential intake forms, consultation booking calendars, and SMS reminders.",
+      },
+      {
+        step: "05",
+        title: "Legal Counsel Review & Compliance QA",
+        desc: "Reviewing all web content against local Bar Council regulations and client confidentiality guidelines.",
+      },
+      {
+        step: "06",
+        title: "Local SEO Launch & Monthly Geo-Grid Tracking",
+        desc: "Going live on production edge servers with continuous monthly citation building and rank monitoring.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "Pre-Qualified Legal Consultation Leads",
+        desc: "24/7 automated intake forms screen out invalid inquiries, delivering pre-qualified leads directly to your firm.",
+      },
+      {
+        title: "Dominant Local Map Pack Placement",
+        desc: "Rank in the top 3 on Google Maps when local clients search for advocates and legal counsel in your city.",
+      },
+      {
+        title: "100% Bar Council Ethics & Rules Compliance",
+        desc: "All website copy and marketing assets adhere strictly to local bar advertising regulations without misleading claims.",
+      },
+      {
+        title: "Bank-Grade Confidentiality & Encrypted Intake",
+        desc: "Protect sensitive prospective client information with encrypted forms and secure cloud storage.",
+      },
+      {
+        title: "100% Proprietary Code & Profile Ownership",
+        desc: "Full source code, domain, directory profiles, and client intake records delivered to your firm under NDA.",
+      },
+    ],
+
+    beforeAfter: [
+      {
+        before: "Generic 1-page site → Hidden on page 3 of Google Maps → Unqualified phone interruptions → Insecure email file attachments.",
+        after: "Authority practice pages → Top 3 Google Map Pack placement → 24/7 automated intake screening → Encrypted portal & calendar booking.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Package",
+        subtitle: "Authority Firm Website & Basic Local SEO",
+        price: "$799",
+        features: [
+          "5-8 Page Custom High-Authority Law Firm Website",
+          "Attorney Profile & Practice Area Showcase Pages",
+          "Google Business Profile Setup & Basic Optimization",
+          "Confidential Contact / Inquiry Intake Form",
+          "Bar Council Advertising Rules Compliance Check",
+          "30 Days Post-Launch Engineering Support",
+        ],
+        highlight: false,
+      },
+      {
+        title: "Growth Package",
+        subtitle: "Full Local SEO + Intake Automation",
+        price: "$1,399",
+        features: [
+          "Dedicated Practice Area Pages + Legal Insights Blog",
+          "Google Map Pack 3-Pack SEO & Monthly Posts",
+          "50-70 Legal Directory & High-Authority NAP Citations",
+          "Automated Intake Assistant & SMS Reminders",
+          "Ethical Post-Case Review Request & Reply System",
+          "60 Days Post-Launch Support & Geo-Grid Reporting",
+        ],
+        highlight: true,
+      },
+      {
+        title: "Authority Package",
+        subtitle: "Multi-City Dominance & Client Portal",
+        price: "$2,499",
+        features: [
+          "Full Custom Multi-City Law Firm Platform + Attorney Profiles",
+          "100+ Legal Directory Listings & Media Citation Strategy",
+          "Encrypted Client Portal with Case Status Tracking",
+          "24/7 AI Intake Chatbot + CRM Lead Qualification Pipeline",
+          "Multi-Language Support (English + Urdu RTL)",
+          "Dedicated Monthly Retainer & Priority SLA Support",
+        ],
+        highlight: false,
+      },
+    ],
+
+    faqs: [
+      {
+        question: "Are digital marketing, ads, and SEO permitted for law firms?",
+        answer: "Yes, provided they strictly comply with your local Bar Council or jurisdiction's legal advertising regulations. We craft all website copy, practice pages, and marketing campaigns to respect these ethics without using prohibited claims like 'best lawyer' or fake outcome guarantees.",
+      },
+      {
+        question: "How long until our law firm sees an increase in consultation inquiries?",
+        answer: "Websites and automated intake capture inquiries immediately upon launch. Organic Google Map Pack and local search ranking growth typically develops over 3 to 6 months of consistent citation building and content optimization.",
+      },
+      {
+        question: "Is it ethical to ask legal clients for online reviews?",
+        answer: "Yes, where local bar rules permit. We set up professional, confidential review request flows that politely encourage satisfied clients to leave authentic feedback on your Google Business Profile without compromising case confidentiality.",
+      },
+      {
+        question: "Do you write exaggerated claims like 'best attorney' or 'guaranteed win'?",
+        answer: "Never. Writing false or misleading claims violates Bar Council regulations. We focus on showcasing your actual qualifications, bar admissions, practice experience, and firm credentials.",
+      },
+      {
+        question: "How is client confidentiality maintained on the website?",
+        answer: "All intake forms use TLS 1.3 encrypted connections. We never publish case details, client names, or testimonials without explicit written consent from the client and approval from your firm.",
+      },
+      {
+        question: "Will the AI chatbot provide legal advice to website visitors?",
+        answer: "No, absolutely not. The AI intake assistant is strictly programmed for administrative functions: answering basic firm FAQs, capturing case contact details, and scheduling consultation calls. It includes clear disclaimers stating it does not dispense legal advice.",
+      },
+      {
+        question: "Can multiple practice areas and office branch locations be covered?",
+        answer: "Yes! In our Growth and Authority packages, we build dedicated practice area landing pages and multi-city location pages for firms with multiple office branches.",
+      },
+      {
+        question: "Can the website support multi-language and Urdu RTL display?",
+        answer: "Yes, we engineer full multi-language legal websites supporting clean English and right-to-left (RTL) Urdu layouts for local clients.",
+      },
+    ],
+
+    deliverables: [
+      "Custom Law Firm Next.js Web Platform",
+      "Dedicated Practice Area & Attorney Profile Pages",
+      "Google Business Profile Map Pack Optimization",
+      "Legal Directory Citation Building (50-100+ Listings)",
+      "Automated Confidential Client Intake & CRM Pipeline",
+      "Multi-Language / Urdu RTL Support Module",
+      "Full Bar Ethics Review & NDA Asset Ownership Handoff",
+    ],
+
+    ctaTitle: "READY TO GROW YOUR LAW FIRM'S TRUSTED CLIENTELE?",
+    coverImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    techStack: ["NEXT.JS 16", "E-E-A-T SCHEMA", "LOCAL MAP PACK SEO", "BAR ETHICS COMPLIANT", "ENCRYPTED INTAKE", "TYPESCRIPT"],
+  },
+  {
+    slug: "finance-wealth-tech",
+    title: "Finance & Wealth Tech: Interactive Tools and Secure Portals Your Clients Trust",
+    category: "web",
+    headline: "Finance & Wealth Tech. Interactive Tools and Secure Portals Your Clients Trust.",
+    tagline: "We engineer custom interactive calculators, encrypted client portals, and security-first web platforms for financial firms, wealth managers, accountants, lenders, and fintech startups to capture qualified leads and safeguard sensitive client data.",
+    heroCtaText: "Book Free Finance Digital Audit",
+    description:
+      "Financial advisory firms, wealth managers, and lending institutions cannot rely on static brochure websites or insecure document exchanges via email. Clients demand high-touch interactive calculators, sub-second web performance, and bank-grade privacy controls. MHKMarkedia builds custom financial calculators, encrypted client portals (MFA, document vault, e-signatures), and automated CRM lead qualification engines designed to build unshakeable client trust.",
+
+    problems: [
+      {
+        title: "Passive Brochure Websites With Zero Engagement",
+        desc: "Static web pages without interactive tools fail to capture prospect interest, sending users to competitors' calculators.",
+      },
+      {
+        title: "Insecure Document Sharing via Email or Messaging",
+        desc: "Sending tax returns, bank statements, and KYC documents via standard email exposes clients to severe security and compliance risks.",
+      },
+      {
+        title: "Unqualified Lead Overload & Manual Vetting",
+        desc: "Advisors spend hours manually qualifying lead inquiries that lack basic financial eligibility criteria.",
+      },
+      {
+        title: "Slow, Outdated Client Portals",
+        desc: "Legacy client portals frustrate users with complex navigation, lack of mobile support, and missing application tracking.",
+      },
+      {
+        title: "Data Privacy & Regulatory Compliance Concerns",
+        desc: "Navigating regional data protection standards (GDPR, SBP/SECP guidelines, local financial ad rules) creates operational anxiety.",
+      },
+      {
+        title: "Manual Consultation Booking & Paperwork Follow-Up",
+        desc: "Manual appointment scheduling and document collection bottlenecks prolong onboarding timelines.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "Interactive Financial Calculators & Lead Engines",
+        desc: "Custom Loan/EMI, Mortgage, Investment/SIP, Retirement, Tax Estimator, Zakat, and Insurance Premium calculators embedded across your web assets.",
+      },
+      {
+        title: "Encrypted Client Portals & Document Vaults",
+        desc: "Secure 2FA/MFA authenticated client portals with role-based access, audit logging, e-signature API integration, and encrypted file sharing.",
+      },
+      {
+        title: "Automated Lead Scoring & Onboarding Pipeline",
+        desc: "Calculator data feeds directly into lead scoring models, triggering automated consultation booking and document request reminders.",
+      },
+      {
+        title: "AI Document Assistant & Process Guidance",
+        desc: "24/7 AI-assisted document collection and process guide (strictly restricted from dispensing formal financial or investment advice).",
+      },
+    ],
+
+    securityPillars: [
+      {
+        title: "Security-First Architecture & Data Controls",
+        desc: "TLS 1.3 encryption in transit, AES-256 storage encryption, multi-factor authentication (MFA), role-based access control (RBAC), and session timeout monitoring.",
+      },
+      {
+        title: "Compliance-Ready Framework & Honest Claims",
+        desc: "We build compliance-ready technical structures aligned with data privacy standards (GDPR, SBP/SECP rules, local privacy guidelines). We make zero false certification claims—formal regulatory compliance remains a joint effort with your legal counsel.",
+      },
+      {
+        title: "Mandatory Disclaimer & Data Integrity Controls",
+        desc: "All calculators incorporate clear disclaimers stating estimates are for informational purposes only and do not constitute financial advice. You retain 100% data and code ownership under NDA.",
+      },
+    ],
+
+    leadJourney: [
+      { step: "01", title: "High-Intent Local/Search Discovery", desc: "Prospect searches 'wealth advisor near me' or 'commercial loan calculator'." },
+      { step: "02", title: "Interactive Calculator Engagement", desc: "Prospect enters figures into loan, mortgage, or SIP calculator to view real-time estimates." },
+      { step: "03", title: "Gated Detailed Report & Lead Capture", desc: "Prospect unlocks detailed PDF breakdown by providing contact details." },
+      { step: "04", title: "Automated Lead Scoring & CRM Sync", desc: "Lead data is scored and assigned to an advisor, triggering instant SMS/email follow-up." },
+      { step: "05", title: "Automated Consultation Booking", desc: "Prospect selects an open calendar slot for an initial 1-on-1 discovery session." },
+      { step: "06", title: "Encrypted Portal Access & KYC Upload", desc: "Client receives secure MFA portal invite to upload onboarding documents (KYC, statements)." },
+      { step: "07", title: "Seamless E-Signature & Advisor Onboarding", desc: "Client reviews and signs agreements via integrated e-signature workflow." },
+      { step: "08", title: "Ongoing Portal Dashboard & Reporting", desc: "Client accesses portfolio summary, application status, and secure advisor messaging." },
+      { step: "09", title: "Post-Onboarding Review & Referral", desc: "Compliant post-service review request sent in accordance with financial ad guidelines." },
+    ],
+
+    tools: [
+      {
+        category: "Web App & Portal Engineering Stack",
+        items: ["Next.js 16", "TypeScript", "Tailwind CSS", "Recharts / D3.js", "Vercel Enterprise Edge"],
+      },
+      {
+        category: "Security & Encryption Protocols",
+        items: ["TLS 1.3 Transit Encryption", "AES-256 Storage", "MFA / 2FA Auth", "Role-Based Access (RBAC)", "Audit Logging"],
+      },
+      {
+        category: "Integrations & Document Automation",
+        items: ["E-Signature API (DocuSign / HelloSign)", "OCR Document Extraction", "HubSpot / GoHighLevel CRM", "WhatsApp API"],
+      },
+      {
+        category: "Analytics & Compliance Infrastructure",
+        items: ["Google Analytics 4 (Privacy-Compliant)", "Cookie Consent Management", "LocalBusiness JSON-LD Schema"],
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "Business Websites",
+        examples: "Trust-focused firm website, advisor bios, compliance disclaimers, service portfolios.",
+      },
+      {
+        department: "Web Apps (Next.js)",
+        examples: "Interactive financial calculators, client portals, real-time portfolio dashboards.",
+      },
+      {
+        department: "Custom Software / SaaS",
+        examples: "Fintech platforms, loan management tools, custom wealth planning software.",
+      },
+      {
+        department: "Mobile Apps",
+        examples: "Client portal mobile apps, wallet views, secure mobile portfolio tracking.",
+      },
+      {
+        department: "API & Integrations",
+        examples: "Banking APIs, payment gateways, e-signature API, KYC verification webhooks.",
+      },
+      {
+        department: "CRM / Lead Automation",
+        examples: "Lead scoring based on calculator inputs, automated consultation booking, follow-up drips.",
+      },
+      {
+        department: "Workflow Automation",
+        examples: "Document collection reminders, automated KYC onboarding, payment/EMI due alerts.",
+      },
+      {
+        department: "Custom AI Integrations",
+        examples: "Document OCR extraction, KYC verification checks (with mandatory human review), report summaries.",
+      },
+      {
+        department: "Local SEO / GBP",
+        examples: "Hyper-local ranking for 'financial advisor near me', 'tax consultant in [city]'.",
+      },
+      {
+        department: "Review Management",
+        examples: "Regulatory-compliant client feedback requests adhering to local financial advertising rules.",
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery & Security Requirements Audit",
+        desc: "Evaluating firm workflows, user personas, document flows, and technical security requirements.",
+      },
+      {
+        step: "02",
+        title: "Risk & Compliance Architecture",
+        desc: "Designing security-first data flow diagrams, encryption standards, and role-based permissions.",
+      },
+      {
+        step: "03",
+        title: "Figma UI/UX & Calculator Logic Design",
+        desc: "Architecting intuitive financial calculator interfaces and clean client portal dashboards.",
+      },
+      {
+        step: "04",
+        title: "Sprint Development & API Integrations",
+        desc: "Engineering custom Next.js code, mathematical calculator logic, e-signature, and CRM webhooks.",
+      },
+      {
+        step: "05",
+        title: "Security Testing, Penetration QA & Review",
+        desc: "Executing rigorous security testing, data vulnerability checks, and cross-browser QA.",
+      },
+      {
+        step: "06",
+        title: "Production Deployment & Ongoing Support",
+        desc: "Launching onto hardened cloud servers with 24/7 uptime monitoring and monthly retainer maintenance.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "3x Higher Qualified Lead Conversion",
+        desc: "Interactive financial calculators engage prospects immediately, delivering pre-qualified leads with full contact data.",
+      },
+      {
+        title: "Bank-Grade Encrypted Document Exchange",
+        desc: "Eliminates insecure email attachments by giving clients a secure 2FA document vault.",
+      },
+      {
+        title: "Accelerated Client Onboarding Time",
+        desc: "Automated document requests and e-signature integrations cut client onboarding from weeks down to days.",
+      },
+      {
+        title: "Compliance-Ready Security Architecture",
+        desc: "Built with industry-standard encryption, audit logs, and data protection practices aligned with regulatory needs.",
+      },
+      {
+        title: "100% Proprietary Code & Data Ownership",
+        desc: "Full source code, domain, client records, and IP ownership delivered under strict NDA protection.",
+      },
+    ],
+
+    beforeAfter: [
+      {
+        before: "Static PDF brochures → Insecure email document exchanges → Unqualified lead phone calls → 14-day manual onboarding.",
+        after: "Interactive calculators → 2FA encrypted client portal → Auto-scored CRM leads → 2-day automated e-signature onboarding.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Package",
+        subtitle: "Trust-Focused Firm Website + Calculators",
+        price: "$799",
+        features: [
+          "5-8 Page High-Trust Financial Firm Website",
+          "1-2 Custom Interactive Financial Calculators",
+          "Standard Lead Capture & CRM Sync",
+          "SSL Encryption & Hardened Cloud Hosting",
+          "Compliance Disclaimer & Privacy Policy Setup",
+          "30 Days Post-Launch Engineering Support",
+        ],
+        highlight: false,
+      },
+      {
+        title: "Growth Package",
+        subtitle: "Website + 3-5 Calculators + Basic Vault",
+        price: "$1,499",
+        features: [
+          "Full Custom Firm Website + Blog & Local SEO",
+          "3-5 Custom Financial Calculators (Loan, SIP, Tax)",
+          "Basic Encrypted Document Upload Vault",
+          "Lead Scoring & Automated Consultation Booking",
+          "Hardened Security Setup & 2FA Access",
+          "60 Days Post-Launch Support & Maintenance",
+        ],
+        highlight: true,
+      },
+      {
+        title: "Secure Platform",
+        subtitle: "Full Encrypted Portal + Advanced Fintech",
+        price: "$2,699",
+        features: [
+          "Full Custom Encrypted Client Portal Architecture",
+          "Multi-Factor Auth (MFA), Role-Based Access & Audit Logs",
+          "E-Signature API & Automated Onboarding Workflows",
+          "Custom Multi-Calculator Suite & Portfolio Dashboards",
+          "Advanced Security Testing & Uptime Monitoring",
+          "Dedicated Monthly Retainer & Priority SLA Support",
+        ],
+        highlight: false,
+      },
+    ],
+
+    faqs: [
+      {
+        question: "How do interactive calculators generate qualified leads?",
+        answer: "Visitors enter their numbers (e.g., loan amount, income, tenure) to calculate estimates. To download or unlock their detailed PDF report, they provide their contact details. The input figures are scored in your CRM so your advisors instantly know their eligibility.",
+      },
+      {
+        question: "How secure is the client portal?",
+        answer: "Portals are built using security-first practices: TLS 1.3 transit encryption, AES-256 storage encryption, multi-factor authentication (MFA/2FA), role-based permissions, session timeouts, and comprehensive audit logging.",
+      },
+      {
+        question: "Do you guarantee formal regulatory compliance (e.g., SBP, SECP, GDPR)?",
+        answer: "We build compliance-ready technical architecture adhering to international security and data protection standards. However, formal regulatory certification remains the joint responsibility of your firm and your legal/compliance counsel.",
+      },
+      {
+        question: "Can the portal integrate with our existing CRM or accounting software?",
+        answer: "Yes! We build custom REST/GraphQL API connectors for HubSpot, Salesforce, GoHighLevel, Xero, QuickBooks, and proprietary backend databases.",
+      },
+      {
+        question: "Can we support e-signatures and document uploads?",
+        answer: "Yes! We integrate DocuSign, HelloSign, or native e-signature APIs directly into the encrypted client portal for instant document signing.",
+      },
+      {
+        question: "Where is client document data stored?",
+        answer: "Documents are stored in encrypted cloud storage buckets (AWS S3 / GCP Cloud Storage with AES-256 encryption at rest) located in your preferred region for data residency compliance.",
+      },
+      {
+        question: "Can a mobile app be built alongside the web portal?",
+        answer: "Yes! Our React Native / Next.js architecture allows seamless cross-platform mobile app development sharing the same encrypted backend APIs.",
+      },
+      {
+        question: "What is the typical implementation timeline?",
+        answer: "Calculators take 1 to 3 weeks, high-trust firm websites take 3 to 5 weeks, and full encrypted client portals take 8 to 16 weeks depending on scope.",
+      },
+    ],
+
+    deliverables: [
+      "Custom Next.js 16 Financial Platform Codebase",
+      "Interactive Financial Calculator Engine (Loan, SIP, Tax, Zakat)",
+      "Encrypted Client Portal with MFA & Audit Logs",
+      "E-Signature API & Document Vault Integration",
+      "Lead Scoring & Consultation Automation Pipeline",
+      "Security Architecture & Data Flow Audit Report",
+      "Full Source Code & NDA Asset Ownership Handoff",
+    ],
+
+    ctaTitle: "READY TO ELEVATE YOUR FINANCIAL FIRM'S DIGITAL TRUST?",
+    coverImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+    techStack: ["NEXT.JS 16", "INTERACTIVE CALCULATORS", "ENCRYPTED PORTAL", "MFA / 2FA AUTH", "E-SIGNATURE API", "TYPESCRIPT"],
+  },
+  {
+    slug: "hospitality-dining",
+    title: "Hospitality & Dining Growth. More Direct Bookings, Zero Commission, 5-Star Reputation.",
+    category: "web",
+    headline: "Hospitality & Dining Growth. More Direct Bookings, Zero Commission, 5-Star Reputation.",
+    tagline: "We engineer direct booking websites, guest automation, and local SEO for hotels, resorts, and restaurants—slashing OTA commissions and driving direct guest reservations.",
+    heroCtaText: "Book Free Hospitality Growth Audit",
+    description:
+      "Third-party booking platforms (Booking.com, Agoda, Foodpanda) charge 15-30% commissions while withholding direct guest data. MHKMarkedia engineers high-speed direct booking engines, 24/7 WhatsApp reservation bots, 5-star reputation systems, and local Google Map Pack SEO for hotels, boutique resorts, restaurants, and cafes—turning third-party platform fees into your owned revenue channel.",
+    
+    problems: [
+      {
+        title: "OTA & Food App Commission Leakage (15-30%)",
+        desc: "Booking.com, Agoda, and delivery apps charge 15-30% commissions per booking, severely draining direct profit margins for hotels and restaurants.",
+      },
+      {
+        title: "Guest Data Controlled by Third-Party OTAs",
+        desc: "OTAs conceal guest emails and phone numbers, preventing direct marketing for repeat stays, dining offers, or loyalty rewards.",
+      },
+      {
+        title: "Website Active But Zero Direct Bookings",
+        desc: "Slow legacy sites lack live availability calendars, online deposit checkout, or instant table booking, driving visitors back to OTAs.",
+      },
+      {
+        title: "Competitors Dominating Local Google Maps",
+        desc: "Lack of hyper-local search optimization pushes nearby tourists and local food enthusiasts directly to competing venues.",
+      },
+      {
+        title: "Low Review Volume & Unanswered Feedback",
+        desc: "Sparse Google Maps and TripAdvisor reviews, combined with unaddressed feedback, degrade trust scores and booking conversion.",
+      },
+      {
+        title: "Delayed Inquiries & Slow Response Times",
+        desc: "Delayed replies to off-hours rate inquiries or menu questions force prospective guests to book with faster competitors.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "Direct Booking Engine (Hotels & Resorts)",
+        desc: "Real-time room availability calendar, multi-category suite showcasing, instant deposit / full online payment gateway, and promo code discount engine.",
+      },
+      {
+        title: "Table Reservation & Online Menu (Restaurants & Cafes)",
+        desc: "Digital interactive menu, table reservation calendar, online food pre-order, and takeaway checkout system.",
+      },
+      {
+        title: "Multi-Language & Mobile-First Design",
+        desc: "Sub-second mobile loading speed with seamless English & multi-language UI support for international and local guests.",
+      },
+      {
+        title: "PMS, Channel Manager & Payment Integrations",
+        desc: "Direct API connectors for Cloudbeds, Opera, Beds24, Sirvoy, Stripe, PayPal, PayFast, and local bank payment gateways.",
+      },
+      {
+        title: "Zero-Commission Booking Perks & WhatsApp Button",
+        desc: "Best-rate guarantee banners, free breakfast/upgrade incentives for direct bookers, and 1-click WhatsApp booking triggers.",
+      },
+    ],
+
+    securityPillars: [
+      {
+        title: "100% White-Hat Google Policy Compliance",
+        desc: "Every guest receives an equal review opportunity. We strictly avoid review gating, fake ratings, or incentivized feedback.",
+      },
+      {
+        title: "Instant Negative Feedback Alert System",
+        desc: "Instant alerts notify your management team on Slack/WhatsApp whenever a low rating occurs, allowing private resolution.",
+      },
+      {
+        title: "100% Client Data & Guest Ownership",
+        desc: "MHKMarkedia hands over 100% primary ownership of full source code, domain, guest database, and analytics accounts.",
+      },
+    ],
+
+    leadJourney: [
+      { step: "01", title: "Google Search & Maps Discovery", desc: "Guest searches 'best resort in [city]' or 'top restaurant near me' and finds your optimized Google Map Pack asset." },
+      { step: "02", title: "Sub-Second Website / Menu Exploration", desc: "Guest opens ultra-fast Next.js website, explores 360 photo galleries, room amenities, or digital menus." },
+      { step: "03", title: "Zero-Commission Direct Booking", desc: "Guest selects room/table dates, applies promo code, and pays deposit securely without OTA fees." },
+      { step: "04", title: "Instant WhatsApp Confirmation", desc: "Automated WhatsApp message triggers instantly with booking reference, location pin, and invoice receipt." },
+      { step: "05", title: "Automated Pre-Arrival Info & Upsell", desc: "24 hours before arrival, guest receives airport transfer offers, room upgrade options, or chef specials." },
+      { step: "06", title: "Delightful Stay / Dining Experience", desc: "Guest enjoys seamless hospitality experience with 24/7 WhatsApp concierge assistant." },
+      { step: "07", title: "Post-Checkout Review Request", desc: "Automated polite review request triggers on WhatsApp/SMS encouraging feedback on Google & TripAdvisor." },
+      { step: "08", title: "Direct Repeat Booking Offer", desc: "60 days later, automated loyalty discount voucher is sent to encourage direct repeat visits." },
+    ],
+
+    tools: [
+      {
+        category: "Booking Engine & Web Stack",
+        items: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "Stripe API", "PayFast / Local Gateways"],
+      },
+      {
+        category: "Messaging & Guest Automation",
+        items: ["WhatsApp Business API", "Twilio SMS", "n8n Cloud Workflows", "OpenAI Concierge Bot", "SendGrid Email"],
+      },
+      {
+        category: "PMS, POS & Channel Managers",
+        items: ["Cloudbeds", "Opera PMS", "Beds24", "Sirvoy", "Custom Webhook APIs"],
+      },
+      {
+        category: "Reputation & Local SEO",
+        items: ["Google Business Profile API", "TripAdvisor Review Monitoring", "JSON-LD Hotel/Restaurant Schema"],
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "Web Development",
+        examples: "Direct booking website, digital menu, high-res photo gallery, 360 virtual room tour.",
+      },
+      {
+        department: "AI Chatbots & Agents",
+        examples: "24/7 WhatsApp room booking assistant, FAQ answer engine, menu item guidance.",
+      },
+      {
+        department: "CRM / Lead Automation",
+        examples: "Inquiry to booking follow-up pipeline, guest contact database & booking history CRM.",
+      },
+      {
+        department: "Workflow Automation",
+        examples: "Instant booking confirmation, pre-arrival messages, location pins, post-checkout feedback requests.",
+      },
+      {
+        department: "Local SEO / GBP",
+        examples: "Rank #1 for 'Hotel near me', 'best resort in [city]', 'top dining place' local map queries.",
+      },
+      {
+        department: "Review Management",
+        examples: "Automated WhatsApp review requests, owner reply templates, reputation score monitoring.",
+      },
+      {
+        department: "API & Integrations",
+        examples: "PMS, POS, payment gateway, and channel manager synchronization.",
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Commission & Booking Channel Audit",
+        desc: "Analyzing current OTA reliance, website drop-off points, and direct booking potential.",
+      },
+      {
+        step: "02",
+        title: "Custom Booking Engine & Web Build",
+        desc: "Engineering sub-second Next.js property website with integrated booking & payment checkout.",
+      },
+      {
+        step: "03",
+        title: "WhatsApp Bot & Workflow Integration",
+        desc: "Connecting 24/7 WhatsApp booking bot, confirmation webhooks, and pre-arrival flows.",
+      },
+      {
+        step: "04",
+        title: "Local SEO & 5-Star Reputation Engine",
+        desc: "Optimizing Google Business Profile 3-Pack rank and launching automated review request funnels.",
+      },
+      {
+        step: "05",
+        title: "PMS Sync & Staff Training",
+        desc: "Syncing channel manager calendars and training hotel/restaurant management team.",
+      },
+      {
+        step: "06",
+        title: "Launch & Commission Savings Analytics",
+        desc: "Tracking direct revenue growth, OTA commission saved, and monthly Google review volume.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "15-30% OTA Commission Saved",
+        desc: "Keep 100% of guest payment revenue on direct bookings instead of giving fees to third parties.",
+      },
+      {
+        title: "100% Direct Guest Data Ownership",
+        desc: "Build a valuable guest database for direct marketing, loyalty programs, and repeat bookings.",
+      },
+      {
+        title: "Sub-Second Mobile Page Load Speed",
+        desc: "100/100 Core Web Vitals performance that converts mobile visitors into booked guests.",
+      },
+      {
+        title: "Top 3 Local Google Maps Placement",
+        desc: "Rank at the top of local map searches when tourists look for hotels and dining in your city.",
+      },
+      {
+        title: "Automated 5-Star Google Review Growth",
+        desc: "Consistent 100% white-hat review requests that elevate your TripAdvisor and Google ratings.",
+      },
+    ],
+
+    beforeAfter: [
+      {
+        before: "80% bookings via OTA paying 22% commission → Zero direct guest emails → Slow website → 3.9 Google rating → Late WhatsApp replies.",
+        after: "60% direct bookings with zero commission → Complete guest database → Sub-second Next.js site → 4.8 Google rating → Instant 24/7 WhatsApp bot.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Package",
+        subtitle: "Booking-Ready Site & Basic Local SEO",
+        price: "$699",
+        features: [
+          "Custom Mobile-Fast Next.js Website",
+          "Basic Room / Menu Showcase & Direct Contact",
+          "Google Business Profile Basic Optimization",
+          "Review Direct Link & QR Code Cards",
+          "WhatsApp Instant Booking Button",
+          "30 Days Post-Launch Engineering Support",
+        ],
+        highlight: false,
+      },
+      {
+        title: "Growth Package",
+        subtitle: "Full Booking Engine & Review Engine",
+        price: "$1,299",
+        features: [
+          "Complete Direct Room & Table Booking Engine",
+          "Online Payment Gateway Integration (Stripe / Local)",
+          "Google Map Pack 3-Pack SEO Optimization",
+          "Automated WhatsApp / SMS Review Request System",
+          "Automated Booking Confirmations & Reminders",
+          "60 Days Post-Launch Support & Analytics",
+        ],
+        highlight: true,
+      },
+      {
+        title: "Premium Package",
+        subtitle: "Custom Engine, PMS & Full Automation",
+        price: "$2,199",
+        features: [
+          "Bespoke Multi-Property Engine + Custom Features",
+          "PMS & Channel Manager Direct API Integration",
+          "Multi-Location Local SEO & Map Dominance",
+          "Full Reputation Management & Review Monitoring",
+          "Full End-to-End Guest Journey Automation + CRM",
+          "Dedicated Monthly Retainer & Priority Support",
+        ],
+        highlight: false,
+      },
+    ],
+
+    faqs: [
+      {
+        question: "Will direct bookings completely eliminate OTAs?",
+        answer: "No, you can operate both OTAs (Booking.com, Agoda) and your direct booking channel side by side. Over time, your direct booking share increases to 50-70%, cutting overall commission fees by over 50%.",
+      },
+      {
+        question: "How soon will direct bookings start?",
+        answer: "The direct booking website and WhatsApp concierge bot are deployed within 7 to 14 business days, driving direct web bookings immediately upon launch.",
+      },
+      {
+        question: "Can it integrate with my existing PMS or Channel Manager?",
+        answer: "Yes, we engineer direct API connectors for Cloudbeds, Opera, Beds24, Sirvoy, and major channel managers to sync real-time room availability and prevent double bookings.",
+      },
+      {
+        question: "Can international payment methods be accepted?",
+        answer: "Yes, Stripe, PayPal, Razorpay, PayFast, and regional credit/debit card payment gateways can all be integrated.",
+      },
+      {
+        question: "Is the review system compliant with Google policies?",
+        answer: "100% Google policy compliant. We grant all guests equal review access without review gating or fake rating tactics.",
+      },
+      {
+        question: "Will online ordering be included for restaurants?",
+        answer: "Yes, for restaurants and cafes we build interactive digital menus, table reservation calendars, and online food pre-ordering/takeaway checkout modules.",
+      },
+    ],
+
+    deliverables: [
+      "Custom Next.js Direct Booking Engine Codebase",
+      "Digital Interactive Menu / Room Showcase Modules",
+      "Automated WhatsApp 24/7 Concierge & Reservation Bot",
+      "Payment Gateway Integration (Stripe / Local Banks)",
+      "Google Business Profile 3-Pack SEO Optimization",
+      "Automated Review Request & Monitoring System",
+      "PMS / Channel Manager Sync Documentation",
+      "Full Source Code & Guest Database Ownership Handoff",
+    ],
+
+    ctaTitle: "READY TO INCREASE YOUR DIRECT BOOKINGS & SAVINGS?",
+    coverImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    techStack: ["NEXT.JS 16", "DIRECT BOOKING ENGINE", "WHATSAPP BOT", "ZERO COMMISSION", "LOCAL MAP SEO", "REPUTATION MANAGEMENT"],
+  },
+  {
+    slug: "home-trades-contractors",
+    title: "Home Trades & Local Contractors Growth: Capture Every Call & Rank #1 on Google Map Pack",
+    category: "seo",
+    headline: "Home Services Growth. Capture Every Call and Rank in the Google Map Pack.",
+    tagline: "We build automated lead capture systems and local Google Maps engines for plumbers, electricians, HVAC contractors, roofers, painters, cleaners, pest control, and renovation specialists to capture every call and rank #1 in 'near me' searches.",
+    heroCtaText: "Book Free Call Capture Audit",
+    description:
+      "For home trade contractors, an unanswered call is a lost job. When homeowners experience emergency pipe leaks, AC breakdowns, or roof damage, they call the top 3 contractors on Google Maps. MHKMarkedia builds high-converting local contractor web platforms, 5-second missed call text-back automation, AI voice receptionists, and hyper-local Google Business Profile Map Pack optimization to ensure zero leads slip to competitors.",
+
+    problems: [
+      {
+        title: "Unanswered Phone Calls During Busy Jobs",
+        desc: "When contractors are busy on-site, missed phone calls instantly send high-paying emergency leads straight to competitors.",
+      },
+      {
+        title: "Competitors Ranking Higher on Google Maps",
+        desc: "Without consistent NAP citation building, geotagged proof, and review velocity, your business stays hidden below competitors.",
+      },
+      {
+        title: "No Website or Outdated, Slow Mobile Site",
+        desc: "Slow, non-responsive sites frustrate mobile homeowners searching for immediate emergency assistance.",
+      },
+      {
+        title: "Forgetting Quote Follow-Ups",
+        desc: "Without automated CRM reminders, open quote requests stall, leading to lost estimates and missed revenue.",
+      },
+      {
+        title: "Low Google Review Volume & Lack of Trust",
+        desc: "Sparse 5-star reviews make prospective clients hesitant to trust your business over established competitors.",
+      },
+      {
+        title: "Ad Spend Wasted Without Lead Tracking",
+        desc: "Spending money on Google Ads without call attribution makes it impossible to track ROI or source channels.",
+      },
+    ],
+
+    botTypes: [
+      {
+        title: "Instant 5-Second Missed Call Text-Back",
+        desc: "Triggers an instant automated SMS/WhatsApp message within 5 seconds when a call goes unanswered, securing the homeowner before they call someone else.",
+      },
+      {
+        title: "AI Voice Receptionist & Smart Routing",
+        desc: "24/7 automated voice assistant answers incoming calls, collects job details, emergency urgency, and customer address.",
+      },
+      {
+        title: "24/7 WhatsApp & Website Quote Chatbot",
+        desc: "Interactive chatbot on your site allowing prospective clients to request instant estimates and upload damage photos.",
+      },
+      {
+        title: "Google Map Pack #1 Hyper-Local SEO Engine",
+        desc: "Full Google Business Profile optimization, geotagged job posts, citation audit, and automated 5-star review request flows.",
+      },
+    ],
+
+    securityPillars: [
+      {
+        title: "100% White-Hat Google Policy Compliance Guarantee",
+        desc: "We strictly follow Google Business Profile and review guidelines. Every customer receives an equal opportunity to leave feedback without review gating, fake ratings, or prohibited incentives.",
+      },
+      {
+        title: "Proven Process & Transparent Expectations",
+        desc: "We do not offer fake instant ranking guarantees. Google Map Pack ranking depends on local competition, but our systematic citation, GBP post, and review framework delivers measurable, compounding growth with monthly grid reports.",
+      },
+      {
+        title: "Full Account & Data Ownership",
+        desc: "MHKMarkedia hands over 100% primary ownership of your Google Business Profile, domain, website code, and call tracking records.",
+      },
+    ],
+
+    leadJourney: [
+      { step: "01", title: "High-Intent Local Search", desc: "Homeowner searches 'plumber near me', 'emergency electrician', or 'HVAC repair [city]'." },
+      { step: "02", title: "Map Pack / Website Discovery", desc: "Homeowner spots your top-rated Google Business Profile or sub-second mobile website." },
+      { step: "03", title: "Call or WhatsApp Click", desc: "Homeowner clicks the prominent 1-tap call button or WhatsApp instant quote button." },
+      { step: "04", title: "Instant Auto Capture (Text-Back)", desc: "If you're busy on-site, automated SMS fires within 5 seconds asking how you can help." },
+      { step: "05", title: "Instant Estimate / Quote", desc: "Lead details and damage photo are logged into CRM, and quote estimate is generated." },
+      { step: "06", title: "Job Booked & Tech Reminder", desc: "Job is scheduled; automated SMS alerts technician and sends arrival reminder to homeowner." },
+      { step: "07", title: "Job Completed & Review Trigger", desc: "Upon job completion, polite automated SMS/WhatsApp triggers requesting a 5-star Google review." },
+      { step: "08", title: "Repeat Customer & Referral Loop", desc: "Automated seasonal maintenance reminders (HVAC checkup, furnace service) keep clients loyal." },
+    ],
+
+    tools: [
+      {
+        category: "Phone & Call Automation",
+        items: ["Twilio SMS / Voice API", "Missed Call Text-Back Webhook", "CallRail Tracking", "OpenAI AI Voice Agent"],
+      },
+      {
+        category: "Web & Mobile Stack",
+        items: ["Next.js 16", "TypeScript", "Tailwind CSS", "Sub-Second Mobile Optimization"],
+      },
+      {
+        category: "Local SEO & Google Maps",
+        items: ["Google Business Profile API", "Local Citation Sync", "Geo-Grid Rank Tracking", "LocalBusiness Schema"],
+      },
+      {
+        category: "CRM & Automation Engines",
+        items: ["GoHighLevel CRM", "HubSpot", "n8n Cloud Workflows", "WhatsApp Business API"],
+      },
+    ],
+
+    automationsTable: [
+      {
+        department: "Business Websites",
+        examples: "Dedicated service pages (pipe repair, geyser, AC service), emergency quote form, click-to-call, work proof gallery.",
+      },
+      {
+        department: "Local SEO / GBP",
+        examples: "Google Business Profile optimization, Map Pack 3-Pack ranking, 'near me' local search dominance.",
+      },
+      {
+        department: "Review Management",
+        examples: "Post-job automated WhatsApp/SMS review requests, 100% Google policy white-hat compliance.",
+      },
+      {
+        department: "CRM / Lead Automation",
+        examples: "Inbound lead capture → instant quote generation → multi-touch follow-up pipeline (Day 1, 3, 7).",
+      },
+      {
+        department: "AI Chatbots & Agents",
+        examples: "24/7 website quote chatbot, WhatsApp assistant, AI voice receptionist for job details & address collection.",
+      },
+      {
+        department: "Workflow Automation",
+        examples: "Appointment reminders, technician arrival SMS, automated invoice & payment follow-up.",
+      },
+      {
+        department: "Location Pages",
+        examples: "Dedicated hyper-local landing pages for every targeted city, neighborhood, and service area.",
+      },
+    ],
+
+    processSteps: [
+      {
+        step: "01",
+        title: "Local Map & Call Audit",
+        desc: "Analyzing your current Google Map Pack position, missed call percentage, and local competitor ranking.",
+      },
+      {
+        step: "02",
+        title: "High-Speed Website & Call Capture Build",
+        desc: "Engineering sub-second mobile website with click-to-call buttons and 5-second missed call text-back setup.",
+      },
+      {
+        step: "03",
+        title: "Google Business Profile & Citation Sync",
+        desc: "Optimizing GBP categories, service areas, geotagged project photos, and consistent NAP citations.",
+      },
+      {
+        step: "04",
+        title: "Automated Review & Follow-Up Workflows",
+        desc: "Deploying post-job SMS review requests, automated quote follow-up sequences, and CRM pipeline sync.",
+      },
+      {
+        step: "05",
+        title: "Call Tracking & LSA/Ads Integration",
+        desc: "Setting up call attribution tracking to measure exact lead sources (Google Maps, Ads, Organic).",
+      },
+      {
+        step: "06",
+        title: "Monthly Reporting & Geo-Grid Rank Monitoring",
+        desc: "Providing transparent monthly reports detailing call volume, captured leads, and geo-grid ranking progress.",
+      },
+    ],
+
+    benefits: [
+      {
+        title: "Zero Missed Leads",
+        desc: "5-second automated text-back captures leads immediately, keeping homeowners from calling competitors.",
+      },
+      {
+        title: "Top 3 Local Google Maps Placement",
+        desc: "Dominating local 'near me' emergency searches in your city and surrounding service neighborhoods.",
+      },
+      {
+        title: "100% Call & Lead Ownership",
+        desc: "Direct tracking shows exactly how many calls come from Google Maps, ads, and your website.",
+      },
+      {
+        title: "Automated 5-Star Review Velocity",
+        desc: "Post-job SMS triggers consistently generate authentic 5-star Google reviews from satisfied clients.",
+      },
+      {
+        title: "Seamless Mobile Experience",
+        desc: "Sub-second fast mobile pages designed specifically for homeowners searching in urgent situations.",
+      },
+    ],
+
+    beforeAfter: [
+      {
+        before: "Missing emergency calls on job sites → Hidden on page 2 of Google Maps → Slow website → 3.8 Google rating → Quote follow-ups forgotten.",
+        after: "Instant 5s text-back on missed calls → Top 3 Google Map Pack ranking → Sub-second mobile site → 4.9 Google rating → Automated CRM follow-ups.",
+      },
+    ],
+
+    pricingModels: [
+      {
+        title: "Starter Package",
+        subtitle: "Website + Missed Call Capture + Basic SEO",
+        price: "$699",
+        features: [
+          "1-5 Page Custom Fast Mobile Website",
+          "Click-to-Call & WhatsApp Floating Buttons",
+          "Google Business Profile Basic Setup & Optimization",
+          "5-Second Missed Call Instant Text-Back",
+          "Review Direct Link & QR Code Setup",
+          "Monthly Performance Report",
+        ],
+        highlight: false,
+      },
+      {
+        title: "Growth Package",
+        subtitle: "Full Map Dominance + WhatsApp Chatbot",
+        price: "$1,299",
+        features: [
+          "Service Pages + Neighborhood Location Pages",
+          "Google Map Pack 3-Pack SEO & Monthly Posts",
+          "Missed Call Text-Back + 24/7 WhatsApp Chatbot",
+          "Automated Post-Job Review Request System",
+          "Basic CRM Lead & Quote Follow-up Pipeline",
+          "Monthly Geo-Grid Ranking Report & Call Tracking",
+        ],
+        highlight: true,
+      },
+      {
+        title: "Premium Package",
+        subtitle: "Full Custom Platform + AI Voice Receptionist",
+        price: "$2,199",
+        features: [
+          "Full Custom Website + Blog & Emergency Service Pages",
+          "Multi-Area Local SEO & Advanced Geo-Grid Rank Tracking",
+          "AI Voice Receptionist (24/7 Call Answering & Address Capture)",
+          "Full Reputation Management & Review Monitoring",
+          "Full CRM Pipeline + Multi-Touch Quote Automation (Day 1, 3, 7)",
+          "Live Analytics Dashboard + Call Recording Attribution",
+        ],
+        highlight: false,
+      },
+    ],
+
+    faqs: [
+      {
+        question: "How does the missed call text-back system work?",
+        answer: "When a customer calls your business line and goes unanswered because you're busy on a job site, an automated SMS is sent within 5 seconds: 'Hi! Sorry we missed your call. How can we help with your service request?' This keeps the lead engaged before they call a competitor.",
+      },
+      {
+        question: "How many days until we rank in the Google Map Pack?",
+        answer: "Map Pack ranking depends on local competition, existing citations, and review authority. While we never provide fake guarantees, our client assets typically see noticeable ranking improvements within 30 to 90 days with our systematic citation and review framework.",
+      },
+      {
+        question: "Can this work if I don't currently have a website?",
+        answer: "Yes! We build a custom, high-speed contractor website from scratch as part of our packages, integrated with click-to-call buttons and quote forms.",
+      },
+      {
+        question: "Can the AI voice receptionist handle job details & addresses?",
+        answer: "Yes, our AI voice receptionist answers calls 24/7, asks what service is needed, collects the emergency details and address, and immediately sends a notification to the owner.",
+      },
+      {
+        question: "Can we target multiple cities or service areas?",
+        answer: "Yes! In our Growth and Premium packages, we build dedicated neighborhood location pages and optimize your Google Business Profile service areas.",
+      },
+      {
+        question: "Are customer reviews collected according to Google policies?",
+        answer: "100% white-hat compliance. We provide equal review access to all clients without review gating, fake ratings, or policy violations.",
+      },
+      {
+        question: "Google Ads vs Local SEO: Which is better for contractors?",
+        answer: "Google Ads (or LSAs) deliver instant leads when turned on, while Local SEO / Map Pack provides compounding organic leads with zero cost-per-click. Combining both produces maximum lead volume.",
+      },
+    ],
+
+    deliverables: [
+      "Custom Contractor Next.js Web Platform",
+      "5-Second Missed Call Instant SMS Text-Back System",
+      "Google Business Profile Map Pack Optimization",
+      "Automated Post-Job Review Request System",
+      "24/7 WhatsApp & AI Voice Receptionist Setup",
+      "Location-Specific Service Landing Pages",
+      "Call Attribution Tracking Setup",
+      "Full Source Code & Account Ownership Handoff",
+    ],
+
+    ctaTitle: "READY TO TURN EVERY CALL INTO A BOOKED JOB?",
+    coverImage: "/images/services/home-trades-contractors.webp",
+    techStack: ["NEXT.JS 16", "MISSED CALL TEXT-BACK", "GOOGLE MAP PACK #1", "TWILIO SMS", "AI VOICE RECEPTIONIST", "REPUTATION MANAGEMENT"],
+  },
+];
+
 
 
 

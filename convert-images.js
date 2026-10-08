@@ -18,6 +18,7 @@ const fileMap = {
   "Ecom Websites.png": "ecommerce.webp",
   "WordPress & Webflow Development.png": "wordpress-webflow.webp",
   "Web Apps (React  Next.js).png": "web-apps.webp",
+  "Home Trades & Contractors.avif": "home-trades-contractors.webp",
 };
 
 async function convertAll() {

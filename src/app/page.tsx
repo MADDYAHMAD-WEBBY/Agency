@@ -30,10 +30,7 @@ const navigationData: NavigationSection[] = [
     title: "Works",
     href: "#works",
   },
-  {
-    title: "FAQ",
-    href: "#faq",
-  },
+
   {
     title: "Pricing",
     href: "#pricing",

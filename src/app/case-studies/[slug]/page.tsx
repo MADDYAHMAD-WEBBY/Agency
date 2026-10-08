@@ -15,7 +15,7 @@ const navigationData: NavigationSection[] = [
   { title: "About us", href: "/#about" },
   { title: "Services", href: "/#services" },
   { title: "Works", href: "/#works", isActive: true },
-  { title: "FAQ", href: "/#faq" },
+
 ];
 
 export async function generateStaticParams() {

@@ -81,7 +81,7 @@ export default function SiteFooter() {
                 <Link href="/services/review-management" className="hover:text-purple-400 transition-colors">⭐ Review Management & Reputation Automation</Link>
               </li>
               <li>
-                <Link href="/services/wordpress-website" className="hover:text-purple-400 transition-colors">Custom WordPress Development</Link>
+                <Link href="/services/wordpress-webflow" className="hover:text-purple-400 transition-colors">Custom WordPress Development</Link>
               </li>
               <li>
                 <Link href="/#works" className="hover:text-white transition-colors">Portfolio & Works</Link>
@@ -99,7 +99,7 @@ export default function SiteFooter() {
             </p>
             <div className="pt-2">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 text-white font-bold hover:bg-purple-700 transition-colors shadow-md"
               >
                 <span>Book Strategy Call</span>

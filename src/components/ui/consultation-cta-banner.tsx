@@ -19,7 +19,7 @@ export default function ConsultationCtaBanner({
   buttonHref,
 }: BannerProps) {
   return (
-    <section id="contact" className="relative z-20 w-full pt-4 sm:pt-6 pb-12 sm:pb-16 bg-white overflow-hidden">
+    <section id="contact" className="relative z-20 w-full mt-2 sm:mt-4 pt-2 sm:pt-4 pb-12 sm:pb-16 bg-white overflow-hidden">
       <div className="w-full max-w-[1562px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Card with 10px Border Radius and Soft Blue-Cyan Atmosphere Glow matching Homepage */}
@@ -90,12 +90,7 @@ export default function ConsultationCtaBanner({
                   if (buttonHref) {
                     window.location.href = buttonHref;
                   } else {
-                    const el = document.getElementById("contact");
-                    if (el) {
-                      el.scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      window.location.href = "/#contact";
-                    }
+                    window.location.href = "/contact";
                   }
                 }}
                 variant="glass"

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
 import ParticlesComponent from "@/components/ui/particles-bg";
 import LogoMarquee from "@/components/ui/logo-marquee";
@@ -162,7 +163,9 @@ export default function HeroSection({ avatarList }: HeroProps) {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-20 pointer-events-auto"
         >
           {/* Black Get Started Button */}
-          <AnimatedPillButton text="Get Started" />
+          <Link href="/contact">
+            <AnimatedPillButton text="Get Started" />
+          </Link>
 
           {/* Social Proof Group */}
           <div className="flex items-center justify-center gap-2.5 sm:gap-3">

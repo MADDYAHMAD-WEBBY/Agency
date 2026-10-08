@@ -16,7 +16,7 @@ const navigationData: NavigationSection[] = [
   { title: "About us", href: "/#about" },
   { title: "Services", href: "/#services", isActive: true },
   { title: "Works", href: "/#works" },
-  { title: "FAQ", href: "/#faq" },
+
 ];
 
 export async function generateStaticParams() {
@@ -206,7 +206,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           {/* CTA Action Pill Button below Title */}
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <Link
-              href="#contact"
+              href={`/contact?service=${encodeURIComponent(service.title)}`}
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/25"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -727,10 +727,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                         <div className="mt-6 pt-4 border-t border-zinc-200/30">
                           <Link
-                            href="#contact"
+                            href={`/contact?package=${encodeURIComponent(plan.title)}&service=${encodeURIComponent(service.title)}`}
                             className={`w-full text-center block py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
                               plan.highlight
-                                ? "bg-purple-500 hover:bg-purple-400 text-white"
+                                ? "bg-purple-500 hover:bg-purple-400 text-white shadow-lg shadow-purple-500/30"
                                 : "bg-zinc-900 hover:bg-black text-white"
                             }`}
                           >
@@ -795,6 +795,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           subtitle="Book a free strategy audit call and discover how your business can save 20+ hours every single week."
           subtext={`Whether you need enterprise ${service.title.toLowerCase()}, n8n & Zapier cloud orchestration, or custom AI integrations, MHKMarkedia engineers robust digital systems built for speed, conversion, and scale.`}
           buttonText="Book Free Audit Call"
+          buttonHref={`/contact?service=${encodeURIComponent(service.title)}`}
         />
       </main>
 
