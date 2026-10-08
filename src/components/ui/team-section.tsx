@@ -29,9 +29,9 @@ const featuredLeader = {
 // 4 Core Team Members
 const teamMembers: TeamMember[] = [
   {
-    name: "Hamad Ahmad",
+    name: "Daniyal Raza",
     role: "Full-Stack Developer & Local SEO Expert",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=85",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=85",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
