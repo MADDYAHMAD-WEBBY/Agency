@@ -174,19 +174,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <Header navigationData={navigationData} />
 
       <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-x-clip relative">
-        {/* Full-Height Right Side Blurred Cover Image Background */}
-        <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[55%] h-[650px] sm:h-[780px] pointer-events-none select-none z-0 overflow-hidden">
-          <div className="w-full h-full relative">
-            <img
-              src={service.coverImage}
-              alt={service.title}
-              className="w-full h-full object-cover object-top filter blur-[8px] opacity-40 sm:opacity-55 scale-110"
-            />
-            {/* Smooth Edge Fade Gradients */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white" />
-            <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-white/70 to-transparent" />
-          </div>
+        {/* HERO AMBIENT LIGHT PURPLE GLOW BACKGROUND */}
+        <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[50%] h-[550px] sm:h-[650px] pointer-events-none select-none z-0 overflow-hidden opacity-60">
+          <div className="absolute top-12 right-12 w-[350px] sm:w-[520px] h-[350px] sm:h-[520px] bg-purple-300/40 rounded-full blur-[120px] mix-blend-multiply" />
+          <div className="absolute top-28 right-36 w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] bg-indigo-200/40 rounded-full blur-[100px]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -204,51 +195,81 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* 1. Hero Section: Main Title & Sub-Heading */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14] max-w-5xl">
-            {service.headline || service.title}
-          </h1>
+          {/* 1. Hero 2-Column Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Content Column (7 Cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14]">
+                {service.headline || service.title}
+              </h1>
 
-          <p className="mt-4 text-base sm:text-xl font-medium text-purple-950/80 max-w-3xl leading-relaxed">
-            {service.tagline}
-          </p>
+              <p className="text-base sm:text-xl font-medium text-purple-950/80 max-w-2xl leading-relaxed">
+                {service.tagline}
+              </p>
 
-          {/* CTA Action Pill Button below Title */}
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Link
-              href={`/contact?service=${encodeURIComponent(service.title)}`}
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/25"
-            >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>{service.heroCtaText || "Book Free Demo Call"}</span>
-              <span>↗</span>
-            </Link>
+              {/* CTA Action Pill Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-1">
+                <Link
+                  href={`/contact?service=${encodeURIComponent(service.title)}`}
+                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/25"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>{service.heroCtaText || "Book Free Demo Call"}</span>
+                  <span>↗</span>
+                </Link>
 
-            <Link
-              href="#pricing"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-zinc-300 bg-white/80 hover:bg-zinc-100 text-zinc-800 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all"
-            >
-              <span>Explore Engagement & Pricing</span>
-            </Link>
+                <Link
+                  href="#pricing"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-zinc-300 bg-white/80 hover:bg-zinc-100 text-zinc-800 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all"
+                >
+                  <span>Explore Engagement & Pricing</span>
+                </Link>
+              </div>
+
+              {/* Tech Stack Badges Row */}
+              {service.techStack && service.techStack.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {service.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-zinc-200 bg-zinc-100/90 text-[11px] font-mono font-semibold tracking-wide text-zinc-700 shadow-2xs"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Right Column: Sharp Featured Service Image Showcase Card (5 Cols) */}
+            <div className="lg:col-span-5">
+              {service.coverImage && (
+                <div className="relative rounded-2xl sm:rounded-3xl border border-purple-200/80 bg-white p-2.5 sm:p-3 shadow-2xl shadow-purple-900/10 overflow-hidden group">
+                  <div className="relative w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-100">
+                    <img
+                      src={service.coverImage}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                    
+                    {/* Badge Overlay */}
+                    <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-[11px] font-mono font-semibold tracking-wider uppercase z-10">
+                      <span className="px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20">
+                        {service.category ? `${service.category.toUpperCase()} CORE SERVICE` : "EXPERT CAPABILITY"}
+                      </span>
+                      <span className="text-purple-300 font-bold">MHKMarkedia ®</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Tech Stack Badges Row */}
-          {service.techStack && service.techStack.length > 0 && (
-            <div className="mt-8 flex flex-wrap gap-2 max-w-5xl">
-              {service.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-zinc-200 bg-zinc-100/90 text-[11px] font-mono font-semibold tracking-wide text-zinc-700 shadow-2xs"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
-
           {/* Overview Lead Description */}
-          <div className="mt-8 text-zinc-700 text-sm sm:text-base font-normal leading-relaxed max-w-5xl">
+          <div className="mt-10 text-zinc-700 text-sm sm:text-base font-normal leading-relaxed max-w-5xl">
             {service.description}
           </div>
 
