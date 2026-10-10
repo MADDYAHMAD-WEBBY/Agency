@@ -49,7 +49,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://db.onlinewebfonts.com; font-src 'self' data: https://fonts.gstatic.com https://db.onlinewebfonts.com; img-src 'self' data: blob: https:; media-src 'self' https:; connect-src 'self' https:; frame-ancestors 'none';",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://db.onlinewebfonts.com; font-src 'self' data: https://fonts.gstatic.com https://db.onlinewebfonts.com; img-src 'self' data: blob: https:; media-src 'self' https:; connect-src 'self' https: https://cdn.jsdelivr.net; frame-ancestors 'none';",
           },
         ],
       },
