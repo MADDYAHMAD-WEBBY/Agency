@@ -12,42 +12,42 @@ import { WorksWheel, type WorksWheelItem } from "@/components/ui/works-wheel";
 const WORKS: WorksWheelItem[] = [
   {
     title: "Amazon FBA Global",
-    image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/amazon-fba-global.webp",
     href: "/case-studies/ksa-to-usa-uk-eu-amazon-fba-case-study",
   },
   {
     title: "Amazon.sa Saudi Launch",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/amazon-saudi-arabia-fba-launch.webp",
     href: "/case-studies/amazon-saudi-arabia-fba-launch-case-study",
   },
   {
     title: "Noon.com Gulf Launch",
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/noon-gulf-marketplace-brand.webp",
     href: "/case-studies/noon-gulf-marketplace-brand-case-study",
   },
   {
     title: "Shopify DTC Brand",
-    image: "https://images.unsplash.com/photo-1556742049-0a67daf4005a?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/shopify-dtc-brand-building.webp",
     href: "/case-studies/shopify-dtc-brand-building-case-study",
   },
   {
     title: "Etsy Global Crafts",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/etsy-handmade-crafts-global.webp",
     href: "/case-studies/etsy-handmade-crafts-global-case-study",
   },
   {
     title: "TikTok Shop Growth",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/tiktok-shop-video-sales.webp",
     href: "/case-studies/tiktok-shop-video-sales-case-study",
   },
   {
     title: "Headless E-Commerce",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/cloudscale-lahore-headless-migration.webp",
     href: "/case-studies/cloudscale-lahore-headless-migration",
   },
   {
     title: "FinTech Client Portal",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80",
+    image: "/images/work/fintech-cloud-portal.webp",
     href: "/case-studies/fintech-cloud-portal-case-study",
   },
 ];

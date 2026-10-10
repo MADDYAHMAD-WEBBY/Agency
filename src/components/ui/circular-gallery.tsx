@@ -306,8 +306,8 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                     style={{ objectPosition: item.photo.pos || 'center' }}
                   />
 
-                  {/* Reduced subtle bottom gradient for text contrast while keeping photo vivid & clear */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 via-40% to-transparent opacity-75 group-hover:opacity-65 transition-opacity" />
+                  {/* Subtle bottom gradient for text contrast while keeping photo bright & clear */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 via-50% to-transparent opacity-60 group-hover:opacity-45 transition-opacity" />
 
                   {/* Subtle top edge light reflection */}
                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />

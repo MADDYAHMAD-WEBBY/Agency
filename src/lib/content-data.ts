@@ -131,7 +131,7 @@ When building custom web applications at MHKMarkedia, we embed JSON-LD schemas d
       role: "CEO & Lead Digital Architect",
       avatar: "/images/ceo.webp",
     },
-    coverImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/custom-ai-integrations.webp",
     tags: ["GEO 2026", "AI Search", "Next.js 15", "Schema Markup"],
   },
   {
@@ -156,7 +156,7 @@ By decoupling WordPress as a headless content management system API and serving 
       role: "CEO & Lead Digital Architect",
       avatar: "/images/ceo.webp",
     },
-    coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/wordpress-website.webp",
     tags: ["Headless WP", "Next.js", "Core Web Vitals", "Web Architecture"],
   },
 ];
@@ -275,7 +275,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Scaling from a single successful product into a multi-SKU profitable brand: 3 new complementary products currently in production, with planned expansion to Amazon UAE and Saudi Arabia (Amazon.sa) marketplaces.",
     results: "Within 6 months of execution, the client successfully established a profitable cross-border Amazon FBA business generating over $42,500/month across USA, UK, and European marketplaces with a 26.4% net profit margin.",
-    coverImage: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/amazon-fba-global.webp",
     techStack: ["Amazon FBA", "Helium 10", "Amazon PPC", "A+ Content", "Amazon SEO", "Cross-Border Logistics"],
   },
   {
@@ -400,7 +400,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Expanding from 1 product to a multi-SKU brand: 4 new complementary products currently in production pipeline, with cross-border store expansion to Amazon UAE (Amazon.ae) and Noon.com marketplaces.",
     results: "Within 13 months of execution, the client established a top-ranking Amazon.sa brand generating over SAR 185,000/month (~$49,300 USD) at a 28.5% net profit margin with cross-border delivery to UAE buyers.",
-    coverImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/amazon-saudi-arabia-fba-launch.webp",
     techStack: ["Amazon.sa", "Arabic SEO", "Amazon FBA KSA", "Helium 10", "Amazon PPC", "SASO Compliance"],
   },
   {
@@ -525,7 +525,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Expanding product portfolio by adding 4 new SKUs, combining Noon.com + Amazon.sa for multi-channel growth, and scaling storage into Noon UAE fulfillment centers in Dubai.",
     results: "Within 8 months of execution, the client established a top-performing Noon.com brand generating over SAR 128,500/month at a 27.2% net profit margin with SAR 64,500 in single-week Yellow Friday revenue.",
-    coverImage: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/noon-gulf-marketplace-brand.webp",
     techStack: ["Noon.com", "FBN Fulfillment", "Arabic SEO", "Noon Ads", "KSA Commerce", "SAR Payouts"],
   },
   {
@@ -679,7 +679,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Expanding catalog with 5 new complementary SKUs, activating Shopify Markets (multi-currency & Arabic checkout), and pairing the DTC store with Amazon.sa & Noon.com for multi-channel growth.",
     results: "Within 11 months of execution, the client established a thriving standalone DTC brand generating over $68,500/month at a 3.65x ad ROAS with 14,800+ active email subscribers and a 24.5% repeat customer purchase rate.",
-    coverImage: "https://images.unsplash.com/photo-1556742049-0a67daf4005a?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/shopify-dtc-brand-building.webp",
     techStack: ["Shopify", "Klaviyo", "Meta Ads", "TikTok Ads", "Google Analytics 4", "Conversions API"],
   },
   {
@@ -805,7 +805,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Expanding into 3 new craft product lines (custom leather goods & hand-carved teakwood decor), introducing personalized gift engraving, and launching a complementary Shopify store to convert repeat Etsy buyers into direct DTC customers.",
     results: "Within 4 months of execution, the client established a top-performing Etsy shop generating over $14,800/month at a 38.5% net profit margin, shipping artisanal crafts to buyers across 14 countries while holding Etsy Star Seller status.",
-    coverImage: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/etsy-handmade-crafts-global.webp",
     techStack: ["Etsy", "Etsy Ads", "Etsy SEO", "Pinterest Marketing", "DHL Express", "Instagram Reels"],
   },
   {
@@ -930,7 +930,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Expanding product catalog with 6 new viral SKUs, launching seller accounts in the UK & KSA markets, and connecting TikTok Shop with Shopify & Amazon for multi-channel brand growth.",
     results: "Within 5 months of execution, the client established a top-performing TikTok Shop brand generating over $84,500/month GMV at a 3.85x ad ROAS with 4.8 million video views and 45 active affiliate creators.",
-    coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/tiktok-shop-video-sales.webp",
     techStack: ["TikTok Shop", "TikTok Ads", "Spark Ads", "Klaviyo", "Live Shopping", "CapCut Pro"],
   },
   {
@@ -1049,7 +1049,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Expanding Headless E-Commerce capabilities with multi-lingual localized routes (Arabic, Spanish, French), localized currency checkout gateways, and AI-driven personalized product search.",
     results: "Within 7 months of execution, the client transformed their legacy monolithic store into a high-speed Headless E-Commerce powerhouse, scaling monthly revenue from $38,000 to $142,000+ at a 4.25% conversion rate with 100/100 Core Web Vitals.",
-    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/cloudscale-lahore-headless-migration.webp",
     techStack: ["Next.js 16", "Shopify Storefront API", "GraphQL", "Tailwind CSS", "Vercel Edge Network", "Klaviyo API"],
   },
   {
@@ -1168,7 +1168,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     whatsNext: "Expanding platform capabilities with AI-driven wealth recommendation agents (OpenAI GPT-4o integration), introducing multi-currency GCC portfolio modeling (SAR, AED, KWD, USD), and launching native iOS and Android wealth advisor mobile apps.",
     results: "Within 6 months of execution, Apex Wealth Tech successfully launched a bank-grade client portal handling over $120 Million in tracked consultations at a 14.2% lead conversion rate with 99.99% uptime.",
-    coverImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/fintech-cloud-portal.webp",
     techStack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "AWS FinTech Cloud"],
   },
 ];
@@ -5923,7 +5923,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO BOOST YOUR STORE SPEED & E-COMMERCE SALES?",
-    coverImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/ecommerce.webp",
     techStack: ["NEXT.JS 16", "HEADLESS WOOCOMMERCE", "SHOPIFY PLUS API", "SUB-SECOND SPEED", "WHATSAPP AUTOMATION", "META CAPI"],
   },
   {
@@ -6013,7 +6013,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       "Interactive ROI Calculator Components",
       "Full Technical Documentation",
     ],
-    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/fintech-cloud-portal.webp",
     techStack: ["NEXT.JS 16", "TYPESCRIPT", "REACT 19", "OPENAI API", "TAILWIND CSS", "POSTGRESQL"],
   },
   {
@@ -6329,7 +6329,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO ATTRACT MORE PATIENTS & STREAMLINE CLINIC APPOINTMENTS?",
-    coverImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/gbp-optimization.webp",
     techStack: ["NEXT.JS 16", "PATIENT PORTAL", "LOCAL MAP PACK SEO", "WHATSAPP BOT", "PRIVACY FIRST", "TYPESCRIPT"],
   },
   {
@@ -6638,7 +6638,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO CAPTURE HIGH-TICKET BUYERS & DOMINATE PROPERTY SEARCH?",
-    coverImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/web-applications.webp",
     techStack: ["NEXT.JS 16", "DYNAMIC LISTINGS", "WHATSAPP QUALIFICATION", "360 VIRTUAL TOURS", "LOCAL SEO", "TYPESCRIPT"],
   },
   {
@@ -6939,7 +6939,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO GROW YOUR LAW FIRM'S TRUSTED CLIENTELE?",
-    coverImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/business-websites.webp",
     techStack: ["NEXT.JS 16", "E-E-A-T SCHEMA", "LOCAL MAP PACK SEO", "BAR ETHICS COMPLIANT", "ENCRYPTED INTAKE", "TYPESCRIPT"],
   },
   {
@@ -7241,7 +7241,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO ELEVATE YOUR FINANCIAL FIRM'S DIGITAL TRUST?",
-    coverImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/work/fintech-cloud-portal.webp",
     techStack: ["NEXT.JS 16", "INTERACTIVE CALCULATORS", "ENCRYPTED PORTAL", "MFA / 2FA AUTH", "E-SIGNATURE API", "TYPESCRIPT"],
   },
   {
@@ -7527,7 +7527,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO INCREASE YOUR DIRECT BOOKINGS & SAVINGS?",
-    coverImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/images/services/crm-lead-automation.webp",
     techStack: ["NEXT.JS 16", "DIRECT BOOKING ENGINE", "WHATSAPP BOT", "ZERO COMMISSION", "LOCAL MAP SEO", "REPUTATION MANAGEMENT"],
   },
   {
