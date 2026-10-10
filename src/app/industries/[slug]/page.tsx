@@ -187,10 +187,26 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
       <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-x-clip relative">
         
-        {/* HERO AMBIENT LIGHT PURPLE GLOW BACKGROUND */}
-        <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[50%] h-[550px] sm:h-[650px] pointer-events-none select-none z-0 overflow-hidden opacity-60">
-          <div className="absolute top-12 right-12 w-[350px] sm:w-[520px] h-[350px] sm:h-[520px] bg-purple-300/40 rounded-full blur-[120px] mix-blend-multiply" />
-          <div className="absolute top-28 right-36 w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] bg-indigo-200/40 rounded-full blur-[100px]" />
+        {/* HERO LIGHT PURPLE GLOW BLUR BACKGROUND */}
+        <div className="absolute top-0 right-0 w-full sm:w-1/2 lg:w-[60%] h-[650px] sm:h-[780px] pointer-events-none select-none z-0 overflow-hidden">
+          {/* Ambient Light Purple Blur Layers */}
+          <div className="absolute top-12 right-12 w-[350px] sm:w-[520px] h-[350px] sm:h-[520px] bg-purple-300/45 rounded-full blur-[110px] mix-blend-multiply animate-pulse" />
+          <div className="absolute top-28 right-36 w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] bg-purple-400/35 rounded-full blur-[130px] mix-blend-multiply" />
+          <div className="absolute top-44 right-8 w-[240px] sm:w-[360px] h-[240px] sm:h-[360px] bg-indigo-200/40 rounded-full blur-[95px]" />
+
+          {/* Soft Cover Image Layer */}
+          {industry.coverImage && (
+            <div className="w-full h-full relative opacity-35 sm:opacity-50 mix-blend-overlay">
+              <img
+                src={industry.coverImage}
+                alt={industry.title}
+                className="w-full h-full object-cover object-top filter blur-[6px] scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white" />
+              <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-white/70 to-transparent" />
+            </div>
+          )}
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -208,81 +224,51 @@ export default async function IndustryDetailPage({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* 1. Hero 2-Column Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
-            {/* Left Content Column (7 Cols) */}
-            <div className="lg:col-span-7 space-y-6">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14]">
-                {industry.headline || industry.title}
-              </h1>
+          {/* 1. Hero Section */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-normal text-zinc-900 tracking-tight leading-[1.14] max-w-5xl">
+            {industry.headline || industry.title}
+          </h1>
 
-              <p className="text-base sm:text-xl font-medium text-purple-950/80 max-w-2xl leading-relaxed">
-                {industry.tagline}
-              </p>
+          <p className="mt-4 text-base sm:text-xl font-medium text-purple-950/80 max-w-3xl leading-relaxed">
+            {industry.tagline}
+          </p>
 
-              {/* CTA Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-1">
-                <Link
-                  href={`/contact?industry=${encodeURIComponent(industry.title)}`}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/25"
-                >
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Book Free Digital Audit</span>
-                  <span>↗</span>
-                </Link>
+          {/* CTA Action Buttons */}
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <Link
+              href={`/contact?industry=${encodeURIComponent(industry.title)}`}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/25"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Book Free Digital Audit</span>
+              <span>↗</span>
+            </Link>
 
-                <Link
-                  href="#pricing"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-purple-200 bg-white/90 hover:bg-purple-50 text-purple-950 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all shadow-2xs"
-                >
-                  <span>Explore Packages & Pricing</span>
-                </Link>
-              </div>
-
-              {/* Tech & Sector Badges */}
-              {industry.techStack && industry.techStack.length > 0 && (
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {industry.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-purple-200/80 bg-purple-50/80 text-[11px] font-mono font-semibold tracking-wide text-purple-900 shadow-2xs"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Right Column: Sharp Featured Industry Image Showcase Card (5 Cols) */}
-            <div className="lg:col-span-5">
-              {industry.coverImage && (
-                <div className="relative rounded-2xl sm:rounded-3xl border border-purple-200/80 bg-white p-2.5 sm:p-3 shadow-2xl shadow-purple-900/10 overflow-hidden group">
-                  <div className="relative w-full aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-100">
-                    <img
-                      src={industry.coverImage}
-                      alt={industry.title}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                    
-                    {/* Badge Overlay */}
-                    <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-[11px] font-mono font-semibold tracking-wider uppercase z-10">
-                      <span className="px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20">
-                        {industry.category ? `${industry.category.toUpperCase()} VERTICAL` : "VERIFIED SOLUTION"}
-                      </span>
-                      <span className="text-purple-300 font-bold">MHKMarkedia ®</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <Link
+              href="#pricing"
+              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-purple-200 bg-white/90 hover:bg-purple-50 text-purple-950 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all shadow-2xs"
+            >
+              <span>Explore Packages & Pricing</span>
+            </Link>
           </div>
 
+          {/* Tech & Sector Badges */}
+          {industry.techStack && industry.techStack.length > 0 && (
+            <div className="mt-8 flex flex-wrap gap-2 max-w-5xl">
+              {industry.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-purple-200/80 bg-purple-50/80 text-[11px] font-mono font-semibold tracking-wide text-purple-900 shadow-2xs"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
           {/* Overview Description */}
-          <div className="mt-10 text-zinc-700 text-sm sm:text-base font-normal leading-relaxed max-w-5xl">
+          <div className="mt-8 text-zinc-700 text-sm sm:text-base font-normal leading-relaxed max-w-5xl">
             {industry.description}
           </div>
 

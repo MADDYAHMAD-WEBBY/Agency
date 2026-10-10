@@ -5923,7 +5923,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO BOOST YOUR STORE SPEED & E-COMMERCE SALES?",
-    coverImage: "/images/services/ecommerce.webp",
+    coverImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
     techStack: ["NEXT.JS 16", "HEADLESS WOOCOMMERCE", "SHOPIFY PLUS API", "SUB-SECOND SPEED", "WHATSAPP AUTOMATION", "META CAPI"],
   },
   {
@@ -6329,7 +6329,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO ATTRACT MORE PATIENTS & STREAMLINE CLINIC APPOINTMENTS?",
-    coverImage: "/images/services/gbp-optimization.webp",
+    coverImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
     techStack: ["NEXT.JS 16", "PATIENT PORTAL", "LOCAL MAP PACK SEO", "WHATSAPP BOT", "PRIVACY FIRST", "TYPESCRIPT"],
   },
   {
@@ -6638,7 +6638,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO CAPTURE HIGH-TICKET BUYERS & DOMINATE PROPERTY SEARCH?",
-    coverImage: "/images/services/web-applications.webp",
+    coverImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
     techStack: ["NEXT.JS 16", "DYNAMIC LISTINGS", "WHATSAPP QUALIFICATION", "360 VIRTUAL TOURS", "LOCAL SEO", "TYPESCRIPT"],
   },
   {
@@ -6939,7 +6939,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO GROW YOUR LAW FIRM'S TRUSTED CLIENTELE?",
-    coverImage: "/images/services/business-websites.webp",
+    coverImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
     techStack: ["NEXT.JS 16", "E-E-A-T SCHEMA", "LOCAL MAP PACK SEO", "BAR ETHICS COMPLIANT", "ENCRYPTED INTAKE", "TYPESCRIPT"],
   },
   {
@@ -7241,7 +7241,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO ELEVATE YOUR FINANCIAL FIRM'S DIGITAL TRUST?",
-    coverImage: "/images/work/fintech-cloud-portal.webp",
+    coverImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
     techStack: ["NEXT.JS 16", "INTERACTIVE CALCULATORS", "ENCRYPTED PORTAL", "MFA / 2FA AUTH", "E-SIGNATURE API", "TYPESCRIPT"],
   },
   {
@@ -7527,7 +7527,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
 
     ctaTitle: "READY TO INCREASE YOUR DIRECT BOOKINGS & SAVINGS?",
-    coverImage: "/images/services/crm-lead-automation.webp",
+    coverImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
     techStack: ["NEXT.JS 16", "DIRECT BOOKING ENGINE", "WHATSAPP BOT", "ZERO COMMISSION", "LOCAL MAP SEO", "REPUTATION MANAGEMENT"],
   },
   {
