@@ -39,7 +39,7 @@ export default function WorksPage() {
       <Header navigationData={navigationData} />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 -mt-[50px] sm:-mt-[70px] pt-24 sm:pt-28 pb-12 sm:pb-16 space-y-16 sm:space-y-24">
+      <main className="flex-1 max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 -mt-[50px] sm:-mt-[70px] pt-24 sm:pt-28 pb-8 space-y-16 sm:space-y-24">
 
         {/* 1. HERO SECTION (Matching About & Contact pages) */}
         <section className="text-center max-w-4xl mx-auto pt-4 relative">
@@ -95,7 +95,18 @@ export default function WorksPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 items-stretch">
             {CASE_STUDIES.map((study) => {
               const primaryMetric = study.metrics && study.metrics[0];
-              const timeline = study.snapshot?.timeline || "Verified Impact";
+              const tagMap: Record<string, string> = {
+                "ksa-to-usa-uk-eu-amazon-fba-case-study": "AMAZON FBA",
+                "amazon-saudi-arabia-fba-launch-case-study": "AMAZON.SA",
+                "noon-gulf-marketplace-brand-case-study": "NOON GULF",
+                "shopify-dtc-brand-building-case-study": "SHOPIFY DTC",
+                "etsy-handmade-crafts-global-case-study": "ETSY GLOBAL",
+                "tiktok-shop-video-sales-case-study": "TIKTOK SHOP",
+                "cloudscale-lahore-headless-migration-case-study": "HEADLESS NEXT.JS",
+                "fintech-cloud-portal-case-study": "FINTECH PORTAL",
+              };
+              const shortTag = tagMap[study.slug] || "CASE STUDY";
+              const timeline = study.snapshot?.timeline?.replace(" Execution", "") || "Verified";
 
               return (
                 <Link
@@ -104,10 +115,11 @@ export default function WorksPage() {
                   className="group block h-full focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-4 rounded-3xl transition-transform"
                 >
                   <FolderCard
-                    title={study.client}
-                    subtitle={study.title}
-                    count={primaryMetric ? primaryMetric.value : "100%"}
-                    countLabel={primaryMetric ? primaryMetric.label : "Growth"}
+                    title={study.title}
+                    subtitle={study.summary}
+                    tag={shortTag}
+                    count={primaryMetric?.value}
+                    countLabel={primaryMetric?.label}
                     meta={timeline}
                     cover={study.coverImage}
                     coverAlt={study.title}
@@ -119,42 +131,10 @@ export default function WorksPage() {
           </div>
         </section>
 
-        {/* 3. CAPABILITIES QUICK NAVIGATION */}
-        <section className="max-w-5xl mx-auto bg-purple-950 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-600/20 blur-[100px] pointer-events-none rounded-full" />
-
-          <div className="relative z-10 max-w-3xl space-y-4">
-            <span className="text-xs font-mono font-bold tracking-widest text-purple-400 uppercase">
-              Custom Engineering &amp; Growth
-            </span>
-            <h3 className="text-2xl sm:text-4xl font-serif italic font-normal text-white leading-tight">
-              Have a similar e-commerce or web software project in mind?
-            </h3>
-            <p className="text-sm sm:text-base text-zinc-300 font-sans leading-relaxed">
-              We build tailor-made digital systems with clear timelines, sub-second Core Web Vitals speed, and 100% full asset handoff.
-            </p>
-
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-purple-600 hover:bg-purple-500 text-white text-xs sm:text-sm font-mono font-bold tracking-wider uppercase active:scale-95 transition-all shadow-lg shadow-purple-600/30"
-              >
-                <span>Book Free Discovery Call</span>
-                <span>↗</span>
-              </Link>
-              <Link
-                href="/#services"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-purple-800/80 bg-purple-900/40 hover:bg-purple-900/80 text-purple-200 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all"
-              >
-                <span>Browse All Services</span>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. CONSULTATION CTA BANNER */}
-        <ConsultationCtaBanner />
       </main>
+
+      {/* Standard Full-Width Consultation CTA Banner (Matching About, Contact & Homepage) */}
+      <ConsultationCtaBanner />
 
       {/* Footer */}
       <SiteFooter />
