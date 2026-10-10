@@ -102,7 +102,7 @@ export default function WorksPage() {
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-900 tracking-tight leading-tight">
             Data-Driven Systems Built for{" "}
-            <span className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal pr-3 sm:pr-4 py-1">
+            <span className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal pr-3 sm:pr-4 py-1 animate-gradient-shift">
               Measurable Client Growth.
             </span>
           </h1>
