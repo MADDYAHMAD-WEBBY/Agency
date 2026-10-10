@@ -31,10 +31,20 @@ export async function generateMetadata({ params }: PageProps) {
   const industry = INDUSTRY_DETAILS.find((item) => item.slug === slug);
   if (!industry) return {};
 
-  const title = `${industry.title} | MHKMarkedia Agency`;
-  const description = industry.headline
-    ? `${industry.headline} ${industry.tagline}`
-    : industry.tagline;
+  const cleanTitle = industry.title.replace(/ Growth$/i, "").replace(/ Services$/i, "");
+  const rawTitle = `${cleanTitle} | MHKMarkedia`;
+  const title = rawTitle.length > 60 ? `${cleanTitle.slice(0, 44)} | MHKMarkedia` : rawTitle;
+
+  const rawDesc = industry.description || industry.tagline || "";
+  let description = rawDesc;
+  if (description.length > 155) {
+    description = description.slice(0, 150).trim();
+    const lastSpace = description.lastIndexOf(" ");
+    if (lastSpace > 110) {
+      description = description.slice(0, lastSpace).trim();
+    }
+    description += ".";
+  }
 
   return {
     title,

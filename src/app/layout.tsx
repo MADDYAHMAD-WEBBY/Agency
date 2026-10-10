@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, EB_Garamond } from "next/font/google";
 import "./globals.css";
+import WhatsAppFloat from "@/components/ui/whatsapp-float";
 
 const sansFont = Plus_Jakarta_Sans({
   variable: "--font-sans-main",
@@ -14,8 +15,9 @@ const serifFont = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "MHKMarkedia — Web Development, Headless WordPress & AI-Driven SEO Agency",
-  description: "MHKMarkedia is a high-performance digital agency led by CEO M. Hafeez Khan (16+ Yrs Exp), specializing in custom Next.js Web Development, Headless WordPress solutions, Local SEO, and Generative Engine Optimization (GEO).",
+  title: "Build High-Converting Websites & #1 Map SEO | MHKMarkedia",
+  description:
+    "Scale your business with high-converting custom web apps, sub-second headless stores, and #1 Google Map Pack rankings engineered by CEO M. Hafeez Khan.",
 };
 
 export default function RootLayout({
@@ -57,6 +59,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );

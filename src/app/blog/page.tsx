@@ -8,23 +8,22 @@ import { BLOG_POSTS } from "@/lib/content-data";
 
 /* ─── SEO METADATA ─── */
 export const metadata: Metadata = {
-  title: "Blog | Web Development, AI Automation & Local SEO Insights | MHKMarkedia",
+  title: "Growth Insights: Scale Web Sales & SEO Rank | MHKMarkedia",
   description:
-    "Actionable technical breakdowns on Next.js 15 architecture, zero-downtime headless WordPress migrations, custom AI workflow automations, and local SEO ranking strategies.",
+    "Discover proven growth strategies, high-speed web architecture insights, and local SEO tactics to dominate search rankings and scale your business sales.",
   keywords: [
     "web development blog",
-    "Next.js 15 tutorials",
+    "Next.js tutorials",
     "headless WordPress migration",
     "AI automation guides",
     "local SEO strategies",
     "Core Web Vitals optimization",
     "React development",
-    "full stack developer blog",
   ],
   openGraph: {
-    title: "Blog | Web Development, AI & SEO Insights",
+    title: "Web Development & AI SEO Blog | MHKMarkedia",
     description:
-      "Deep dives into Next.js 15, headless WordPress, AI workflow automation, and local SEO — written from hands-on production builds.",
+      "Deep dives into Next.js 16, Headless WordPress, AI workflow automation, and Local SEO written from hands-on production builds.",
     url: "https://mhkmarkedia.com/blog",
     siteName: "MHKMarkedia",
     type: "website",

@@ -23,12 +23,26 @@ import {
   SiBigcommerce,
   SiSquarespace,
 } from "react-icons/si";
-import { FaAmazon, FaMagento, FaMeta } from "react-icons/fa6";
+import { FaAmazon, FaMagento, FaMeta, FaLinkedin, FaPinterest, FaSnapchat, FaGoogle } from "react-icons/fa6";
 import { RiOpenaiFill } from "react-icons/ri";
+
+// Official Google Ads Brand Logo Component ("A" shape: Yellow left bar, Blue right capsule, Green bottom circle)
+const GoogleAdsIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
+  <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" className={className} style={style}>
+    {/* Yellow Left Bar */}
+    <path d="M14.5 74.5L46.5 19L66.5 53.5L34.5 109Z" fill="#FABB05" />
+    {/* Blue Right Pill */}
+    <g transform="translate(61, 47) rotate(30)">
+      <rect x="-12" y="-36" width="24" height="72" rx="12" fill="#4285F4" />
+    </g>
+    {/* Green Bottom-Left Circle */}
+    <circle cx="24.5" cy="74.5" r="14.5" fill="#34A853" />
+  </svg>
+);
 
 // Official GoHighLevel (GHL) 3-Arrow Brand Logo Component
 const GoHighLevelIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg viewBox="0 0 100 100" fill="none" className={className} style={style}>
+  <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" className={className} style={style}>
     {/* Left Yellow Arrow */}
     <path d="M4 34L20 8L36 34H27V92H13V34H4Z" fill="#F59E0B" />
     <path d="M20 8L36 34H20V8Z" fill="#000000" opacity="0.15" />
@@ -45,9 +59,44 @@ const GoHighLevelIcon = ({ className, style }: { className?: string; style?: Rea
 
 export const logos: Logo[] = [
   {
-    alt: "TikTok Shop",
+    alt: "Google Ads",
+    icon: GoogleAdsIcon,
+    color: "#4285F4",
+  },
+  {
+    alt: "Meta Ads",
+    icon: FaMeta,
+    color: "#0081FB",
+  },
+  {
+    alt: "TikTok Ads",
     icon: SiTiktok,
     color: "#000000",
+  },
+  {
+    alt: "Google Analytics",
+    icon: FaGoogle,
+    color: "#E37400",
+  },
+  {
+    alt: "LinkedIn Ads",
+    icon: FaLinkedin,
+    color: "#0A66C2",
+  },
+  {
+    alt: "Pinterest Ads",
+    icon: FaPinterest,
+    color: "#E60023",
+  },
+  {
+    alt: "Snapchat Ads",
+    icon: FaSnapchat,
+    color: "#FFFC00",
+  },
+  {
+    alt: "GoHighLevel",
+    icon: GoHighLevelIcon,
+    color: "#FF5722",
   },
   {
     alt: "Shopify",
@@ -88,16 +137,6 @@ export const logos: Logo[] = [
     alt: "Squarespace",
     icon: SiSquarespace,
     color: "#000000",
-  },
-  {
-    alt: "Meta Shop",
-    icon: FaMeta,
-    color: "#0081FB",
-  },
-  {
-    alt: "GoHighLevel",
-    icon: GoHighLevelIcon,
-    color: "#FF5722",
   },
   {
     alt: "WordPress",
@@ -171,7 +210,7 @@ export default function LogoMarqueePreview() {
     <section className="w-full bg-white py-8 sm:py-12 border-y border-zinc-100/80 relative z-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <p className="text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase mb-6">
-          Powering High-Growth E-Commerce, CRMs, AI & Enterprise Tech Stacks
+          Powering High-Growth E-Commerce, Ads & Growth Platforms, CRMs, AI & Enterprise Tech Stacks
         </p>
         <LogoMarquee logos={logos} />
       </div>

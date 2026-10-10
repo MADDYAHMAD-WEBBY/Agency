@@ -193,10 +193,10 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[12px] pt-6 sm:pt-10 px-5 sm:px-10 pb-0 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[420px] xs:min-h-[460px] sm:min-h-[540px] lg:min-h-[620px]"
+            className="lg:col-span-6 bg-gradient-to-br from-[#f0efff] via-[#e8e7fd] to-[#f4f3ff] border border-purple-200/80 rounded-[12px] pt-6 sm:pt-8 px-5 sm:px-10 pb-0 flex flex-col justify-between relative overflow-hidden shadow-xs hover:shadow-md transition-shadow min-h-[360px] xs:min-h-[400px] sm:min-h-[440px] lg:min-h-[480px]"
           >
             {/* Top Content */}
-            <div className="relative z-10 flex flex-col items-center text-center space-y-3.5 sm:space-y-4 pt-1 sm:pt-2">
+            <div className="relative z-10 flex flex-col items-center text-center space-y-3 sm:space-y-3.5 pt-1 sm:pt-2">
               
               {/* Pulsating Availability Badge */}
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 border border-purple-200/90 shadow-2xs backdrop-blur-md">
@@ -234,10 +234,10 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Bottom 3D Interactive Globe Container (Cobe Globe with Arcs & Markers - Compact Height) */}
-            <div className="relative z-10 mt-2 sm:mt-4 w-full h-[260px] sm:h-[320px] lg:h-[360px] mx-auto flex items-center justify-center overflow-hidden rounded-b-[12px]">
-              {/* Globe Canvas Container */}
-              <div className="w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[400px] aspect-square relative flex items-center justify-center translate-y-6 sm:translate-y-10 lg:translate-y-12 pointer-events-auto">
+            {/* Bottom 3D Interactive Globe Container (+100px Extra Globe Width, Compact Card Height) */}
+            <div className="relative z-10 mt-[6px] -mx-5 sm:-mx-10 w-[calc(100%+2.5rem)] sm:w-[calc(100%+5rem)] h-[220px] xs:h-[260px] sm:h-[300px] lg:h-[340px] flex items-start justify-center overflow-hidden rounded-b-[12px]">
+              {/* Globe Canvas Container: 100px wider than card width, ~6px below button */}
+              <div className="w-[calc(100%+100px)] aspect-square relative flex items-center justify-center translate-y-0 pointer-events-auto">
                 <Globe
                   markers={globeMarkers}
                   arcs={globeArcs}

@@ -30,10 +30,20 @@ export async function generateMetadata({ params }: PageProps) {
   const service = SERVICE_DETAILS.find((item) => item.slug === slug);
   if (!service) return {};
 
-  const title = `${service.title} | MHKMarkedia Agency`;
-  const description = service.headline
-    ? `${service.headline} ${service.tagline}`
-    : service.tagline;
+  const cleanTitle = service.title.replace(/ Services$/i, "");
+  const rawTitle = `${cleanTitle} | MHKMarkedia`;
+  const title = rawTitle.length > 60 ? `${cleanTitle.slice(0, 44)} | MHKMarkedia` : rawTitle;
+
+  const rawDesc = service.description || service.tagline || "";
+  let description = rawDesc;
+  if (description.length > 155) {
+    description = description.slice(0, 150).trim();
+    const lastSpace = description.lastIndexOf(" ");
+    if (lastSpace > 110) {
+      description = description.slice(0, lastSpace).trim();
+    }
+    description += ".";
+  }
 
   return {
     title,
@@ -725,16 +735,28 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                           </ul>
                         </div>
 
-                        <div className="mt-6 pt-4 border-t border-zinc-200/30">
-                          <Link
-                            href={`/contact?package=${encodeURIComponent(plan.title)}&service=${encodeURIComponent(service.title)}`}
-                            className={`w-full text-center block py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                        <div className="mt-6 pt-4 border-t border-zinc-200/30 space-y-2">
+                          <a
+                            href={`https://wa.me/966532428200?text=${encodeURIComponent(`Hi! I am interested in ordering the *${plan.title}* plan for *${service.title}* (${plan.price || "Custom Quote"}). Please confirm availability and next steps.`)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`w-full text-center flex items-center justify-center gap-1.5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
                               plan.highlight
-                                ? "bg-purple-500 hover:bg-purple-400 text-white shadow-lg shadow-purple-500/30"
-                                : "bg-zinc-900 hover:bg-black text-white"
+                                ? "bg-emerald-500 hover:bg-emerald-400 text-white shadow-emerald-500/30 ring-2 ring-emerald-300"
+                                : "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/20"
                             }`}
                           >
-                            Get Started
+                            <span>Order via WhatsApp 💬</span>
+                          </a>
+                          <Link
+                            href={`/contact?package=${encodeURIComponent(plan.title)}&service=${encodeURIComponent(service.title)}`}
+                            className={`w-full text-center block py-2 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider transition-all ${
+                              plan.highlight
+                                ? "bg-purple-800/60 hover:bg-purple-700/80 text-purple-100"
+                                : "bg-zinc-100 hover:bg-zinc-200 text-zinc-700 border border-zinc-200"
+                            }`}
+                          >
+                            Book Call 📅
                           </Link>
                         </div>
                       </div>

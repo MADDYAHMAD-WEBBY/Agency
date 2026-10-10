@@ -166,7 +166,7 @@ export function WorksWheel({
   const metrics = React.useMemo(() => {
     const { w, h } = stage;
     const isMobile = w > 0 && w < 640;
-    const maxWFactor = isMobile ? 0.44 : CARD_MAX_W;
+    const maxWFactor = isMobile ? 0.44 : 0.28;
     const cardHFactor = isMobile ? 0.30 : CARD_H;
     const cardW = Math.min(h * cardHFactor * CARD_RATIO, w * maxWFactor);
     const cardH = cardW / CARD_RATIO;
@@ -508,7 +508,9 @@ export function WorksWheel({
         ref={titleRef}
         className={cn(
           "pointer-events-none absolute top-1/2 -translate-y-1/2 tracking-tight opacity-0 z-20",
-          metrics.isMobile ? "left-[3%] max-w-[32vw]" : "left-[5%] sm:left-[7%] max-w-[34vw]"
+          metrics.isMobile
+            ? "left-[3%] max-w-[32vw]"
+            : "left-[3%] sm:left-[4%] lg:left-[5%] xl:left-[6%] max-w-[240px] sm:max-w-[280px] lg:max-w-[360px] xl:max-w-[420px]"
         )}
         style={{ fontSize: metrics.title }}
       >
@@ -522,7 +524,7 @@ export function WorksWheel({
 
       {/* Right-hand Index with clean numbers & indicator dots */}
       <ol
-        className="absolute top-[8%] right-[3%] sm:right-[4%] text-right leading-[2] z-20 hidden sm:flex flex-col items-end"
+        className="absolute top-[8%] right-[3%] sm:right-[4%] lg:right-[5%] xl:right-[6%] text-right leading-[2] z-20 hidden sm:flex flex-col items-end"
         style={{ fontSize: metrics.index }}
       >
         {items.map((item, i) => (

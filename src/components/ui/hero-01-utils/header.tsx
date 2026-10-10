@@ -6,6 +6,7 @@ import { Menu, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import AnimatedPillButton from "@/components/ui/animated-pill-button";
+import { StylishMHKWordmark } from "@/components/ui/brand-logo";
 
 export interface NavigationSection {
   title: string;
@@ -221,11 +222,9 @@ export default function Header({ navigationData }: HeaderProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         
-        {/* Logo: Black pill */}
-        <Link href="/" className="inline-flex items-center">
-          <div className="bg-black text-white border border-zinc-900 px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-bold text-sm sm:text-lg tracking-tight hover:opacity-95 transition-opacity shadow-sm">
-            MHKMarkedia
-          </div>
+        {/* Logo: Stylish MHK Wordmark */}
+        <Link href="/" className="inline-flex items-center group py-1">
+          <StylishMHKWordmark className="h-7 sm:h-9 w-auto group-hover:scale-102 transition-transform duration-300" />
         </Link>
 
         {/* Center Nav: Original Segmented Glass Pill with Light Glassy Dropdowns */}
@@ -442,7 +441,9 @@ export default function Header({ navigationData }: HeaderProps) {
             <SheetContent side="right" className="w-[300px] xs:w-[340px] bg-white text-zinc-900 p-6 overflow-y-auto">
               <SheetHeader className="border-b pb-4 mb-6">
                 <SheetTitle className="text-left font-bold text-xl text-black">
-                  MHKMarkedia
+                  <Link href="/" onClick={() => setIsOpen(false)} className="inline-flex items-center">
+                    <StylishMHKWordmark className="h-7 w-auto" />
+                  </Link>
                 </SheetTitle>
               </SheetHeader>
               

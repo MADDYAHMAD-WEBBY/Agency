@@ -17,6 +17,13 @@ export type Logo = {
 // Brand colors & subtle background glow for uniform visual hierarchy
 const brandColorMap: Record<string, { color: string; bg: string }> = {
   Shopify: { color: "#96BF48", bg: "rgba(150, 191, 72, 0.1)" },
+  "Google Ads": { color: "#4285F4", bg: "rgba(66, 133, 244, 0.1)" },
+  "Meta Ads": { color: "#0081FB", bg: "rgba(0, 129, 251, 0.1)" },
+  "TikTok Ads": { color: "#000000", bg: "rgba(0, 0, 0, 0.08)" },
+  "Google Analytics": { color: "#E37400", bg: "rgba(227, 116, 0, 0.1)" },
+  "LinkedIn Ads": { color: "#0A66C2", bg: "rgba(10, 102, 194, 0.1)" },
+  "Pinterest Ads": { color: "#E60023", bg: "rgba(230, 0, 35, 0.1)" },
+  "Snapchat Ads": { color: "#FFFC00", bg: "rgba(255, 252, 0, 0.15)" },
   GoHighLevel: { color: "#FF5722", bg: "rgba(255, 87, 34, 0.1)" },
   WooCommerce: { color: "#96588A", bg: "rgba(150, 88, 138, 0.1)" },
   WordPress: { color: "#21759B", bg: "rgba(33, 117, 155, 0.1)" },
@@ -56,7 +63,7 @@ const LogoItem = memo(function LogoItem({ logo }: { logo: Logo }) {
       
       {IconComponent ? (
         <IconComponent
-          className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
+          className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:scale-110"
           style={{ color: brandMeta.color }}
         />
       ) : logo.src ? (
@@ -64,12 +71,12 @@ const LogoItem = memo(function LogoItem({ logo }: { logo: Logo }) {
           alt={logo.alt}
           src={logo.src}
           loading="eager"
-          className="pointer-events-none h-5 sm:h-6 w-auto object-contain max-h-6 transition-transform duration-300 group-hover:scale-105"
+          className="pointer-events-none h-5 sm:h-6 w-auto object-contain max-h-6 shrink-0 align-middle transition-transform duration-300 group-hover:scale-105"
         />
       ) : null}
 
       <span
-        className="text-xs sm:text-sm font-bold tracking-tight text-zinc-900 group-hover:text-zinc-950 transition-colors"
+        className="text-xs sm:text-sm font-bold tracking-tight text-zinc-900 group-hover:text-zinc-950 transition-colors whitespace-nowrap"
       >
         {logo.alt}
       </span>
@@ -84,8 +91,8 @@ export const LogoMarquee = memo(function LogoMarquee({
   logos: Logo[];
   className?: string;
 }) {
-  // Duplicating logos 3 times guarantees seamless 100% infinite marquee loop
-  const duplicatedLogos = [...logos, ...logos, ...logos];
+  // Duplicating logos 2 times for 100% pixel-exact 50% translation loop without subpixel jumps
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
     <div

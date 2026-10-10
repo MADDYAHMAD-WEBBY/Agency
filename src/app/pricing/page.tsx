@@ -422,6 +422,17 @@ export default function PricingPage() {
   const [activeTab, setActiveTab] = useState<"web" | "seo" | "ai" | "software">("web");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  /* ─── SELECTED TIER PLAN STATE ─── */
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string; period?: string } | null>(null);
+
+  const handleSelectPlan = (name: string, price: string, period: string = "") => {
+    if (selectedPlan?.name === name) {
+      setSelectedPlan(null);
+    } else {
+      setSelectedPlan({ name, price, period });
+    }
+  };
+
   /* ─── MODULAR CALCULATOR STATE ─── */
   const [itemQuantities, setItemQuantities] = useState<Record<string, number>>({});
 
@@ -454,7 +465,7 @@ export default function PricingPage() {
 
   /* GENERATE WHATSAPP ORDER LINK */
   const generateWhatsAppLink = () => {
-    const phone = "923000000000";
+    const phone = "966532428200";
     if (selectedItems.length === 0) {
       const msg = encodeURIComponent("Hi! I am interested in getting a custom project quote for my business.");
       return `https://wa.me/${phone}?text=${msg}`;
@@ -794,189 +805,246 @@ export default function PricingPage() {
           {/* TAB 1: WEB DEVELOPMENT */}
           {activeTab === "web" && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {WEB_DEV_TIERS.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all ${
-                    tier.highlight
-                      ? "bg-gradient-to-b from-purple-50/90 via-white to-white border-2 border-purple-500 shadow-xl relative scale-[1.02]"
-                      : "bg-white border border-zinc-200 shadow-2xs"
-                  }`}
-                >
-                  {tier.badge && (
-                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#8B3DFF] text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow-sm">
-                      {tier.badge}
-                    </span>
-                  )}
-                  <div className="space-y-4">
-                    <h4 className="text-2xl font-serif font-bold text-zinc-900">{tier.name}</h4>
-                    <p className="text-xs text-zinc-500 font-sans min-h-[32px]">{tier.subtitle}</p>
-
-                    <div className="pt-2 border-t border-zinc-100">
-                      <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 font-mono">
-                        {formatPrice(tier.usdPrice, currency)}
-                      </span>
-                      <span className="text-xs font-mono text-zinc-400 ml-1">/{tier.period}</span>
-                    </div>
-
-                    <ul className="space-y-3 pt-4 text-xs font-sans text-zinc-700">
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Pages:</strong> {tier.pages}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Design:</strong> {tier.design}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>SEO:</strong> {tier.seo}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Features:</strong> {tier.extras}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Support:</strong> {tier.support}</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <Link
-                    href="/contact"
-                    className={`w-full text-center py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all ${
-                      tier.highlight
-                        ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6] shadow-md"
-                        : "bg-zinc-900 text-white hover:bg-black"
+              {WEB_DEV_TIERS.map((tier) => {
+                const isSelected = selectedPlan?.name === tier.name;
+                const formattedPrice = formatPrice(tier.usdPrice, currency);
+                return (
+                  <div
+                    key={tier.name}
+                    onClick={() => handleSelectPlan(tier.name, formattedPrice, tier.period)}
+                    className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer ${
+                      isSelected
+                        ? "bg-gradient-to-b from-emerald-50/90 via-white to-white border-2 border-emerald-500 shadow-2xl relative scale-[1.03] ring-4 ring-emerald-500/20"
+                        : tier.highlight
+                        ? "bg-gradient-to-b from-purple-50/90 via-white to-white border-2 border-purple-500 shadow-xl relative scale-[1.02] hover:border-purple-600"
+                        : "bg-white border border-zinc-200 shadow-2xs hover:border-purple-300 hover:shadow-md"
                     }`}
                   >
-                    Select {tier.name} Plan
-                  </Link>
-                </div>
-              ))}
+                    {(isSelected || tier.badge) && (
+                      <span className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow-sm transition-colors ${
+                        isSelected ? "bg-emerald-600 ring-2 ring-emerald-300" : "bg-[#8B3DFF]"
+                      }`}>
+                        {isSelected ? "SELECTED PLAN ✓" : tier.badge}
+                      </span>
+                    )}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-2xl font-serif font-bold text-zinc-900">{tier.name}</h4>
+                        <div className={`w-6 h-6 rounded-full border flex items-center justify-center text-xs font-bold transition-all ${
+                          isSelected ? "bg-emerald-500 border-emerald-500 text-white" : "border-zinc-300 text-transparent"
+                        }`}>
+                          ✓
+                        </div>
+                      </div>
+                      <p className="text-xs text-zinc-500 font-sans min-h-[32px]">{tier.subtitle}</p>
+
+                      <div className="pt-2 border-t border-zinc-100">
+                        <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 font-mono">
+                          {formattedPrice}
+                        </span>
+                        <span className="text-xs font-mono text-zinc-400 ml-1">/{tier.period}</span>
+                      </div>
+
+                      <ul className="space-y-3 pt-4 text-xs font-sans text-zinc-700">
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Pages:</strong> {tier.pages}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Design:</strong> {tier.design}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>SEO:</strong> {tier.seo}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Features:</strong> {tier.extras}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Support:</strong> {tier.support}</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <Link
+                      href={`/contact?package=${encodeURIComponent(tier.name)}&total=${encodeURIComponent(formattedPrice)}`}
+                      className={`w-full text-center py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
+                        isSelected
+                          ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30 ring-2 ring-emerald-400"
+                          : tier.highlight
+                          ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
+                          : "bg-zinc-900 text-white hover:bg-black"
+                      }`}
+                    >
+                      GET {tier.name.toUpperCase()} PLAN →
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           )}
 
           {/* TAB 2: LOCAL SEO */}
           {activeTab === "seo" && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {LOCAL_SEO_TIERS.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all ${
-                    tier.highlight
-                      ? "bg-gradient-to-b from-purple-50/90 via-white to-white border-2 border-purple-500 shadow-xl relative scale-[1.02]"
-                      : "bg-white border border-zinc-200 shadow-2xs"
-                  }`}
-                >
-                  {tier.badge && (
-                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#8B3DFF] text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow-sm">
-                      {tier.badge}
-                    </span>
-                  )}
-                  <div className="space-y-4">
-                    <h4 className="text-2xl font-serif font-bold text-zinc-900">{tier.name}</h4>
-                    <p className="text-xs text-zinc-500 font-sans min-h-[32px]">{tier.subtitle}</p>
-
-                    <div className="pt-2 border-t border-zinc-100">
-                      <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 font-mono">
-                        {formatPrice(tier.usdPrice, currency)}
-                      </span>
-                      <span className="text-xs font-mono text-zinc-400 ml-1">{tier.period}</span>
-                    </div>
-
-                    <ul className="space-y-3 pt-4 text-xs font-sans text-zinc-700">
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>GBP:</strong> {tier.gbp}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Posts:</strong> {tier.posts}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Citations:</strong> {tier.citations}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Reviews:</strong> {tier.reviews}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="text-purple-600 font-bold">✓</span>
-                        <span><strong>Reporting:</strong> {tier.reporting}</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <Link
-                    href="/contact"
-                    className={`w-full text-center py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all ${
-                      tier.highlight
-                        ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6] shadow-md"
-                        : "bg-zinc-900 text-white hover:bg-black"
+              {LOCAL_SEO_TIERS.map((tier) => {
+                const isSelected = selectedPlan?.name === tier.name;
+                const formattedPrice = formatPrice(tier.usdPrice, currency);
+                return (
+                  <div
+                    key={tier.name}
+                    onClick={() => handleSelectPlan(tier.name, formattedPrice, tier.period)}
+                    className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer ${
+                      isSelected
+                        ? "bg-gradient-to-b from-emerald-50/90 via-white to-white border-2 border-emerald-500 shadow-2xl relative scale-[1.03] ring-4 ring-emerald-500/20"
+                        : tier.highlight
+                        ? "bg-gradient-to-b from-purple-50/90 via-white to-white border-2 border-purple-500 shadow-xl relative scale-[1.02] hover:border-purple-600"
+                        : "bg-white border border-zinc-200 shadow-2xs hover:border-purple-300 hover:shadow-md"
                     }`}
                   >
-                    Start {tier.name}
-                  </Link>
-                </div>
-              ))}
+                    {(isSelected || tier.badge) && (
+                      <span className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow-sm transition-colors ${
+                        isSelected ? "bg-emerald-600 ring-2 ring-emerald-300" : "bg-[#8B3DFF]"
+                      }`}>
+                        {isSelected ? "SELECTED PLAN ✓" : tier.badge}
+                      </span>
+                    )}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-2xl font-serif font-bold text-zinc-900">{tier.name}</h4>
+                        <div className={`w-6 h-6 rounded-full border flex items-center justify-center text-xs font-bold transition-all ${
+                          isSelected ? "bg-emerald-500 border-emerald-500 text-white" : "border-zinc-300 text-transparent"
+                        }`}>
+                          ✓
+                        </div>
+                      </div>
+                      <p className="text-xs text-zinc-500 font-sans min-h-[32px]">{tier.subtitle}</p>
+
+                      <div className="pt-2 border-t border-zinc-100">
+                        <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 font-mono">
+                          {formattedPrice}
+                        </span>
+                        <span className="text-xs font-mono text-zinc-400 ml-1">{tier.period}</span>
+                      </div>
+
+                      <ul className="space-y-3 pt-4 text-xs font-sans text-zinc-700">
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>GBP:</strong> {tier.gbp}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Posts:</strong> {tier.posts}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Citations:</strong> {tier.citations}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Reviews:</strong> {tier.reviews}</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="text-purple-600 font-bold">✓</span>
+                          <span><strong>Reporting:</strong> {tier.reporting}</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <Link
+                      href={`/contact?package=${encodeURIComponent(tier.name)}&total=${encodeURIComponent(formattedPrice)}`}
+                      className={`w-full text-center py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
+                        isSelected
+                          ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30 ring-2 ring-emerald-400"
+                          : tier.highlight
+                          ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
+                          : "bg-zinc-900 text-white hover:bg-black"
+                      }`}
+                    >
+                      GET {tier.name.toUpperCase()} →
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           )}
 
           {/* TAB 3: AI AUTOMATIONS */}
           {activeTab === "ai" && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {AI_AUTOMATION_TIERS.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all ${
-                    tier.highlight
-                      ? "bg-gradient-to-b from-purple-50/90 via-white to-white border-2 border-purple-500 shadow-xl relative scale-[1.02]"
-                      : "bg-white border border-zinc-200 shadow-2xs"
-                  }`}
-                >
-                  {tier.badge && (
-                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#8B3DFF] text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow-sm">
-                      {tier.badge}
-                    </span>
-                  )}
-                  <div className="space-y-4">
-                    <h4 className="text-2xl font-serif font-bold text-zinc-900">{tier.name}</h4>
-                    <p className="text-xs text-zinc-500 font-sans min-h-[32px]">{tier.subtitle}</p>
+              {AI_AUTOMATION_TIERS.map((tier) => {
+                const formattedSetup = formatPrice(tier.usdSetup, currency);
+                const formattedMonthly = formatPrice(tier.usdMonthly, currency);
+                const priceLabel = `${formattedSetup} setup + ${formattedMonthly}/mo`;
+                const isSelected = selectedPlan?.name === tier.name;
 
-                    <div className="pt-2 border-t border-zinc-100 space-y-1">
-                      <div className="text-xs font-mono text-zinc-500">
-                        Setup: <strong className="text-zinc-900 text-base">{formatPrice(tier.usdSetup, currency)}</strong>
-                      </div>
-                      <div className="text-xs font-mono text-purple-600 font-bold">
-                        Maintenance: {formatPrice(tier.usdMonthly, currency)}/mo
-                      </div>
-                    </div>
-
-                    <ul className="space-y-2.5 pt-4 text-xs font-sans text-zinc-700">
-                      {tier.features.map((feat) => (
-                        <li key={feat} className="flex items-center gap-2">
-                          <span className="text-purple-600 font-bold">✓</span>
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Link
-                    href="/contact"
-                    className={`w-full text-center py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all ${
-                      tier.highlight
-                        ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6] shadow-md"
-                        : "bg-zinc-900 text-white hover:bg-black"
+                return (
+                  <div
+                    key={tier.name}
+                    onClick={() => handleSelectPlan(tier.name, priceLabel, "setup")}
+                    className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer ${
+                      isSelected
+                        ? "bg-gradient-to-b from-emerald-50/90 via-white to-white border-2 border-emerald-500 shadow-2xl relative scale-[1.03] ring-4 ring-emerald-500/20"
+                        : tier.highlight
+                        ? "bg-gradient-to-b from-purple-50/90 via-white to-white border-2 border-purple-500 shadow-xl relative scale-[1.02] hover:border-purple-600"
+                        : "bg-white border border-zinc-200 shadow-2xs hover:border-purple-300 hover:shadow-md"
                     }`}
                   >
-                    Build {tier.name}
-                  </Link>
-                </div>
-              ))}
+                    {(isSelected || tier.badge) && (
+                      <span className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow-sm transition-colors ${
+                        isSelected ? "bg-emerald-600 ring-2 ring-emerald-300" : "bg-[#8B3DFF]"
+                      }`}>
+                        {isSelected ? "SELECTED PLAN ✓" : tier.badge}
+                      </span>
+                    )}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-2xl font-serif font-bold text-zinc-900">{tier.name}</h4>
+                        <div className={`w-6 h-6 rounded-full border flex items-center justify-center text-xs font-bold transition-all ${
+                          isSelected ? "bg-emerald-500 border-emerald-500 text-white" : "border-zinc-300 text-transparent"
+                        }`}>
+                          ✓
+                        </div>
+                      </div>
+                      <p className="text-xs text-zinc-500 font-sans min-h-[32px]">{tier.subtitle}</p>
+
+                      <div className="pt-2 border-t border-zinc-100 space-y-1">
+                        <div className="text-xs font-mono text-zinc-500">
+                          Setup: <strong className="text-zinc-900 text-base">{formattedSetup}</strong>
+                        </div>
+                        <div className="text-xs font-mono text-purple-600 font-bold">
+                          Maintenance: {formattedMonthly}/mo
+                        </div>
+                      </div>
+
+                      <ul className="space-y-2.5 pt-4 text-xs font-sans text-zinc-700">
+                        {tier.features.map((feat) => (
+                          <li key={feat} className="flex items-center gap-2">
+                            <span className="text-purple-600 font-bold">✓</span>
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <Link
+                      href={`/contact?package=${encodeURIComponent(tier.name)}&total=${encodeURIComponent(priceLabel)}`}
+                      className={`w-full text-center py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
+                        isSelected
+                          ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30 ring-2 ring-emerald-400"
+                          : tier.highlight
+                          ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
+                          : "bg-zinc-900 text-white hover:bg-black"
+                      }`}
+                    >
+                      BUILD {tier.name.toUpperCase()} PLAN →
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           )}
 
@@ -1019,7 +1087,7 @@ export default function PricingPage() {
 
               <div className="pt-2 text-center">
                 <Link
-                  href="/contact"
+                  href="/contact?package=Custom+Software+Discovery"
                   className="inline-block px-8 py-3.5 rounded-full bg-[#8B3DFF] text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#782ee6] transition-all shadow-md active:scale-95"
                 >
                   Book Discovery &amp; Scope Call →
@@ -1084,10 +1152,10 @@ export default function PricingPage() {
                 </div>
 
                 <Link
-                  href="/contact"
-                  className="w-full text-center py-3 rounded-full bg-zinc-900 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-black transition-all"
+                  href={`/contact?package=${encodeURIComponent(bundle.name)}&total=${encodeURIComponent(formatPrice(bundle.bundleUsd, currency))}`}
+                  className="w-full text-center py-3 rounded-full bg-zinc-900 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-black transition-all shadow-md active:scale-95"
                 >
-                  Get {bundle.name} →
+                  GET {bundle.name.toUpperCase()} →
                 </Link>
               </div>
             ))}
@@ -1312,6 +1380,59 @@ export default function PricingPage() {
         buttonText="Book Your Free Call"
         buttonHref="/contact"
       />
+
+      {/* ─── STICKY SELECTION CONVERSION BAR ─── */}
+      <AnimatePresence>
+        {selectedPlan && (
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 80, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-2xl bg-zinc-950/95 text-white p-4 rounded-2xl border border-emerald-500/50 shadow-2xl backdrop-blur-md flex flex-wrap items-center justify-between gap-4"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-bold shrink-0 text-sm">
+                ✓
+              </div>
+              <div>
+                <div className="text-[11px] font-mono font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <span>Selected Package</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                </div>
+                <div className="text-sm font-bold text-white font-serif">
+                  {selectedPlan.name} <span className="text-emerald-300 font-mono font-normal">({selectedPlan.price})</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <a
+                href={`https://wa.me/966532428200?text=${encodeURIComponent(`Hi! I selected the *${selectedPlan.name}* package (${selectedPlan.price}) on your website and would like to proceed.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/25 active:scale-95"
+              >
+                <span>Order via WhatsApp 💬</span>
+              </a>
+              <Link
+                href={`/contact?package=${encodeURIComponent(selectedPlan.name)}`}
+                className="hidden sm:inline-flex px-4 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-mono text-xs font-bold uppercase tracking-wider transition-all"
+              >
+                Book Call 📅
+              </Link>
+              <button
+                type="button"
+                onClick={() => setSelectedPlan(null)}
+                className="w-8 h-8 rounded-full bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-white flex items-center justify-center text-xs font-mono transition-colors"
+                title="Clear selection"
+              >
+                ✕
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Footer */}
       <SiteFooter />

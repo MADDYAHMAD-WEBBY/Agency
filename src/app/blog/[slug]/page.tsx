@@ -30,12 +30,25 @@ export async function generateMetadata({ params }: PageProps) {
   const post = BLOG_POSTS.find((item) => item.slug === slug);
   if (!post) return {};
 
+  const titleMap: Record<string, string> = {
+    "generative-engine-optimization-geo-2026-guide": "2026 Generative Engine Optimization Guide | MHKMarkedia",
+    "why-headless-wordpress-outperforms-monolithic-themes": "Why Headless WordPress Outperforms Themes | MHKMarkedia",
+  };
+
+  const descMap: Record<string, string> = {
+    "generative-engine-optimization-geo-2026-guide": "How to optimize your brand entity so AI engines like ChatGPT, Perplexity, and Gemini cite your business first. Complete 2026 GEO playbook.",
+    "why-headless-wordpress-outperforms-monolithic-themes": "Decoupling WordPress with Next.js frontend unlocks sub-second load speeds, 100/100 Core Web Vitals, and bulletproof cloud security.",
+  };
+
+  const title = titleMap[slug] || (post.title.length > 44 ? `${post.title.slice(0, 42)} | MHKMarkedia` : `${post.title} | MHKMarkedia`);
+  const description = descMap[slug] || (post.excerpt.length > 155 ? `${post.excerpt.slice(0, 150)}.` : post.excerpt);
+
   return {
-    title: `${post.title} | Technical Blog | MHKMarkedia`,
-    description: post.excerpt,
+    title,
+    description,
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title,
+      description,
       images: [post.coverImage],
     },
   };

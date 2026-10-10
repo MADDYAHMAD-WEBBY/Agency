@@ -269,7 +269,7 @@ function ContactPageInner() {
             </a>
 
             <a
-              href="https://wa.me/923000000000"
+              href="https://wa.me/966532428200"
               target="_blank"
               rel="noopener noreferrer"
               title="WhatsApp Chat"
