@@ -62,8 +62,59 @@ export default async function BlogDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `https://mhkmarkedia.com/blog/${post.slug}#article`,
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": post.coverImage,
+        "datePublished": post.publishDate,
+        "author": {
+          "@type": "Person",
+          "name": post.author.name,
+          "jobTitle": post.author.role
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "MHKMarkedia",
+          "url": "https://mhkmarkedia.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mhkmarkedia.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://mhkmarkedia.com/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": `https://mhkmarkedia.com/blog/${post.slug}`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header navigationData={navigationData} />
 
       <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-hidden relative">
@@ -98,7 +149,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
               <div className="w-10 h-10 rounded-full overflow-hidden border border-purple-300 shadow-xs bg-zinc-200 shrink-0">
                 <img
                   src={post.author.avatar}
-                  alt={post.author.name}
+                  alt={`${post.author.name} - ${post.author.role}`}
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -122,7 +173,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
           <div className="mt-8 w-full aspect-[16/9] rounded-2xl overflow-hidden border border-zinc-200 shadow-xl bg-zinc-950 relative">
             <img
               src={post.coverImage}
-              alt={post.title}
+              alt={`${post.title} blog article featured image`}
               className="w-full h-full object-cover object-center"
             />
           </div>

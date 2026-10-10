@@ -343,7 +343,7 @@ export default function TestimonialsSection() {
                 <div className="flex items-center gap-3">
                   <img
                     src={item.avatar}
-                    alt={item.name}
+                    alt={`${item.name} client testimonial photo`}
                     loading="lazy"
                     draggable={false}
                     className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover ring-1 ring-black/10 shrink-0 pointer-events-none"

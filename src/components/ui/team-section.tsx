@@ -154,7 +154,7 @@ export default function TeamSection() {
             <div className="relative w-full aspect-square rounded-[10px] overflow-hidden bg-slate-100 shadow-xs border border-slate-200/80 group-hover:border-purple-200 transition-colors">
               <img
                 src={featuredLeader.image}
-                alt={featuredLeader.name}
+                alt={`${featuredLeader.name} - ${featuredLeader.role}`}
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
@@ -224,7 +224,7 @@ export default function TeamSection() {
                   <div className="relative w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-[10px] overflow-hidden bg-slate-100 shadow-xs shrink-0 border border-slate-200/80 group-hover:border-purple-200 transition-colors">
                     <img
                       src={member.image}
-                      alt={member.name}
+                      alt={`${member.name} - ${member.role}`}
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />

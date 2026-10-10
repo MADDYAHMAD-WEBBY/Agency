@@ -11,7 +11,7 @@ const navigationData: NavigationSection[] = [
   { title: "Home", href: "/", isActive: false },
   { title: "About us", href: "/#about" },
   { title: "Services", href: "/#services" },
-  { title: "Works", href: "/#works" },
+  { title: "Works", href: "/works" },
 
   { title: "Contact", href: "/contact", isActive: true },
 ];
@@ -165,8 +165,55 @@ function ContactPageInner() {
     setMsgSentSuccess(true);
   };
 
+  const contactJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://mhkmarkedia.com/contact#page",
+        "url": "https://mhkmarkedia.com/contact",
+        "name": "Contact CEO M. Hafeez Khan | Free Digital Consultation | MHKMarkedia",
+        "description": "Book a free 30-minute discovery call or send a direct project brief. Low friction, maximum transparency & guaranteed 24-hour response.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MHKMarkedia",
+          "url": "https://mhkmarkedia.com"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://mhkmarkedia.com/#service",
+        "name": "MHKMarkedia Digital Architect Agency",
+        "telephone": "+966532428200",
+        "url": "https://mhkmarkedia.com",
+        "priceRange": "$$$"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mhkmarkedia.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://mhkmarkedia.com/contact"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-purple-600 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
+      />
       {/* Standard Site Header matching entire website */}
       <Header navigationData={navigationData} />
 
@@ -183,7 +230,7 @@ function ContactPageInner() {
             <motion.span
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal"
+              className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal pr-3 sm:pr-4 py-1"
             >
               Free Consultation, No Obligation.
             </motion.span>
@@ -778,7 +825,7 @@ function ContactPageInner() {
               <motion.span
                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal"
+                className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal pr-3 sm:pr-4 py-1"
               >
                 What Happens Next?
               </motion.span>
@@ -852,7 +899,7 @@ function ContactPageInner() {
               <motion.span
                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal"
+                className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal pr-3 sm:pr-4 py-1"
               >
                 &amp; Direct Insights
               </motion.span>

@@ -107,21 +107,15 @@ export default function AboutSection() {
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <AnimatedPillButton 
                   text="Explore More"
-                  onClick={() => {
-                    const el = document.getElementById("contact");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  href="/works"
                 />
                 
-                <button
-                  onClick={() => {
-                    const el = document.getElementById("contact");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
+                <a
+                  href="/contact?package=15-Min+CEO+Strategy+Call"
                   className="px-4 py-2.5 rounded-full border border-zinc-200 text-xs sm:text-sm font-semibold text-zinc-700 hover:text-zinc-900 hover:border-zinc-400 hover:bg-zinc-50 transition-all cursor-pointer shadow-2xs"
                 >
                   🗓️ Book 15-Min Strategy Call
-                </button>
+                </a>
               </div>
             </div>
 
@@ -309,7 +303,7 @@ export default function AboutSection() {
 
                 {/* Hero Animated Pill Button */}
                 <div className="shrink-0 flex items-center">
-                  <AnimatedPillButton text="View Results" />
+                  <AnimatedPillButton text="View Results" href="/works" />
                 </div>
               </div>
             </motion.div>
@@ -354,7 +348,7 @@ export default function AboutSection() {
 
                 {/* Hero Animated Pill Button */}
                 <div className="pt-1 flex justify-center sm:justify-start">
-                  <AnimatedPillButton text="Book Call with CEO" />
+                  <AnimatedPillButton text="Book Call with CEO" href="/contact?package=15-Min+CEO+Strategy+Call" />
                 </div>
               </div>
             </motion.div>

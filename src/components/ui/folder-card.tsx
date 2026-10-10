@@ -85,7 +85,7 @@ export const FolderCard = React.forwardRef<HTMLDivElement, FolderCardProps>(
       countLabel,
       meta,
       cover,
-      coverAlt = "",
+      coverAlt,
       interactive = true,
       className,
       style,
@@ -134,7 +134,7 @@ export const FolderCard = React.forwardRef<HTMLDivElement, FolderCardProps>(
                 {cover ? (
                   <img
                     src={cover}
-                    alt={coverAlt}
+                    alt={coverAlt || `${title} case study cover image`}
                     draggable={false}
                     className="h-full w-full object-cover"
                   />

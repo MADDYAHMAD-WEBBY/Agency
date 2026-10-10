@@ -78,7 +78,7 @@ export function NotchedProjectCard({
         <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-zinc-100 border border-zinc-200/80 shadow-xs group-hover:shadow-md transition-shadow">
           <img
             src={image}
-            alt={screen ? "" : imageAlt}
+            alt={imageAlt || `${title} service project cover`}
             className={cn(
               "absolute inset-0 h-full w-full object-cover",
               tone,
@@ -91,7 +91,7 @@ export function NotchedProjectCard({
           {screen && (
             <img
               src={screen.src}
-              alt={screen.alt}
+              alt={screen.alt || `${title} screen interface preview`}
               className={cn(
                 "absolute bottom-0 right-0 w-[82%] origin-bottom-right drop-shadow-[0_18px_40px_rgba(0,0,0,0.5)] group-hover:scale-[1.07]",
                 tone,

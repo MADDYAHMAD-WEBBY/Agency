@@ -32,9 +32,58 @@ const navigationData: NavigationSection[] = [
   { title: "Contact", href: "/contact", isActive: false },
 ];
 
+const worksJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://mhkmarkedia.com/works#page",
+      "url": "https://mhkmarkedia.com/works",
+      "name": "Featured Works & E-Commerce Case Studies | MHKMarkedia",
+      "description": "Explore our portfolio of Amazon FBA global expansions, Saudi Arabia marketplace launches, Headless Next.js e-commerce migrations, and high-converting FinTech web applications.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MHKMarkedia",
+        "url": "https://mhkmarkedia.com"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": CASE_STUDIES.map((cs, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": `https://mhkmarkedia.com/case-studies/${cs.slug}`,
+          "name": cs.title,
+          "description": cs.summary
+        }))
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mhkmarkedia.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Works",
+          "item": "https://mhkmarkedia.com/works"
+        }
+      ]
+    }
+  ]
+};
+
 export default function WorksPage() {
   return (
     <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-purple-600 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(worksJsonLd) }}
+      />
       {/* Header */}
       <Header navigationData={navigationData} />
 
@@ -53,7 +102,7 @@ export default function WorksPage() {
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-900 tracking-tight leading-tight">
             Data-Driven Systems Built for{" "}
-            <span className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal">
+            <span className="inline-block bg-gradient-to-r from-cyan-600 via-blue-600 via-purple-600 via-fuchsia-600 to-pink-600 bg-[length:200%_auto] bg-clip-text text-transparent font-serif italic font-normal pr-3 sm:pr-4 py-1">
               Measurable Client Growth.
             </span>
           </h1>
@@ -61,19 +110,6 @@ export default function WorksPage() {
           <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-2xl mx-auto leading-relaxed font-sans mt-3 sm:mt-4">
             Explore our real-world client implementations: from cross-border Amazon FBA expansions and Saudi marketplace launches to sub-second Headless Next.js storefronts and bank-grade FinTech portals.
           </p>
-
-          {/* Key Value Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-5 text-xs font-mono text-zinc-600">
-            <span className="flex items-center gap-1.5 bg-zinc-100/90 px-3.5 py-1.5 rounded-full border border-zinc-200/80">
-              <span className="text-emerald-500">✓</span> Real Revenue Metrics
-            </span>
-            <span className="flex items-center gap-1.5 bg-zinc-100/90 px-3.5 py-1.5 rounded-full border border-zinc-200/80">
-              <span className="text-emerald-500">✓</span> Sub-Second Core Web Vitals
-            </span>
-            <span className="flex items-center gap-1.5 bg-zinc-100/90 px-3.5 py-1.5 rounded-full border border-zinc-200/80">
-              <span className="text-emerald-500">✓</span> 100% Client Asset Ownership
-            </span>
-          </div>
         </section>
 
         {/* 2. CASE STUDIES GRID WITH FOLDER CARDS */}

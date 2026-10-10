@@ -225,7 +225,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </Link>
 
             <Link
-              href="#pricing"
+              href="/pricing"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-zinc-300 bg-white/80 hover:bg-zinc-100 text-zinc-800 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all"
             >
               <span>Explore Engagement & Pricing</span>

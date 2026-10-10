@@ -451,7 +451,7 @@ export function WorksWheel({
                   <span className="bg-zinc-900 shadow-2xl relative block size-full overflow-hidden rounded-2xl ring-1 ring-black/5 group-hover:ring-purple-500/50 transition-[border-color,box-shadow] duration-300 group-hover:shadow-[0_24px_50px_rgba(147,51,234,0.18)] will-change-transform">
                     <img
                       src={item.image}
-                      alt={item.title}
+                      alt={`${item.title} portfolio case study showcase image`}
                       draggable={false}
                       className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />

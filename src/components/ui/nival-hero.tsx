@@ -545,7 +545,7 @@ export default function NivalHeroSection() {
           >
             <img
               src={HERO_FRONT}
-              alt=""
+              alt="Robo-O digital avatar preview"
               className="absolute left-[-4px] top-[5px] w-[116px] h-[147px] object-contain drop-shadow-[3px_5px_8px_rgba(35,57,79,0.12)]"
             />
           </div>

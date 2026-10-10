@@ -80,5 +80,10 @@ export default function AnimatedPillButton({
     );
   }
 
-  return <button type="button" className="bg-transparent border-0 p-0 m-0">{buttonContent}</button>;
+  return (
+    <button type="button" onClick={onClick} className="bg-transparent border-0 p-0 m-0 cursor-pointer">
+      {buttonContent}
+    </button>
+  );
 }
+

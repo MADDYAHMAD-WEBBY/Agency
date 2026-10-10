@@ -48,6 +48,7 @@ const footerCategories = [
     title: "Company & Resources",
     links: [
       { text: "About Us", href: "/about" },
+      { text: "Featured Works & Case Studies", href: "/works" },
       { text: "Interactive Package Calculator", href: "/pricing" },
       { text: "Tech Insights & Guides", href: "/blog" },
       { text: "Schedule Strategy Call", href: "/contact", highlight: true },

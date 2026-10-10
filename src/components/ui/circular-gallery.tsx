@@ -299,7 +299,7 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                   {/* Background Image with smooth zoom on hover */}
                   <img
                     src={item.photo.url}
-                    alt={item.photo.text}
+                    alt={item.photo.text || `${item.common} industry vertical showcase`}
                     loading="lazy"
                     draggable={false}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

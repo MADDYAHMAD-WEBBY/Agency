@@ -362,7 +362,7 @@ export default function Header({ navigationData }: HeaderProps) {
 
           {/* Works */}
           <Link
-            href="/#works"
+            href="/works"
             className="px-5 py-2 text-sm font-medium rounded-full text-zinc-700 hover:text-purple-950 hover:bg-white/60 transition-all duration-300"
           >
             Works
@@ -529,7 +529,7 @@ export default function Header({ navigationData }: HeaderProps) {
 
                 {/* Works */}
                 <Link
-                  href="/#works"
+                  href="/works"
                   onClick={() => setIsOpen(false)}
                   className="px-4 py-2.5 text-sm font-semibold rounded-xl text-zinc-800 hover:bg-zinc-100 transition-colors"
                 >

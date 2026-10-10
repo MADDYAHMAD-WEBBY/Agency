@@ -59,7 +59,7 @@ export default function BlogPostsGrid({ posts, categories }: BlogPostsGridProps)
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-100">
                   <img
                     src={post.coverImage}
-                    alt={post.title}
+                    alt={`${post.title} article cover image`}
                     loading="lazy"
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />

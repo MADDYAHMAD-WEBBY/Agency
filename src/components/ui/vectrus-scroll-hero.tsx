@@ -51,11 +51,11 @@ export default function VectrusScrollHero() {
   const navTextColor = isLightTheme ? DARK : "#FFFFFF";
 
   const navLinks = [
-    { label: "VECTRUS ENERGY", active: true },
-    { label: "VECTRUS UPSTREAM" },
-    { label: "VECTRUS MARKETS" },
-    { label: "VECTRUS SYSTEMS" },
-    { label: "VECTRUS+" },
+    { label: "ABOUT", href: "/#about", active: true },
+    { label: "SERVICES", href: "/#services" },
+    { label: "WORKS", href: "/works" },
+    { label: "PRICING", href: "/pricing" },
+    { label: "CONTACT", href: "/contact" },
   ];
 
   if (!mounted) {
@@ -125,7 +125,7 @@ export default function VectrusScrollHero() {
               {navLinks.map((link, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={link.href || "#"}
                   className={`relative text-xs tracking-[0.15em] uppercase font-medium transition-opacity duration-200 hover:opacity-70 animate-nav-entry`}
                   style={{
                     animationDelay: `${i * 80 + 100}ms`,
@@ -343,12 +343,15 @@ export default function VectrusScrollHero() {
                   transitionDelay: "300ms",
                 }}
               >
-                <span className="text-sm tracking-[0.3em] text-white/80 uppercase font-medium">
-                  Contact Nordvik
-                </span>
-                <button className="w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                  <ArrowRight className="w-[16px] h-[16px] text-gray-800" />
-                </button>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-3 text-sm tracking-[0.3em] text-white/80 hover:text-white uppercase font-medium transition-colors group"
+                >
+                  <span>Contact Hafeez</span>
+                  <span className="w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <ArrowRight className="w-[16px] h-[16px] text-gray-800" />
+                  </span>
+                </a>
               </div>
             </div>
           </section>
@@ -387,7 +390,7 @@ export default function VectrusScrollHero() {
             {navLinks.map((link, idx) => (
               <a
                 key={idx}
-                href="#"
+                href={link.href || "#"}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`text-2xl sm:text-3xl font-light tracking-wide uppercase transition-all duration-300 ${
                   link.active ? "text-white" : "text-white/60 hover:text-white"

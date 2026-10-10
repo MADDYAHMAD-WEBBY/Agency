@@ -12,7 +12,7 @@ const navigationData: NavigationSection[] = [
   { title: "Home", href: "/", isActive: false },
   { title: "About us", href: "/about", isActive: true },
   { title: "Services", href: "/#services" },
-  { title: "Works", href: "/#works" },
+  { title: "Works", href: "/works" },
 
   { title: "Contact", href: "/contact", isActive: false },
 ];
@@ -157,9 +157,57 @@ const DIFFERENTIATORS = [
   },
 ];
 
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://mhkmarkedia.com/about#page",
+      "url": "https://mhkmarkedia.com/about",
+      "name": "About CEO M. Hafeez Khan | 16+ Yrs Digital Architecture Experience",
+      "description": "Meet M. Hafeez Khan, CEO & Lead Architect at MHKMarkedia with 16+ years of experience engineering high-performance web platforms, Headless Next.js, and organic Local SEO.",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://mhkmarkedia.com/#hafeezkhan",
+        "name": "M. Hafeez Khan",
+        "jobTitle": "CEO & Lead Digital Architect",
+        "description": "CEO & Lead Architect with over 16+ years experience in Full-Stack Web Development, Headless WordPress, and Local & Global SEO.",
+        "image": "https://mhkmarkedia.com/images/ceo.webp",
+        "sameAs": ["https://www.linkedin.com/in/hafeezkhan"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MHKMarkedia",
+        "url": "https://mhkmarkedia.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mhkmarkedia.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://mhkmarkedia.com/about"
+        }
+      ]
+    }
+  ]
+};
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-purple-600 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
       {/* Header */}
       <Header navigationData={navigationData} />
 

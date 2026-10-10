@@ -480,8 +480,59 @@ export default function PricingPage() {
     return `https://wa.me/${phone}?text=${encodeURIComponent(messageText)}`;
   };
 
+  const pricingJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://mhkmarkedia.com/pricing#page",
+        "url": "https://mhkmarkedia.com/pricing",
+        "name": "Simple, Transparent Pricing & Custom Calculator | MHKMarkedia",
+        "description": "Transparent web development, local SEO, and AI workflow packages. Build your custom estimate with zero hidden fees.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MHKMarkedia",
+          "url": "https://mhkmarkedia.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mhkmarkedia.com/pricing#faq",
+        "mainEntity": PRICING_FAQS.map((faq) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mhkmarkedia.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pricing",
+            "item": "https://mhkmarkedia.com/pricing"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-purple-600 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }}
+      />
       {/* Header */}
       <Header navigationData={navigationData} />
 

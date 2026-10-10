@@ -17,17 +17,17 @@ const orbits = [
     size: "w-[640px] h-[640px] sm:w-[760px] sm:h-[760px] md:w-[880px] md:h-[880px]",
     duration: 24,
     icons: [
-      { src: "https://cdn.21st.dev/assets/mirror/cd/cdf9d8e18269a990e7854c0255d64513e5f8b6052b8580dd8f24480a85ec130a.svg", alt: "Figma", angle: 0 },
-      { src: "https://cdn.21st.dev/assets/mirror/83/83a5f27a428146febbe4672046c78bfa796a7931aebab5705655cab4fffb5794.svg", alt: "Slack", angle: -90 },
+      { src: "https://cdn.21st.dev/assets/mirror/cd/cdf9d8e18269a990e7854c0255d64513e5f8b6052b8580dd8f24480a85ec130a.svg", alt: "Figma design tool logo", angle: 0 },
+      { src: "https://cdn.21st.dev/assets/mirror/83/83a5f27a428146febbe4672046c78bfa796a7931aebab5705655cab4fffb5794.svg", alt: "Slack communication platform logo", angle: -90 },
     ],
   },
   {
     size: "w-[760px] h-[760px] sm:w-[900px] sm:h-[900px] md:w-[1040px] md:h-[1040px]",
     duration: 30,
     icons: [
-      { src: "https://cdn.21st.dev/assets/mirror/b5/b58af96de173670c64254e6d93ca4e4daf57b2637cc4fb90529f3232ea1bdf3f.svg", alt: "Claude", angle: -60 },
-      { src: "https://cdn.21st.dev/assets/mirror/a2/a21f0f00193ad70e39d2d82b6437464853f77bf6569adeb1ecc6d1f7bc0f5226.svg", alt: "react", angle: 0 },
-      { src: "https://cdn.21st.dev/assets/mirror/96/96c6123c466766d6714874ae77ba88be923c98313f09bbd72c9860ff26797d53.svg", alt: "python", angle: 60 },
+      { src: "https://cdn.21st.dev/assets/mirror/b5/b58af96de173670c64254e6d93ca4e4daf57b2637cc4fb90529f3232ea1bdf3f.svg", alt: "Claude AI assistant logo", angle: -60 },
+      { src: "https://cdn.21st.dev/assets/mirror/a2/a21f0f00193ad70e39d2d82b6437464853f77bf6569adeb1ecc6d1f7bc0f5226.svg", alt: "React JavaScript library logo", angle: 0 },
+      { src: "https://cdn.21st.dev/assets/mirror/96/96c6123c466766d6714874ae77ba88be923c98313f09bbd72c9860ff26797d53.svg", alt: "Python programming language logo", angle: 60 },
     ],
   },
 ];

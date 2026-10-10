@@ -245,7 +245,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
             </Link>
 
             <Link
-              href="#pricing"
+              href="/pricing"
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-purple-200 bg-white/90 hover:bg-purple-50 text-purple-950 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all shadow-2xs"
             >
               <span>Explore Packages & Pricing</span>

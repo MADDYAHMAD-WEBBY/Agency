@@ -73,8 +73,58 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `https://mhkmarkedia.com/case-studies/${cs.slug}#article`,
+        "headline": cs.title,
+        "description": cs.summary,
+        "image": cs.coverImage,
+        "author": {
+          "@type": "Person",
+          "name": "M. Hafeez Khan",
+          "jobTitle": "CEO & Lead Digital Architect"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "MHKMarkedia",
+          "url": "https://mhkmarkedia.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mhkmarkedia.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Works",
+            "item": "https://mhkmarkedia.com/works"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": cs.title,
+            "item": `https://mhkmarkedia.com/case-studies/${cs.slug}`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-purple-600 selection:text-white relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header navigationData={navigationData} />
 
       <main className="w-full -mt-[68px] sm:-mt-[96px] pt-28 sm:pt-36 pb-0 overflow-hidden relative">
@@ -83,7 +133,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           <div className="w-full h-full relative">
             <img
               src={cs.coverImage}
-              alt=""
+              alt={`${cs.title} background cover image`}
               className="w-full h-full object-cover object-top filter blur-[8px] opacity-40 sm:opacity-55 scale-110"
             />
             {/* Smooth Edge Fade Gradients */}
@@ -97,7 +147,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           {/* Top Back Button Navigation */}
           <div className="mb-6">
             <Link
-              href="/#works"
+              href="/works"
               className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-mono font-bold tracking-widest text-zinc-600 hover:text-purple-600 uppercase transition-colors group"
             >
               <div className="w-8 h-8 rounded-full border border-zinc-200 bg-zinc-50 group-hover:border-purple-300 group-hover:bg-purple-50 flex items-center justify-center transition-all">
@@ -120,7 +170,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
             </div>
 
             <Link
-              href="/#contact"
+              href={`/contact?package=${encodeURIComponent(cs.title)}`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 text-white text-xs font-mono font-bold tracking-wider uppercase hover:bg-purple-700 active:scale-95 transition-all shadow-md hover:shadow-purple-500/25"
             >
               <span>Request Custom Build</span>
