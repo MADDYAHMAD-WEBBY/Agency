@@ -735,28 +735,16 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                           </ul>
                         </div>
 
-                        <div className="mt-6 pt-4 border-t border-zinc-200/30 space-y-2">
-                          <a
-                            href={`https://wa.me/966532428200?text=${encodeURIComponent(`Hi! I am interested in ordering the *${plan.title}* plan for *${service.title}* (${plan.price || "Custom Quote"}). Please confirm availability and next steps.`)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`w-full text-center flex items-center justify-center gap-1.5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
-                              plan.highlight
-                                ? "bg-emerald-500 hover:bg-emerald-400 text-white shadow-emerald-500/30 ring-2 ring-emerald-300"
-                                : "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/20"
-                            }`}
-                          >
-                            <span>Order via WhatsApp 💬</span>
-                          </a>
+                        <div className="mt-6 pt-4 border-t border-zinc-200/30">
                           <Link
                             href={`/contact?package=${encodeURIComponent(plan.title)}&service=${encodeURIComponent(service.title)}`}
-                            className={`w-full text-center block py-2 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider transition-all ${
+                            className={`w-full text-center block py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
                               plan.highlight
-                                ? "bg-purple-800/60 hover:bg-purple-700/80 text-purple-100"
-                                : "bg-zinc-100 hover:bg-zinc-200 text-zinc-700 border border-zinc-200"
+                                ? "bg-purple-600 hover:bg-purple-500 text-white shadow-purple-600/30 ring-2 ring-purple-400"
+                                : "bg-zinc-900 hover:bg-black text-white"
                             }`}
                           >
-                            Book Call 📅
+                            Get Started →
                           </Link>
                         </div>
                       </div>

@@ -733,18 +733,19 @@ export default function PricingPage() {
 
                 {/* Action Buttons */}
                 <div className="space-y-3 pt-2">
-                  <a
-                    href={generateWhatsAppLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href={selectedItems.length > 0
+                      ? `/contact?package=${encodeURIComponent(`Custom Estimate: ${selectedItems.map(i => `${i.title} (x${i.qty})`).join(', ')}`)}&total=${encodeURIComponent(formatPrice(totalUsd, currency))}`
+                      : `/contact?package=Custom+Estimate`
+                    }
                     className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full bg-[#8B3DFF] text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#782ee6] transition-all shadow-md active:scale-95"
                   >
-                    <span>Order on WhatsApp</span>
+                    <span>Get Started</span>
                     <span>→</span>
-                  </a>
+                  </Link>
 
                   <Link
-                    href="/contact"
+                    href="/contact?package=Custom+Estimate+Strategy+Call"
                     className="w-full flex items-center justify-center py-3.5 rounded-full border border-purple-300 bg-purple-50/60 hover:bg-purple-100 text-purple-950 font-mono text-xs font-bold uppercase tracking-wider transition-all"
                   >
                     Book a Free Strategy Call
@@ -753,7 +754,7 @@ export default function PricingPage() {
 
                 {/* Disclaimer Note */}
                 <p className="text-[11px] text-zinc-400 font-sans italic text-center leading-relaxed">
-                  Prices are per unit in {CURRENCY_CONFIG[currency].suffix}. Final scope and delivery timeline are confirmed on WhatsApp or during your free consultation.
+                  Prices are per unit in {CURRENCY_CONFIG[currency].suffix}. Final scope and delivery timeline are confirmed during your project setup or free consultation.
                 </p>
               </div>
             </div>
@@ -1458,14 +1459,12 @@ export default function PricingPage() {
             </div>
 
             <div className="flex items-center gap-2">
-              <a
-                href={`https://wa.me/966532428200?text=${encodeURIComponent(`Hi! I selected the *${selectedPlan.name}* package (${selectedPlan.price}) on your website and would like to proceed.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/25 active:scale-95"
+              <Link
+                href={`/contact?package=${encodeURIComponent(selectedPlan.name)}&total=${encodeURIComponent(selectedPlan.price)}`}
+                className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/25 active:scale-95"
               >
-                <span>Order via WhatsApp 💬</span>
-              </a>
+                <span>Get Started →</span>
+              </Link>
               <Link
                 href={`/contact?package=${encodeURIComponent(selectedPlan.name)}`}
                 className="hidden sm:inline-flex px-4 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-mono text-xs font-bold uppercase tracking-wider transition-all"
