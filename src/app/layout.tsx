@@ -111,6 +111,14 @@ export default function RootLayout({
               "logo": "https://mhkmarkedia.com/images/ceo.webp",
               "image": "https://mhkmarkedia.com/images/ceo.webp",
               "description": "High-performance digital agency specializing in custom Web Development, Headless WordPress, Local SEO, and AI Search Engine Optimization (GEO).",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Al-Aziziyah",
+                "addressLocality": "Jeddah",
+                "postalCode": "23337",
+                "addressCountry": "SA",
+                "addressRegion": "Makkah Province"
+              },
               "founder": {
                 "@type": "Person",
                 "name": "M. Hafeez Khan",

@@ -19,12 +19,12 @@ const navigationData: NavigationSection[] = [
 ];
 
 /* ─── CURRENCIES & RATES ─── */
-type Currency = "USD" | "PKR" | "AED";
+type Currency = "USD" | "PKR" | "SAR";
 
 const CURRENCY_CONFIG: Record<Currency, { symbol: string; rate: number; label: string; suffix: string }> = {
   USD: { symbol: "$", rate: 1, label: "USD ($)", suffix: "USD" },
   PKR: { symbol: "Rs ", rate: 280, label: "PKR (Rs)", suffix: "PKR" },
-  AED: { symbol: "AED ", rate: 3.67, label: "AED (AED)", suffix: "AED" },
+  SAR: { symbol: "SAR ", rate: 3.75, label: "SAR (SAR)", suffix: "SAR" },
 };
 
 function formatPrice(usdAmount: number, currency: Currency): string {

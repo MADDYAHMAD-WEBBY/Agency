@@ -58,8 +58,11 @@ const homepageJsonLd = {
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Al-Aziziyah",
+        "addressLocality": "Jeddah",
+        "postalCode": "23337",
         "addressCountry": "SA",
-        "addressRegion": "Riyadh"
+        "addressRegion": "Makkah Province"
       },
       "sameAs": [
         "https://www.linkedin.com/in/hafeezkhan",

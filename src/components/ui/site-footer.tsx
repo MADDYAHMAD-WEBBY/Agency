@@ -67,7 +67,12 @@ const socials = [
 const contactInfo = [
   { icon: Mail, text: "hello@mhkmarkedia.com", href: "mailto:hello@mhkmarkedia.com" },
   { icon: FaWhatsapp, text: "+966 53 242 8200", href: "https://wa.me/966532428200", isExternal: true },
-  { icon: MapPin, text: "Worldwide / Remote Execution", href: "/contact" },
+  {
+    icon: MapPin,
+    text: "Al-Aziziyah, Jeddah Kingdom of Saudi Arabia (KSA) 23337",
+    href: "https://maps.google.com/?q=Al-Aziziyah,+Jeddah+23337+Saudi+Arabia",
+    isExternal: true,
+  },
 ];
 
 export default function SiteFooter() {
@@ -165,10 +170,14 @@ export default function SiteFooter() {
           ))}
         </div>
 
-        {/* Bottom Rights & Global Presence Bar (Centered) */}
-        <div className="pt-8 flex items-center justify-center text-center text-xs text-zinc-500 font-mono">
+        {/* Bottom Rights & Global Presence Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-mono border-t border-zinc-900 mt-2">
+          <div className="flex items-center gap-2 text-zinc-400">
+            <MapPin className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+            <span>Al-Aziziyah, Jeddah Kingdom of Saudi Arabia (KSA) 23337</span>
+          </div>
           <div className="flex items-center justify-center gap-2">
-            <Globe2 className="w-4 h-4 text-zinc-400 shrink-0" />
+            <Globe2 className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
             <span>&copy; {new Date().getFullYear()} MHKMarkedia. Designed &amp; Engineered for Scale.</span>
           </div>
         </div>
