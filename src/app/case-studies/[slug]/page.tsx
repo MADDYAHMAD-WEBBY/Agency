@@ -134,7 +134,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
             <img
               src={cs.coverImage}
               alt={`${cs.title} background cover image`}
-              className="w-full h-full object-cover object-top filter blur-[8px] opacity-40 sm:opacity-55 scale-110"
+              className="w-full h-full object-cover object-top filter blur-[2px] opacity-45 sm:opacity-60 scale-105"
             />
             {/* Smooth Edge Fade Gradients */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
@@ -207,7 +207,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-purple-400 mb-6 flex items-center gap-2">
                 <span>📋</span> Project Snapshot
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs sm:text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-[14px]">
                 <div>
                   <div className="text-zinc-500 font-mono text-[11px] uppercase tracking-wider mb-1">Client</div>
                   <div className="font-bold text-white">{cs.snapshot.client}</div>
@@ -260,7 +260,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                 <div className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight my-1">
                   {m.value}
                 </div>
-                <div className="text-xs text-zinc-600 font-medium pt-1">
+                <div className="text-[14px] text-zinc-600 font-medium pt-1">
                   {m.desc}
                 </div>
               </div>
@@ -275,7 +275,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight">
                 Executive Overview
               </h2>
-              <p className="text-zinc-700 leading-relaxed max-w-4xl text-sm sm:text-base">
+              <p className="text-zinc-700 leading-relaxed max-w-4xl text-base sm:text-lg">
                 {cs.summary}
               </p>
             </div>
@@ -411,7 +411,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               <h3 className="text-xl sm:text-2xl font-bold font-serif text-zinc-900">
                 Overcoming Cross-Border Selling Obstacles
               </h3>
-              <p className="text-zinc-700 leading-relaxed text-xs sm:text-sm">
+              <p className="text-zinc-700 leading-relaxed text-[14px]">
                 {cs.challenge}
               </p>
             </div>
@@ -443,12 +443,12 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                         </h4>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-sans">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed font-sans">
                         {step.desc}
                       </p>
 
                       {step.bullets && step.bullets.length > 0 && (
-                        <ul className="space-y-2 pt-2 text-xs font-sans text-zinc-700">
+                        <ul className="space-y-2 pt-2 text-[14px] font-sans text-zinc-700">
                           {step.bullets.map((b, bIdx) => (
                             <li key={bIdx} className="flex items-start gap-2">
                               <span className="text-purple-600 font-bold shrink-0">✓</span>
@@ -459,7 +459,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                       )}
 
                       {step.outcome && (
-                        <div className="mt-4 p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 text-xs text-emerald-950 font-medium flex items-center gap-2">
+                        <div className="mt-4 p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 text-[14px] text-emerald-950 font-medium flex items-center gap-2">
                           <span className="text-emerald-600 font-bold">🎯 Outcome:</span>
                           <span>{step.outcome}</span>
                         </div>
@@ -525,7 +525,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                   {cs.whatMadeItWork.map((item, idx) => (
                     <div key={idx} className="p-4 rounded-2xl bg-white/10 border border-white/15 space-y-1.5 backdrop-blur-xs">
                       <div className="text-xs font-mono font-bold text-purple-300">0{idx + 1}</div>
-                      <p className="text-xs text-zinc-200 leading-relaxed font-sans">{item}</p>
+                      <p className="text-[14px] text-zinc-200 leading-relaxed font-sans">{item}</p>
                     </div>
                   ))}
                 </div>

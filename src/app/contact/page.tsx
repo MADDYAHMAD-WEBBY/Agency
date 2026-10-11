@@ -91,6 +91,7 @@ function ContactPageInner() {
   const selectedService = searchParams.get("service");
   const selectedIndustry = searchParams.get("industry");
   const selectedTotal = searchParams.get("total");
+  const selectedScope = searchParams.get("scope");
 
   const [activeTab, setActiveTab] = useState<"call" | "message">("call");
 
@@ -119,18 +120,71 @@ function ContactPageInner() {
   const [msgSentSuccess, setMsgSentSuccess] = useState(false);
 
   useEffect(() => {
-    if (selectedPackage || selectedService || selectedIndustry) {
-      const parts = [];
-      if (selectedPackage) parts.push(`Package: ${selectedPackage}`);
-      if (selectedService) parts.push(`Service: ${selectedService}`);
-      if (selectedIndustry) parts.push(`Industry: ${selectedIndustry}`);
-      if (selectedTotal) parts.push(`Est. Total: ${selectedTotal}`);
+    if (selectedPackage || selectedService || selectedIndustry || selectedScope) {
+      // Resolve Service & Scope if not directly passed in searchParams
+      let resolvedService = selectedService || "";
+      let resolvedScope = selectedScope || "";
+      const pkgLower = (selectedPackage || "").toLowerCase();
+      const totalStr = selectedTotal || "";
 
-      const summary = parts.join(" | ");
-      setBookingNote(`Hi, I'm interested in discussing the ${summary}. Ready for kickoff!`);
-      setMsgContent(`Hi, I would like to get started with ${summary}. Please send over the onboarding details and kickoff schedule.`);
+      if (!resolvedService) {
+        if (totalStr.includes("3,299") || totalStr.includes("3299")) {
+          resolvedService = "E-Commerce";
+          if (!resolvedScope) resolvedScope = "Product Hunting, Product Research, Product Sourcing, Product Listing, Listing Optimization, PPC (Advertisement), Account Management";
+        } else if (totalStr.includes("1,999") || totalStr.includes("1999")) {
+          resolvedService = "E-Commerce";
+          if (!resolvedScope) resolvedScope = "Product Hunting, Product Research, Product Sourcing, Product Listing, Listing Optimization, PPC (Advertisement), Account Management";
+        } else if (totalStr.includes("1,899") || totalStr.includes("1899")) {
+          resolvedService = "Web Development";
+          if (!resolvedScope) resolvedScope = "12+ Custom Pages, Custom UI + Smooth Micro-Animations, Advanced SEO + Schema Markup, Direct Booking Engine + CRM Pipeline Sync, 60 Days Post-Launch Support";
+        } else if (totalStr.includes("999")) {
+          resolvedService = "Web Development";
+          if (!resolvedScope) resolvedScope = "6–12 Custom Pages, 100% Fully Custom UI/UX, Advanced Core Web Vitals SEO, Blog System + WhatsApp Chatbot, 30 Days Post-Launch Support";
+        } else if (totalStr.includes("499")) {
+          resolvedService = "Web Development";
+          if (!resolvedScope) resolvedScope = "1–5 Custom Pages, Customized Fast Template, Basic Technical & On-Page SEO, Click-to-Call & Contact Form, 15 Days Post-Launch Support";
+        } else if (totalStr.includes("299") || totalStr.includes("599")) {
+          resolvedService = "Local SEO & Maps";
+          if (!resolvedScope) resolvedScope = "Google Map Pack Strategy, Local Citations Building, Geotagged Posts & Review Automation";
+        } else if (pkgLower.includes("ecom") || pkgLower.includes("store")) {
+          resolvedService = "E-Commerce";
+        } else if (pkgLower.includes("seo") || pkgLower.includes("map")) {
+          resolvedService = "Local SEO & Maps";
+        } else if (pkgLower.includes("web") || pkgLower.includes("landing")) {
+          resolvedService = "Web Development";
+        } else if (pkgLower.includes("ai") || pkgLower.includes("bot")) {
+          resolvedService = "AI Workflows & Bots";
+        } else if (pkgLower.includes("software") || pkgLower.includes("saas")) {
+          resolvedService = "Custom Software / SaaS";
+        }
+      }
+
+      const infoLines: string[] = [];
+      if (resolvedService) infoLines.push(`Project: ${resolvedService}`);
+      if (selectedPackage) infoLines.push(`Package: ${selectedPackage}`);
+      if (resolvedScope) infoLines.push(`Scope: ${resolvedScope}`);
+      if (selectedIndustry) infoLines.push(`Industry: ${selectedIndustry}`);
+      if (selectedTotal) infoLines.push(`Est. Total: ${selectedTotal}`);
+
+      const noteText = [
+        `Hi Hamad, I'm interested in discussing this project:`,
+        ...infoLines.map((line) => `• ${line}`),
+        `Ready for kickoff! Let's discuss the roadmap and timeline.`
+      ].join("\n");
+
+      setBookingNote(noteText);
+
+      setMsgContent(
+        `Hi Hamad,\n\nI would like to get started with this project:\n` +
+        infoLines.map((line) => `• ${line}`).join("\n") +
+        `\n\nPlease send over the onboarding details and kickoff schedule.`
+      );
+
+      if (resolvedService) {
+        setMsgService(resolvedService);
+      }
     }
-  }, [selectedPackage, selectedService, selectedIndustry, selectedTotal]);
+  }, [selectedPackage, selectedService, selectedIndustry, selectedTotal, selectedScope]);
 
   // Calendar Navigation
   const currentYear = currentDate.getFullYear();
@@ -651,11 +705,11 @@ function ContactPageInner() {
                         PROJECT NOTES (OPTIONAL)
                       </label>
                       <textarea
-                        rows={3}
+                        rows={4}
                         placeholder="Briefly describe what you'd like to discuss..."
                         value={bookingNote}
                         onChange={(e) => setBookingNote(e.target.value)}
-                        className="w-full px-4 py-3 rounded-2xl border border-purple-100 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500/20 text-sm text-zinc-900 placeholder:text-zinc-400 bg-white transition-all resize-none"
+                        className="w-full px-4 py-3 rounded-2xl border border-purple-100 focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-500/20 text-xs sm:text-sm leading-relaxed text-zinc-900 placeholder:text-zinc-400 bg-white transition-all resize-y min-h-[105px]"
                       />
                     </div>
 

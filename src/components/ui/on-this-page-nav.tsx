@@ -42,10 +42,10 @@ export default function OnThisPageNav({ items }: OnThisPageNavProps) {
 
   return (
     <div className="hidden lg:block lg:col-span-4 sticky top-28 sm:top-32 self-start space-y-4 pl-6 border-l border-zinc-200/80 max-h-[calc(100vh-150px)] overflow-y-auto scrollbar-thin">
-      <div className="text-xs font-mono font-bold text-zinc-400 tracking-wider uppercase mb-4 sticky top-0 bg-white/90 backdrop-blur-xs py-1 z-10">
+      <div className="text-[11px] font-sans font-bold text-zinc-400 tracking-wider uppercase mb-4 sticky top-0 bg-white/90 backdrop-blur-xs py-1 z-10">
         ON THIS PAGE
       </div>
-      <nav className="space-y-3.5 text-xs font-mono">
+      <nav className="space-y-3.5 text-[14px] font-sans">
         {items.map((item) => {
           const isActive = activeId === item.id;
           return (
@@ -62,11 +62,11 @@ export default function OnThisPageNav({ items }: OnThisPageNavProps) {
               }}
               className={`flex items-start gap-2.5 transition-all duration-200 ${
                 isActive
-                  ? "border-l-2 border-black -ml-[25px] pl-5 font-bold text-black"
-                  : "text-zinc-500 font-normal hover:text-zinc-900"
+                  ? "border-l-2 border-[#8B3DFF] -ml-[25px] pl-5 font-semibold text-[#8B3DFF]"
+                  : "text-zinc-600 font-medium hover:text-zinc-900"
               }`}
             >
-              <span className={`shrink-0 ${isActive ? "text-black" : "text-zinc-400"}`}>
+              <span className={`shrink-0 ${isActive ? "text-[#8B3DFF]" : "text-zinc-400"}`}>
                 {item.icon}
               </span>
               <span className="leading-tight">{item.label}</span>

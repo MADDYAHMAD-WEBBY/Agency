@@ -151,7 +151,7 @@ export function NotchedProjectCard({
       </h3>
       
       {description && (
-        <p className="mt-2 text-xs sm:text-sm leading-relaxed text-zinc-600">
+        <p className="mt-2 text-[14px] leading-relaxed text-zinc-600">
           {description}
         </p>
       )}
@@ -161,7 +161,7 @@ export function NotchedProjectCard({
           {tags.map((t, i) => (
             <li
               key={`${t}-${i}`}
-              className="rounded-full bg-zinc-100/90 border border-zinc-200/80 px-3 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-zinc-700 group-hover:border-[var(--card-accent)]/30 transition-colors duration-300"
+              className="rounded-full bg-zinc-100/90 border border-zinc-200/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-700 group-hover:border-[var(--card-accent)]/30 transition-colors duration-300"
             >
               {t}
             </li>

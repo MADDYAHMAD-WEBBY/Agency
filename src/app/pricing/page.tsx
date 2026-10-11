@@ -124,6 +124,14 @@ const MODULAR_ITEMS: CalcItem[] = [
     usdUnitPrice: 249,
     defaultQty: 0,
   },
+  {
+    id: "ecom-workout-az",
+    title: "End-to-End E-Commerce Launch & Management",
+    category: "E-Commerce",
+    unitLabel: "Per brand / store",
+    usdUnitPrice: 1999,
+    defaultQty: 0,
+  },
 ];
 
 /* ─── PRICING MODELS DATA ─── */
@@ -192,6 +200,43 @@ const WEB_DEV_TIERS = [
     seo: "Advanced SEO + Hyper-Local Schema Markup",
     extras: "Direct Booking Engine + CRM Pipeline Sync",
     support: "60 Days Post-Launch Support",
+    highlight: false,
+    badge: null,
+  },
+];
+
+const ECOMMERCE_TIERS = [
+  {
+    name: "Business",
+    subtitle: "Complete end-to-end execution from hunting to scaling",
+    usdPrice: 1999,
+    period: "one-time",
+    features: [
+      { label: "Product Hunting", value: "High-Demand, Low-Competition Gap Analysis" },
+      { label: "Product Research", value: "In-Depth Margin, Patent & Review Gap Analysis" },
+      { label: "Product Sourcing", value: "Direct Manufacturer Negotiation & Sampling" },
+      { label: "Product Listing", value: "Conversion Copywriting & Backend Search Terms" },
+      { label: "Listing Optimization", value: "A+ Content / EBC & Conversion Rate Testing" },
+      { label: "PPC (Advertisement)", value: "Sponsored Products, Brands & Video Ads Setup" },
+      { label: "Account Management", value: "Complete Daily Health & Inventory Operations" },
+    ],
+    highlight: true,
+    badge: "MOST POPULAR",
+  },
+  {
+    name: "Premium",
+    subtitle: "Multi-marketplace expansion across Amazon, Noon & Shopify",
+    usdPrice: 3299,
+    period: "one-time",
+    features: [
+      { label: "Product Hunting", value: "Multi-Country Global Market Validation" },
+      { label: "Product Research", value: "Cross-Border Demand, VAT & Margin Mapping" },
+      { label: "Product Sourcing", value: "Bulk Factory Contracts & Freight Inspection" },
+      { label: "Product Listing", value: "Multi-Store English & Arabic Catalog Setup" },
+      { label: "Listing Optimization", value: "Brand Registry Storefront & Premium A+ Design" },
+      { label: "PPC (Advertisement)", value: "Advanced PPC & Amazon DSP Full-Funnel Ads" },
+      { label: "Account Management", value: "Dedicated Account Director & Weekly Strategy" },
+    ],
     highlight: false,
     badge: null,
   },
@@ -419,17 +464,29 @@ const PRICING_FAQS = [
 
 export default function PricingPage() {
   const [currency, setCurrency] = useState<Currency>("USD");
-  const [activeTab, setActiveTab] = useState<"web" | "seo" | "ai" | "software">("web");
+  const [activeTab, setActiveTab] = useState<"web" | "ecommerce" | "seo" | "ai" | "software">("ecommerce");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   /* ─── SELECTED TIER PLAN STATE ─── */
-  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string; period?: string } | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<{
+    name: string;
+    price: string;
+    period?: string;
+    service?: string;
+    scope?: string;
+  } | null>(null);
 
-  const handleSelectPlan = (name: string, price: string, period: string = "") => {
-    if (selectedPlan?.name === name) {
+  const handleSelectPlan = (
+    name: string,
+    price: string,
+    period: string = "",
+    service: string = "",
+    scope: string = ""
+  ) => {
+    if (selectedPlan?.name === name && selectedPlan?.service === service) {
       setSelectedPlan(null);
     } else {
-      setSelectedPlan({ name, price, period });
+      setSelectedPlan({ name, price, period, service, scope });
     }
   };
 
@@ -809,6 +866,17 @@ export default function PricingPage() {
             <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
               <button
                 type="button"
+                onClick={() => setActiveTab("ecommerce")}
+                className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                  activeTab === "ecommerce"
+                    ? "bg-[#8B3DFF] text-white shadow-md scale-105"
+                    : "bg-zinc-100 text-zinc-600 border border-zinc-200 hover:text-zinc-900"
+                }`}
+              >
+                🛒 E-Commerce
+              </button>
+              <button
+                type="button"
                 onClick={() => setActiveTab("web")}
                 className={`px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
                   activeTab === "web"
@@ -853,6 +921,77 @@ export default function PricingPage() {
               </button>
             </div>
           </div>
+
+          {/* TAB: ECOMMERCE */}
+          {activeTab === "ecommerce" && (
+            <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6">
+              {ECOMMERCE_TIERS.map((tier) => {
+                const isSelected = selectedPlan?.name === tier.name;
+                const formattedPrice = formatPrice(tier.usdPrice, currency);
+                return (
+                  <div
+                    key={tier.name}
+                    onClick={() => handleSelectPlan(tier.name, formattedPrice, tier.period)}
+                    className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer ${
+                      isSelected
+                        ? "bg-gradient-to-b from-emerald-50/90 via-white to-white border-2 border-emerald-500 shadow-2xl relative scale-[1.03] ring-4 ring-emerald-500/20"
+                        : tier.highlight
+                        ? "bg-gradient-to-b from-purple-50/90 via-white to-white border-2 border-purple-500 shadow-xl relative scale-[1.02] hover:border-purple-600"
+                        : "bg-white border border-zinc-200 shadow-2xs hover:border-purple-300 hover:shadow-md"
+                    }`}
+                  >
+                    {(isSelected || tier.badge) && (
+                      <span className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-white text-[10px] font-mono font-bold uppercase tracking-widest shadow-sm transition-colors ${
+                        isSelected ? "bg-emerald-600 ring-2 ring-emerald-300" : "bg-[#8B3DFF]"
+                      }`}>
+                        {isSelected ? "SELECTED PLAN ✓" : tier.badge}
+                      </span>
+                    )}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-2xl font-serif font-bold text-zinc-900">{tier.name}</h4>
+                        <div className={`w-6 h-6 rounded-full border flex items-center justify-center text-xs font-bold transition-all ${
+                          isSelected ? "bg-emerald-500 border-emerald-500 text-white" : "border-zinc-300 text-transparent"
+                        }`}>
+                          ✓
+                        </div>
+                      </div>
+                      <p className="text-xs text-zinc-500 font-sans min-h-[32px]">{tier.subtitle}</p>
+
+                      <div className="pt-2 border-t border-zinc-100">
+                        <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 font-mono">
+                          {formattedPrice}
+                        </span>
+                        <span className="text-xs font-mono text-zinc-400 ml-1">/{tier.period}</span>
+                      </div>
+
+                      <ul className="space-y-3 pt-4 text-xs font-sans text-zinc-700">
+                        {tier.features.map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2.5">
+                            <span className="text-purple-600 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong>{feat.label}:</strong> {feat.value}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <Link
+                      href={`/contact?package=${encodeURIComponent(tier.name)}&total=${encodeURIComponent(formattedPrice)}`}
+                      className={`w-full text-center py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
+                        isSelected
+                          ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30 ring-2 ring-emerald-400"
+                          : tier.highlight
+                          ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
+                          : "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
+                      }`}
+                    >
+                      GET {tier.name.toUpperCase()} PLAN →
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* TAB 1: WEB DEVELOPMENT */}
           {activeTab === "web" && (
@@ -928,7 +1067,7 @@ export default function PricingPage() {
                           ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30 ring-2 ring-emerald-400"
                           : tier.highlight
                           ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
-                          : "bg-zinc-900 text-white hover:bg-black"
+                          : "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
                       }`}
                     >
                       GET {tier.name.toUpperCase()} PLAN →
@@ -1013,7 +1152,7 @@ export default function PricingPage() {
                           ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30 ring-2 ring-emerald-400"
                           : tier.highlight
                           ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
-                          : "bg-zinc-900 text-white hover:bg-black"
+                          : "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
                       }`}
                     >
                       GET {tier.name.toUpperCase()} →
@@ -1089,7 +1228,7 @@ export default function PricingPage() {
                           ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30 ring-2 ring-emerald-400"
                           : tier.highlight
                           ? "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
-                          : "bg-zinc-900 text-white hover:bg-black"
+                          : "bg-[#8B3DFF] text-white hover:bg-[#782ee6]"
                       }`}
                     >
                       BUILD {tier.name.toUpperCase()} PLAN →
@@ -1205,7 +1344,7 @@ export default function PricingPage() {
 
                 <Link
                   href={`/contact?package=${encodeURIComponent(bundle.name)}&total=${encodeURIComponent(formatPrice(bundle.bundleUsd, currency))}`}
-                  className="w-full text-center py-3 rounded-full bg-zinc-900 text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-black transition-all shadow-md active:scale-95"
+                  className="w-full text-center py-3 rounded-full bg-[#8B3DFF] text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#782ee6] transition-all shadow-md active:scale-95"
                 >
                   GET {bundle.name.toUpperCase()} →
                 </Link>

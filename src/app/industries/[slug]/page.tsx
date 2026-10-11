@@ -200,7 +200,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
               <img
                 src={industry.coverImage}
                 alt={industry.title}
-                className="w-full h-full object-cover object-top filter blur-[6px] scale-110"
+                className="w-full h-full object-cover object-top filter blur-[2px] scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white" />
@@ -268,7 +268,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
           )}
 
           {/* Overview Description */}
-          <div className="mt-8 text-zinc-700 text-sm sm:text-base font-normal leading-relaxed max-w-5xl">
+          <div className="mt-8 text-zinc-700 text-base sm:text-lg font-normal leading-relaxed max-w-5xl">
             {industry.description}
           </div>
 
@@ -287,7 +287,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   <h3 className="text-base sm:text-lg font-bold text-purple-950 flex items-center gap-2 font-serif">
                     <span>🚀</span> Tailored Digital Engineering for {industry.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                  <p className="text-[14px] text-zinc-700 leading-relaxed">
                     By aligning high-speed web application frameworks, automated lead qualification, and hyper-local SEO strategies, MHKMarkedia engineers digital systems built specifically for the operational workflows and acquisition channels of your industry.
                   </p>
                 </div>
@@ -312,22 +312,22 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">HOTELS & RESORTS</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">HOTELS & RESORTS</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Room booking engine, real-time availability calendar, suite photo tours, online deposit and full payment gateways.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">RESTAURANTS & CAFES</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">RESTAURANTS & CAFES</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Table reservation calendar, digital interactive menus, online food pre-order, and takeaway checkout modules.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-3 pt-2">
-                      <div className="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider">ENGINE FEATURES & INTEGRATIONS:</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-300">
+                      <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase tracking-wider">ENGINE FEATURES & INTEGRATIONS:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[14px] text-zinc-300">
                         <div className="flex items-center gap-2">✓ Multi-language (English + Urdu/Roman Urdu)</div>
                         <div className="flex items-center gap-2">✓ Mobile-first ultra-fast checkout</div>
                         <div className="flex items-center gap-2">✓ Promo codes & stay+dining packages</div>
@@ -355,26 +355,26 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">AUTOMATED REVIEW REQUESTS</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">AUTOMATED REVIEW REQUESTS</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Stay ya meal ke baad automated review request triggers via WhatsApp, SMS, or Email.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">MULTI-PLATFORM MONITORING</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">MULTI-PLATFORM MONITORING</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Real-time sentiment monitoring across Google Business Profile, TripAdvisor, and Facebook.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">PROFESSIONAL REPLIES</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">PROFESSIONAL REPLIES</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Brand-aligned response playbooks for 5-star praise and negative feedback.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">INSTANT CRITICAL ALERTS</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">INSTANT CRITICAL ALERTS</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Low rating feedback triggers instant Slack/WhatsApp alerts to hotel & restaurant managers.
                         </p>
                       </div>
@@ -385,7 +385,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <div className="text-xs font-mono font-bold text-amber-300 uppercase flex items-center gap-2">
                         <span>⚖️</span> 100% WHITE-HAT GOOGLE POLICY COMPLIANCE GUARANTEE
                       </div>
-                      <p className="text-xs text-amber-100 leading-relaxed">
+                      <p className="text-[14px] text-amber-100 leading-relaxed">
                         MHKMarkedia Google aur TripAdvisor policy ka strict dhyan rakhti hai: Hum sabhi guests ko review ka equal option dete hain. Hum gated feedback, fake reviews, ya incentivized ratings jaisi illegal tactics strictly use nahi karte.
                       </p>
                     </div>
@@ -412,22 +412,22 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
-                        <div className="text-xs font-mono font-bold text-amber-400 uppercase">MISSED CALL TEXT-BACK</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-amber-400 uppercase">MISSED CALL TEXT-BACK</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Missed call triggers an instant SMS/WhatsApp within 5 seconds asking how you can help, securing the homeowner before they call a competitor.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
-                        <div className="text-xs font-mono font-bold text-amber-400 uppercase">AI VOICE RECEPTIONIST</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-amber-400 uppercase">AI VOICE RECEPTIONIST</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           24/7 AI voice receptionist picks up calls, records emergency job details, and captures customer address automatically.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-3 pt-2">
-                      <div className="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider">CALL CAPTURE FEATURES:</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-300">
+                      <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase tracking-wider">CALL CAPTURE FEATURES:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[14px] text-zinc-300">
                         <div className="flex items-center gap-2">✓ 24/7 WhatsApp & Website Chatbot</div>
                         <div className="flex items-center gap-2">✓ Click-to-Call & WhatsApp buttons on every page</div>
                         <div className="flex items-center gap-2">✓ Instant owner lead alerts</div>
@@ -454,26 +454,26 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-purple-400 uppercase">GBP FULL OPTIMIZATION</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase">GBP FULL OPTIMIZATION</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Primary/secondary category setup, service areas, and geo-tagged before/after project photos.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-purple-400 uppercase">POST-JOB REVIEW AUTOMATION</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase">POST-JOB REVIEW AUTOMATION</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Automated SMS triggers after job completion encouraging authentic 5-star Google reviews.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-purple-400 uppercase">NAP & CITATION CONSISTENCY</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase">NAP & CITATION CONSISTENCY</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Building local directory citations with 100% consistent business Name, Address, and Phone.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-purple-400 uppercase">GEO-GRID RANK TRACKING</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase">GEO-GRID RANK TRACKING</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Monthly grid reports mapping your ranking position across every targeted neighborhood zip code.
                         </p>
                       </div>
@@ -483,7 +483,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <div className="text-xs font-mono font-bold text-purple-300 uppercase flex items-center gap-2">
                         <span>⚖️</span> PROVEN PROCESS & HONEST EXPECTATIONS
                       </div>
-                      <p className="text-xs text-purple-100 leading-relaxed">
+                      <p className="text-[14px] text-purple-100 leading-relaxed">
                         Google Map Pack ranking depends on local competition and citation history. We do not provide fake ranking guarantees; instead, we execute a rigorous white-hat SEO process backed by monthly transparent reporting.
                       </p>
                     </div>
@@ -499,11 +499,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>🔎</span> High-Intent Local Search Dominance
                     </h3>
 
-                    <p className="text-xs text-indigo-200 leading-relaxed">
+                    <p className="text-[14px] text-indigo-200 leading-relaxed">
                       Targeting homeowners searching "pipe repair near me", "AC repair in [city]", or "24/7 electrician" right when emergency strikes:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-indigo-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-indigo-100">
                       <div className="p-3.5 rounded-xl bg-indigo-900/60 border border-indigo-700/60 space-y-1">
                         <div className="font-bold text-emerald-300">Dedicated Service Pages</div>
                         <div>Individual pages for pipe repair, water heater replacement, AC maintenance, roofing, etc.</div>
@@ -544,22 +544,22 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">LIQUID & ONLINE STORE 2.0</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">LIQUID & ONLINE STORE 2.0</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Bespoke theme development without bloated page builders, optimizing images, fonts, and critical rendering paths.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-2">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">APP SCRIPT PURGING & SHOPIFY MARKETS</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">APP SCRIPT PURGING & SHOPIFY MARKETS</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Eliminating heavy 3rd-party apps by writing native Liquid code, configuring multi-currency, bundles, and upsell features.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-3 pt-2">
-                      <div className="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider">SHOPIFY ARCHITECTURE HIGHLIGHTS:</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-300">
+                      <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase tracking-wider">SHOPIFY ARCHITECTURE HIGHLIGHTS:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[14px] text-zinc-300">
                         <div className="flex items-center gap-2">✓ Shopify Plus checkout customization</div>
                         <div className="flex items-center gap-2">✓ Conversion-focused product page redesign</div>
                         <div className="flex items-center gap-2">✓ Dynamic product bundling & 1-click upsells</div>
@@ -580,20 +580,20 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>⚡</span> Headless WooCommerce Engine (Next.js + WPGraphQL)
                     </h3>
 
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-[14px] text-slate-300 leading-relaxed">
                       Headless commerce decouples the frontend UI (Next.js / React) from the backend store engine (WooCommerce REST API / WPGraphQL). This gives your store app-like speed, sub-second page transitions, and complete UI freedom without WordPress theme limits.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">WHEN HEADLESS IS RIGHT</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">WHEN HEADLESS IS RIGHT</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Large product catalogs, high traffic volume, custom 3D/interactive landing pages, or demanding international scaling.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-amber-400 uppercase">WHEN MONOLITHIC IS BETTER</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-amber-400 uppercase">WHEN MONOLITHIC IS BETTER</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           For smaller stores or budget-conscious launches, an optimized standard Shopify or WooCommerce store is faster to market and more cost-effective.
                         </p>
                       </div>
@@ -603,7 +603,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <div className="text-xs font-mono font-bold text-indigo-300 uppercase flex items-center gap-2">
                         <span>💡</span> HONEST ARCHITECTURAL GUIDANCE
                       </div>
-                      <p className="text-xs text-indigo-100 leading-relaxed">
+                      <p className="text-[14px] text-indigo-100 leading-relaxed">
                         "Not every store needs headless commerce. We build headless strictly when your brand scale demands it, saving you unnecessary development overhead."
                       </p>
                     </div>
@@ -619,7 +619,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>🚀</span> Fast Checkout & Conversion Rate Optimization (CRO)
                     </h3>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-purple-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-purple-100">
                       <div className="p-3.5 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
                         <div className="font-bold text-emerald-300">Guest Checkout & 1-Click Payments</div>
                         <div>Shop Pay, Apple Pay, Google Pay, and streamlined 1-page checkout forms.</div>
@@ -662,11 +662,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>📊</span> Interactive Financial Calculators & Lead Engines
                     </h3>
 
-                    <p className="text-xs text-zinc-300 leading-relaxed">
+                    <p className="text-[14px] text-zinc-300 leading-relaxed">
                       Custom mathematical models embedded directly across your site to engage prospects and capture pre-qualified leads:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[14px] text-zinc-300">
                       <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="font-bold text-emerald-400">Loan & Mortgage Calculators</div>
                         <div>EMI estimation, amortization schedules, and home loan eligibility checkers.</div>
@@ -702,22 +702,22 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-purple-400 uppercase">MFA & ENCRYPTED VAULT</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase">MFA & ENCRYPTED VAULT</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Secure 2FA login, document upload/sharing (KYC, bank statements, tax files) with AES-256 storage encryption.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-purple-400 uppercase">E-SIGNATURE & DASHBOARDS</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase">E-SIGNATURE & DASHBOARDS</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Integrated e-signature API workflows, portfolio summaries, application status tracking, and secure client messaging.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-3 pt-2">
-                      <div className="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider">PORTAL SECURITY CONTROLS:</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                      <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase tracking-wider">PORTAL SECURITY CONTROLS:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[14px] text-slate-300">
                         <div className="flex items-center gap-2">✓ Role-based access control (Client, Advisor, Admin)</div>
                         <div className="flex items-center gap-2">✓ Comprehensive audit logging (who viewed what & when)</div>
                         <div className="flex items-center gap-2">✓ Session timeout & device monitoring</div>
@@ -736,11 +736,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>🛡️</span> Security-First Architecture & Compliance-Ready Structure
                     </h3>
 
-                    <p className="text-xs text-indigo-200 leading-relaxed">
+                    <p className="text-[14px] text-indigo-200 leading-relaxed">
                       We construct security-first technical architectures adhering to international data protection standards (GDPR, SBP/SECP guidelines, local privacy laws):
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-indigo-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-indigo-100">
                       <div className="p-3.5 rounded-xl bg-indigo-900/60 border border-indigo-700/60 space-y-1">
                         <div className="font-bold text-emerald-300">Transit & Rest Encryption</div>
                         <div>TLS 1.3 encryption in transit and AES-256 encrypted database storage.</div>
@@ -755,7 +755,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <div className="text-xs font-mono font-bold text-indigo-300 uppercase flex items-center gap-2">
                         <span>⚖️</span> TRANSPARENT COMPLIANCE DISCLAIMER
                       </div>
-                      <p className="text-xs text-indigo-100 leading-relaxed">
+                      <p className="text-[14px] text-indigo-100 leading-relaxed">
                         We build compliance-ready technical structures. Formal regulatory certification remains the joint legal responsibility of your firm and your compliance counsel. We make zero false claims regarding third-party certifications.
                       </p>
                     </div>
@@ -780,11 +780,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>🏛️</span> High-Authority Law Firm Web Architecture
                     </h3>
 
-                    <p className="text-xs text-zinc-300 leading-relaxed">
+                    <p className="text-[14px] text-zinc-300 leading-relaxed">
                       Custom mobile-first Next.js firm platform projecting undeniable legal authority, academic credentials, and client confidence:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[14px] text-zinc-300">
                       <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="font-bold text-purple-300">Dedicated Practice Area Pages</div>
                         <div>Separate high-ranking landing pages for family, criminal, corporate, property, immigration, and tax law.</div>
@@ -816,22 +816,22 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">LOCAL MAP PACK DOMINANCE</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">LOCAL MAP PACK DOMINANCE</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Top 3 Google Maps optimization for 'advocate in [city]' and 'family lawyer near me' search queries.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">24/7 AUTOMATED INTAKE SCREENING</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">24/7 AUTOMATED INTAKE SCREENING</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Confidential intake forms screen prospects by practice area, budget, and case urgency before booking.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-3 pt-2">
-                      <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">ACQUISITION & INTAKE HIGHLIGHTS:</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                      <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase tracking-wider">ACQUISITION & INTAKE HIGHLIGHTS:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[14px] text-slate-300">
                         <div className="flex items-center gap-2">✓ Automated consultation scheduling & reminders</div>
                         <div className="flex items-center gap-2">✓ Missed call instant text-back setup</div>
                         <div className="flex items-center gap-2">✓ 24/7 AI intake assistant (strictly non-legal advice)</div>
@@ -850,11 +850,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>📜</span> High-Authority Legal Citations & Bar Ethics Adherence
                     </h3>
 
-                    <p className="text-xs text-amber-100 leading-relaxed">
+                    <p className="text-[14px] text-amber-100 leading-relaxed">
                       Legal marketing requires absolute compliance with local Bar Council rules and advertising ethics:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-amber-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-amber-100">
                       <div className="p-3.5 rounded-xl bg-amber-900/60 border border-amber-700/60 space-y-1">
                         <div className="font-bold text-amber-300">Legal Directory Citations</div>
                         <div>Listings in local bar association directories and high-authority legal portals with NAP consistency.</div>
@@ -869,7 +869,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <div className="text-xs font-mono font-bold text-amber-300 uppercase flex items-center gap-2">
                         <span>⚖️</span> STRICT LEGAL ADVERTISING ETHICS GUARANTEE
                       </div>
-                      <p className="text-xs text-amber-100 leading-relaxed">
+                      <p className="text-[14px] text-amber-100 leading-relaxed">
                         We strictly follow local Bar Council rules: We never use prohibited claims like 'best lawyer' or make false outcome guarantees. All website copy undergoes thorough review by your firm's legal counsel prior to launch.
                       </p>
                     </div>
@@ -894,11 +894,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>🏡</span> Dynamic MLS / IDX Property Listing System
                     </h3>
 
-                    <p className="text-xs text-zinc-300 leading-relaxed">
+                    <p className="text-[14px] text-zinc-300 leading-relaxed">
                       Custom MLS-style listing architecture connected to dynamic property databases, portal feeds, and agent management panels:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[14px] text-zinc-300">
                       <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="font-bold text-blue-300">Multi-Category Search & Filters</div>
                         <div>Instant filtering by city, neighborhood, price range, size (marla/kanal/sq ft), bedrooms, and property status.</div>
@@ -930,22 +930,22 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">24/7 WHATSAPP INTAKE BOT</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">24/7 WHATSAPP INTAKE BOT</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Automated WhatsApp assistant greets buyers, screens budget & buying timeline, and logs details in CRM instantly.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">OVERSEAS INVESTOR FUNNELS</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">OVERSEAS INVESTOR FUNNELS</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Dedicated video tour scheduling, digital brochure downloads, and multi-touch automated follow-up sequences.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-3 pt-2">
-                      <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">LEAD AUTOMATION HIGHLIGHTS:</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                      <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase tracking-wider">LEAD AUTOMATION HIGHLIGHTS:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[14px] text-slate-300">
                         <div className="flex items-center gap-2">✓ Automated site visit scheduling & reminders</div>
                         <div className="flex items-center gap-2">✓ Lead scoring (Hot, Warm, Cold) & agent routing</div>
                         <div className="flex items-center gap-2">✓ EMI loan & rental yield calculators</div>
@@ -968,7 +968,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       Transform flat property photos into high-converting virtual walkthroughs that engage remote buyers:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-purple-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-purple-100">
                       <div className="p-3.5 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
                         <div className="font-bold text-purple-300">360° Virtual Tours & Matterport</div>
                         <div>Seamless embedding of Matterport 360° tours, drone video walkthroughs, and interactive floor plans.</div>
@@ -990,11 +990,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>📍</span> Neighborhood Geo-Targeting & Google Map Pack #1
                     </h3>
 
-                    <p className="text-xs text-amber-100 leading-relaxed">
+                    <p className="text-[14px] text-amber-100 leading-relaxed">
                       Dominating local search queries for high-intent property buyers and architectural services:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-amber-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-amber-100">
                       <div className="p-3.5 rounded-xl bg-amber-900/60 border border-amber-700/60 space-y-1">
                         <div className="font-bold text-amber-300">Neighborhood SEO Landing Pages</div>
                         <div>Dedicated high-ranking pages for specific areas ('Plots in DHA Multan', 'Flats in Gulberg Lahore').</div>
@@ -1025,11 +1025,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>🩺</span> Secure Patient Portals & Encrypted Vaults
                     </h3>
 
-                    <p className="text-xs text-zinc-300 leading-relaxed">
+                    <p className="text-[14px] text-zinc-300 leading-relaxed">
                       Encrypted MFA-authenticated patient portal for lab reports, medical history, and digital prescriptions:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[14px] text-zinc-300">
                       <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="font-bold text-cyan-300">Encrypted Report & Prescription Vault</div>
                         <div>Patients authenticate via 2FA to download diagnostic lab reports and digital prescriptions securely.</div>
@@ -1061,22 +1061,22 @@ export default async function IndustryDetailPage({ params }: PageProps) {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">24/7 WHATSAPP BOOKING BOT</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">24/7 WHATSAPP BOOKING BOT</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Conversational bot checks doctor schedules, books slots, and triggers automated confirmations.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-800/90 border border-slate-700 space-y-1.5">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">AUTOMATED PATIENT RECALL</div>
-                        <p className="text-xs text-slate-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">AUTOMATED PATIENT RECALL</div>
+                        <p className="text-[14px] text-slate-300 leading-relaxed">
                           Automated 6-month checkup, vaccination, and repeat visit recall drips to maximize patient retention.
                         </p>
                       </div>
                     </div>
 
                     <div className="space-y-3 pt-2">
-                      <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">BOOKING & RECALL HIGHLIGHTS:</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                      <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase tracking-wider">BOOKING & RECALL HIGHLIGHTS:</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[14px] text-slate-300">
                         <div className="flex items-center gap-2">✓ Multi-channel SMS/WhatsApp appointment reminders</div>
                         <div className="flex items-center gap-2">✓ Instant 5-second missed call text-back</div>
                         <div className="flex items-center gap-2">✓ Automated cancellation waitlist filler</div>
@@ -1121,11 +1121,11 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <span>⚖️</span> Privacy-First Architecture & Medical Ethics Adherence
                     </h3>
 
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-[14px] text-slate-300 leading-relaxed">
                       Built specifically for healthcare data protection and health authority advertising compliance:
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[14px] text-slate-300">
                       <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
                         <div className="font-bold text-cyan-300">PHI-Stripped Notifications</div>
                         <div>Protected Health Information is never sent via unencrypted SMS/WhatsApp—only secure portal links.</div>
@@ -1163,7 +1163,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                         <div className="text-sm font-bold text-red-950 flex items-center gap-2 font-serif">
                           <span className="text-red-500 font-bold">✕</span> {prob.title}
                         </div>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-600 leading-relaxed">
                           {prob.desc}
                         </p>
                       </div>
@@ -1185,7 +1185,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   </div>
 
                   <div className="relative p-6 sm:p-8 rounded-2xl bg-zinc-950 text-white space-y-6 shadow-2xl border border-zinc-800">
-                    <div className="text-xs font-mono font-bold text-purple-400 uppercase tracking-widest flex items-center justify-between">
+                    <div className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase tracking-widest flex items-center justify-between">
                       <span>END-TO-END GUEST PIPELINE AUTOMATION MAP</span>
                       <span className="text-emerald-400">8 STEP AUTOMATED FLOW</span>
                     </div>
@@ -1256,7 +1256,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                         <h3 className="text-base font-bold text-zinc-900 font-serif flex items-center gap-2">
                           <span className="text-purple-600 font-bold">•</span> {bot.title}
                         </h3>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-600 leading-relaxed">
                           {bot.desc}
                         </p>
                       </div>
@@ -1274,7 +1274,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   
                   <div className="p-6 sm:p-8 rounded-2xl bg-purple-950 text-white space-y-6 shadow-xl border border-purple-800">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+                      <span className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase tracking-widest">
                         HERITAGE LUXURY RESORT & FINE DINING
                       </span>
                       <span className="text-xs font-mono bg-purple-800/80 text-purple-200 px-3 py-1 rounded-full">
@@ -1285,19 +1285,19 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="p-4 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
                         <div className="text-xs font-mono font-bold text-red-300 uppercase">PROBLEM</div>
-                        <p className="text-xs text-purple-100 leading-relaxed">
+                        <p className="text-[14px] text-purple-100 leading-relaxed">
                           78% of bookings came through OTAs paying 22% average commission, zero direct guest marketing, slow legacy site.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
                         <div className="text-xs font-mono font-bold text-emerald-300 uppercase">SOLUTION</div>
-                        <p className="text-xs text-purple-100 leading-relaxed">
+                        <p className="text-[14px] text-purple-100 leading-relaxed">
                           Next.js direct booking engine + 24/7 WhatsApp concierge bot + 100% white-hat Google review request engine.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">EMPIRICAL RESULTS</div>
-                        <p className="text-xs text-purple-100 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">EMPIRICAL RESULTS</div>
+                        <p className="text-[14px] text-purple-100 leading-relaxed">
                           • Direct Bookings: 22% → 58%<br/>
                           • OTA Commission Saved: ~$14,500/yr<br/>
                           • Rating: 4.1 → 4.8 Stars (210+ reviews)
@@ -1320,7 +1320,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   
                   <div className="p-6 sm:p-8 rounded-2xl bg-zinc-950 text-white space-y-6 shadow-xl border border-zinc-800">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest">
+                      <span className="text-xs sm:text-sm font-mono font-bold text-amber-400 uppercase tracking-widest">
                         METRO PLUMBING & HVAC CONTRACTORS
                       </span>
                       <span className="text-xs font-mono bg-zinc-800 text-zinc-300 px-3 py-1 rounded-full">
@@ -1331,19 +1331,19 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-red-400 uppercase">PROBLEM</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           42% of emergency calls missed while on job sites, zero Map Pack ranking, stuck at 3.8 Google rating with 14 reviews.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           5-second missed call text-back + GBP Map Pack #1 SEO + mobile-fast site + post-job SMS review requests.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-amber-300 uppercase">EMPIRICAL RESULTS</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           • Captured Leads: 58% → 94%<br/>
                           • Map Pack Position: Unranked → Top 3<br/>
                           • Rating: 3.8 → 4.9 Stars (140+ reviews)
@@ -1366,7 +1366,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   
                   <div className="p-6 sm:p-8 rounded-2xl bg-purple-950 text-white space-y-6 shadow-xl border border-purple-800">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+                      <span className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase tracking-widest">
                         AURA DTC APPAREL & BEAUTY
                       </span>
                       <span className="text-xs font-mono bg-purple-800 text-purple-200 px-3 py-1 rounded-full">
@@ -1377,19 +1377,19 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="p-4 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
                         <div className="text-xs font-mono font-bold text-red-300 uppercase">PROBLEM</div>
-                        <p className="text-xs text-purple-100 leading-relaxed">
+                        <p className="text-[14px] text-purple-100 leading-relaxed">
                           4.2s mobile load time, 74% cart abandonment, heavy plugin app bloat, inaccurate Meta pixel ad attribution.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
                         <div className="text-xs font-mono font-bold text-emerald-300 uppercase">SOLUTION</div>
-                        <p className="text-xs text-purple-100 leading-relaxed">
+                        <p className="text-[14px] text-purple-100 leading-relaxed">
                           Custom Liquid theme speed optimization + 1-click checkout + Meta CAPI server tracking + automated WhatsApp/Klaviyo recovery flows.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-purple-900/60 border border-purple-700/60 space-y-1">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">EMPIRICAL RESULTS</div>
-                        <p className="text-xs text-purple-100 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">EMPIRICAL RESULTS</div>
+                        <p className="text-[14px] text-purple-100 leading-relaxed">
                           • Mobile Speed: 4.2s → 0.9s<br/>
                           • Conversion Rate: 1.4% → 3.6%<br/>
                           • Cart Recovery: 32% of abandoned carts recovered
@@ -1412,7 +1412,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   
                   <div className="p-6 sm:p-8 rounded-2xl bg-zinc-950 text-white space-y-6 shadow-xl border border-zinc-800">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+                      <span className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase tracking-widest">
                         APEX WEALTH MANAGEMENT FIRM
                       </span>
                       <span className="text-xs font-mono bg-zinc-800 text-zinc-300 px-3 py-1 rounded-full">
@@ -1423,19 +1423,19 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-red-400 uppercase">PROBLEM</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Static PDF brochure site, un-qualified lead phone inquiries, 14-day manual email document onboarding.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Interactive investment calculators + 2FA encrypted client portal + e-signature & automated CRM onboarding workflows.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-emerald-300 uppercase">EMPIRICAL RESULTS</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           • Lead Conversion: 3.1% → 14.2%<br/>
                           • Onboarding Speed: 14 days → 2 days<br/>
                           • Encrypted Vault: 100% secure client file uploads
@@ -1458,7 +1458,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   
                   <div className="p-6 sm:p-8 rounded-2xl bg-zinc-950 text-white space-y-6 shadow-xl border border-zinc-800">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-xs font-mono font-bold text-purple-400 uppercase tracking-widest">
+                      <span className="text-xs sm:text-sm font-mono font-bold text-purple-400 uppercase tracking-widest">
                         ANONYMIZED COMMERCIAL & FAMILY LAW FIRM
                       </span>
                       <span className="text-xs font-mono bg-zinc-800 text-zinc-300 px-3 py-1 rounded-full">
@@ -1469,19 +1469,19 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-red-400 uppercase">PROBLEM</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Outdated brochure website, missing Map Pack visibility for key practice terms, delayed intake leading to lost consultations.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           High-authority Next.js firm portal + practice area landing pages + bar-compliant Google Business Profile optimization + 24/7 automated lead intake workflow.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-purple-300 uppercase">EMPIRICAL RESULTS</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           • Consultation Requests: +240% qualified inquiry growth<br/>
                           • Map Pack Placement: Unranked → Top 3 for primary city searches<br/>
                           • Intake Speed: Consultation scheduled within 5 minutes of inquiry
@@ -1515,19 +1515,19 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-red-400 uppercase">PROBLEM</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Listings trapped in WhatsApp groups & Excel, heavy portal dependence, slow 4h lead response time, high site visit drop-off.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Dynamic Next.js listing portal + 60s WhatsApp qualification bot + 360 virtual tours + neighborhood location SEO pages.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-blue-300 uppercase">EMPIRICAL RESULTS</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           • Qualified Buyer Leads: +180% surge in verified inquiries<br/>
                           • Site Visit Bookings: 4.2x increase with calendar reminders<br/>
                           • Lead Response Time: Reduced from 4 hours to under 60 seconds
@@ -1561,19 +1561,19 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-red-400 uppercase">PROBLEM</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Phone-only booking causing missed after-hours calls, 35% no-show rate, low Google Maps presence, insecure WhatsApp report sharing.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
-                        <div className="text-xs font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase">SOLUTION</div>
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           Next.js clinic web platform + 24/7 WhatsApp booking bot + automated SMS reminders + encrypted 2FA patient report portal + Map Pack SEO.
                         </p>
                       </div>
                       <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 space-y-1">
                         <div className="text-xs font-mono font-bold text-cyan-300 uppercase">EMPIRICAL RESULTS</div>
-                        <p className="text-xs text-zinc-300 leading-relaxed">
+                        <p className="text-[14px] text-zinc-300 leading-relaxed">
                           • Online Patient Bookings: +210% increase within 90 days<br/>
                           • No-Show Rate: Reduced from 35% to under 11%<br/>
                           • Google Map Pack Placement: Unranked → Top 3 for target specialty
@@ -1599,7 +1599,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Unified Engineering Team
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Booking engine + Local SEO + Google reviews + WhatsApp automation built by a single expert team.
                       </p>
                     </div>
@@ -1607,7 +1607,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Focus on Cutting OTA Commissions
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Our primary architectural goal is maximizing your direct profit margins by reducing third-party fees.
                       </p>
                     </div>
@@ -1615,7 +1615,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Local Payment & WhatsApp Mastery
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Deep integration expertise with regional payment gateways, Stripe, and official WhatsApp Business APIs.
                       </p>
                     </div>
@@ -1623,7 +1623,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Transparent Reporting & Data Ownership
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Real-time analytics dashboards with 100% client ownership of domain, source code, and guest databases.
                       </p>
                     </div>
@@ -1641,7 +1641,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Unified Calls + Web + SEO Team
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Missed call text-back, high-speed website, Map Pack SEO, and Google review automation managed by one expert agency team.
                       </p>
                     </div>
@@ -1649,7 +1649,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Built Specifically for Trade Contractors
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Simple, practical systems tailored for plumbers, electricians, HVAC, roofers, and repair contractors on the go.
                       </p>
                     </div>
@@ -1657,7 +1657,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Fast Setup & Zero Technical Hassle
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         We handle 100% of the technical workload, domain setup, call webhooks, and Google Business Profile optimization.
                       </p>
                     </div>
@@ -1665,7 +1665,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Transparent Monthly Reporting
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Clear monthly reports showing exact call volume, text-back lead conversions, and neighborhood geo-grid rankings.
                       </p>
                     </div>
@@ -1673,7 +1673,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> 100% Client Data & Profile Ownership
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         You retain 100% ownership of your Google Business Profile, domain, website source code, and customer records.
                       </p>
                     </div>
@@ -1691,7 +1691,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Unified Store + Automation + Integrations Team
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Shopify theme code, Next.js headless storefronts, Klaviyo/WhatsApp drips, and Meta CAPI server integrations built by a single engineering team.
                       </p>
                     </div>
@@ -1699,7 +1699,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Speed & Conversion First Philosophy
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         We prioritize sub-second Core Web Vitals, app script purging, and frictionless checkout funnels to maximize your return on ad spend (ROAS).
                       </p>
                     </div>
@@ -1707,7 +1707,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Honest Architectural Platform Guidance
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         We recommend headless commerce strictly when catalog scale and custom UX demand it, ensuring smaller stores launch cost-effectively on custom Shopify/WooCommerce themes.
                       </p>
                     </div>
@@ -1715,7 +1715,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Local & Global Gateway Expertise
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Proven integration experience with 1-click credit card checkout, Shop Pay, Apple Pay, Cash on Delivery (COD verification), and regional payment options.
                       </p>
                     </div>
@@ -1723,7 +1723,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> 100% Store & Data Ownership
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         You retain full primary ownership of your Shopify account, WooCommerce database, domain, repository source code, and customer records.
                       </p>
                     </div>
@@ -1741,7 +1741,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Website + Calculators + Portal + Automation
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         High-trust firm website, mathematical calculators, encrypted client vaults, and CRM lead pipelines engineered by a single expert team.
                       </p>
                     </div>
@@ -1749,7 +1749,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Security-First Development Standards
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Built with TLS 1.3 transit encryption, AES-256 storage, MFA authentication, role-based access, and session auditing controls.
                       </p>
                     </div>
@@ -1757,7 +1757,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Transparent & Honest Compliance Claims
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         We build compliance-ready technical structures aligned with data privacy standards without making false regulatory certification claims.
                       </p>
                     </div>
@@ -1765,7 +1765,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Lead Generation & Unshakeable Client Trust
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Engage high-net-worth leads with interactive financial tools while assuring clients their confidential files are encrypted and safe.
                       </p>
                     </div>
@@ -1773,7 +1773,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> 100% Code, IP & Data Ownership Under NDA
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         You retain 100% primary ownership of your website source code, client records, database, and custom financial algorithms protected under NDA.
                       </p>
                     </div>
@@ -1791,7 +1791,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Unified Web + SEO + Citations + Reputation Team
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Firm website, practice area pages, legal directory listings, and review workflows handled by a single dedicated team.
                       </p>
                     </div>
@@ -1799,7 +1799,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Strict Bar Council & Ethics Adherence
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Strict adherence to legal marketing ethics—zero prohibited claims like 'best lawyer' or false outcome guarantees.
                       </p>
                     </div>
@@ -1807,7 +1807,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Strict Confidentiality & Security Focus
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Encrypted intake forms, NDA-backed data workflows, and complete protection of sensitive client details.
                       </p>
                     </div>
@@ -1815,7 +1815,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Honest Claims & Real Reviews Only
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Zero fake reviews or deceptive marketing tactics; only authentic client reviews processed strictly where bar rules permit.
                       </p>
                     </div>
@@ -1823,7 +1823,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Transparent Monthly Reporting
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Detailed monthly reports tracking inquiry sources, practice area performance, and local search visibility.
                       </p>
                     </div>
@@ -1831,7 +1831,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> 100% Website & Profile Ownership
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         You retain complete primary ownership of your domain, website source code, legal directories, and Google Business Profile.
                       </p>
                     </div>
@@ -1849,7 +1849,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Unified Listing + CRM + WhatsApp + SEO Team
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         MLS/IDX listing site, CRM pipeline, 24/7 WhatsApp qualification bot, and Map Pack SEO engineered by a single team.
                       </p>
                     </div>
@@ -1857,7 +1857,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Break Free from Portal Dependency
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Build your own direct buyer channel and retain 100% ownership of your high-ticket buyer data without sharing leads with portal competitors.
                       </p>
                     </div>
@@ -1865,7 +1865,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Sub-1-Minute Lead Response Speed
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         24/7 automated WhatsApp bot greets and qualifies buyers instantly, ensuring serious investors never wait for manual callbacks.
                       </p>
                     </div>
@@ -1873,7 +1873,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Deep Neighborhood SEO Expertise
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Proven experience building high-ranking area pages, housing society landing pages, and Google Business Profile Map Pack rankings.
                       </p>
                     </div>
@@ -1881,7 +1881,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> 100% Platform, Listing & Code Ownership Under NDA
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         You retain complete primary ownership of your website source code, domain, listing database, and customer CRM records.
                       </p>
                     </div>
@@ -1899,7 +1899,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Unified Web + Map Pack SEO + Booking + Portal Team
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Clinic website, Google Map Pack SEO, 24/7 WhatsApp booking bot, and encrypted patient portal engineered by a single team.
                       </p>
                     </div>
@@ -1907,7 +1907,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Privacy-First Development Standards
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Built with TLS 1.3 transit encryption, AES-256 database storage, MFA authentication, role-based access, and audit logging.
                       </p>
                     </div>
@@ -1915,7 +1915,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Strict Medical Ethics & Advertising Adherence
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         Zero misleading cure promises ('100% cure', 'best doctor'). All medical content is reviewed by your clinic's medical team.
                       </p>
                     </div>
@@ -1923,7 +1923,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> Honest Claims & Transparent Reporting
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         No fake instant ranking guarantees; systematic citation building and monthly reporting on appointments and Map Pack progress.
                       </p>
                     </div>
@@ -1931,7 +1931,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <h3 className="text-sm font-bold text-purple-900 font-serif flex items-center gap-2">
                         <span>✓</span> 100% Website, Profile & Patient Data Ownership
                       </h3>
-                      <p className="text-xs text-zinc-600 leading-relaxed">
+                      <p className="text-[14px] text-zinc-600 leading-relaxed">
                         You retain complete primary ownership of your domain, website source code, Google Business Profile, and patient records under NDA.
                       </p>
                     </div>
@@ -1982,7 +1982,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                         <h3 className="text-base font-bold text-zinc-900 font-serif pt-1">
                           {step.title}
                         </h3>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-600 leading-relaxed">
                           {step.desc}
                         </p>
                       </div>
@@ -2003,7 +2003,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                         <h3 className="text-sm font-bold text-emerald-950 font-serif flex items-center gap-2">
                           <span className="text-emerald-600 font-bold">✓</span> {b.title}
                         </h3>
-                        <p className="text-xs text-zinc-700 leading-relaxed">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed">
                           {b.desc}
                         </p>
                       </div>
@@ -2037,7 +2037,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                           <h3 className={`text-base font-bold font-serif ${plan.highlight ? "text-white" : "text-zinc-900"}`}>
                             {plan.title}
                           </h3>
-                          <p className={`text-xs ${plan.highlight ? "text-purple-200" : "text-zinc-500"}`}>
+                          <p className={`text-[14px] ${plan.highlight ? "text-purple-200" : "text-zinc-500"}`}>
                             {plan.subtitle}
                           </p>
                           {plan.price && (
@@ -2063,7 +2063,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                             className={`w-full text-center block py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all ${
                               plan.highlight
                                 ? "bg-purple-500 hover:bg-purple-400 text-white shadow-lg shadow-purple-500/30"
-                                : "bg-zinc-900 hover:bg-black text-white"
+                                : "bg-[#8B3DFF] hover:bg-[#782ee6] text-white"
                             }`}
                           >
                             Book Package Audit
@@ -2109,7 +2109,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                         <h3 className="text-sm font-bold text-zinc-900 font-serif flex items-center gap-2">
                           <span className="text-purple-600 font-mono font-bold">Q:</span> {faq.question}
                         </h3>
-                        <p className="text-xs text-zinc-700 leading-relaxed pl-6">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed pl-6">
                           {faq.answer}
                         </p>
                       </div>

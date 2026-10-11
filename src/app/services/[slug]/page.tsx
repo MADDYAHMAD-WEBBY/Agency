@@ -180,7 +180,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <img
               src={service.coverImage}
               alt={service.title}
-              className="w-full h-full object-cover object-top filter blur-[8px] opacity-40 sm:opacity-55 scale-110"
+              className="w-full h-full object-cover object-top filter blur-[2px] opacity-45 sm:opacity-60 scale-105"
             />
             {/* Smooth Edge Fade Gradients */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
@@ -224,12 +224,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <span>↗</span>
             </Link>
 
-            <Link
-              href="/pricing"
+            <a
+              href="#pricing"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-zinc-300 bg-white/80 hover:bg-zinc-100 text-zinc-800 text-xs sm:text-sm font-mono font-bold tracking-wider uppercase transition-all"
             >
               <span>Explore Engagement & Pricing</span>
-            </Link>
+            </a>
           </div>
 
           {/* Tech Stack Badges Row */}
@@ -248,7 +248,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           )}
 
           {/* Overview Lead Description */}
-          <div className="mt-8 text-zinc-700 text-sm sm:text-base font-normal leading-relaxed max-w-5xl">
+          <div className="mt-8 text-zinc-700 text-base sm:text-lg font-normal leading-relaxed max-w-5xl">
             {service.description}
           </div>
 
@@ -264,10 +264,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <span>⚡</span> Strategy & Technical Architecture
                 </h2>
                 <div className="p-6 sm:p-8 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3">
-                  <h3 className="text-base sm:text-lg font-bold text-zinc-900 flex items-center gap-2 font-serif">
+                  <h3 className="text-lg sm:text-xl font-bold text-zinc-900 flex items-center gap-2 font-serif">
                     <span>🚀</span> Enterprise Engineering & Execution
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
+                  <p className="text-[14px] sm:text-[15px] text-zinc-700 leading-relaxed">
                     By combining modern engineering frameworks, cloud databases, and bespoke software architecture, MHKMarkedia builds robust digital systems that streamline business operations and scale revenue effortlessly.
                   </p>
                 </div>
@@ -292,7 +292,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                               <span>{step.title}</span>
                               <span className="text-purple-400 font-mono text-xs opacity-75">Step {idx + 1}</span>
                             </h3>
-                            <p className="text-xs text-zinc-400 leading-relaxed">
+                            <p className="text-[14px] text-zinc-400 leading-relaxed">
                               {step.desc}
                             </p>
                           </div>
@@ -309,7 +309,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
                     <span>⚖️</span> {service.slug === "ecommerce" ? "Shopify vs WooCommerce Platform Comparison" : service.slug === "wordpress-website" ? "Generic Pre-Made Themes vs Custom WordPress Engineering" : service.slug === "web-applications" ? "Standard Website vs Interactive Web Application" : service.slug === "custom-software-saas" ? "Ready-Made Software vs Custom Software & SaaS Platforms" : service.slug === "mobile-apps" ? "Native (Swift/Kotlin) vs Cross-Platform (React Native/Flutter)" : service.slug === "api-integrations" ? "No-Code (Zapier/Make) vs Custom Integration & API Development" : service.slug === "gbp-optimization" ? "Unoptimized Google Profile vs Fully Optimized Map Pack Asset" : service.slug === "citation-building" ? "Unaudited Directory Listings vs Synchronized Citation Platform" : service.slug === "review-management" ? "Manual Review Requests vs Automated Reputation System" : "Traditional Chatbots vs Autonomous AI Agents"}
                   </h2>
-                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
+                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-[14px] shadow-sm">
                     <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
                       <div className="col-span-4">{service.comparisonHeaders?.col1 || "FEATURE / CAPABILITY"}</div>
                       <div className="col-span-4 text-purple-300">{service.comparisonHeaders?.col2 || "TRADITIONAL CHATBOT"}</div>
@@ -325,65 +325,65 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                         <div className="col-span-4 font-bold text-zinc-900 font-serif">
                           {row.feature}
                         </div>
-                        <div className="col-span-4 text-zinc-600 text-xs leading-relaxed pr-2">
+                        <div className="col-span-4 text-zinc-600 text-[14px] leading-relaxed pr-2">
                           {row.chatbot}
                         </div>
-                        <div className="col-span-4 text-purple-950 font-medium text-xs leading-relaxed">
+                        <div className="col-span-4 text-purple-950 font-medium text-[14px] leading-relaxed">
                           {row.agent}
                         </div>
                       </div>
                     ))}
                   </div>
                   {service.slug === "ecommerce" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Confused between Shopify and WooCommerce? We provide a free platform consultation to select the optimal e-commerce tech stack for your business.</span>
                     </div>
                   )}
                   {service.slug === "wordpress-website" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Confused between pre-made themes and custom WordPress engineering? We evaluate your business requirements for free and design the ideal WordPress architecture.</span>
                     </div>
                   )}
                   {service.slug === "web-applications" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Not sure whether you need a website or a full web app? We provide a free architectural consultation to guide your business.</span>
                     </div>
                   )}
                   {service.slug === "custom-software-saas" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Not sure whether you need internal custom software or a commercial SaaS product? We provide a free architectural scoping consultation to guide your product strategy.</span>
                     </div>
                   )}
                   {service.slug === "mobile-apps" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Confused between Native (Swift/Kotlin) and Cross-Platform (React Native/Flutter)? We provide a free technical consultation to select the optimal mobile architecture for your budget.</span>
                     </div>
                   )}
                   {service.slug === "api-integrations" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Not sure which integration approach is right for your stack? We suggest the optimal approach for free. In many cases, no-code connectors (Zapier/Make) are sufficient, and we will honestly advise you if that fits your requirements.</span>
                     </div>
                   )}
                   {service.slug === "gbp-optimization" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Not sure where your business ranks on local Google Maps? We provide a 100% free Google Business Profile audit and competitor map pack analysis.</span>
                     </div>
                   )}
                   {service.slug === "citation-building" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Unsure whether your NAP data is consistent across online directories? We provide a 100% free local citation and duplicate listing audit.</span>
                     </div>
                   )}
                   {service.slug === "review-management" && (
-                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-xs text-purple-950 font-medium flex items-center gap-2">
+                    <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/70 text-sm text-purple-950 font-medium flex items-center gap-2">
                       <span>💡</span>
                       <span>Struggling to collect fresh 5-star customer reviews? We provide a 100% free online reputation audit and review workflow scoping call.</span>
                     </div>
@@ -397,7 +397,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <h2 className="text-2xl sm:text-3xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
                     <span>⚔️</span> Off-the-Shelf Tools vs Custom Engineering
                   </h2>
-                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
+                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-[14px] shadow-sm">
                     <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
                       <div className="col-span-4">EVALUATION CRITERIA</div>
                       <div className="col-span-4 text-red-300">READY-MADE TOOLS</div>
@@ -413,10 +413,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                         <div className="col-span-4 font-bold text-zinc-900 font-serif">
                           {row.feature}
                         </div>
-                        <div className="col-span-4 text-zinc-600 text-xs leading-relaxed pr-2">
+                        <div className="col-span-4 text-zinc-600 text-[14px] leading-relaxed pr-2">
                           {row.readyMade}
                         </div>
-                        <div className="col-span-4 text-purple-950 font-medium text-xs leading-relaxed">
+                        <div className="col-span-4 text-purple-950 font-medium text-[14px] leading-relaxed">
                           {row.custom}
                         </div>
                       </div>
@@ -437,10 +437,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                         key={idx}
                         className="p-6 rounded-2xl bg-red-50/40 border border-red-200/60 space-y-2 hover:border-red-300 transition-colors"
                       >
-                        <div className="text-sm font-bold text-red-950 flex items-center gap-2 font-serif">
+                        <div className="text-base sm:text-lg font-bold text-red-950 flex items-center gap-2 font-serif">
                           <span className="text-red-500 font-bold">✕</span> {prob.title}
                         </div>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed">
                           {prob.desc}
                         </p>
                       </div>
@@ -458,10 +458,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.botTypes.map((bot, idx) => (
                       <div key={idx} className="p-6 rounded-2xl bg-purple-50/40 border border-purple-200/60 space-y-2 hover:border-purple-300 transition-colors">
-                        <h3 className="text-base font-bold text-zinc-900 font-serif flex items-center gap-2">
+                        <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-serif flex items-center gap-2">
                           <span className="text-purple-600 font-bold">•</span> {bot.title}
                         </h3>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed">
                           {bot.desc}
                         </p>
                       </div>
@@ -486,7 +486,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                           <h3 className="text-sm font-bold text-emerald-400 font-serif flex items-center gap-2">
                             <span>🔒</span> {sec.title}
                           </h3>
-                          <p className="text-xs text-slate-300 leading-relaxed">
+                          <p className="text-[14px] text-slate-300 leading-relaxed">
                             {sec.desc}
                           </p>
                         </div>
@@ -503,7 +503,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     <span>🔌</span> Connected Ingestion Channels & Sources
                   </h2>
                   <div className="p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3">
-                    <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-sans">
+                    <p className="text-[14px] text-zinc-700 leading-relaxed font-sans">
                       We connect every prospective touchpoint into a unified CRM pipeline with zero lead leakage:
                     </p>
                     <div className="flex flex-wrap gap-2.5 pt-2">
@@ -528,7 +528,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     <span>⚙️</span> Department-Level Automation Use Cases
                   </h2>
                   
-                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-xs sm:text-sm shadow-sm">
+                  <div className="rounded-2xl border border-zinc-200 overflow-hidden text-[14px] shadow-sm">
                     <div className="grid grid-cols-12 bg-zinc-900 p-4 font-mono font-bold text-white uppercase tracking-wider">
                       <div className="col-span-4">DEPARTMENT</div>
                       <div className="col-span-8">AUTOMATION EXAMPLES & WORKFLOWS</div>
@@ -561,10 +561,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.dashboardMetrics.map((m, idx) => (
                       <div key={idx} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
-                        <h3 className="text-sm font-bold text-zinc-900 font-serif text-purple-900">
+                        <h3 className="text-base font-bold text-zinc-900 font-serif text-purple-900">
                           {m.metric}
                         </h3>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed">
                           {m.desc}
                         </p>
                       </div>
@@ -582,10 +582,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.useCases.map((uc, idx) => (
                       <div key={idx} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
-                        <h3 className="text-sm font-bold text-zinc-900 font-serif text-purple-900">
+                        <h3 className="text-base font-bold text-zinc-900 font-serif text-purple-900">
                           {uc.industry}
                         </h3>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed">
                           {uc.desc}
                         </p>
                       </div>
@@ -634,10 +634,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                         <span className="text-xs font-mono font-bold text-purple-600 bg-purple-100 px-2.5 py-1 rounded-full">
                           {step.step}
                         </span>
-                        <h3 className="text-base font-bold text-zinc-900 font-serif pt-1">
+                        <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-serif pt-1">
                           {step.title}
                         </h3>
-                        <p className="text-xs text-zinc-600 leading-relaxed">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed">
                           {step.desc}
                         </p>
                       </div>
@@ -655,10 +655,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.benefits.map((b, idx) => (
                       <div key={idx} className="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-200/70 space-y-2">
-                        <h3 className="text-sm font-bold text-emerald-950 font-serif flex items-center gap-2">
+                        <h3 className="text-base sm:text-lg font-bold text-emerald-950 font-serif flex items-center gap-2">
                           <span className="text-emerald-600 font-bold">✓</span> {b.title}
                         </h3>
-                        <p className="text-xs text-zinc-700 leading-relaxed">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed">
                           {b.desc}
                         </p>
                       </div>
@@ -678,11 +678,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                       <div key={idx} className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80">
                         <div className="space-y-1.5 p-4 rounded-xl bg-red-50/60 border border-red-200/60">
                           <div className="text-xs font-mono font-bold text-red-600 uppercase">BEFORE AUTOMATION</div>
-                          <p className="text-xs text-zinc-700 leading-relaxed">{ba.before}</p>
+                          <p className="text-sm text-zinc-700 leading-relaxed">{ba.before}</p>
                         </div>
                         <div className="space-y-1.5 p-4 rounded-xl bg-emerald-50/60 border border-emerald-200/60">
                           <div className="text-xs font-mono font-bold text-emerald-700 uppercase">AFTER AUTOMATION</div>
-                          <p className="text-xs text-zinc-800 leading-relaxed">{ba.after}</p>
+                          <p className="text-sm text-zinc-800 leading-relaxed">{ba.after}</p>
                         </div>
                       </div>
                     ))}
@@ -715,7 +715,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                           <h3 className={`text-base font-bold font-serif ${plan.highlight ? "text-white" : "text-zinc-900"}`}>
                             {plan.title}
                           </h3>
-                          <p className={`text-xs ${plan.highlight ? "text-purple-200" : "text-zinc-500"}`}>
+                          <p className={`text-[14px] ${plan.highlight ? "text-purple-200" : "text-zinc-500"}`}>
                             {plan.subtitle}
                           </p>
                           {plan.price && (
@@ -723,7 +723,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                               {plan.price}
                             </div>
                           )}
-                          <ul className="space-y-2 pt-4 text-xs">
+                          <ul className="space-y-2 pt-4 text-[14px]">
                             {plan.features.map((feat, fIdx) => (
                               <li key={fIdx} className="flex items-start gap-2">
                                 <span className={plan.highlight ? "text-emerald-400 font-bold" : "text-purple-600 font-bold"}>
@@ -737,11 +737,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                         <div className="mt-6 pt-4 border-t border-zinc-200/30">
                           <Link
-                            href={`/contact?package=${encodeURIComponent(plan.title)}&service=${encodeURIComponent(service.title)}`}
+                            href={`/contact?package=${encodeURIComponent(plan.title)}&service=${encodeURIComponent(service.title)}${plan.price ? `&total=${encodeURIComponent(plan.price)}` : ""}&scope=${encodeURIComponent(plan.features.join(", "))}`}
                             className={`w-full text-center block py-3 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 ${
                               plan.highlight
                                 ? "bg-purple-600 hover:bg-purple-500 text-white shadow-purple-600/30 ring-2 ring-purple-400"
-                                : "bg-zinc-900 hover:bg-black text-white"
+                                : "bg-[#8B3DFF] hover:bg-[#782ee6] text-white"
                             }`}
                           >
                             Get Started →
@@ -759,7 +759,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <h2 className="text-xl sm:text-2xl font-serif italic font-normal text-zinc-900 tracking-tight flex items-center gap-2">
                     <span>📦</span> {service.sectionTitles?.deliverables || `${service.title} Deliverables & Asset Handoff`}
                   </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-zinc-800 p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[14px] font-semibold text-zinc-800 p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80">
                     {service.deliverables.map((item) => (
                       <div key={item} className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-purple-600" />
@@ -779,10 +779,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div className="space-y-4">
                     {service.faqs.map((faq, idx) => (
                       <div key={idx} className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-2">
-                        <h3 className="text-sm font-bold text-zinc-900 font-serif flex items-center gap-2">
+                        <h3 className="text-base sm:text-lg font-bold text-zinc-900 font-serif flex items-center gap-2">
                           <span className="text-purple-600 font-mono font-bold">Q:</span> {faq.question}
                         </h3>
-                        <p className="text-xs text-zinc-700 leading-relaxed pl-6">
+                        <p className="text-[14px] text-zinc-700 leading-relaxed pl-6">
                           {faq.answer}
                         </p>
                       </div>

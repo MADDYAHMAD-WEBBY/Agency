@@ -194,10 +194,10 @@ export const FolderCard = React.forwardRef<HTMLDivElement, FolderCardProps>(
                 {/* Main Body Content (Below the Tab Curve) */}
                 <div className="absolute left-[5cqw] top-[43.5cqw] right-[5cqw] bottom-[4.5cqw] flex flex-col justify-between">
                   <div className="space-y-[1.6cqw]">
-                    <h3 className="m-0 font-sans text-[4.3cqw] font-extrabold tracking-tight text-white leading-[1.28] line-clamp-2">
+                    <h3 className="m-0 font-sans text-[4.7cqw] font-extrabold tracking-tight text-white leading-[1.28] line-clamp-2">
                       {title}
                     </h3>
-                    <p className="m-0 font-sans text-[3.3cqw] font-normal text-purple-100/85 leading-relaxed line-clamp-2">
+                    <p className="m-0 font-sans text-[3.7cqw] font-normal text-purple-100/85 leading-relaxed line-clamp-2">
                       {subtitle}
                     </p>
                   </div>
@@ -207,11 +207,11 @@ export const FolderCard = React.forwardRef<HTMLDivElement, FolderCardProps>(
                     <div className="flex items-center justify-between border-t border-purple-500/25 pt-[2.2cqw] mt-[2cqw]">
                       {count ? (
                         <div className="flex items-baseline gap-[1cqw]">
-                          <span className="font-mono font-extrabold text-[4.2cqw] text-emerald-400">
+                          <span className="font-mono font-extrabold text-[4.7cqw] text-emerald-400">
                             {count}
                           </span>
                           {countLabel && (
-                            <span className="font-sans text-[2.8cqw] font-medium text-zinc-400">
+                            <span className="font-sans text-[3.2cqw] font-medium text-zinc-400">
                               {countLabel}
                             </span>
                           )}

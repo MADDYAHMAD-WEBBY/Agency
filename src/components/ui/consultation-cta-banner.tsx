@@ -22,22 +22,22 @@ export default function ConsultationCtaBanner({
     <section id="contact" className="relative z-20 w-full mt-2 sm:mt-4 pt-2 sm:pt-4 pb-12 sm:pb-16 bg-white overflow-hidden">
       <div className="w-full max-w-[1562px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Card with 10px Border Radius and Soft Blue-Cyan Atmosphere Glow matching Homepage */}
+        {/* Main Card with 10px Border Radius and Soft Purple Atmosphere Glow matching Homepage */}
         <div className="relative rounded-[10px] border border-zinc-200/90 bg-white/90 backdrop-blur-md overflow-hidden p-8 sm:p-14 lg:p-16 shadow-[0_12px_45px_rgba(0,0,0,0.04)]">
           
-          {/* Bottom-Left Vibrant Cyan/Blue Aura */}
+          {/* Bottom-Left Vibrant Purple Aura */}
           <div
             className="pointer-events-none absolute -bottom-24 -left-24 w-80 sm:w-[420px] h-80 sm:h-[420px] rounded-full blur-[85px] opacity-75"
             style={{
-              background: "radial-gradient(circle, rgba(56, 189, 248, 0.7) 0%, rgba(6, 182, 212, 0.4) 45%, transparent 75%)",
+              background: "radial-gradient(circle, rgba(168, 85, 247, 0.7) 0%, rgba(139, 61, 255, 0.4) 45%, transparent 75%)",
             }}
           />
 
-          {/* Top-Right Vibrant Sky/Azure Aura */}
+          {/* Top-Right Vibrant Purple/Indigo Aura */}
           <div
             className="pointer-events-none absolute -top-24 -right-24 w-80 sm:w-[440px] h-80 sm:h-[440px] rounded-full blur-[90px] opacity-70"
             style={{
-              background: "radial-gradient(circle, rgba(56, 189, 248, 0.65) 0%, rgba(14, 165, 233, 0.35) 45%, transparent 75%)",
+              background: "radial-gradient(circle, rgba(168, 85, 247, 0.65) 0%, rgba(147, 51, 234, 0.35) 45%, transparent 75%)",
             }}
           />
 
@@ -51,7 +51,7 @@ export default function ConsultationCtaBanner({
 
               {/* Rotating "OPEN TO COLLABORATE" Sticker Badge */}
               <div className="relative sm:absolute sm:-top-2 sm:-right-16 md:-right-20 lg:-right-24 mt-4 sm:mt-0 inline-flex items-center justify-center">
-                <div className="relative w-20 h-20 sm:w-22 sm:h-22 rounded-full border-[3.5px] border-[#0055ff] bg-black shadow-xl flex items-center justify-center">
+                <div className="relative w-20 h-20 sm:w-22 sm:h-22 rounded-full border-[3.5px] border-[#8B3DFF] bg-black shadow-xl flex items-center justify-center">
                   
                   {/* Rotating Circular Text SVG */}
                   <svg

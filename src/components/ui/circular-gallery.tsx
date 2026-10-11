@@ -320,10 +320,10 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
                         <span className="text-purple-300 group-hover:translate-x-0.5 transition-transform">↗</span>
                       )}
                     </span>
-                    <h3 className="text-base sm:text-xl font-bold font-serif tracking-tight leading-snug drop-shadow-sm text-white group-hover:text-purple-100 transition-colors">
+                    <h3 className="text-lg sm:text-2xl font-bold font-serif tracking-tight leading-snug drop-shadow-sm text-white group-hover:text-purple-100 transition-colors">
                       {item.common}
                     </h3>
-                    <p className="text-xs sm:text-[0.8rem] font-sans text-zinc-300 font-normal mt-1 leading-relaxed line-clamp-2">
+                    <p className="text-sm sm:text-[0.95rem] font-sans text-zinc-200 font-normal mt-1.5 leading-relaxed line-clamp-2">
                       {item.binomial}
                     </p>
 

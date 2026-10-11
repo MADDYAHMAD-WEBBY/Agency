@@ -274,7 +274,7 @@ export default function ServicesSection() {
                 }}
                 className={`relative px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? "bg-black text-white shadow-md"
+                    ? "bg-[#8B3DFF] text-white shadow-md shadow-purple-500/25 scale-[1.02]"
                     : "bg-zinc-100/90 text-zinc-600 hover:bg-zinc-200/80 hover:text-zinc-900 border border-zinc-200/60"
                 }`}
               >
@@ -318,7 +318,7 @@ export default function ServicesSection() {
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 hover:bg-black text-white font-semibold text-sm transition-all duration-300 shadow-md cursor-pointer group"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#8B3DFF] hover:bg-[#782ee6] text-white font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-purple-500/25 cursor-pointer group"
             >
               <span>{isExpanded ? "Show Less Services" : `View All ${rawServices.length} Services`}</span>
               {isExpanded ? (
