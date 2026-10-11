@@ -63,6 +63,15 @@ export const metadata: Metadata = {
     images: ["/images/ceo.webp"],
     creator: "@mhkmarkedia",
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,

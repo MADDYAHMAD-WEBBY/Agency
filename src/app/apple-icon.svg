@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <defs>
+    <radialGradient id="apple-bg-glow" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="70%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#06080E" />
+    </radialGradient>
+
+    <linearGradient id="apple-border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#7C3AED" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#4C1D95" stop-opacity="0.5" />
+    </linearGradient>
+
+    <linearGradient id="apple-mhk-m-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="35%" stop-color="#A855F7" />
+      <stop offset="70%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#6B21A8" />
+    </linearGradient>
+
+    <filter id="apple-mhk-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#8B5CF6" flood-opacity="0.55" />
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#7C3AED" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- iOS App Icon Base -->
+  <rect width="180" height="180" rx="42" fill="url(#apple-bg-glow)" />
+  <rect x="1.5" y="1.5" width="177" height="177" rx="40.5" stroke="url(#apple-border-grad)" stroke-width="3" fill="none" />
+
+  <!-- Geometric 'M' scaled for 180x180 -->
+  <g transform="translate(15.96, 14.06) scale(3.797)" filter="url(#apple-mhk-glow)">
+    <path
+      d="M4 34V6H12.5L19.5 22.5L26.5 6H35V34H27.5V15.5L20.5 31.5H18.5L11.5 15.5V34H4Z"
+      fill="url(#apple-mhk-m-grad)"
+    />
+  </g>
+
+  <!-- Constellation Accent Dot -->
+  <circle cx="145" cy="41" r="5.5" fill="#E9D5FF" />
+  <circle cx="145" cy="41" r="10" stroke="#A855F7" stroke-width="2" opacity="0.6" />
+</svg>
