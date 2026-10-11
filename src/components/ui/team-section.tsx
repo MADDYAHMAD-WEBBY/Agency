@@ -54,9 +54,9 @@ const teamMembers: TeamMember[] = [
     },
   },
   {
-    name: "Zainab Noor",
-    role: "Conversion & Content Strategist",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=85",
+    name: "David Harrison",
+    role: "Conversion & Content Strategist • London (UK)",
+    image: "/images/team/david-harrison.webp",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
