@@ -29,27 +29,25 @@ const featuredLeader = {
 // 4 Core Team Members
 const teamMembers: TeamMember[] = [
   {
-    name: "Daniyal Raza",
-    role: "Full-Stack Developer & Local SEO Expert",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=85",
+    name: "Shoaib Naeem",
+    role: "Business Development Manager • New York (U.S.A)",
+    image: "/images/team/shoaib-naeem.webp",
     socials: {
-      github: "https://github.com",
       linkedin: "https://linkedin.com",
     },
   },
   {
-    name: "Bilal Tariq",
-    role: "Senior Full-Stack Engineer",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=85",
+    name: "Jawad Malik",
+    role: "Operations Manager • Jeddah (KSA)",
+    image: "/images/team/jawad-malik.webp",
     socials: {
-      github: "https://github.com",
       linkedin: "https://linkedin.com",
     },
   },
   {
-    name: "Ayesha Malik",
-    role: "Lead UI/UX & Brand Designer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=85",
+    name: "Hamad Ahmad",
+    role: "Full Stack Developer",
+    image: "/images/team/hamad-ahmad.webp",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",

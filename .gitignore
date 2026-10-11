@@ -40,3 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 generate-*.ps1
+convert-*.js
+process-*.js
