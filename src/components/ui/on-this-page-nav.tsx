@@ -45,7 +45,7 @@ export default function OnThisPageNav({ items }: OnThisPageNavProps) {
       <div className="text-[11px] font-sans font-bold text-zinc-400 tracking-wider uppercase mb-4 sticky top-0 bg-white/90 backdrop-blur-xs py-1 z-10">
         ON THIS PAGE
       </div>
-      <nav className="space-y-3.5 text-[14px] font-sans">
+      <nav className="space-y-3.5 text-[13px] font-sans">
         {items.map((item) => {
           const isActive = activeId === item.id;
           return (
