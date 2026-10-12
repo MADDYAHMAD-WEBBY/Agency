@@ -5,6 +5,7 @@ import { CASE_STUDIES } from "@/lib/content-data";
 import Header, { NavigationSection } from "@/components/ui/hero-01-utils/header";
 import SiteFooter from "@/components/ui/site-footer";
 import ConsultationCtaBanner from "@/components/ui/consultation-cta-banner";
+import PlatformBadge from "@/components/ui/platform-badge";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -199,6 +200,11 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+
+            {/* Platform Logo Badge on Showcase Image */}
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 pointer-events-none drop-shadow-xl transition-transform group-hover:scale-105">
+              <PlatformBadge slug={cs.slug} size="lg" />
+            </div>
           </div>
 
           {/* Snapshot Grid Card */}

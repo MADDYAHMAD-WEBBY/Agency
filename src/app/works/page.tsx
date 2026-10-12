@@ -6,72 +6,7 @@ import SiteFooter from "@/components/ui/site-footer";
 import ConsultationCtaBanner from "@/components/ui/consultation-cta-banner";
 import FolderCard from "@/components/ui/folder-card";
 import { CASE_STUDIES } from "@/lib/content-data";
-import { FaAmazon, FaShopify, FaEtsy, FaTiktok } from "react-icons/fa6";
-import { SiNextdotjs } from "react-icons/si";
-import { ShieldCheck } from "lucide-react";
-
-function renderPlatformBadge(slug: string) {
-  switch (slug) {
-    case "ksa-to-usa-uk-eu-amazon-fba-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-amber-500/40 text-white shadow-lg transition-transform group-hover:scale-105">
-          <FaAmazon className="w-3.5 h-3.5 text-[#FF9900]" />
-          <span className="text-[10px] font-bold tracking-tight text-white font-sans">Amazon FBA</span>
-        </div>
-      );
-    case "amazon-saudi-arabia-fba-launch-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-amber-500/40 text-white shadow-lg transition-transform group-hover:scale-105">
-          <FaAmazon className="w-3.5 h-3.5 text-[#FF9900]" />
-          <span className="text-[10px] font-bold tracking-tight text-white font-sans">Amazon.sa</span>
-        </div>
-      );
-    case "noon-gulf-marketplace-brand-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FEEE00] text-black border border-yellow-300/80 shadow-lg font-black transition-transform group-hover:scale-105">
-          <span className="w-2.5 h-2.5 rounded-full bg-black flex items-center justify-center text-[7px] text-[#FEEE00] font-black">ن</span>
-          <span className="text-[10px] font-extrabold tracking-tight font-sans">noon</span>
-        </div>
-      );
-    case "shopify-dtc-brand-building-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-emerald-500/40 text-white shadow-lg transition-transform group-hover:scale-105">
-          <FaShopify className="w-3.5 h-3.5 text-[#95BF47]" />
-          <span className="text-[10px] font-bold tracking-tight text-white font-sans">Shopify</span>
-        </div>
-      );
-    case "etsy-handmade-crafts-global-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-orange-500/40 text-white shadow-lg transition-transform group-hover:scale-105">
-          <FaEtsy className="w-3.5 h-3.5 text-[#F16521]" />
-          <span className="text-[10px] font-bold tracking-tight text-white font-sans">Etsy</span>
-        </div>
-      );
-    case "tiktok-shop-video-sales-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-pink-500/40 text-white shadow-lg transition-transform group-hover:scale-105">
-          <FaTiktok className="w-3 h-3 text-[#FE2C55]" />
-          <span className="text-[10px] font-bold tracking-tight text-white font-sans">TikTok Shop</span>
-        </div>
-      );
-    case "cloudscale-lahore-headless-migration-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-purple-500/40 text-white shadow-lg transition-transform group-hover:scale-105">
-          <SiNextdotjs className="w-3.5 h-3.5 text-white" />
-          <span className="text-[10px] font-bold tracking-tight text-white font-sans">Next.js 16</span>
-        </div>
-      );
-    case "fintech-cloud-portal-case-study":
-      return (
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-950/85 backdrop-blur-md border border-blue-500/40 text-white shadow-lg transition-transform group-hover:scale-105">
-          <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-          <span className="text-[10px] font-bold tracking-tight text-white font-sans">FinTech Cloud</span>
-        </div>
-      );
-    default:
-      return null;
-  }
-}
+import PlatformBadge from "@/components/ui/platform-badge";
 
 export const metadata: Metadata = {
   title: "Featured Works & E-Commerce Case Studies | MHKMarkedia",
@@ -204,6 +139,7 @@ export default function WorksPage() {
                 "shopify-dtc-brand-building-case-study": "SHOPIFY DTC",
                 "etsy-handmade-crafts-global-case-study": "ETSY GLOBAL",
                 "tiktok-shop-video-sales-case-study": "TIKTOK SHOP",
+                "cloudscale-lahore-headless-migration": "HEADLESS NEXT.JS",
                 "cloudscale-lahore-headless-migration-case-study": "HEADLESS NEXT.JS",
                 "fintech-cloud-portal-case-study": "FINTECH PORTAL",
               };
@@ -225,7 +161,7 @@ export default function WorksPage() {
                     meta={timeline}
                     cover={study.coverImage}
                     coverAlt={study.title}
-                    platformLogo={renderPlatformBadge(study.slug)}
+                    platformLogo={<PlatformBadge slug={study.slug} />}
                     className="h-full"
                   />
                 </Link>
