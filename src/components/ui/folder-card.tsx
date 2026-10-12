@@ -24,6 +24,8 @@ export interface FolderCardProps extends Omit<
   cover?: string;
   /** Alt text for the cover image. */
   coverAlt?: string;
+  /** Platform logo or badge displayed on the visible portion of the cover image. */
+  platformLogo?: React.ReactNode;
   /** Hover motion. Default: true. */
   interactive?: boolean;
 }
@@ -86,6 +88,7 @@ export const FolderCard = React.forwardRef<HTMLDivElement, FolderCardProps>(
       meta,
       cover,
       coverAlt,
+      platformLogo,
       interactive = true,
       className,
       style,
@@ -146,6 +149,13 @@ export const FolderCard = React.forwardRef<HTMLDivElement, FolderCardProps>(
                   />
                 )}
               </motion.div>
+
+              {/* Platform Logo Badge on visible portion of the image */}
+              {platformLogo && (
+                <div className="absolute top-[3.5cqw] right-[3.5cqw] z-10 pointer-events-none drop-shadow-md">
+                  {platformLogo}
+                </div>
+              )}
             </div>
 
             {/* Folder Front Panel */}
