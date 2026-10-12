@@ -118,6 +118,12 @@ function ContactPageInner() {
   const [msgBudget, setMsgBudget] = useState("$1k - $3k");
   const [msgContent, setMsgContent] = useState("");
   const [msgSentSuccess, setMsgSentSuccess] = useState(false);
+  const [isSubmittingMsg, setIsSubmittingMsg] = useState(false);
+  const [msgError, setMsgError] = useState("");
+
+  // Booking Form Submission States
+  const [isSubmittingBooking, setIsSubmittingBooking] = useState(false);
+  const [bookingError, setBookingError] = useState("");
 
   useEffect(() => {
     if (selectedPackage || selectedService || selectedIndustry || selectedScope) {
@@ -208,15 +214,65 @@ function ContactPageInner() {
   const monthShortStr = selectedDateObj.toLocaleDateString("en-US", { month: "short" }).toUpperCase();
   const selectedDateHeaderStr = `${dayOfWeekStr}, ${monthShortStr} ${selectedDay}`;
 
-  const handleBookingSubmit = (e: React.FormEvent) => {
+  const handleBookingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setBookingSuccess(true);
-    setIsConfirmingSlot(false);
+    setIsSubmittingBooking(true);
+    setBookingError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "booking",
+          name: bookingName,
+          email: bookingEmail,
+          content: bookingNote,
+          selectedDate: `${monthYearString} ${selectedDay}`,
+          selectedTime: formatTimeSlot(selectedTime, timeFormat),
+          timezone,
+          selectedDeal: selectedPackage || selectedService || selectedIndustry || "",
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to schedule call. Please try again.");
+      }
+      setBookingSuccess(true);
+      setIsConfirmingSlot(false);
+    } catch (err: any) {
+      setBookingError(err.message || "Failed to send booking request. Please check SMTP credentials.");
+    } finally {
+      setIsSubmittingBooking(false);
+    }
   };
 
-  const handleSendMessageSubmit = (e: React.FormEvent) => {
+  const handleSendMessageSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setMsgSentSuccess(true);
+    setIsSubmittingMsg(true);
+    setMsgError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "message",
+          name: msgName,
+          email: msgEmail,
+          service: msgService,
+          budget: msgBudget,
+          content: msgContent,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to send message. Please try again.");
+      }
+      setMsgSentSuccess(true);
+    } catch (err: any) {
+      setMsgError(err.message || "Failed to send message. Please check SMTP credentials.");
+    } finally {
+      setIsSubmittingMsg(false);
+    }
   };
 
   const contactJsonLd = {
@@ -239,6 +295,7 @@ function ContactPageInner() {
         "@id": "https://mhkmarkedia.com/#service",
         "name": "MHKMarkedia Digital Architect Agency",
         "telephone": "+966532428200",
+        "email": "info@mhkmarkedia.com",
         "url": "https://mhkmarkedia.com",
         "priceRange": "$$$"
       },
@@ -348,7 +405,7 @@ function ContactPageInner() {
           {/* Social Media Links Bar */}
           <div className="inline-flex items-center gap-3 p-1.5 px-4 rounded-full bg-zinc-100/90 border border-zinc-200/80">
             <a
-              href="mailto:contact@mhkmarkedia.com"
+              href="mailto:info@mhkmarkedia.com"
               title="Send Email"
               className="w-9 h-9 rounded-full bg-white border border-zinc-200 text-zinc-700 hover:text-purple-600 hover:border-purple-300 flex items-center justify-center transition-colors shadow-2xs"
             >
@@ -713,12 +770,28 @@ function ContactPageInner() {
                       />
                     </div>
 
+                    {bookingError && (
+                      <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs font-mono">
+                        {bookingError}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full py-4 px-6 rounded-full bg-gradient-to-r from-[#8B3DFF] to-[#635BFF] hover:from-[#782ee6] hover:to-[#5248e6] text-white font-mono text-xs sm:text-sm font-bold tracking-wide transition-all shadow-lg hover:shadow-purple-500/25 active:scale-98 flex items-center justify-center gap-2 mt-2"
+                      disabled={isSubmittingBooking}
+                      className="w-full py-4 px-6 rounded-full bg-gradient-to-r from-[#8B3DFF] to-[#635BFF] hover:from-[#782ee6] hover:to-[#5248e6] disabled:opacity-70 text-white font-mono text-xs sm:text-sm font-bold tracking-wide transition-all shadow-lg hover:shadow-purple-500/25 active:scale-98 flex items-center justify-center gap-2 mt-2 cursor-pointer"
                     >
-                      <span>Confirm Booking</span>
-                      <span>→</span>
+                      {isSubmittingBooking ? (
+                        <>
+                          <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <span>Scheduling Meeting...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Confirm Booking</span>
+                          <span>→</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 </div>
@@ -852,15 +925,31 @@ function ContactPageInner() {
                   </div>
                 </div>
 
+                {msgError && (
+                  <div className="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-600 text-xs font-mono">
+                    {msgError}
+                  </div>
+                )}
+
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#8B3DFF] to-[#5248e6] hover:from-[#782ee6] hover:to-[#4238d6] text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 active:scale-98"
+                    disabled={isSubmittingMsg}
+                    className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#8B3DFF] to-[#5248e6] hover:from-[#782ee6] hover:to-[#4238d6] disabled:opacity-70 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 active:scale-98 cursor-pointer"
                   >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
-                    <span>Send Message</span>
+                    {isSubmittingMsg ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <span>Sending Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

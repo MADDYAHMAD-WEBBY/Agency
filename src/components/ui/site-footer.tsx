@@ -65,7 +65,7 @@ const socials = [
 ];
 
 const contactInfo = [
-  { icon: Mail, text: "hello@mhkmarkedia.com", href: "mailto:hello@mhkmarkedia.com" },
+  { icon: Mail, text: "info@mhkmarkedia.com", href: "mailto:info@mhkmarkedia.com" },
   { icon: FaWhatsapp, text: "+966 53 242 8200", href: "https://wa.me/966532428200", isExternal: true },
   {
     icon: MapPin,

@@ -108,6 +108,7 @@ export default function RootLayout({
               "@type": "ProfessionalService",
               "name": "MHKMarkedia",
               "url": "https://mhkmarkedia.com",
+              "email": "info@mhkmarkedia.com",
               "logo": "https://mhkmarkedia.com/images/ceo.webp",
               "image": "https://mhkmarkedia.com/images/ceo.webp",
               "description": "High-performance digital agency specializing in custom Web Development, Headless WordPress, Local SEO, and AI Search Engine Optimization (GEO).",

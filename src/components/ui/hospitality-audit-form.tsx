@@ -15,14 +15,31 @@ export default function HospitalityAuditForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "audit",
+          propertyName: formData.propertyName,
+          city: formData.city,
+          bookingChannels: formData.bookingChannels,
+          monthlyBookings: formData.monthlyBookings,
+          contactNumber: formData.contactNumber,
+          email: formData.email,
+        }),
+      });
       setSubmitted(true);
-    }, 800);
+    } catch (err) {
+      console.error("Audit form submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
