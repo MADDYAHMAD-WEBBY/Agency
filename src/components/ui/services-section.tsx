@@ -234,14 +234,27 @@ const servicesData: ServiceItem[] = [
     accent: "#0064e0",
     accentForeground: "#ffffff",
   },
+  {
+    id: "social-media-management",
+    category: "ads",
+    href: "/services/social-media-management",
+    title: "Social Media Management",
+    description:
+      "End-to-end organic social content calendars, viral short-form video reels, custom branded graphics, and automated comment-to-DM lead capture.",
+    image: "/images/services/social-media-management.webp",
+    badge: "Organic Growth",
+    tags: ["Viral Video Reels", "Content Calendar", "DM Lead Funnels"],
+    accent: "#ec4899",
+    accentForeground: "#ffffff",
+  },
 ];
 
 const categories = [
   { id: "ai", label: "AI & Automation" },
   { id: "web", label: "Web & App Development" },
   { id: "seo", label: "Local SEO & Reputation" },
-  { id: "ads", label: "Paid Ads (Google & Meta)" },
-  { id: "all", label: "All Services (18)" },
+  { id: "ads", label: "Digital Marketing (Ads & Social)" },
+  { id: "all", label: "All Services (19)" },
 ];
 
 export default function ServicesSection() {

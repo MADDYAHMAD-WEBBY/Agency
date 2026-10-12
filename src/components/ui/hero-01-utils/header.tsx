@@ -117,6 +117,26 @@ export const SERVICES_DROPDOWN_GROUPS: ServiceCategoryGroup[] = [
       },
     ],
   },
+  {
+    category: "Paid Ads & Social Media",
+    items: [
+      {
+        title: "Google Ads (PPC) Management",
+        href: "/services/google-ads",
+        description: "High-intent Search, Shopping & Performance Max campaigns.",
+      },
+      {
+        title: "Meta Ads (Facebook & Instagram)",
+        href: "/services/meta-ads",
+        description: "Scroll-stopping hooks, CAPI tracking & WhatsApp leads.",
+      },
+      {
+        title: "Social Media Management",
+        href: "/services/social-media-management",
+        description: "Organic content calendars, viral reels & comment-to-DM funnels.",
+      },
+    ],
+  },
 ];
 
 export const INDUSTRIES_DROPDOWN_ITEMS: DropdownSubItem[] = [
@@ -261,7 +281,7 @@ export default function Header({ navigationData }: HeaderProps) {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.96 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[840px] bg-white/95 backdrop-blur-2xl rounded-3xl border border-purple-100/90 shadow-[0_20px_50px_rgba(139,61,255,0.15)] p-6 z-50 grid grid-cols-1 md:grid-cols-3 gap-6 text-zinc-900"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[1080px] max-w-[96vw] bg-white/95 backdrop-blur-2xl rounded-3xl border border-purple-100/90 shadow-[0_20px_50px_rgba(139,61,255,0.15)] p-6 z-50 grid grid-cols-1 md:grid-cols-4 gap-5 text-zinc-900"
                 >
                   {SERVICES_DROPDOWN_GROUPS.map((group, idx) => (
                     <div key={idx} className="space-y-3">
@@ -291,7 +311,7 @@ export default function Header({ navigationData }: HeaderProps) {
                   ))}
                   
                   {/* View All Services Footer Bar */}
-                  <div className="md:col-span-3 pt-3 border-t border-purple-100 flex items-center justify-between">
+                  <div className="md:col-span-4 pt-3 border-t border-purple-100 flex items-center justify-between">
                     <span className="text-xs text-zinc-600 font-sans">Looking for custom digital services?</span>
                     <Link
                       href="/#services"

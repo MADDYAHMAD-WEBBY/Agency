@@ -6402,6 +6402,382 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       },
     ],
   },
+  {
+    slug: "social-media-management",
+    title: "Social Media Management & Organic Brand Growth",
+    category: "ads",
+    headline: "Social Media Management. Build a Brand People Trust and Follow.",
+    tagline: "We strategize, design, and manage your Facebook, Instagram, TikTok, and LinkedIn presence so your brand looks world-class, posts consistently, and turns followers into loyal paying customers.",
+    description: "End-to-end organic social media management engineered for brand authority, high-engagement short-form video reels, multi-platform content calendars, and automated DM lead capture. Transform passive scrollers into passionate brand advocates.",
+    heroCtaText: "Book Free Social Media Audit",
+    coverImage: "/images/services/social-media-management.webp",
+    ctaTitle: "Ready to Build an Authentic, High-Converting Social Media Brand?",
+    techStack: [
+      "INSTAGRAM & REELS",
+      "TIKTOK GROWTH",
+      "LINKEDIN B2B",
+      "FACEBOOK COMMUNITY",
+      "CONTENT CALENDAR",
+      "SHORT-FORM VIDEO",
+      "DM AUTOMATION",
+      "COMMUNITY MANAGEMENT",
+    ],
+    sectionTitles: {
+      capabilities: "Platforms & Multi-Channel Distribution We Manage",
+      problems: "7 Costly Social Media Mistakes Stalling Your Growth",
+      process: "6-Step Organic Content Strategy & Publishing Roadmap",
+      benefits: "Why Partner With Us for High-Impact Social Growth",
+      pricing: "Social Media Management Packages & Retainers",
+      deliverables: "What We Do: Full-Scope Social Media Deliverables",
+      faqs: "Frequently Asked Questions About Social Media Management",
+    },
+    problems: [
+      {
+        title: "Irregular & Inconsistent Posting Schedule",
+        desc: "Posting daily for one week and disappearing for an entire month damages algorithmic distribution and makes your business look abandoned to potential clients.",
+      },
+      {
+        title: "Zero Cohesive Visual Identity or Brand Guidelines",
+        desc: "Inconsistent colors, low-resolution graphics, and mismatched fonts erode customer trust and look amateurish next to polished, modern competitors.",
+      },
+      {
+        title: "Vanity Follower Count Without Inbound Inquiries or Sales",
+        desc: "Amassing passive followers who never convert because your content lacks strategic calls-to-action, lead magnets, and conversion funnels.",
+      },
+      {
+        title: "Slow, Unanswered Comments & Direct Messages (DMs)",
+        desc: "Prospective buyers reach out in comments or DMs and wait 24+ hours for a reply, driving them straight into the arms of faster, more responsive competitors.",
+      },
+      {
+        title: "No Clarity on Which Content Formats Actually Generate Revenue",
+        desc: "Guessing what to post with zero insight into whether video reels, educational carousels, or client testimonials produce actual business inquiries.",
+      },
+      {
+        title: "Burnout from Lack of In-House Designers, Writers & Video Editors",
+        desc: "Business owners spending 20+ hours weekly struggling with Canva and video editing apps instead of focusing on core operational growth.",
+      },
+      {
+        title: "Competitors Looking Noticeably More Active and Authoritative",
+        desc: "Industry rivals capturing market share simply because their social profiles look modern, active, and consistently engaging.",
+      },
+    ],
+    botTypes: [
+      {
+        title: "Instagram (Visual Storytelling, Carousels & Reels)",
+        desc: "Ideal for aesthetic lifestyle brands, restaurants, fashion, medical clinics, and luxury real estate. High focus on reels discovery, aesthetic grid design, and story engagement.",
+      },
+      {
+        title: "Facebook (Community Building & Local Customer Reach)",
+        desc: "Prime platform for regional trade contractors, local clinics, and community groups across Gulf, South Asian, and regional demographics.",
+      },
+      {
+        title: "TikTok (High-Velocity Viral Short-Form Video)",
+        desc: "Rapid organic reach powered by algorithmic discovery for e-commerce, consumer products, mobile apps, and youth-oriented services.",
+      },
+      {
+        title: "LinkedIn (B2B Authority & Executive Thought Leadership)",
+        desc: "The premier professional network for corporate services, law firms, financial consultancies, SaaS startups, and high-ticket B2B business partnerships.",
+      },
+      {
+        title: "YouTube & Shorts (Evergreen Search & Long-Term Equity)",
+        desc: "High-value educational breakdowns and short video tutorials that compound organic search authority and brand trust over years.",
+      },
+      {
+        title: "WhatsApp Business & Broadcast Channels",
+        desc: "Direct, frictionless communication pipeline for VIP client broadcasts, product catalog updates, and instant consultation booking.",
+      },
+      {
+        title: "Pinterest & Google Business Profile Synergy",
+        desc: "Visual discovery engine for interior design and architecture, synchronized with Google Business posts to amplify local SEO rankings.",
+      },
+    ],
+    deliverables: [
+      "Comprehensive Social Media Audit & Competitor Gap Analysis",
+      "5-Pillar Content Strategy: Education, Proof, Story, Culture & Offers",
+      "Collaborative Monthly Content Calendar & Publishing Matrix",
+      "Bespoke Graphic Design (Carousels, Static Posts & Story Sequences)",
+      "Short-Form Video Production (Reels, TikToks, Shorts with Hooks & Subtitles)",
+      "High-Converting Multilingual Copywriting (English, Arabic, Roman Urdu)",
+      "Multi-Platform Scheduling via Meta Business Suite, Buffer & Later",
+      "Active Community Management: Comment Moderation & Message Triage",
+      "Hashtag Architecture & Social Search Engine Optimization (SEO)",
+      "Full Profile Revamp: High-Converting Bios, Highlight Covers & Custom Links",
+      "Influencer & User-Generated Content (UGC) Creator Coordination",
+      "Monthly Executive Analytics Report & Strategic Growth Review Call",
+    ],
+    useCases: [
+      {
+        industry: "Hospitality, Dining & Nightlife",
+        desc: "Cinematic food preparation reels, ambient interior tours, chef highlights, and seasonal dining promotions driving direct table reservations.",
+      },
+      {
+        industry: "Real Estate & Architectural Developments",
+        desc: "High-production property walkthroughs, construction progress updates, and market insight reels capturing affluent home buyers and overseas investors.",
+      },
+      {
+        industry: "Healthcare & Aesthetic Clinics",
+        desc: "Credibility-building doctor explainers, patient testimonial stories, and sanitized procedure breakdowns adhering strictly to medical compliance rules.",
+      },
+      {
+        industry: "Home Trades & Construction Contractors",
+        desc: "Dramatic before-and-after project transformations, maintenance tip carousels, and local neighborhood proof establishing local neighborhood trust.",
+      },
+      {
+        industry: "E-Commerce & DTC Consumer Brands",
+        desc: "Product unboxings, UGC aesthetic reels, customer lifestyle showcases, and seasonal drops designed to generate viral saves and shares.",
+      },
+      {
+        industry: "Law, Finance & Corporate Advisory",
+        desc: "Educational regulatory insights, client case success summaries, and executive thought leadership positioning your firm as the premier authority.",
+      },
+    ],
+    leadJourney: [
+      {
+        step: "01",
+        title: "Comment-to-DM Automated Trigger Workflows",
+        desc: "When a user comments a keyword (e.g., 'PRICING' or 'GUIDE'), our automation instantly slides into their DM with the requested link and an invitation to chat.",
+      },
+      {
+        step: "02",
+        title: "Sub-60-Second Instant Inbound Auto-Reply",
+        desc: "Automated chatbot routing on Instagram and WhatsApp that greets prospects immediately, answers FAQs, and books appointments.",
+      },
+      {
+        step: "03",
+        title: "Automated CRM Sync & Lead Qualification",
+        desc: "Prospective clients chatting in DMs are automatically tagged and pushed into HubSpot or GoHighLevel for seamless sales follow-up.",
+      },
+      {
+        step: "04",
+        title: "Automated Cross-Platform Syndication (n8n/Make)",
+        desc: "New website blog articles, case studies, or YouTube videos are automatically formatted and scheduled across all connected social channels.",
+      },
+      {
+        step: "05",
+        title: "Automated Monthly Executive KPI Report",
+        desc: "Automated summary metrics detailing reach, audience growth, engagement rates, and DM sales inquiries delivered to leadership.",
+      },
+    ],
+    dashboardMetrics: [
+      {
+        metric: "Total Net Follower Growth & Audience Reach",
+        desc: "Tracking organic impressions and net new followers across Instagram, LinkedIn, TikTok, and Facebook.",
+      },
+      {
+        metric: "Engagement Rate & Interaction Velocity",
+        desc: "Monitoring meaningful engagement (saves, shares, thoughtful comments) over superficial likes.",
+      },
+      {
+        metric: "Top-Performing Content Formats & Hook Rankings",
+        desc: "Identifying which creative hooks, reel styles, and carousel themes produce highest reach and virality.",
+      },
+      {
+        metric: "Profile Visits & External Link-In-Bio Clicks",
+        desc: "Measuring how effectively your organic content drives traffic to your landing page or booking calendar.",
+      },
+      {
+        metric: "Sales-Qualified DM Inquiries & Chat Leads",
+        desc: "Direct attribution tracking how many prospective buyers initiated direct messages or WhatsApp chats from organic posts.",
+      },
+      {
+        metric: "Next-Month Editorial Roadmap & Growth Sprints",
+        desc: "Data-backed adjustments to content pillars and video concepts for the upcoming publishing cycle.",
+      },
+    ],
+    tools: [
+      {
+        category: "Creative Production & Design Stack",
+        items: [
+          "Adobe Creative Cloud",
+          "Figma Design Systems",
+          "CapCut Pro & Premiere",
+          "Canva Enterprise",
+          "Epidemic Sound",
+          "Motion Graphics Suite",
+        ],
+      },
+      {
+        category: "Publishing, Scheduling & Social SEO",
+        items: [
+          "Meta Business Suite",
+          "Buffer Pro",
+          "Later.com",
+          "Sprout Social",
+          "Flick Hashtag Search",
+          "TubeBuddy / VidIQ",
+        ],
+      },
+      {
+        category: "DM Automation & Analytics Stack",
+        items: [
+          "ManyChat Pro",
+          "WhatsApp Cloud API",
+          "n8n Social Workflows",
+          "Make.com Automation",
+          "GoHighLevel CRM",
+          "Google Looker Studio",
+        ],
+      },
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery, Brand Tone & Competitive Gap Audit (Week 1)",
+        desc: "We dissect your brand ethos, target customer demographics, competitor content gaps, and define your authentic brand voice.",
+      },
+      {
+        step: "02",
+        title: "Strategic Content Pillars & Platform Selection (Week 1-2)",
+        desc: "Establishing the 40/20/20/20 content framework (Value, Proof, Story, Offers) and identifying the optimal platforms where your buyers actually spend time.",
+      },
+      {
+        step: "03",
+        title: "Brand Kit & Custom Template Architecture (Week 2)",
+        desc: "Engineering bespoke typography systems, color schemes, carousel templates, and reel cover layouts so your grid looks instantly recognizable.",
+      },
+      {
+        step: "04",
+        title: "Monthly Content Calendar & Collaborative Approval (Week 2-3)",
+        desc: "Presenting a visual 30-day editorial calendar with fully scripted reels, captions, and graphics for your approval.",
+      },
+      {
+        step: "05",
+        title: "Content Production, Scheduling & Community Engagement (Ongoing)",
+        desc: "Publishing on scheduled peak-engagement hours, monitoring comment sections, and routing inbound DM leads to your sales pipeline.",
+      },
+      {
+        step: "06",
+        title: "Monthly Analytics Review & Strategy Compounding (Month 1-6)",
+        desc: "Reviewing data, doubling down on winning formats, and refining strategy as organic community trust compounds steadily over time.",
+      },
+    ],
+    benefits: [
+      {
+        title: "Integrated Synergy: Content + Paid Ads + Automations + Web",
+        desc: "Unlike isolated social agencies, we engineer the organic content, paid amplification, instant DM automations, and landing pages under one cohesive roof.",
+      },
+      {
+        title: "Obsessed with Business Inquiries, Not Empty Vanity Likes",
+        desc: "We design posts with clear conversion hooks, lead magnets, and DM automation to drive paying customers rather than passive lurkers.",
+      },
+      {
+        title: "Bespoke Custom Brand Design—Zero Lazy Generic Templates",
+        desc: "Every graphic, carousel, and reel is custom-crafted to reflect your unique brand identity, avoiding repetitive stock templates.",
+      },
+      {
+        title: "100% Client Ownership & Secure Admin Access",
+        desc: "You retain permanent administrative control of your social channels. We access accounts securely through official Partner tools—never asking for passwords.",
+      },
+      {
+        title: "Human Quality Control with AI Efficiency",
+        desc: "We leverage cutting-edge AI for rapid research and ideation, but every word of copy and video frame is polished and perfected by senior human creators.",
+      },
+      {
+        title: "Transparent Reporting with Actionable Growth Insights",
+        desc: "Monthly reports that clearly demonstrate real business impact, profile visits, and DM lead generation without confusing jargon.",
+      },
+    ],
+    beforeAfter: [
+      {
+        before: "Ghost-town social profiles posting once every 6 weeks with low-resolution graphics and zero clear brand identity.",
+        after: "A vibrant, polished multi-platform presence posting 24+ pieces of consistent high-value content monthly, boosting organic reach by +480%.",
+      },
+      {
+        before: "12,000 vanity Instagram followers yielding zero phone calls or customer inquiries due to lack of conversion hooks.",
+        after: "45+ qualified inbound DM and WhatsApp consultation inquiries generated monthly through keyword-triggered comment-to-DM automation.",
+      },
+      {
+        before: "Business owner spending 15+ painful hours each weekend struggling with video editing and caption writing.",
+        after: "Zero time spent on content creation; our complete done-for-you production handles scripting, editing, design, and scheduling seamlessly.",
+      },
+      {
+        before: "Potential clients waiting 24-48 hours for a reply in Instagram direct messages, resulting in lost deals.",
+        after: "Sub-60-second automated DM lead qualification directing high-budget clients directly to instant consultation booking.",
+      },
+    ],
+    pricingModels: [
+      {
+        title: "Social Media Starter",
+        subtitle: "Ideal for local trade contractors and emerging service businesses seeking a consistent, polished online brand presence.",
+        price: "$550 / month",
+        features: [
+          "1-2 Social Media Platforms (e.g., IG + FB)",
+          "12 Custom Designed Posts / Month",
+          "2-4 Short-Form Video Reels / TikToks",
+          "Custom Brand Grid & Typography Kit",
+          "Hashtag & Social Search SEO Optimization",
+          "Monthly Executive Performance Report",
+          "Client Retains 100% Account Ownership",
+          "Note: On-site photography & ad spend are separate add-ons",
+        ],
+      },
+      {
+        title: "Social Media Growth",
+        subtitle: "Our most popular package for growing clinics, e-commerce stores, real estate firms, and active service brands.",
+        price: "$950 / month",
+        highlight: true,
+        features: [
+          "2-3 Social Media Platforms (IG, FB & TikTok/LinkedIn)",
+          "20-24 Custom Branded Posts / Month",
+          "6-8 High-Impact Video Reels / TikToks (Hooks & Subtitles)",
+          "Instagram Stories Sequences (3x / week)",
+          "Active Comment Moderation & Community Triage",
+          "Keyword Comment-to-DM Automation Setup",
+          "Monthly Strategy Call & Content Planning",
+          "Note: Shoot fees & paid advertising are separate add-ons",
+        ],
+      },
+      {
+        title: "Social Media Premium & Scale",
+        subtitle: "Full-throttle omnichannel content engine for established regional brands, luxury hospitality, and high-ticket B2B firms.",
+        price: "$1,750 / month",
+        features: [
+          "3-4 Platforms (IG, FB, TikTok, LinkedIn & YouTube Shorts)",
+          "30+ Custom Branded Posts / Month",
+          "12+ High-End Video Reels with Motion Design",
+          "Daily Instagram & Facebook Story Sequences",
+          "Full Community Management (Comments & Direct Messages)",
+          "Advanced Multi-Channel DM Lead Capture Chatbot",
+          "Dedicated Senior Content Strategist & Art Director Access",
+          "Live Looker Studio Social Analytics Dashboard",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How quickly can I expect to see follower growth and inbound inquiries from organic social media?",
+        answer: "Unlike paid advertising which turns on instant traffic the same day, organic social media is a compounding brand equity channel. Generally, visual improvements and engagement lifts occur within the first 30 days. Consistent, compounding follower growth and predictable inbound DM inquiries typically stabilize and peak between months 3 and 6 as audience trust builds.",
+      },
+      {
+        question: "Do you create all graphics, write all captions, and edit all the video reels in-house?",
+        answer: "Yes, 100%. Our dedicated creative team handles concept ideation, copywriting, graphic design, and video editing (hooks, subtitles, sound design, and color grading). For on-location raw video or product clips, you can easily send raw footage via Google Drive or Dropbox, and we transform it into viral-ready reels.",
+      },
+      {
+        question: "Will you need my personal social media account passwords?",
+        answer: "No, never. We value your account security. We connect with your accounts using official Meta Business Suite partner access, LinkedIn Organization roles, or secure social scheduling platforms (Buffer/Later). You never have to share personal login credentials.",
+      },
+      {
+        question: "Do you ever buy followers or fake likes to inflate numbers?",
+        answer: "Never. Buying fake followers or bot engagement permanently damages your account's algorithmic reach and destroys trust. We exclusively practice 100% white-hat organic growth strategies that attract real human prospects who have genuine interest in your services.",
+      },
+      {
+        question: "How many posts, reels, and stories will you publish each month?",
+        answer: "This depends on your selected package. Our Starter plan includes 12 posts and 2-4 reels; our Growth plan includes 20-24 posts, 6-8 reels, and regular story sequences; and our Premium plan includes 30+ posts, 12+ reels, and daily active story engagement across up to 4 platforms.",
+      },
+      {
+        question: "How do you handle negative comments or customer complaints on our profiles?",
+        answer: "We establish a brand response protocol during onboarding. Constructive feedback or service questions receive polite, empathetic public responses directing the customer to a private DM or customer support channel. Inappropriate spam or abusive comments are immediately hidden or removed according to pre-approved rules.",
+      },
+      {
+        question: "Can you create content in multiple languages like Arabic or Urdu alongside English?",
+        answer: "Yes. We regularly produce bilingual and multilingual content tailored to regional demographics, including English, Arabic, and Roman Urdu. We adjust tone and cultural context so your messaging resonates authentically with local audiences in the Gulf, Pakistan, or international markets.",
+      },
+      {
+        question: "Do you guarantee specific follower numbers or sales revenue?",
+        answer: "No ethical agency can guarantee exact follower counts because social media algorithms and consumer behavior are outside third-party control. What we guarantee is consistent, high-aesthetic creative execution, strategic content pillars, sub-60-second DM automations, and relentless optimization to turn attention into tangible business inquiries.",
+      },
+    ],
+  },
 ];
 
 export const INDUSTRY_DETAILS: IndustryDetail[] = [
