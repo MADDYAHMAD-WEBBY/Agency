@@ -123,7 +123,7 @@ export async function POST(request: Request) {
               Hi <strong>${name || "there"}</strong>,
             </p>
             <p style="font-size: 14px; line-height: 1.6; color: #52525b; margin: 0 0 20px;">
-              Your 30-minute consultation has been scheduled. I am looking forward to discussing your digital architecture, custom web dev, or local SEO roadmap.
+              Your 30-minute consultation has been scheduled. We are looking forward to discussing your digital architecture, custom web dev, or local SEO roadmap.
             </p>
             <div style="background: #faf5ff; border: 1px solid #f3e8ff; border-radius: 12px; p: 16px; padding: 16px 20px; margin-bottom: 24px;">
               <p style="margin: 0 0 6px; font-size: 14px; font-weight: 600; color: #7e22ce;">📅 ${selectedDate}</p>
@@ -214,10 +214,10 @@ export async function POST(request: Request) {
               Hi <strong>${name || "there"}</strong>,
             </p>
             <p style="font-size: 14px; line-height: 1.6; color: #52525b; margin: 0 0 20px;">
-              Thank you for reaching out. I have received your project details regarding <strong>${service || "your project"}</strong>.
+              Thank you for reaching out. We have received your project details regarding <strong>${service || "your project"}</strong>.
             </p>
             <p style="font-size: 14px; line-height: 1.6; color: #52525b; margin: 0 0 24px;">
-              I will personally review your requirements and respond within 24 hours with actionable technical insights and next steps.
+              Our team will personally review your requirements and respond within 24 hours with actionable technical insights and next steps.
             </p>
             <p style="font-size: 13px; line-height: 1.6; color: #71717a; margin: 0;">
               Best regards,<br />

@@ -8,7 +8,7 @@ const INITIAL_CHIPS = [
   {
     id: 1,
     title: "Zero Hand-Holding",
-    description: "I own the problem end to end",
+    description: "We own the problem end to end",
     icon: Rocket,
   },
   {
