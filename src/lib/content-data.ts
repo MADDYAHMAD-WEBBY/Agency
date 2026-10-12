@@ -5638,11 +5638,11 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     title: "Google Ads Management & High-ROI Paid Advertising (PPC)",
     category: "ads",
     headline: "Google Ads Management. Get Calls, Leads and Sales from People Searching Right Now.",
-    tagline: "Hum aapke ad budget ko sahi keywords, sahi message aur sahi tracking ke saath chalate hain taake har rupee ka hisaab ho aur cost per lead kam ho.",
+    tagline: "We deploy and optimize your ad budget with precision keywords, persuasive messaging, and airtight tracking so every dollar is fully accounted for and your Cost Per Lead drops.",
     description: "Full-funnel Google Ads management engineered for high-intent search capture, sub-second conversion landing pages, and airtight GA4/GTM server-side tracking. Transform your paid ad spend into reliable, predictable customer acquisition with zero wasted budget.",
-    heroCtaText: "Free Google Ads Audit Book Karein",
+    heroCtaText: "Book Free Google Ads Audit",
     coverImage: "/images/services/google-ads.webp",
-    ctaTitle: "Apne Ad Budget Ka Behtar Hisaab Chahte Hain? Free Audit Mein Hum Batayenge.",
+    ctaTitle: "Want Complete Financial Accountability & Higher ROI from Your Ad Budget? Discover Leaks in a Free Audit.",
     techStack: [
       "SEARCH ADS",
       "PERFORMANCE MAX",
@@ -5664,31 +5664,31 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     },
     problems: [
       {
-        title: "Ads Chal Rahi Hain Lekin Leads Nahi Aa Rahi",
+        title: "Ads Are Running, but Zero Qualified Leads Are Inbound",
         desc: "You are getting clicks and burning budget every single day, but your phone isn't ringing and contact forms remain empty due to untargeted traffic.",
       },
       {
-        title: "Budget Zaya Ho Raha Hai Irrelevant Clicks Par",
+        title: "Ad Budget Bleeding on Irrelevant, Junk Clicks",
         desc: "Broad match keywords and lack of negative keyword scrubbing trigger your ads on irrelevant queries, wasting up to 40-60% of your total ad spend.",
       },
       {
-        title: "Pata Nahi Kaun Si Keyword Ya Ad Kaam Kar Rahi Hai",
+        title: "Zero Attribution: No Clarity on What Keywords Actually Convert",
         desc: "Without granular keyword attribution and search query audits, you can't tell which campaigns bring high-paying clients and which waste cash.",
       },
       {
-        title: "Calls Aur Form Tracking Set Nahi",
+        title: "Missing Server-Side Call & Form Conversion Tracking",
         desc: "Flying blind without server-side Google Tag Manager, dynamic call tracking, and WhatsApp click attribution means Google's algorithm cannot optimize bids.",
       },
       {
-        title: "Agency Ya Freelancer Ne Clear Report Nahi Di",
+        title: "Opaque Agency Reporting with Zero Real Accountability",
         desc: "Receiving vague PDF reports showing useless vanity metrics like 'Impressions' and 'Clicks' instead of actual Cost Per Lead (CPL) and revenue generated.",
       },
       {
-        title: "Landing Page Par Visitors Convert Nahi Hote",
+        title: "High Bounce Rates on Slow, Unoptimized Landing Pages",
         desc: "Paid clicks land on a slow, generic homepage or bloated WordPress theme that fails to provide a compelling headline, mobile click-to-call, or clear proof.",
       },
       {
-        title: "Competitors Ke Mukable Mein Cost Per Click (CPC) Zyada",
+        title: "Higher Cost Per Click (CPC) Due to Low Quality Scores",
         desc: "Low Quality Scores and mismatched ad relevance force Google to charge you 2x-3x higher CPC than competitors bidding on the exact same search terms.",
       },
     ],
@@ -5984,35 +5984,35 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ],
     faqs: [
       {
-        question: "Google Ads se kitne din mein leads aana shuru hoti hain?",
+        question: "How quickly do leads and phone calls start coming in from Google Ads?",
         answer: "Unlike SEO which takes 3 to 6 months to build organic domain authority, Google Ads captures high-intent traffic immediately upon launch. Generally, campaigns generate incoming calls and form submissions within the first 24 to 72 hours of going live. However, the initial 2 to 4 weeks serve as Google's algorithmic learning phase, after which Cost Per Lead stabilizes and efficiency peaks.",
       },
       {
-        question: "Google Ads shuru karne ke liye kitna minimum budget chahiye?",
+        question: "What is the minimum recommended ad budget to start Google Ads?",
         answer: "Minimum ad spend depends on your industry and market competition. For local home trades and regional clinics, an ad budget of $800 to $1,500 per month is typically sufficient to gather conclusive conversion data. For highly competitive legal or real estate verticals, we recommend $2,000 to $5,000+ per month. Remember: ad budget is paid directly to Google from your billing card, separate from our management fee.",
       },
       {
-        question: "Management fee aur ad spend mein kya farq hai?",
+        question: "What is the difference between ad spend and your agency management fee?",
         answer: "Ad spend is the budget paid directly to Google for buying clicks on the auction. Management fee is what you pay our agency for strategy, campaign architecture, ad copywriting, negative keyword management, landing page design, conversion tracking, and ongoing bid optimization. We maintain 100% transparency: you always know exactly how much goes to Google and how much goes to management.",
       },
       {
-        question: "Google Ads aur SEO mein se kaun sa behtar hai?",
+        question: "Google Ads vs. Local SEO: Which is better for my business?",
         answer: "They serve complementary roles in your digital acquisition funnel. Google Ads is short-term and immediate: it delivers instant calls and leads the day you turn it on, making it ideal for immediate cash flow. SEO is a long-term asset: it compounds over months to deliver sustainable organic traffic with zero cost-per-click. For maximum market dominance, businesses run Google Ads for immediate revenue while building Local SEO for long-term equity.",
       },
       {
-        question: "Kya Google Ads account meri ownership mein rahega?",
+        question: "Will I retain 100% ownership of my Google Ads account and data?",
         answer: "Yes, 100%. We always build campaigns inside your own Google Ads account or create a new account in your company name. Your credit card is linked directly to Google billing, and you retain permanent ownership of all conversion data, search term history, and campaign assets. If you ever stop working with us, you keep everything.",
       },
       {
-        question: "Kya results aur leads guarantee hain?",
+        question: "Can you guarantee specific lead volumes or sales results?",
         answer: "No reputable digital marketing agency can ethically guarantee specific lead counts, because consumer purchase decisions and competitor auction bidding are outside anyone's direct control. What we DO guarantee is rigorous scientific optimization: complete server-side tracking, elimination of wasted clicks through negative keywords, sub-second landing pages, and relentless focus on lowering your Cost Per Qualified Lead.",
       },
       {
-        question: "Kya phone calls aur WhatsApp leads accurately track hotay hain?",
+        question: "Can inbound phone calls and WhatsApp consultation clicks be tracked accurately?",
         answer: "Yes. We implement dynamic call tracking via Google Tag Manager and CallRail, capturing the exact keyword and ad group that prompted each phone call, along with call recording and duration. We also configure custom GA4 event triggers for WhatsApp chat clicks and thank-you page form submissions so every conversion is attributed accurately.",
       },
       {
-        question: "Click fraud ya competitors ke fake clicks se ad budget kaise bachta hai?",
+        question: "How do you protect our ad budget against competitor click fraud and fake bot clicks?",
         answer: "We employ multiple defensive layers against fraudulent clicks. First, we configure strict geo-radius and exclusion boundaries. Second, we integrate automated click fraud protection systems (like ClickCease) that automatically identify repetitive bot IPs or malicious competitor devices and exclude them from seeing your ads in real-time, preserving your budget for genuine buyers.",
       },
     ],
