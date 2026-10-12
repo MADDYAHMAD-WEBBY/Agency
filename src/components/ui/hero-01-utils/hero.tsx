@@ -122,7 +122,7 @@ function RotatingServicesHeadline() {
 
 export default function HeroSection({ avatarList }: HeroProps) {
   const subtitleText =
-    "I engineer sub-second Next.js web applications, high-converting E-Commerce stores, Headless WordPress architectures, and aggressive Local SEO strategies that rank your business #1 on Google, Google Maps, and AI search engines.";
+    "We transform your online presence into a 24/7 client generation engine—capturing high-value leads, scaling e-commerce sales, and dominating Google rankings so your business outgrows the competition.";
 
   return (
     <section className="relative w-full min-h-[105vh] sm:min-h-[118vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32 pb-36 sm:pb-56 bg-white text-zinc-900">
