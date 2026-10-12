@@ -221,14 +221,27 @@ const servicesData: ServiceItem[] = [
     accent: "#4285f4",
     accentForeground: "#ffffff",
   },
+  {
+    id: "meta-ads",
+    category: "ads",
+    href: "/services/meta-ads",
+    title: "Meta Ads (Facebook & Instagram)",
+    description:
+      "Full-funnel Meta advertising engineered with scroll-stopping creative hooks, high-LTV lookalikes, and server-side Conversions API (CAPI).",
+    image: "/images/services/meta-ads.webp",
+    badge: "Meta Ads",
+    tags: ["Scroll-Stopping Hooks", "CAPI Server Tracking", "WhatsApp Leads"],
+    accent: "#0064e0",
+    accentForeground: "#ffffff",
+  },
 ];
 
 const categories = [
   { id: "ai", label: "AI & Automation" },
   { id: "web", label: "Web & App Development" },
   { id: "seo", label: "Local SEO & Reputation" },
-  { id: "ads", label: "Paid Ads (Google PPC)" },
-  { id: "all", label: "All Services (17)" },
+  { id: "ads", label: "Paid Ads (Google & Meta)" },
+  { id: "all", label: "All Services (18)" },
 ];
 
 export default function ServicesSection() {

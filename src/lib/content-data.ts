@@ -6017,6 +6017,391 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       },
     ],
   },
+  {
+    slug: "meta-ads",
+    title: "Meta Ads Management (Facebook & Instagram PPC)",
+    category: "ads",
+    headline: "Meta Ads Management. Turn Facebook & Instagram into a Lead and Sales Machine.",
+    tagline: "We engineer and scale high-converting Meta ad campaigns that stop the scroll, captivate target audiences, and drive profitable conversions via WhatsApp, instant lead forms, and seamless e-commerce checkouts.",
+    description: "Full-funnel Meta advertising (Facebook & Instagram) engineered for scroll-stopping creative hooks, hyper-targeted custom & lookalike audiences, and airtight server-side Conversions API (CAPI) tracking. Scale qualified leads and e-commerce purchases with predictable ROI.",
+    heroCtaText: "Book Free Meta Ads Audit",
+    coverImage: "/images/services/meta-ads.webp",
+    ctaTitle: "Want Real, Paying Customers from Facebook & Instagram? Discover Leaks in a Free Audit.",
+    techStack: [
+      "FACEBOOK ADS",
+      "INSTAGRAM REELS",
+      "CONVERSIONS API (CAPI)",
+      "ADVANTAGE+ SHOPPING",
+      "CLICK-TO-WHATSAPP",
+      "INSTANT LEAD FORMS",
+      "CREATIVE TESTING",
+      "LOOKALIKE AUDIENCES",
+    ],
+    sectionTitles: {
+      capabilities: "Meta Ads Campaign Types We Build & Scale",
+      problems: "7 Critical Meta Ad Mistakes Bleeding Your Budget",
+      process: "6-Step Scientific Meta Ads Roadmap & Creative Sprint",
+      benefits: "Why Partner With Us for Performance-Driven Meta Ads",
+      pricing: "Meta Ads Pricing & Transparent Management Models",
+      deliverables: "What We Do: Full-Scope Meta Ads Deliverables",
+      faqs: "Frequently Asked Questions About Meta Ads (Facebook & Instagram)",
+    },
+    problems: [
+      {
+        title: "Vanity Metrics Trap: Likes and Views Without Real Leads or Sales",
+        desc: "You get thousands of post views and cheap likes, but your bank account sees zero qualified leads or sales because Meta optimized for casual engagement rather than high-intent conversion actions.",
+      },
+      {
+        title: "Money Burned on the Generic 'Boost Post' Button",
+        desc: "Clicking 'Boost Post' dumps budget into broad, un-optimized audiences with zero custom conversion tracking, bleeding ad spend with no return.",
+      },
+      {
+        title: "Zero Creative Clarity: Inability to Identify What Angles Actually Work",
+        desc: "Running single un-tested ad creative for months leads to creative fatigue, declining ROAS, and guesswork over which visual hooks actually trigger conversions.",
+      },
+      {
+        title: "Fake or Low-Quality Leads Flooding Your Sales Pipeline",
+        desc: "Standard instant lead forms without friction or custom qualifying questions collect junk phone numbers and spam contacts that waste your sales team's valuable hours.",
+      },
+      {
+        title: "Broken Tracking: Missing Meta Pixel & Server-Side Conversions API (CAPI)",
+        desc: "Relying on browser-only pixel tracking loses up to 40% of conversion events due to iOS 14.5+ privacy restrictions, ad blockers, and cookie expiration.",
+      },
+      {
+        title: "Sudden Ad Account Bans, Restrictions & Policy Violations",
+        desc: "Unprepared accounts getting flagged by Meta's automated compliance bots, disabling business managers and freezing sales overnight without recovery protocols.",
+      },
+      {
+        title: "Sluggish Lead Follow-Up Allowing Hot Prospects to Go Cold",
+        desc: "Leads sitting uncontacted for hours or days in Meta Ads Manager instead of receiving sub-60-second WhatsApp auto-replies and automated CRM nurture flows.",
+      },
+    ],
+    botTypes: [
+      {
+        title: "Instant Lead Generation Forms (High-Intent Lead Gen)",
+        desc: "On-platform native forms equipped with custom qualifying questions and conditional logic to weed out tire-kickers for clinics, real estate, and B2B services.",
+      },
+      {
+        title: "Click-to-WhatsApp Conversation Ads",
+        desc: "The highest-converting ad format across the Gulf, Pakistan, and emerging markets. Opens an immediate direct WhatsApp dialogue with automated greeting and lead capture.",
+      },
+      {
+        title: "Sales & Purchase Conversion Campaigns",
+        desc: "Precision e-commerce funnels engineered for Shopify and WooCommerce stores, optimizing for purchases, average order value (AOV), and repeat customer acquisition.",
+      },
+      {
+        title: "Advantage+ Shopping & Dynamic Product Catalogs (DPA)",
+        desc: "Algorithmic machine-learning campaigns that dynamically showcase relevant product catalogs and bestsellers to shoppers most likely to buy right now.",
+      },
+      {
+        title: "Multi-Stage Retargeting Funnels",
+        desc: "Custom audiences re-engaging website visitors, Instagram profile engagers, 50%+ video watchers, and abandoned carts with irresistible objection-handling offers.",
+      },
+      {
+        title: "Messenger & Instagram Direct (DM) Inbound Ads",
+        desc: "Personalized 1-on-1 direct message funnels ideal for luxury consultations, beauty clinics, and high-ticket service bookings.",
+      },
+      {
+        title: "Brand Authority & Hyper-Reach Launches",
+        desc: "High-impact video views and brand awareness campaigns engineered for new market entries, product drops, and exclusive local store inaugurations.",
+      },
+      {
+        title: "Local Store Foot-Traffic & Radius Geo-Targeting",
+        desc: "Hyper-targeted 3km-10km geo-fenced campaigns driving local customers directly to physical clinics, restaurants, and retail showrooms.",
+      },
+      {
+        title: "High-LTV Lookalike (LAL) & Seed Audience Scaling",
+        desc: "Creating 1%-5% Lookalike audiences built from your highest-spending past customers and CRM buyer lists to uncover untapped profitable segments.",
+      },
+    ],
+    deliverables: [
+      "Business Manager Infrastructure & Ad Account Health Audit",
+      "Server-Side Meta Pixel & Conversions API (CAPI) Integration",
+      "Deep Audience Research (Custom, Lookalike & Broad Segmentation)",
+      "Full Creative Strategy: Hooks, Psychological Angles & Scripting",
+      "High-Converting Ad Creative Production (Statics, Carousels, Video Reels & UGC)",
+      "Persuasive Multilingual Ad Copywriting (English, Arabic, Roman Urdu)",
+      "Scientific Campaign Structuring & ABO/CBO Budget Allocation",
+      "Weekly Creative Iteration Sprint (5-10 Fresh Variations Tested Monthly)",
+      "Multi-Tier Retargeting Sequences for Warm & Cold Traffic",
+      "Lead Quality Filtering with Custom Qualification Questionnaires",
+      "Real-Time CRM & WhatsApp Lead Sync Automation Setup",
+      "Bi-Weekly Executive Transparency Reporting & Live Strategy Calls",
+    ],
+    useCases: [
+      {
+        industry: "Real Estate & Luxury Developments",
+        desc: "High-impact video tours, off-plan developer launches, and lead generation campaigns targeting qualified domestic buyers and overseas expatriate investors.",
+      },
+      {
+        industry: "Healthcare & Aesthetic Clinics",
+        desc: "Credibility-driven doctor video testimonials and Click-to-WhatsApp booking campaigns compliant with strict Meta Health & Wellness advertising policies.",
+      },
+      {
+        industry: "Hospitality, Resorts & Fine Dining",
+        desc: "Visual Instagram Reels, seasonal promotions, and experiential event campaigns driving direct table reservations and private room bookings.",
+      },
+      {
+        industry: "E-Commerce & DTC Brands",
+        desc: "High-scale Advantage+ Shopping campaigns, dynamic catalog carousels, and UGC unboxing videos delivering consistent 3.5x-5.0x ROAS.",
+      },
+      {
+        industry: "Home Trades & Local Contractors",
+        desc: "Local neighborhood geo-radius campaigns with Click-to-WhatsApp urgency triggers for emergency plumbing, electrical, and HVAC repairs.",
+      },
+      {
+        industry: "Finance & Wealth Advisory",
+        desc: "Special Ad Category compliant lead funnels delivering verified consultation inquiries for wealth management, mortgage, and business credit solutions.",
+      },
+      {
+        industry: "Law & Legal Consultations",
+        desc: "Professional credibility and practice-area awareness campaigns strictly adhering to regional legal advertising standards to capture high-value corporate retainers.",
+      },
+    ],
+    leadJourney: [
+      {
+        step: "01",
+        title: "Sub-60-Second WhatsApp Instant Auto-Reply",
+        desc: "As soon as a lead submits an instant form, our automation fires an immediate, personalized WhatsApp greeting and next-steps menu.",
+      },
+      {
+        step: "02",
+        title: "Real-Time CRM Sync & Automated Lead Scoring",
+        desc: "Leads instantly route into HubSpot, GoHighLevel, or your custom database with campaign and creative attribution tags attached.",
+      },
+      {
+        step: "03",
+        title: "Automated Multi-Touch Follow-Up Sequences",
+        desc: "Automated Day 1, Day 3, and Day 7 SMS/WhatsApp check-ins ensure no hot prospect slips through the cracks while your sales team is busy.",
+      },
+      {
+        step: "04",
+        title: "Sub-Second Next.js Dedicated Landing Page",
+        desc: "For web traffic, lightning-fast pages load in under 0.8s, eliminating mobile drop-offs and maximizing visitor-to-lead conversion.",
+      },
+      {
+        step: "05",
+        title: "Automated Weekly Performance Digest",
+        desc: "Executive summary detailing ad spend, verified leads, cost per qualified lead, and e-commerce ROAS delivered automatically to your inbox.",
+      },
+    ],
+    dashboardMetrics: [
+      {
+        metric: "Spend, Reach, Impressions & Frequency",
+        desc: "Monitoring daily budget pacing, audience saturation, and ensuring ad frequency stays below fatigue thresholds.",
+      },
+      {
+        metric: "Click-Through Rate (CTR) & Cost Per Click (CPC)",
+        desc: "Tracking link CTR vs outbound CTR to evaluate hook strength and creative engagement.",
+      },
+      {
+        metric: "Cost Per Lead (CPL) & Customer Acquisition Cost (CAC)",
+        desc: "Financial clarity on exact cash required to generate a phone number, consultation, or buyer.",
+      },
+      {
+        metric: "Verified CRM Lead Quality (SQLs vs Total Leads)",
+        desc: "Distinguishing between spam inquiries and verified sales opportunities to feed high-value signals back to Meta's algorithm.",
+      },
+      {
+        metric: "Creative Scoreboard & Angle Winner Matrix",
+        desc: "Transparent ranking of top-performing video reels, static hooks, and carousels so scaling budget is only allocated to proven winners.",
+      },
+      {
+        metric: "Return on Ad Spend (ROAS) & Blended MER",
+        desc: "Real-time revenue tracking across Shopify and payment gateways against total Meta ad spend.",
+      },
+    ],
+    tools: [
+      {
+        category: "Meta Advertising Ecosystem",
+        items: [
+          "Meta Ads Manager",
+          "Meta Business Suite",
+          "Conversions API (CAPI)",
+          "Meta Pixel Helper",
+          "Advantage+ Creative Suite",
+          "Commerce Manager / Catalogs",
+        ],
+      },
+      {
+        category: "Creative Production & Design Stack",
+        items: [
+          "CapCut Pro & Premiere Pro",
+          "Figma Ad Frameworks",
+          "Canva Enterprise",
+          "UGC Creator Network",
+          "Motion Design Assets",
+          "ElevenLabs AI Voiceovers",
+        ],
+      },
+      {
+        category: "Automation, CRM & Attribution",
+        items: [
+          "WhatsApp Cloud API",
+          "GoHighLevel (GHL)",
+          "HubSpot CRM",
+          "Zapier / n8n Webhooks",
+          "Triple Whale / Hyros Attribution",
+          "Google Analytics 4 (GA4)",
+        ],
+      },
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery, Offer Architecture & Unit Economics (Week 1)",
+        desc: "We audit your past ad accounts, define target audience personas, calculate break-even CPA/ROAS targets, and formulate an irresistible front-end offer.",
+      },
+      {
+        step: "02",
+        title: "Airtight Tracking Setup: Pixel, CAPI & Events (Week 1-2)",
+        desc: "Before spending a cent on ads, we configure server-side Conversions API (CAPI), custom domain verification, and custom conversion events to bypass iOS tracking loss.",
+      },
+      {
+        step: "03",
+        title: "Creative Sprint: Hooks, Angles & Video Production (Week 2)",
+        desc: "Producing 6-10 distinct ad creatives across static designs, dynamic carousels, and high-energy short-form video reels with 3-second hook variations.",
+      },
+      {
+        step: "04",
+        title: "Campaign Architecture & Testing Launch (Week 2-3)",
+        desc: "Launching structured testing campaigns (ABO for creative testing, CBO for audience scaling) with rigorous budget allocation rules.",
+      },
+      {
+        step: "05",
+        title: "Algorithmic Learning, Optimization & Pruning (Weeks 3-6)",
+        desc: "Analyzing first-party data, pausing losing creatives, harvesting winning hooks, and tuning lead qualification criteria.",
+      },
+      {
+        step: "06",
+        title: "Budget Scaling & Systematic Compounding (Month 2-3+)",
+        desc: "Stacking winning creatives into high-budget scaling campaigns, refreshing fatigued assets, and expanding into Lookalike and broad audiences.",
+      },
+    ],
+    benefits: [
+      {
+        title: "Creative-First Engineering ('Creative is the Targeting')",
+        desc: "On modern Meta, the creative does the targeting. We engineer high-converting 3-second visual hooks, psychological problem-solution angles, and persuasive calls-to-action that captivate buyers.",
+      },
+      {
+        title: "Server-Side Conversions API (CAPI) Set First, Budget Spent Second",
+        desc: "We never run blind. Our server-side CAPI integration bypasses ad blockers and iOS 14.5+ restrictions, feeding Meta's machine learning accurate purchase signals.",
+      },
+      {
+        title: "Complete Synergy: Ads + Creative + Landing Page + Automations",
+        desc: "Unlike agencies that only handle media buying, we produce the video creatives, build the sub-second landing page, and automate the instant WhatsApp lead reply under one roof.",
+      },
+      {
+        title: "100% Client Ownership of Business Manager & Pixel",
+        desc: "You retain permanent administrative control of your Meta Business Manager, ad accounts, pixel data, and customer lists. We work with partner access—zero hostage situations.",
+      },
+      {
+        title: "Obsessed with Sales-Qualified Leads, Not Cheap Spam",
+        desc: "We implement multi-step qualifying questions on lead forms and CRM lead scoring to guarantee your sales team speaks with high-budget buyers, not accidental clickers.",
+      },
+      {
+        title: "Transparent Pricing with Zero Hidden Ad Spend Markups",
+        desc: "You pay Meta directly using your own corporate credit card. Our management fee is 100% transparent and separate, with no hidden percentage markups.",
+      },
+    ],
+    beforeAfter: [
+      {
+        before: "$94 Cost Per Lead for real estate off-plan development with 70%+ of form fills answering phone calls with 'I didn't submit this'.",
+        after: "$31 Cost Per Qualified Lead achieved with multi-question Instant Forms, sub-60-second WhatsApp auto-reply, and +310% appointment show-up rate.",
+      },
+      {
+        before: "1.6x ROAS on generic product photo ads for DTC skincare brand, suffering severe creative fatigue and high customer acquisition costs.",
+        after: "4.2x verified ROAS scaled through structured Advantage+ Shopping campaigns and 8 weekly UGC video creative hook variations.",
+      },
+      {
+        before: "Burning $1,200/mo on the 'Boost Post' button for dental clinic, generating vanity post likes with zero booked patient appointments.",
+        after: "115+ qualified clinic consultations booked monthly using hyper-local Click-to-WhatsApp video ads and automated calendar scheduling.",
+      },
+      {
+        before: "Meta Ad Account restricted and pixel data lost due to unverified business manager and iOS 14 browser tracking drops.",
+        after: "Fully reinstated Business Manager with 100% server-side Conversions API (CAPI) delivering 94%+ event match quality score.",
+      },
+    ],
+    pricingModels: [
+      {
+        title: "Meta Ads Starter",
+        subtitle: "Ideal for local service businesses and clinics seeking predictable inbound inquiries and WhatsApp leads.",
+        price: "$650 / month",
+        features: [
+          "1-2 Targeted Lead or Message Campaigns",
+          "4-6 Custom Ad Creatives / Month",
+          "Meta Pixel & Custom Conversion Event Setup",
+          "Click-to-WhatsApp or Instant Form Funnel",
+          "Monthly Executive Performance Report",
+          "Client Owns Business Manager & Ad Account 100%",
+          "Separate Ad Spend: Recommended $500 - $1,500/mo (Paid to Meta)",
+        ],
+      },
+      {
+        title: "Meta Ads Growth",
+        subtitle: "Our most popular package for high-growth e-commerce brands, real estate firms, and scaling service companies.",
+        price: "$1,250 / month",
+        highlight: true,
+        features: [
+          "3-5 Full-Funnel Campaigns (Prospecting + Retargeting)",
+          "8-12 High-Converting Creatives / Mo (Statics, Carousels & Reels)",
+          "Full Server-Side Conversions API (CAPI) Integration",
+          "1 Dedicated High-Converting Landing Page Included",
+          "Instant WhatsApp & CRM Auto-Reply Workflow",
+          "Bi-Weekly Strategy Calls & Creative Iteration Sprints",
+          "Separate Ad Spend: Recommended $1,500 - $5,000/mo (Paid to Meta)",
+        ],
+      },
+      {
+        title: "Meta Ads Enterprise & Scale",
+        subtitle: "Omnichannel performance engine for established DTC brands and multi-location regional enterprises.",
+        price: "$2,400 / month",
+        features: [
+          "Full-Funnel Omnichannel Scaling (Advantage+ & Catalog)",
+          "15+ Custom Creatives / Mo (Including High-End Video Reels & UGC)",
+          "Offline Conversion Tracking & Direct CRM Revenue Sync",
+          "Multiple A/B Tested Landing Pages & Funnel Optimization",
+          "Live Looker Studio Dashboard & Weekly Executive Reviews",
+          "Dedicated Creative Director & Senior Media Buyer Access",
+          "Separate Ad Spend: $5,000+/mo (Flat fee or % of spend above threshold)",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Meta Ads vs. Google Ads: What is the core difference and which one does my business need?",
+        answer: "Google Ads captures explicit intent—people actively searching keywords like 'plumber in Jeddah' or 'buy ergonomic chair'. Meta Ads (Facebook & Instagram) captures attention via interruption—reaching qualified prospects while they scroll with irresistible creative hooks and offers. Businesses needing immediate emergency or high-intent clients start with Google Ads; businesses with visual products, strong front-end offers, or broad demographic appeal scale fastest on Meta. High-growth brands combine both for maximum market share.",
+      },
+      {
+        question: "What is the minimum recommended ad budget to run Meta Ads effectively?",
+        answer: "To exit Meta's algorithmic learning phase (which requires ~50 conversions per ad set per week), we recommend a starting ad budget of $800 to $1,500 per month for local lead generation or WhatsApp campaigns. For regional e-commerce and high-ticket real estate, $2,000 to $5,000+ per month allows for aggressive creative testing. Remember: ad spend is paid directly to Meta via your business payment card, separate from our management fee.",
+      },
+      {
+        question: "How quickly can I expect real leads and sales after launching campaigns?",
+        answer: "Instant Lead Forms and Click-to-WhatsApp campaigns typically generate qualified inquiries within 24 to 48 hours of going live. For e-commerce purchase campaigns, initial sales register within the first few days, with ROAS stabilizing and scaling over the first 2 to 4 weeks as winning creative angles are identified.",
+      },
+      {
+        question: "How do you prevent low-quality, spam, or fake leads on Meta?",
+        answer: "We never use zero-friction default lead forms. Instead, we implement custom qualifying questions (e.g., budget range, project timeline, specific service requirement) and higher-intent confirmation steps. For WhatsApp campaigns, we connect conversational qualification chatbots that filter out tire-kickers before your sales team steps in.",
+      },
+      {
+        question: "Do you produce all the ad creatives, video reels, and copywriting?",
+        answer: "Yes, 100%. Creative is the single biggest determinant of performance on Meta today. We script, design, and edit high-converting static graphic ads, dynamic multi-slide carousels, and attention-grabbing short-form video reels (UGC-style, founder-led, or product showcase). We also test 5 to 10 fresh creative variations every single month to prevent ad fatigue.",
+      },
+      {
+        question: "What happens if Meta restricts or disables our ad account?",
+        answer: "We follow strict Meta Advertising Standards to prevent bans. Before launching, we ensure your Business Manager is fully verified, domain verification is active, 2FA is enforced, and landing page compliance policies are met. If an automated false-positive flag occurs, our team handles official appeal submissions and backup asset routing immediately.",
+      },
+      {
+        question: "Can Click-to-WhatsApp and Instagram DM conversions be accurately tracked?",
+        answer: "Yes. Meta supports native WhatsApp and Instagram Direct conversation initiation objectives. We configure custom conversion events, UTM parameters, and webhook integrations with your CRM to track which specific ad creative and audience produced each initiated chat and closed deal.",
+      },
+      {
+        question: "Do you guarantee specific lead volumes or revenue outcomes?",
+        answer: "No ethical agency can guarantee exact lead numbers or sales figures due to fluctuating auction costs, external market factors, and sales closing ability. What we guarantee is rigorous technical execution: server-side CAPI tracking, rapid creative testing, relentless negative angle elimination, sub-second landing pages, and minimizing your Cost Per Qualified Acquisition.",
+      },
+    ],
+  },
 ];
 
 export const INDUSTRY_DETAILS: IndustryDetail[] = [

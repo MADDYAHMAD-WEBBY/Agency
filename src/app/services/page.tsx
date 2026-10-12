@@ -50,8 +50,8 @@ const categoryLabels: Record<string, { label: string; desc: string; badge: strin
     badge: "ORGANIC GROWTH",
   },
   ads: {
-    label: "Paid Advertising & Google Ads (PPC)",
-    desc: "High-intent Search, Performance Max, and Call-only campaigns engineered for lowest Cost Per Lead and verified ROI.",
+    label: "Paid Advertising (Google & Meta PPC)",
+    desc: "High-intent Google Search & PMax alongside scroll-stopping Meta (Facebook & Instagram) creative funnels engineered for maximum ROI.",
     badge: "PAID ACQUISITION",
   },
 };

@@ -23,6 +23,7 @@ const footerCategories = [
     title: "Ads, AI & Local SEO",
     links: [
       { text: "Google Ads (PPC) Management", href: "/services/google-ads" },
+      { text: "Meta Ads (Facebook & Instagram)", href: "/services/meta-ads" },
       { text: "n8n & Zapier Automations", href: "/services/workflow-automation" },
       { text: "24/7 WhatsApp AI Chatbots", href: "/services/ai-chatbots" },
       { text: "CRM Lead Pipeline Sync", href: "/services/crm-lead-automation" },
