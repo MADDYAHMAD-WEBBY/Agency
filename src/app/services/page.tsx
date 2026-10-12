@@ -49,10 +49,15 @@ const categoryLabels: Record<string, { label: string; desc: string; badge: strin
     desc: "Google Business Profile optimization, authoritative local citations, and generative GEO rankings.",
     badge: "ORGANIC GROWTH",
   },
+  ads: {
+    label: "Paid Advertising & Google Ads (PPC)",
+    desc: "High-intent Search, Performance Max, and Call-only campaigns engineered for lowest Cost Per Lead and verified ROI.",
+    badge: "PAID ACQUISITION",
+  },
 };
 
 export default function ServicesPage() {
-  const categories = ["web", "ai", "seo"] as const;
+  const categories = ["web", "ai", "seo", "ads"] as const;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-white selection:text-black">

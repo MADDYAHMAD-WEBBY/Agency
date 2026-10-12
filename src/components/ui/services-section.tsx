@@ -7,7 +7,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface ServiceItem {
   id: string;
-  category: "ai" | "web" | "seo";
+  category: "ai" | "web" | "seo" | "ads";
   href: string;
   title: string;
   description: string;
@@ -206,13 +206,29 @@ const servicesData: ServiceItem[] = [
     accent: "#e11d48",
     accentForeground: "#ffffff",
   },
+
+  // --- Category: Paid Advertising & PPC ---
+  {
+    id: "google-ads",
+    category: "ads",
+    href: "/services/google-ads",
+    title: "Google Ads (PPC) Management",
+    description:
+      "High-intent Search, Shopping, and Performance Max campaigns with sub-second landing pages and server-side tracking to minimize Cost Per Lead.",
+    image: "/images/services/google-ads.webp",
+    badge: "Google Ads",
+    tags: ["High-Intent Search", "Performance Max", "Lowest CPL"],
+    accent: "#4285f4",
+    accentForeground: "#ffffff",
+  },
 ];
 
 const categories = [
   { id: "ai", label: "AI & Automation" },
   { id: "web", label: "Web & App Development" },
   { id: "seo", label: "Local SEO & Reputation" },
-  { id: "all", label: "All Services (16)" },
+  { id: "ads", label: "Paid Ads (Google PPC)" },
+  { id: "all", label: "All Services (17)" },
 ];
 
 export default function ServicesSection() {

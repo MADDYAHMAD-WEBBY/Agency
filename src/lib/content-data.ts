@@ -64,7 +64,7 @@ export interface CaseStudy {
 export interface ServiceDetail {
   slug: string;
   title: string;
-  category: "ai" | "web" | "seo";
+  category: "ai" | "web" | "seo" | "ads";
   headline?: string;
   tagline: string;
   description: string;
@@ -5631,6 +5631,390 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
       "REAL-TIME ALERTS",
       "WHITE-HAT COMPLIANT",
       "CUSTOMER TRUST",
+    ],
+  },
+  {
+    slug: "google-ads",
+    title: "Google Ads Management & High-ROI Paid Advertising (PPC)",
+    category: "ads",
+    headline: "Google Ads Management. Get Calls, Leads and Sales from People Searching Right Now.",
+    tagline: "Hum aapke ad budget ko sahi keywords, sahi message aur sahi tracking ke saath chalate hain taake har rupee ka hisaab ho aur cost per lead kam ho.",
+    description: "Full-funnel Google Ads management engineered for high-intent search capture, sub-second conversion landing pages, and airtight GA4/GTM server-side tracking. Transform your paid ad spend into reliable, predictable customer acquisition with zero wasted budget.",
+    heroCtaText: "Free Google Ads Audit Book Karein",
+    coverImage: "/images/services/google-ads.webp",
+    ctaTitle: "Apne Ad Budget Ka Behtar Hisaab Chahte Hain? Free Audit Mein Hum Batayenge.",
+    techStack: [
+      "SEARCH ADS",
+      "PERFORMANCE MAX",
+      "LOCAL SERVICES ADS",
+      "SHOPPING ADS",
+      "YOUTUBE ADS",
+      "GA4 CONVERSIONS",
+      "GOOGLE TAG MANAGER",
+      "CLICK FRAUD SHIELD",
+    ],
+    sectionTitles: {
+      capabilities: "Google Ads Campaign Types We Build & Scale",
+      problems: "7 Costly Paid Ad Mistakes Bleeding Your Budget",
+      process: "6-Step Scientific Google Ads Roadmap & Timeline",
+      benefits: "Why Partner With Us for High-Performance PPC",
+      pricing: "Google Ads Pricing & Transparent Management Models",
+      deliverables: "What We Do: Full-Scope PPC Services & Deliverables",
+      faqs: "Frequently Asked Questions About Google Ads (PPC)",
+    },
+    problems: [
+      {
+        title: "Ads Chal Rahi Hain Lekin Leads Nahi Aa Rahi",
+        desc: "You are getting clicks and burning budget every single day, but your phone isn't ringing and contact forms remain empty due to untargeted traffic.",
+      },
+      {
+        title: "Budget Zaya Ho Raha Hai Irrelevant Clicks Par",
+        desc: "Broad match keywords and lack of negative keyword scrubbing trigger your ads on irrelevant queries, wasting up to 40-60% of your total ad spend.",
+      },
+      {
+        title: "Pata Nahi Kaun Si Keyword Ya Ad Kaam Kar Rahi Hai",
+        desc: "Without granular keyword attribution and search query audits, you can't tell which campaigns bring high-paying clients and which waste cash.",
+      },
+      {
+        title: "Calls Aur Form Tracking Set Nahi",
+        desc: "Flying blind without server-side Google Tag Manager, dynamic call tracking, and WhatsApp click attribution means Google's algorithm cannot optimize bids.",
+      },
+      {
+        title: "Agency Ya Freelancer Ne Clear Report Nahi Di",
+        desc: "Receiving vague PDF reports showing useless vanity metrics like 'Impressions' and 'Clicks' instead of actual Cost Per Lead (CPL) and revenue generated.",
+      },
+      {
+        title: "Landing Page Par Visitors Convert Nahi Hote",
+        desc: "Paid clicks land on a slow, generic homepage or bloated WordPress theme that fails to provide a compelling headline, mobile click-to-call, or clear proof.",
+      },
+      {
+        title: "Competitors Ke Mukable Mein Cost Per Click (CPC) Zyada",
+        desc: "Low Quality Scores and mismatched ad relevance force Google to charge you 2x-3x higher CPC than competitors bidding on the exact same search terms.",
+      },
+    ],
+    botTypes: [
+      {
+        title: "Search Ads (High-Intent Inbound Capture)",
+        desc: "Capture ready-to-buy customers searching urgent queries like 'emergency plumber in Jeddah' or 'corporate lawyer near me' right at the moment of intent.",
+      },
+      {
+        title: "Local Services Ads (LSA / Google Guaranteed)",
+        desc: "Direct top-of-page local badges for home trades and licensed professionals with pay-per-lead billing (available in eligible Google-supported regions).",
+      },
+      {
+        title: "Performance Max (PMax Omnichannel Campaigns)",
+        desc: "Leverage Google's neural network to capture conversions across Search, Maps, YouTube, Gmail, Display, and Discover using unified high-converting asset groups.",
+      },
+      {
+        title: "Google Shopping & Merchant Center Feeds",
+        desc: "Showcase your e-commerce product catalog with high-resolution imagery, pricing, customer reviews, and automated stock synchronization.",
+      },
+      {
+        title: "Display Network & Visual Retargeting",
+        desc: "Build strong brand recall and re-engage prospective buyers across millions of premium publisher websites with laser-targeted banner creative.",
+      },
+      {
+        title: "YouTube Video Advertising",
+        desc: "Drive targeted video awareness, custom-intent audience conquesting, and high-converting skippable/in-stream video ads that build immediate authority.",
+      },
+      {
+        title: "Call-Only Ads (Direct Phone Inbound)",
+        desc: "Engineered specifically for emergency home trades, medical clinics, and roadside services where every tap initiates an immediate direct phone call.",
+      },
+      {
+        title: "Dynamic Remarketing & Re-Engagement",
+        desc: "Bring back high-intent visitors who left your landing page or abandoned shopping carts with personalized, high-incentive ad sequences.",
+      },
+      {
+        title: "App Install & Engagement Campaigns",
+        desc: "Scale verified iOS and Android mobile app installs across the Google Play Store, Search, and YouTube at the lowest possible Cost Per Install (CPI).",
+      },
+    ],
+    deliverables: [
+      "Deep Historical Account Audit & Wasted Spend Leak Identification",
+      "Multi-Lingual Keyword Architecture (English, Arabic, Roman Urdu)",
+      "Single-Intent Campaign Structuring & Tightly Clustered Ad Groups",
+      "Persuasive Responsive Search Ads (RSA) & Custom Ad Copywriting",
+      "Complete Ad Extensions Setup (Call, Location, Sitelinks, Callouts, Price)",
+      "Multi-Tier Negative Keyword Lists & Daily Search Term Scrubbing",
+      "Landing Page UX/Speed Optimization & Dedicated Custom Page Builds",
+      "Target CPA / Target ROAS Smart Bidding & Portfolio Bid Strategies",
+      "GA4 + Google Tag Manager Conversion Tracking (Calls, Forms, WhatsApp)",
+      "Hyper-Local Geo-Radius & Dayparting Work-Hour Schedule Targeting",
+      "Continuous A/B Split Testing for Ad Copy, Headings & Value Propositions",
+      "Bi-Weekly Executive Transparency Reporting & Live Strategy Reviews",
+    ],
+    useCases: [
+      {
+        industry: "Home Trades & Contractors",
+        desc: "Emergency search campaigns and call-only ads geo-fenced to specific service zip codes. Homeowners with leaking pipes or broken ACs get connected to your dispatch team in seconds.",
+      },
+      {
+        industry: "Healthcare & Specialized Clinics",
+        desc: "Strictly policy-compliant campaigns adhering to Google Health Ad regulations. Promotes specific dental, dermatological, and clinical services with instant WhatsApp and call booking.",
+      },
+      {
+        industry: "Law & Legal Services",
+        desc: "Practice-area search ads (corporate, personal injury, immigration) strictly aligned with regional legal advertising standards, capturing high-value consultation retainers.",
+      },
+      {
+        industry: "Real Estate & Luxury Developments",
+        desc: "High-intent developer project campaigns, off-plan launches, and geo-targeted ads capturing wealthy domestic buyers and overseas expatriate investors.",
+      },
+      {
+        industry: "E-Commerce & DTC Retail",
+        desc: "Performance Max and Google Shopping campaigns structured with clean Merchant Center feeds, maximizing ROAS while weeding out low-margin, high-spend SKUs.",
+      },
+      {
+        industry: "Hospitality & Dining",
+        desc: "Direct room booking and private dining search campaigns designed to bypass 15%-25% third-party OTA commissions and capture higher direct guest margins.",
+      },
+      {
+        industry: "Finance & Wealth Advisory",
+        desc: "Google Finance Policy-compliant lead campaigns targeting mortgage calculators, wealth management, and corporate loan consultations with high trust signals.",
+      },
+    ],
+    leadJourney: [
+      {
+        step: "01",
+        title: "Sub-Second Next.js Landing Page",
+        desc: "Your paid traffic lands on a custom, mobile-optimized page loading in under 0.8 seconds. Zero bloat, clear value proposition, and instant credibility.",
+      },
+      {
+        step: "02",
+        title: "Click-to-Call & WhatsApp Direct Triggers",
+        desc: "High-contrast mobile action buttons allow high-intent buyers to initiate an instant phone call or WhatsApp consultation with UTM tracking attached.",
+      },
+      {
+        step: "03",
+        title: "Missed-Call Text-Back Automation",
+        desc: "If your staff is on another call, our automation instantly fires an SMS or WhatsApp auto-reply so the prospective client never dials your competitor.",
+      },
+      {
+        step: "04",
+        title: "Granular CRM Lead Qualification",
+        desc: "Incoming leads are tagged with the exact campaign, ad group, and keyword, syncing directly into your CRM to identify which clicks produce actual revenue.",
+      },
+      {
+        step: "05",
+        title: "Automated Weekly Performance Digest",
+        desc: "Executive metrics detailing ad spend, qualified leads, and cost per acquisition are generated and sent straight to your leadership team.",
+      },
+    ],
+    dashboardMetrics: [
+      {
+        metric: "Ad Spend, Impressions & CTR",
+        desc: "Real-time visibility into your daily budget consumption, impression volume, and ad copy engagement across all search networks.",
+      },
+      {
+        metric: "Cost Per Qualified Lead (CPL) & CPA",
+        desc: "Financial accountability tracking the exact cost required to generate a phone call, WhatsApp consultation, or verified form submission.",
+      },
+      {
+        metric: "Return on Ad Spend (ROAS)",
+        desc: "Direct revenue tracking for e-commerce and retail transactions, displaying your exact gross profit multiple against ad spend.",
+      },
+      {
+        metric: "Call Tracking & Search Terms Log",
+        desc: "Granular recordings of customer search queries, call durations, and caller location to identify high-value customer patterns.",
+      },
+      {
+        metric: "Sales-Qualified Leads vs Total Leads",
+        desc: "CRM attribution distinguishing between casual inquiries and high-paying contracts to refine Google's smart bidding algorithms.",
+      },
+      {
+        metric: "Next-Month Scaling Projections",
+        desc: "Strategic bid adjustments and keyword expansion roadmaps based on concrete auction data rather than guesswork.",
+      },
+    ],
+    tools: [
+      {
+        category: "Google Advertising Ecosystem",
+        items: [
+          "Google Ads Editor",
+          "Google Merchant Center",
+          "Google Tag Manager (GTM)",
+          "Google Analytics 4 (GA4)",
+          "Google Search Console",
+          "Local Services Ads (LSA)",
+        ],
+      },
+      {
+        category: "Tracking, Call Analytics & CRM",
+        items: [
+          "CallRail Dynamic Tracking",
+          "WhatsApp Cloud API",
+          "HubSpot CRM Sync",
+          "GoHighLevel (GHL)",
+          "Zapier / n8n Webhooks",
+          "ClickCease Fraud Shield",
+        ],
+      },
+      {
+        category: "Competitive Intelligence & Auditing",
+        items: [
+          "SEMrush PPC Toolkit",
+          "SpyFu Auction Insights",
+          "Google Keyword Planner",
+          "Optmyzr Scripts",
+          "Looker Studio Dashboards",
+        ],
+      },
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: "Discovery, Margins & Unit Economics (Week 1)",
+        desc: "We analyze your average customer lifetime value, profit margins, geographic service area, and target Cost Per Acquisition (CPA) to model realistic ROI.",
+      },
+      {
+        step: "02",
+        title: "Deep Audit & Competitor Intelligence (Week 1-2)",
+        desc: "We inspect historical ad data, locate budget leaks, analyze competitor auction insights, and compile exhaustive positive and negative keyword banks.",
+      },
+      {
+        step: "03",
+        title: "Conversion Tracking First, Spend Second (Week 2)",
+        desc: "Before spending $1 on clicks, we deploy server-side GTM, GA4 conversion events, dynamic call tracking numbers, and WhatsApp click triggers.",
+      },
+      {
+        step: "04",
+        title: "Campaign Architecture & Ad Launch (Week 2-3)",
+        desc: "Building single-intent ad groups, writing compelling high-CTR responsive search ads, configuring location radius targeting, and launching initial bids.",
+      },
+      {
+        step: "05",
+        title: "Algorithmic Learning & Query Scrubbing (Weeks 3-6)",
+        desc: "Gathering initial auction data, aggressively pruning negative search queries, testing ad copy variations, and training Google's smart bidding algorithms.",
+      },
+      {
+        step: "06",
+        title: "Scaling & Channel Compounding (Month 2-3+)",
+        desc: "Allocating budget to winning keywords, scaling high-ROAS campaign types (like PMax and LSA), and continuously lowering your overall Cost Per Lead.",
+      },
+    ],
+    benefits: [
+      {
+        title: "Ads + Landing Page + Automation Under One Roof",
+        desc: "Unlike traditional ad agencies that leave landing pages to third parties, we engineer the high-speed web app, the tracking tags, and the CRM automations together.",
+      },
+      {
+        title: "Tracking Configured Before Spending Any Budget",
+        desc: "We refuse to run ads blind. Every campaign is backed by verified server-side GA4 and phone tracking so Google optimizes for actual revenue.",
+      },
+      {
+        title: "100% Client Ownership of Ad Account & Data",
+        desc: "You retain full direct administrative ownership of your Google Ads account, payment profiles, and historical data. We never hold your assets hostage.",
+      },
+      {
+        title: "Transparent Fees with Zero Marked-Up Ad Spend",
+        desc: "You pay Google directly with your corporate card. Our management fee is completely separate and transparent, with zero hidden percentage markups.",
+      },
+      {
+        title: "Honest Strategic Advice & Zero Fluff",
+        desc: "If your organic SEO or website performance needs fixing before paid ads can deliver profitable returns, we will advise you honestly before you waste budget.",
+      },
+      {
+        title: "Click Fraud & Competitor Waste Protection",
+        desc: "We implement advanced IP exclusion and click fraud monitoring rules to stop competitors and automated bots from burning your daily budget.",
+      },
+    ],
+    beforeAfter: [
+      {
+        before: "$68 Cost Per Lead with 60%+ of monthly ad budget wasted on broad-match search queries that never convert into paying customers.",
+        after: "$22 Cost Per Lead achieved via strict phrase/exact match clusters, exhaustive negative keyword banks, and +240% inbound phone call volume.",
+      },
+      {
+        before: "2.1% conversion rate on a slow, generic WordPress theme that lost impatient mobile visitors before the page finished loading.",
+        after: "8.4% conversion rate powered by a sub-second custom Next.js landing page with instant WhatsApp and click-to-call direct action triggers.",
+      },
+      {
+        before: "1.8x ROAS on generic Google Shopping campaigns with disorganized product feeds and zero search term isolation.",
+        after: "4.7x verified ROAS using segmented Performance Max asset groups, optimized Merchant Center feeds, and high-converting product pages.",
+      },
+      {
+        before: "Zero call tracking or form attribution, forcing business owners to guess which marketing channels were actually generating revenue.",
+        after: "100% server-side attribution connecting closed revenue and CRM deals directly to the exact keyword and ad group that initiated the inquiry.",
+      },
+    ],
+    pricingModels: [
+      {
+        title: "Google Ads Starter",
+        subtitle: "Ideal for local trades, single-service professionals, and businesses testing high-intent search acquisition.",
+        price: "$650 / month",
+        features: [
+          "1-2 Targeted Search Campaigns",
+          "Calls & Lead Form Conversion Tracking",
+          "Negative Keyword List & Leak Scrubbing",
+          "Landing Page Audit & Recommendations",
+          "Monthly Executive Performance Report",
+          "Client Owns Ad Account 100%",
+          "Separate Ad Spend: Recommended $500 - $1,500/mo (Paid to Google)",
+        ],
+      },
+      {
+        title: "Google Ads Growth",
+        subtitle: "Our most popular package for aggressive customer acquisition, regional expansion, and multi-service businesses.",
+        price: "$1,250 / month",
+        highlight: true,
+        features: [
+          "3-5 Search & Performance Max Campaigns",
+          "Calls, Lead Forms & WhatsApp Tracking",
+          "1 Dedicated High-Converting Landing Page Included",
+          "Daily Negative Keyword & Search Query Management",
+          "Click Fraud Shield & IP Exclusion Setup",
+          "Bi-Weekly Strategy Calls & Optimization",
+          "Separate Ad Spend: Recommended $1,500 - $5,000/mo (Paid to Google)",
+        ],
+      },
+      {
+        title: "Google Ads Enterprise & Scale",
+        subtitle: "Full-funnel omnichannel PPC management for established multi-location brands and high-volume e-commerce stores.",
+        price: "$2,400 / month",
+        features: [
+          "Omnichannel (Search, PMax, YouTube, Shopping & Display)",
+          "Offline Conversion Tracking & Direct CRM Sync",
+          "Multiple Landing Pages with A/B Split Testing",
+          "Weekly Performance Review & Live Looker Dashboard",
+          "Smart Bidding Portfolio Script Automations",
+          "Dedicated Senior PPC Strategist Direct Access",
+          "Separate Ad Spend: $5,000+/mo (Flat fee or % of spend above threshold)",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Google Ads se kitne din mein leads aana shuru hoti hain?",
+        answer: "Unlike SEO which takes 3 to 6 months to build organic domain authority, Google Ads captures high-intent traffic immediately upon launch. Generally, campaigns generate incoming calls and form submissions within the first 24 to 72 hours of going live. However, the initial 2 to 4 weeks serve as Google's algorithmic learning phase, after which Cost Per Lead stabilizes and efficiency peaks.",
+      },
+      {
+        question: "Google Ads shuru karne ke liye kitna minimum budget chahiye?",
+        answer: "Minimum ad spend depends on your industry and market competition. For local home trades and regional clinics, an ad budget of $800 to $1,500 per month is typically sufficient to gather conclusive conversion data. For highly competitive legal or real estate verticals, we recommend $2,000 to $5,000+ per month. Remember: ad budget is paid directly to Google from your billing card, separate from our management fee.",
+      },
+      {
+        question: "Management fee aur ad spend mein kya farq hai?",
+        answer: "Ad spend is the budget paid directly to Google for buying clicks on the auction. Management fee is what you pay our agency for strategy, campaign architecture, ad copywriting, negative keyword management, landing page design, conversion tracking, and ongoing bid optimization. We maintain 100% transparency: you always know exactly how much goes to Google and how much goes to management.",
+      },
+      {
+        question: "Google Ads aur SEO mein se kaun sa behtar hai?",
+        answer: "They serve complementary roles in your digital acquisition funnel. Google Ads is short-term and immediate: it delivers instant calls and leads the day you turn it on, making it ideal for immediate cash flow. SEO is a long-term asset: it compounds over months to deliver sustainable organic traffic with zero cost-per-click. For maximum market dominance, businesses run Google Ads for immediate revenue while building Local SEO for long-term equity.",
+      },
+      {
+        question: "Kya Google Ads account meri ownership mein rahega?",
+        answer: "Yes, 100%. We always build campaigns inside your own Google Ads account or create a new account in your company name. Your credit card is linked directly to Google billing, and you retain permanent ownership of all conversion data, search term history, and campaign assets. If you ever stop working with us, you keep everything.",
+      },
+      {
+        question: "Kya results aur leads guarantee hain?",
+        answer: "No reputable digital marketing agency can ethically guarantee specific lead counts, because consumer purchase decisions and competitor auction bidding are outside anyone's direct control. What we DO guarantee is rigorous scientific optimization: complete server-side tracking, elimination of wasted clicks through negative keywords, sub-second landing pages, and relentless focus on lowering your Cost Per Qualified Lead.",
+      },
+      {
+        question: "Kya phone calls aur WhatsApp leads accurately track hotay hain?",
+        answer: "Yes. We implement dynamic call tracking via Google Tag Manager and CallRail, capturing the exact keyword and ad group that prompted each phone call, along with call recording and duration. We also configure custom GA4 event triggers for WhatsApp chat clicks and thank-you page form submissions so every conversion is attributed accurately.",
+      },
+      {
+        question: "Click fraud ya competitors ke fake clicks se ad budget kaise bachta hai?",
+        answer: "We employ multiple defensive layers against fraudulent clicks. First, we configure strict geo-radius and exclusion boundaries. Second, we integrate automated click fraud protection systems (like ClickCease) that automatically identify repetitive bot IPs or malicious competitor devices and exclude them from seeing your ads in real-time, preserving your budget for genuine buyers.",
+      },
     ],
   },
 ];
