@@ -87,8 +87,8 @@ export default function AboutSection() {
                     <ShoppingBag className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-sm font-extrabold text-zinc-900 leading-tight">E-Commerce</div>
-                    <div className="text-[11px] font-medium text-zinc-500">TikTok & Shopify E-Commerce</div>
+                    <div className="text-sm font-extrabold text-zinc-900 leading-tight">Consultant &amp; Expert</div>
+                    <div className="text-[11px] font-medium text-zinc-500">eCommerce and Digital Marketing</div>
                   </div>
                 </div>
 
